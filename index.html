@@ -1,0 +1,1735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>IIC | DMIMS</title>
+
+    <style>
+      /* =====================================
+   IIC DMIMS WEBSITE
+   ===================================== */
+
+:root {
+    --blue: #171d69;
+    --blue-dark: #10154f;
+    --blue-light: #eef0ff;
+
+    --orange: #f7a719;
+    --yellow: #ffc52e;
+
+    --red: #d51f2b;
+
+    --white: #ffffff;
+    --black: #171717;
+
+    --text: #444a5c;
+    --light: #f7f8fc;
+
+    --border: #e5e7ef;
+
+    --shadow: 0 15px 45px rgba(20, 28, 90, 0.10);
+}
+
+
+/* =====================================
+   GLOBAL
+   ===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    color: var(--black);
+    background: var(--white);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: min(1180px, 92%);
+    margin: auto;
+}
+
+
+/* =====================================
+   TOP HEADER
+   ===================================== */
+
+.top-header {
+    background: white;
+    border-bottom: 1px solid var(--border);
+}
+
+.header-container {
+    width: min(1180px, 92%);
+    margin: auto;
+
+    min-height: 88px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.iic-logo {
+    width: 210px;
+    max-height: 72px;
+    object-fit: contain;
+}
+
+.brand-text {
+    border-left: 1px solid #ddd;
+    padding-left: 18px;
+}
+
+.brand-text h1 {
+    font-size: 18px;
+    color: var(--blue);
+}
+
+.brand-text p {
+    font-size: 12px;
+    color: #777;
+}
+
+.menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: var(--blue);
+}
+
+
+/* =====================================
+   NAVBAR
+   ===================================== */
+
+.navbar {
+    background: var(--blue);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    width: min(1180px, 92%);
+    margin: auto;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    color: white;
+    padding: 16px 18px;
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.25s;
+}
+
+.nav-links a:hover {
+    background: rgba(255,255,255,0.12);
+}
+
+.nav-links .nav-apply {
+    margin-left: auto;
+
+    background: var(--orange);
+    color: var(--blue);
+
+    border-radius: 5px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    padding: 10px 20px;
+}
+
+.nav-links .nav-apply:hover {
+    background: var(--yellow);
+}
+
+
+/* =====================================
+   HERO
+   ===================================== */
+
+.hero {
+    background:
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(247,167,25,0.20),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #f5f6ff,
+            #ffffff
+        );
+
+    padding: 90px 0;
+}
+
+.hero-container {
+    width: min(1180px, 92%);
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.official-tag {
+    display: inline-block;
+
+    background: #fff2d1;
+    color: #8b5a00;
+
+    padding: 7px 13px;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    border-radius: 4px;
+
+    margin-bottom: 20px;
+}
+
+.hero h2 {
+    color: var(--blue);
+
+    font-size: clamp(42px, 6vw, 72px);
+
+    line-height: 1.05;
+
+    margin-bottom: 22px;
+}
+
+.hero h2 span {
+    display: block;
+    color: var(--red);
+}
+
+.hero-content > p {
+    max-width: 650px;
+
+    color: var(--text);
+
+    font-size: 18px;
+
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.btn {
+    display: inline-block;
+
+    padding: 13px 23px;
+
+    border-radius: 5px;
+
+    font-weight: 700;
+
+    transition: 0.25s;
+}
+
+.primary-btn {
+    background: var(--blue);
+    color: white;
+}
+
+.primary-btn:hover {
+    background: var(--blue-dark);
+    transform: translateY(-2px);
+}
+
+.outline-btn {
+    background: white;
+    color: var(--blue);
+
+    border: 1px solid var(--blue);
+}
+
+.outline-btn:hover {
+    background: var(--blue);
+    color: white;
+}
+
+
+/* =====================================
+   HERO CARD
+   ===================================== */
+
+.hero-card {
+    min-height: 350px;
+
+    background: var(--blue);
+
+    border-radius: 15px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 40px;
+
+    color: white;
+
+    position: relative;
+    overflow: hidden;
+
+    box-shadow: var(--shadow);
+}
+
+.hero-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    border-radius: 50%;
+
+    background: var(--orange);
+
+    top: -90px;
+    right: -60px;
+}
+
+.hero-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 160px;
+    height: 160px;
+
+    border-radius: 50%;
+
+    background: var(--red);
+
+    bottom: -80px;
+    left: -50px;
+}
+
+.innovation-icon {
+    position: relative;
+    z-index: 2;
+
+    font-size: 65px;
+
+    margin-bottom: 15px;
+}
+
+.hero-card h3,
+.hero-card p {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.hero-card p {
+    color: #dfe2ff;
+}
+
+
+/* =====================================
+   SECTION
+   ===================================== */
+
+section {
+    padding: 85px 0;
+}
+
+.section-heading {
+    text-align: center;
+
+    margin-bottom: 45px;
+}
+
+.section-heading span,
+.section-label {
+    color: var(--red);
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+    color: var(--blue);
+
+    font-size: 38px;
+
+    margin: 8px 0;
+}
+
+.section-heading p {
+    color: var(--text);
+}
+
+
+/* =====================================
+   INSTITUTE
+   ===================================== */
+
+.institute-section {
+    background: white;
+}
+
+.info-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.info-box {
+    border: 1px solid var(--border);
+
+    padding: 30px;
+
+    border-radius: 10px;
+
+    transition: 0.25s;
+}
+
+.info-box:hover {
+    transform: translateY(-5px);
+
+    box-shadow: var(--shadow);
+
+    border-color: var(--orange);
+}
+
+.info-icon {
+    font-size: 35px;
+
+    margin-bottom: 10px;
+}
+
+.info-box h3 {
+    color: var(--blue);
+
+    margin-bottom: 8px;
+}
+
+.info-box p {
+    color: var(--text);
+
+    font-size: 14px;
+}
+
+
+/* =====================================
+   ABOUT
+   ===================================== */
+
+.about-section {
+    background: var(--light);
+}
+
+.about-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 0.8fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+.about-grid h2 {
+    color: var(--blue);
+
+    font-size: 42px;
+
+    margin: 10px 0 20px;
+}
+
+.about-grid p {
+    color: var(--text);
+
+    margin-bottom: 15px;
+}
+
+.about-highlight {
+    background: var(--blue);
+
+    color: white;
+
+    border-radius: 15px;
+
+    padding: 45px;
+
+    box-shadow: var(--shadow);
+}
+
+.big-number {
+    font-size: 65px;
+
+    color: var(--orange);
+
+    font-weight: 800;
+}
+
+.about-highlight h3 {
+    font-size: 28px;
+
+    margin-bottom: 10px;
+}
+
+
+/* =====================================
+   ACTIVITIES
+   ===================================== */
+
+.activity-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+.activity-card {
+    border: 1px solid var(--border);
+
+    padding: 25px;
+
+    min-height: 220px;
+
+    border-radius: 10px;
+
+    transition: 0.25s;
+}
+
+.activity-card:hover {
+    background: var(--blue);
+
+    color: white;
+
+    transform: translateY(-5px);
+}
+
+.activity-card span {
+    color: var(--orange);
+
+    font-weight: 800;
+
+    font-size: 13px;
+}
+
+.activity-card h3 {
+    color: var(--blue);
+
+    margin: 15px 0 8px;
+}
+
+.activity-card:hover h3 {
+    color: white;
+}
+
+.activity-card p {
+    color: var(--text);
+
+    font-size: 14px;
+}
+
+.activity-card:hover p {
+    color: #dce0ff;
+}
+
+
+/* =====================================
+   ROLES
+   ===================================== */
+
+.roles-section {
+    background: #f6f7fb;
+}
+
+.search-container {
+    max-width: 550px;
+
+    margin: 0 auto 30px;
+}
+
+.search-container input {
+    width: 100%;
+
+    padding: 15px 18px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 7px;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+.search-container input:focus {
+    border-color: var(--blue);
+
+    box-shadow: 0 0 0 3px #171d6915;
+}
+
+.roles-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 15px;
+}
+
+.role-card {
+    background: white;
+
+    border: 1px solid var(--border);
+
+    padding: 25px;
+
+    border-radius: 9px;
+
+    display: grid;
+
+    grid-template-columns: 50px 1fr;
+
+    column-gap: 15px;
+
+    transition: 0.25s;
+}
+
+.role-card:hover {
+    border-color: var(--orange);
+
+    box-shadow: var(--shadow);
+
+    transform: translateY(-3px);
+}
+
+.role-number {
+    grid-row: span 2;
+
+    color: var(--red);
+
+    font-weight: 800;
+
+    font-size: 18px;
+}
+
+.role-card h3 {
+    color: var(--blue);
+
+    margin-bottom: 5px;
+}
+
+.role-card p {
+    color: var(--text);
+
+    font-size: 13px;
+}
+
+
+/* =====================================
+   COMMITMENT
+   ===================================== */
+
+.commitment-section {
+    padding: 45px 0;
+}
+
+.commitment-box {
+    background:
+        linear-gradient(
+            120deg,
+            #fff2ca,
+            #fff
+        );
+
+    border-left: 6px solid var(--red);
+
+    border-radius: 10px;
+
+    padding: 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.commitment-box span {
+    color: var(--red);
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+.commitment-box h2 {
+    color: var(--blue);
+
+    margin: 5px 0 8px;
+}
+
+.commitment-box p {
+    color: var(--text);
+
+    max-width: 850px;
+}
+
+.commitment-icon {
+    font-size: 55px;
+}
+
+
+/* =====================================
+   TEAM
+   ===================================== */
+
+.team-section {
+    background: white;
+}
+
+.team-placeholder {
+    max-width: 500px;
+
+    margin: auto;
+
+    text-align: center;
+
+    padding: 45px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+}
+
+.team-avatar {
+    width: 90px;
+    height: 90px;
+
+    margin: auto auto 15px;
+
+    border-radius: 50%;
+
+    background: var(--blue);
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-weight: 800;
+
+    font-size: 24px;
+}
+
+.team-placeholder h3 {
+    color: var(--blue);
+}
+
+.team-placeholder p {
+    color: var(--text);
+}
+
+
+/* =====================================
+   APPLY
+   ===================================== */
+
+.apply-section {
+    background: var(--blue);
+}
+
+.apply-box {
+    text-align: center;
+
+    color: white;
+}
+
+.apply-box span {
+    color: var(--orange);
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    font-size: 12px;
+}
+
+.apply-box h2 {
+    font-size: 52px;
+
+    margin: 5px 0;
+}
+
+.apply-box p {
+    color: #d7dbff;
+
+    margin-bottom: 25px;
+}
+
+.apply-btn {
+    display: inline-block;
+
+    background: var(--orange);
+
+    color: var(--blue);
+
+    padding: 14px 28px;
+
+    border-radius: 5px;
+
+    font-weight: 800;
+
+    transition: 0.25s;
+}
+
+.apply-btn:hover {
+    background: var(--yellow);
+
+    transform: translateY(-3px);
+}
+
+
+/* =====================================
+   FOOTER
+   ===================================== */
+
+footer {
+    background: #0c103e;
+
+    color: #cfd2ed;
+
+    padding-top: 55px;
+}
+
+.footer-container {
+    width: min(1180px, 92%);
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 2fr 1fr 1.5fr;
+
+    gap: 40px;
+
+    padding-bottom: 40px;
+}
+
+.footer-logo {
+    width: 190px;
+
+    background: white;
+
+    padding: 8px;
+
+    border-radius: 4px;
+
+    margin-bottom: 12px;
+}
+
+.footer-container h3 {
+    color: white;
+
+    margin-bottom: 12px;
+}
+
+.footer-container a {
+    display: block;
+
+    margin: 6px 0;
+
+    color: #cfd2ed;
+
+    font-size: 14px;
+}
+
+.footer-container a:hover {
+    color: var(--orange);
+}
+
+.copyright {
+    text-align: center;
+
+    border-top: 1px solid #282d68;
+
+    padding: 20px;
+
+    font-size: 12px;
+}
+
+
+/* =====================================
+   RESPONSIVE
+   ===================================== */
+
+@media (max-width: 900px) {
+
+    .hero-container {
+        grid-template-columns: 1fr;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .activity-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .brand-text {
+        display: none;
+    }
+
+    .iic-logo {
+        width: 180px;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        padding: 10px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 12px 5%;
+    }
+
+    .nav-links .nav-apply {
+        margin: 8px 5%;
+        text-align: center;
+    }
+
+    .hero {
+        padding: 60px 0;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .hero-buttons .btn {
+        text-align: center;
+    }
+
+    .info-grid,
+    .activity-grid,
+    .roles-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading h2 {
+        font-size: 32px;
+    }
+
+    .commitment-box {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+    </style>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="top-header">
+
+    <div class="header-container">
+
+        <div class="brand">
+
+            <img
+                src="https://iic.mic.gov.in/assets/assets/images/iiclogo.png"
+                alt="Institution's Innovation Council Logo"
+                class="iic-logo"
+            >
+
+            <div class="brand-text">
+                <h1>Institution's Innovation Council</h1>
+                <p>DMIMS • Innovation & Entrepreneurship</p>
+            </div>
+
+        </div>
+
+        <button class="menu-btn" id="menuBtn">
+            ☰
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar">
+
+    <div class="nav-container">
+
+        <div class="nav-links" id="navLinks">
+
+            <a href="#home">Home</a>
+            <a href="#about">About IIC</a>
+            <a href="#activities">Activities</a>
+            <a href="#roles">Council Roles</a>
+            <a href="#team">Team</a>
+            <a href="#contact">Contact</a>
+
+            <a
+                href="https://tally.so/r/Zjq0Dv"
+                target="_blank"
+                class="nav-apply"
+            >
+                Join IIC
+            </a>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-container">
+
+        <div class="hero-content">
+
+            <span class="official-tag">
+                MINISTRY OF EDUCATION INITIATIVE
+            </span>
+
+            <h2>
+                Institution's
+                <span>Innovation Council</span>
+            </h2>
+
+            <p>
+                Developing a culture of innovation, entrepreneurship,
+                creativity and leadership among students at DMIMS.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#about" class="btn primary-btn">
+                    Explore IIC
+                </a>
+
+                <a
+                    href="https://tally.so/r/Zjq0Dv"
+                    target="_blank"
+                    class="btn outline-btn"
+                >
+                    Join the Council
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-card">
+
+            <div class="innovation-icon">
+                💡
+            </div>
+
+            <h3>
+                IDEA → INNOVATION → IMPACT
+            </h3>
+
+            <p>
+                Turning student ideas into meaningful initiatives,
+                ventures and solutions.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= INSTITUTE INFO ================= -->
+
+<section class="institute-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span>OUR INSTITUTE</span>
+
+            <h2>
+                IIC at DMIMS
+            </h2>
+
+            <p>
+                Empowering students to discover, develop and implement
+                innovative ideas.
+            </p>
+
+        </div>
+
+
+        <div class="info-grid">
+
+            <div class="info-box">
+                <div class="info-icon">🚀</div>
+                <h3>Innovation</h3>
+                <p>
+                    Encourage students to identify problems and
+                    develop innovative solutions.
+                </p>
+            </div>
+
+            <div class="info-box">
+                <div class="info-icon">💼</div>
+                <h3>Entrepreneurship</h3>
+                <p>
+                    Support student startups, business ideas and
+                    entrepreneurial initiatives.
+                </p>
+            </div>
+
+            <div class="info-box">
+                <div class="info-icon">🤝</div>
+                <h3>Collaboration</h3>
+                <p>
+                    Connect students with alumni, industry experts,
+                    mentors and innovation ecosystems.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about-section" id="about">
+
+    <div class="container about-grid">
+
+        <div>
+
+            <span class="section-label">
+                ABOUT IIC
+            </span>
+
+            <h2>
+                Building an Innovation Culture
+            </h2>
+
+            <p>
+                The Institution's Innovation Council provides a platform
+                for students to explore innovation, entrepreneurship,
+                intellectual property, startups and industry interaction.
+            </p>
+
+            <p>
+                At DMIMS, IIC aims to create opportunities where students
+                can move from ideas to action.
+            </p>
+
+        </div>
+
+
+        <div class="about-highlight">
+
+            <div class="big-number">
+                01
+            </div>
+
+            <h3>
+                Think Different
+            </h3>
+
+            <p>
+                Question problems, create ideas and find better solutions.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ACTIVITIES ================= -->
+
+<section class="activities-section" id="activities">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span>WHAT WE DO</span>
+
+            <h2>
+                IIC Activities
+            </h2>
+
+        </div>
+
+
+        <div class="activity-grid">
+
+            <div class="activity-card">
+                <span>01</span>
+                <h3>Startup & Entrepreneurship</h3>
+                <p>
+                    Student startup ideas, pitching, mentoring and
+                    entrepreneurship initiatives.
+                </p>
+            </div>
+
+            <div class="activity-card">
+                <span>02</span>
+                <h3>Innovation Challenges</h3>
+                <p>
+                    Encourage students to develop innovative solutions
+                    to real-world problems.
+                </p>
+            </div>
+
+            <div class="activity-card">
+                <span>03</span>
+                <h3>Expert Sessions</h3>
+                <p>
+                    Sessions with entrepreneurs, industry professionals,
+                    alumni and innovation experts.
+                </p>
+            </div>
+
+            <div class="activity-card">
+                <span>04</span>
+                <h3>Workshops</h3>
+                <p>
+                    Practical workshops covering innovation,
+                    entrepreneurship, IPR and design thinking.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ROLES ================= -->
+
+<section class="roles-section" id="roles">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span>STUDENT COUNCIL</span>
+
+            <h2>
+                Council Roles
+            </h2>
+
+            <p>
+                Explore the responsibilities of the IIC Student Council.
+            </p>
+
+        </div>
+
+
+        <!-- Search -->
+
+        <div class="search-container">
+
+            <input
+                type="text"
+                id="roleSearch"
+                placeholder="Search a role..."
+            >
+
+        </div>
+
+
+        <div class="roles-grid" id="rolesGrid">
+
+            <div class="role-card">
+                <div class="role-number">01</div>
+                <h3>Start-up Coordinator</h3>
+                <p>
+                    Scout student business ideas and facilitate
+                    pitching, mentoring and incubation support.
+                </p>
+            </div>
+
+            <div class="role-card">
+                <div class="role-number">02</div>
+                <h3>Internship Coordinator</h3>
+                <p>
+                    Facilitate startup and industry internship
+                    opportunities for students.
+                </p>
+            </div>
+
+            <div class="role-card">
+                <div class="role-number">03</div>
+                <h3>IPR Coordinator</h3>
+                <p>
+                    Create awareness about patents, copyrights,
+                    trademarks and intellectual property.
+                </p>
+            </div>
+
+            <div class="role-card">
+                <div class="role-number">04</div>
+                <h3>Graphics & Creative</h3>
+                <p>
+                    Design posters, banners, brochures,
+                    presentations and promotional creatives.
+                </p>
+            </div>
+
+            <div class="role-card">
+                <div class="role-number">05</div>
+                <h3>YUKTI Coordinator</h3>
+                <p>
+                    Identify innovative student projects and
+                    coordinate YUKTI submissions.
+                </p>
+            </div>
+
+            <div class="role-card">
+                <div class="role-number">06</div>
+                <h3>WISE Student Lead</h3>
+                <p>
+                    Promote women innovation, entrepreneurship
+                    and community outreach.
+                </p>
+            </div>
+
+            <div class="role-card">
+                <div class="role-number">07</div>
+                <h3>ARIIA Coordinator</h3>
+                <p>
+                    Organize innovation metrics, achievements
+                    and institutional data.
+                </p>
+            </div>
+
+            <div class="role-card">
+                <div class="role-number">08</div>
+                <h3>Alumni Coordinator</h3>
+                <p>
+                    Connect entrepreneur alumni and experts for
+                    mentoring and collaboration.
+                </p>
+            </div>
+
+            <div class="role-card">
+                <div class="role-number">09</div>
+                <h3>Social Media Coordinator</h3>
+                <p>
+                    Manage social media, event coverage,
+                    captions and digital outreach.
+                </p>
+            </div>
+
+            <div class="role-card">
+                <div class="role-number">10</div>
+                <h3>Documentation & Logistics</h3>
+                <p>
+                    Manage event logistics, meeting minutes,
+                    documentation and reports.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= COMMITMENT ================= -->
+
+<section class="commitment-section">
+
+    <div class="container">
+
+        <div class="commitment-box">
+
+            <div>
+                <span>IMPORTANT</span>
+
+                <h2>
+                    IIC requires commitment.
+                </h2>
+
+                <p>
+                    Selected Core Committee members are expected to
+                    dedicate themselves to IIC and cannot simultaneously
+                    be part of another college club or committee during
+                    their IIC tenure.
+                </p>
+
+            </div>
+
+            <div class="commitment-icon">
+                ⚡
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= TEAM ================= -->
+
+<section class="team-section" id="team">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span>STUDENT LEADERSHIP</span>
+
+            <h2>
+                Meet the IIC Team
+            </h2>
+
+        </div>
+
+
+        <div class="team-placeholder">
+
+            <div class="team-avatar">
+                IIC
+            </div>
+
+            <h3>
+                IIC DMIMS Student Council
+            </h3>
+
+            <p>
+                Innovate • Lead • Create • Impact
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= APPLY ================= -->
+
+<section class="apply-section">
+
+    <div class="container">
+
+        <div class="apply-box">
+
+            <span>
+                READY TO MAKE AN IMPACT?
+            </span>
+
+            <h2>
+                We Need You.
+            </h2>
+
+            <p>
+                Join the IIC Student Council and turn your ideas
+                into action.
+            </p>
+
+            <a
+                href="https://tally.so/r/Zjq0Dv"
+                target="_blank"
+                class="apply-btn"
+            >
+                APPLY FOR IIC →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer id="contact">
+
+    <div class="footer-container">
+
+        <div>
+
+            <img
+                src="https://iic.mic.gov.in/assets/assets/images/iiclogo.png"
+                alt="IIC Logo"
+                class="footer-logo"
+            >
+
+            <p>
+                Institution's Innovation Council
+            </p>
+
+            <p>
+                DMIMS
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>Quick Links</h3>
+
+            <a href="#about">About</a>
+            <a href="#activities">Activities</a>
+            <a href="#roles">Roles</a>
+            <a href="#apply">Join IIC</a>
+
+        </div>
+
+
+        <div>
+
+            <h3>Connect</h3>
+
+            <p>
+                Innovation • Entrepreneurship • Leadership
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 IIC DMIMS. All Rights Reserved.
+
+    </div>
+
+</footer>
+
+
+<script>
+  /* =====================================
+   IIC DMIMS WEBSITE JAVASCRIPT
+   ===================================== */
+
+
+/* ===============================
+   MOBILE MENU
+   =============================== */
+
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", () => {
+
+    navLinks.classList.toggle("active");
+
+});
+
+
+/* ===============================
+   CLOSE MOBILE MENU
+   AFTER CLICKING A LINK
+   =============================== */
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        navLinks.classList.remove("active");
+
+    });
+
+});
+
+
+/* ===============================
+   ROLE SEARCH
+   =============================== */
+
+const searchInput = document.getElementById("roleSearch");
+const roleCards = document.querySelectorAll(".role-card");
+
+searchInput.addEventListener("input", () => {
+
+    const searchValue = searchInput.value.toLowerCase().trim();
+
+    roleCards.forEach(card => {
+
+        const roleText = card.innerText.toLowerCase();
+
+        if (roleText.includes(searchValue)) {
+
+            card.style.display = "grid";
+
+        } else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+});
+
+
+/* ===============================
+   SCROLL REVEAL
+   =============================== */
+
+const revealElements = document.querySelectorAll(
+    ".info-box, .activity-card, .role-card, .about-highlight"
+);
+
+const observer = new IntersectionObserver(
+    entries => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
+
+            }
+
+        });
+
+    },
+    {
+        threshold: 0.1
+    }
+);
+
+
+revealElements.forEach(element => {
+
+    element.style.opacity = "0";
+
+    element.style.transform = "translateY(25px)";
+
+    element.style.transition =
+        "opacity .6s ease, transform .6s ease";
+
+    observer.observe(element);
+
+});
+
+
+/* ===============================
+   CURRENT YEAR
+   =============================== */
+
+console.log(
+    "IIC DMIMS Website Loaded Successfully 🚀"
+);
+</script>
+
+</body>
+</html>
