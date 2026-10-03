@@ -7,6 +7,172 @@
     <title>IIC | DMIMS</title>
 
     <style>
+
+        /* =====================================
+   POSITION DROPDOWN / ACCORDION
+   ===================================== */
+
+.accordion {
+    max-width: 950px;
+    margin: auto;
+}
+
+.accordion-item {
+    background: #ffffff;
+    border: 1px solid #e3e5ee;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+
+.accordion-item:hover {
+    border-color: #f7a719;
+    box-shadow: 0 8px 25px rgba(20, 28, 90, 0.08);
+}
+
+
+/* HEADER */
+
+.accordion-header {
+    width: 100%;
+
+    background: white;
+    border: none;
+
+    padding: 20px 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    cursor: pointer;
+
+    color: #171d69;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    text-align: left;
+}
+
+.accordion-header span:first-child {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.accordion-header b {
+    color: #d51f2b;
+    font-size: 13px;
+}
+
+
+/* PLUS / MINUS */
+
+.arrow {
+    width: 30px;
+    height: 30px;
+
+    border-radius: 50%;
+
+    background: #eef0ff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+
+    color: #171d69;
+
+    transition: 0.3s;
+}
+
+
+/* CONTENT */
+
+.accordion-content {
+    max-height: 0;
+
+    overflow: hidden;
+
+    transition:
+        max-height 0.4s ease,
+        padding 0.4s ease;
+
+    background: #f8f9fd;
+
+    padding: 0 70px 0 70px;
+}
+
+.accordion-content p {
+    color: #555b6e;
+
+    font-size: 14px;
+
+    padding-bottom: 0;
+
+    opacity: 0;
+
+    transition: 0.3s ease;
+}
+
+
+/* ACTIVE */
+
+.accordion-item.active {
+    border-color: #171d69;
+}
+
+.accordion-item.active .accordion-header {
+    background: #171d69;
+    color: white;
+}
+
+.accordion-item.active .accordion-header b {
+    color: #ffc52e;
+}
+
+.accordion-item.active .arrow {
+    background: #f7a719;
+
+    color: #171d69;
+
+    transform: rotate(180deg);
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 200px;
+
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
+
+.accordion-item.active .accordion-content p {
+    opacity: 1;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .accordion-header {
+        padding: 17px;
+        font-size: 14px;
+    }
+
+    .accordion-header span:first-child {
+        gap: 9px;
+    }
+
+    .accordion-content {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+}
       /* =====================================
    IIC DMIMS WEBSITE
    ===================================== */
@@ -1480,43 +1646,223 @@ footer {
 </section>
 
 
-<!-- ================= TEAM ================= -->
+<!-- ================= COUNCIL POSITIONS ================= -->
 
-<section class="team-section" id="team">
+<section class="roles-section" id="roles">
 
     <div class="container">
 
         <div class="section-heading">
-
-            <span>STUDENT LEADERSHIP</span>
-
-            <h2>
-                Meet the IIC Team
-            </h2>
-
+            <span>IIC STUDENT COUNCIL</span>
+            <h2>Positions & Responsibilities</h2>
+            <p>Click on any position to explore its responsibilities.</p>
         </div>
 
+        <div class="accordion">
 
-        <div class="team-placeholder">
+            <!-- 01 -->
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span>
+                        <b>01</b>
+                        🚀 Start-up Coordinator
+                    </span>
+                    <span class="arrow">+</span>
+                </button>
 
-            <div class="team-avatar">
-                IIC
+                <div class="accordion-content">
+                    <p>
+                        Scout student business ideas, connect student ventures
+                        with incubation support, and facilitate pitching and
+                        mentoring sessions.
+                    </p>
+                </div>
             </div>
 
-            <h3>
-                IIC DMIMS Student Council
-            </h3>
 
-            <p>
-                Innovate • Lead • Create • Impact
-            </p>
+            <!-- 02 -->
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span>
+                        <b>02</b>
+                        💼 Internship Coordinator
+                    </span>
+                    <span class="arrow">+</span>
+                </button>
+
+                <div class="accordion-content">
+                    <p>
+                        Facilitate industry and startup internship opportunities,
+                        helping students gain hands-on project and startup exposure.
+                    </p>
+                </div>
+            </div>
+
+
+            <!-- 03 -->
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span>
+                        <b>03</b>
+                        ©️ IPR Coordinator
+                    </span>
+                    <span class="arrow">+</span>
+                </button>
+
+                <div class="accordion-content">
+                    <p>
+                        Drive awareness around Intellectual Property Rights
+                        including patents, copyrights and trademarks, and assist
+                        students in identifying protectable innovations.
+                    </p>
+                </div>
+            </div>
+
+
+            <!-- 04 -->
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span>
+                        <b>04</b>
+                        🎨 Graphics & Creative Coordinator
+                    </span>
+                    <span class="arrow">+</span>
+                </button>
+
+                <div class="accordion-content">
+                    <p>
+                        Design promotional posters, banners, brochures,
+                        presentations and event creatives to build strong
+                        visual branding for IIC.
+                    </p>
+                </div>
+            </div>
+
+
+            <!-- 05 -->
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span>
+                        <b>05</b>
+                        💡 YUKTI Coordinator
+                    </span>
+                    <span class="arrow">+</span>
+                </button>
+
+                <div class="accordion-content">
+                    <p>
+                        Identify innovative student prototypes and technologies
+                        and coordinate project submissions on the MoE YUKTI
+                        Innovation Portal.
+                    </p>
+                </div>
+            </div>
+
+
+            <!-- 06 -->
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span>
+                        <b>06</b>
+                        👩‍💼 Student Lead – WISE
+                    </span>
+                    <span class="arrow">+</span>
+                </button>
+
+                <div class="accordion-content">
+                    <p>
+                        Drive Women’s Innovation, Student Entrepreneurship
+                        and community outreach initiatives focused on
+                        empowering women innovators.
+                    </p>
+                </div>
+            </div>
+
+
+            <!-- 07 -->
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span>
+                        <b>07</b>
+                        📊 ARIIA Coordinator
+                    </span>
+                    <span class="arrow">+</span>
+                </button>
+
+                <div class="accordion-content">
+                    <p>
+                        Track, organize and compile institutional innovation
+                        metrics, data points and achievement reports for
+                        ARIIA/NIRF innovation-related submissions.
+                    </p>
+                </div>
+            </div>
+
+
+            <!-- 08 -->
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span>
+                        <b>08</b>
+                        🎓 Alumni Coordinator
+                    </span>
+                    <span class="arrow">+</span>
+                </button>
+
+                <div class="accordion-content">
+                    <p>
+                        Engage entrepreneur and alumni leaders for expert
+                        guest sessions, mentorship networks and collaboration
+                        opportunities.
+                    </p>
+                </div>
+            </div>
+
+
+            <!-- 09 -->
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span>
+                        <b>09</b>
+                        📱 Social Media Coordinator
+                    </span>
+                    <span class="arrow">+</span>
+                </button>
+
+                <div class="accordion-content">
+                    <p>
+                        Manage live event coverage, create engaging captions
+                        and increase IIC visibility across LinkedIn, Instagram
+                        and other digital platforms.
+                    </p>
+                </div>
+            </div>
+
+
+            <!-- 10 -->
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span>
+                        <b>10</b>
+                        📋 Documentation & Logistics Coordinator
+                    </span>
+                    <span class="arrow">+</span>
+                </button>
+
+                <div class="accordion-content">
+                    <p>
+                        Handle on-ground arrangements, event logistics,
+                        meeting minutes and activity reports required
+                        for documentation and portal uploads.
+                    </p>
+                </div>
+            </div>
 
         </div>
 
     </div>
 
 </section>
-
 
 <!-- ================= APPLY ================= -->
 
@@ -1729,6 +2075,47 @@ revealElements.forEach(element => {
 console.log(
     "IIC DMIMS Website Loaded Successfully 🚀"
 );
+
+    /* =====================================
+   POSITION ACCORDION
+   ===================================== */
+
+const accordionItems =
+    document.querySelectorAll(".accordion-item");
+
+accordionItems.forEach(item => {
+
+    const header =
+        item.querySelector(".accordion-header");
+
+    header.addEventListener("click", () => {
+
+        const isActive =
+            item.classList.contains("active");
+
+
+        // Close all other positions
+        accordionItems.forEach(otherItem => {
+            otherItem.classList.remove("active");
+
+            otherItem.querySelector(".arrow")
+                .textContent = "+";
+        });
+
+
+        // Open selected position
+        if (!isActive) {
+
+            item.classList.add("active");
+
+            item.querySelector(".arrow")
+                .textContent = "−";
+
+        }
+
+    });
+
+});
 </script>
 
 </body>
