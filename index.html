@@ -1184,29 +1184,58 @@ footer {
 
 <body>
 
-<!-- ================= HEADER ================= -->
+```html
+<!-- =========================================================
+     IIC DMIMS — HEADER
+========================================================= -->
 
-<header class="top-header">
+<header class="iic-header">
 
     <div class="header-container">
 
-        <div class="brand">
+        <!-- BRAND -->
+        <a href="#home" class="iic-brand">
 
-            <img
-                src="https://iic.mic.gov.in/assets/assets/images/iiclogo.png"
-                alt="Institution's Innovation Council Logo"
-                class="iic-logo"
-            >
+            <div class="logo-wrap">
 
-            <div class="brand-text">
-                <h1>Institution's Innovation Council</h1>
-                <p>DMIMS • Innovation & Entrepreneurship</p>
+                <img
+                    src="https://iic.mic.gov.in/assets/institute/images/logoiic.png"
+                    alt="Institution's Innovation Council Logo"
+                    class="iic-logo"
+                >
+
             </div>
 
-        </div>
+            <div class="brand-text">
 
-        <button class="menu-btn" id="menuBtn">
-            ☰
+                <div class="brand-mini">
+                    DMIMS
+                </div>
+
+                <h1>
+                    Institution's
+                    <span>Innovation Council</span>
+                </h1>
+
+                <p>
+                    Innovation • Entrepreneurship • Leadership
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <!-- MOBILE MENU BUTTON -->
+        <button
+            class="menu-btn"
+            id="menuBtn"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
         </button>
 
     </div>
@@ -1214,27 +1243,66 @@ footer {
 </header>
 
 
-<!-- ================= NAVBAR ================= -->
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
 
-<nav class="navbar">
+<nav class="iic-navbar" id="navbar">
 
     <div class="nav-container">
 
+        <div class="nav-left">
+
+            <div class="nav-indicator"></div>
+
+            <span class="nav-label">
+                IIC DMIMS
+            </span>
+
+        </div>
+
+
         <div class="nav-links" id="navLinks">
 
-            <a href="#home">Home</a>
-            <a href="#about">About IIC</a>
-            <a href="#activities">Activities</a>
-            <a href="#roles">Council Roles</a>
-            <a href="#team">Team</a>
-            <a href="#contact">Contact</a>
+            <a href="#home" class="nav-link active">
+                <span>01</span>
+                Home
+            </a>
+
+            <a href="#about" class="nav-link">
+                <span>02</span>
+                About IIC
+            </a>
+
+            <a href="#activities" class="nav-link">
+                <span>03</span>
+                Activities
+            </a>
+
+            <a href="#roles" class="nav-link">
+                <span>04</span>
+                Council Roles
+            </a>
+
+            <a href="#team" class="nav-link">
+                <span>05</span>
+                Team
+            </a>
+
+            <a href="#contact" class="nav-link">
+                <span>06</span>
+                Contact
+            </a>
+
 
             <a
                 href="https://iicdmims.vercel.app/join.html"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="nav-apply"
             >
-                Join IIC
+                <span>JOIN IIC</span>
+                <strong>→</strong>
             </a>
 
         </div>
@@ -1243,6 +1311,774 @@ footer {
 
 </nav>
 
+
+<style>
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.iic-header {
+
+    position: relative;
+    z-index: 1000;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #e8edf3;
+
+}
+
+
+.header-container {
+
+    max-width: 1350px;
+
+    margin: auto;
+
+    padding: 17px 6%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.iic-brand {
+
+    display: flex;
+    align-items: center;
+    gap: 17px;
+
+    text-decoration: none;
+    color: #071c3d;
+
+}
+
+
+.logo-wrap {
+
+    width: 70px;
+    height: 70px;
+
+    display: grid;
+    place-items: center;
+
+    flex-shrink: 0;
+
+    border-right: 1px solid #e4e9ef;
+
+    padding-right: 17px;
+
+}
+
+
+.iic-logo {
+
+    width: 58px;
+    height: 58px;
+
+    object-fit: contain;
+
+}
+
+
+.brand-text {
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.brand-mini {
+
+    margin-bottom: 2px;
+
+    color: #f58220;
+
+    font-size: 8px;
+    font-weight: 900;
+
+    letter-spacing: 2.5px;
+
+}
+
+
+.brand-text h1 {
+
+    margin: 0;
+
+    color: #071c3d;
+
+    font-size: 19px;
+
+    line-height: 1.15;
+
+    font-weight: 800;
+
+    letter-spacing: -.4px;
+
+}
+
+
+.brand-text h1 span {
+
+    color: #f58220;
+
+}
+
+
+.brand-text p {
+
+    margin: 5px 0 0;
+
+    color: #7d8da1;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+
+    text-transform: uppercase;
+
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.menu-btn {
+
+    display: none;
+
+    width: 43px;
+    height: 43px;
+
+    padding: 0;
+
+    border: 1px solid #dfe5ec;
+
+    background: #ffffff;
+
+    cursor: pointer;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 5px;
+
+}
+
+
+.menu-btn span {
+
+    width: 19px;
+    height: 2px;
+
+    background: #071c3d;
+
+    transition: .3s ease;
+
+}
+
+
+.menu-btn.active span:nth-child(1) {
+
+    transform:
+        translateY(7px)
+        rotate(45deg);
+
+}
+
+
+.menu-btn.active span:nth-child(2) {
+
+    opacity: 0;
+
+}
+
+
+.menu-btn.active span:nth-child(3) {
+
+    transform:
+        translateY(-7px)
+        rotate(-45deg);
+
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.iic-navbar {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 999;
+
+    background: rgba(5,22,47,.96);
+
+    border-bottom: 1px solid rgba(255,255,255,.08);
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+}
+
+
+.nav-container {
+
+    max-width: 1350px;
+
+    margin: auto;
+
+    min-height: 58px;
+
+    padding: 0 6%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+
+/* LEFT */
+
+.nav-left {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+}
+
+
+.nav-indicator {
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: #f58220;
+
+    box-shadow:
+        0 0 12px rgba(245,130,32,.8);
+
+}
+
+
+.nav-label {
+
+    color: #687d96;
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* LINKS */
+
+.nav-links {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+}
+
+
+.nav-link {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 21px 15px;
+
+    color: #9aaac0;
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    font-weight: 750;
+
+    letter-spacing: .4px;
+
+    transition: .3s ease;
+
+}
+
+
+.nav-link span {
+
+    color: #4c617a;
+
+    font-size: 7px;
+
+    font-weight: 800;
+
+    transition: .3s ease;
+
+}
+
+
+.nav-link::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 15px;
+    right: 15px;
+    bottom: 0;
+
+    height: 2px;
+
+    background: #f58220;
+
+    transform: scaleX(0);
+
+    transform-origin: center;
+
+    transition: .3s ease;
+
+}
+
+
+.nav-link:hover,
+.nav-link.active {
+
+    color: #ffffff;
+
+}
+
+
+.nav-link:hover span,
+.nav-link.active span {
+
+    color: #f58220;
+
+}
+
+
+.nav-link:hover::after,
+.nav-link.active::after {
+
+    transform: scaleX(1);
+
+}
+
+
+/* JOIN BUTTON */
+
+.nav-apply {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-left: 15px;
+
+    padding: 10px 12px 10px 17px;
+
+    color: #ffffff;
+
+    background: #f58220;
+
+    text-decoration: none;
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.3px;
+
+    transition: .3s ease;
+
+}
+
+
+.nav-apply strong {
+
+    width: 23px;
+    height: 23px;
+
+    display: grid;
+    place-items: center;
+
+    background: rgba(255,255,255,.16);
+
+    font-size: 14px;
+
+    font-weight: 400;
+
+    transition: .3s ease;
+
+}
+
+
+.nav-apply:hover {
+
+    background: #ff9135;
+
+    box-shadow:
+        0 8px 25px rgba(245,130,32,.22);
+
+}
+
+
+.nav-apply:hover strong {
+
+    transform: translateX(3px);
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .nav-left {
+
+        display: none;
+
+    }
+
+    .nav-links {
+
+        margin-left: auto;
+
+    }
+
+    .nav-link {
+
+        padding-left: 10px;
+        padding-right: 10px;
+
+    }
+
+}
+
+
+@media (max-width: 850px) {
+
+    .header-container {
+
+        padding: 13px 5%;
+
+    }
+
+    .menu-btn {
+
+        display: flex;
+
+    }
+
+
+    .iic-navbar {
+
+        position: fixed;
+
+        top: 0;
+        right: 0;
+
+        width: 100%;
+
+        height: 100vh;
+
+        background: rgba(3,17,38,.98);
+
+        transform: translateX(100%);
+
+        transition: transform .4s ease;
+
+        border: 0;
+
+    }
+
+
+    .iic-navbar.mobile-open {
+
+        transform: translateX(0);
+
+    }
+
+
+    .nav-container {
+
+        height: 100%;
+
+        padding: 100px 8% 50px;
+
+        display: block;
+
+    }
+
+
+    .nav-links {
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 0;
+
+        width: 100%;
+
+    }
+
+
+    .nav-link {
+
+        padding: 18px 5px;
+
+        border-bottom: 1px solid rgba(255,255,255,.07);
+
+        font-size: 14px;
+
+    }
+
+
+    .nav-link span {
+
+        font-size: 8px;
+
+    }
+
+
+    .nav-link::after {
+
+        left: 0;
+        right: auto;
+
+        width: 3px;
+
+        height: 100%;
+
+        bottom: 0;
+
+        transform:
+            scaleY(0);
+
+        transform-origin: center;
+
+    }
+
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+
+        transform: scaleY(1);
+
+    }
+
+
+    .nav-apply {
+
+        justify-content: center;
+
+        margin: 30px 0 0;
+
+        padding: 16px;
+
+        font-size: 11px;
+
+    }
+
+}
+
+
+@media (max-width: 520px) {
+
+    .logo-wrap {
+
+        width: 58px;
+        height: 58px;
+
+        padding-right: 11px;
+
+    }
+
+
+    .iic-logo {
+
+        width: 47px;
+        height: 47px;
+
+    }
+
+
+    .iic-brand {
+
+        gap: 12px;
+
+    }
+
+
+    .brand-text h1 {
+
+        font-size: 14px;
+
+    }
+
+
+    .brand-text p {
+
+        font-size: 6.5px;
+
+        letter-spacing: .8px;
+
+    }
+
+
+    .brand-mini {
+
+        font-size: 6px;
+
+    }
+
+}
+
+</style>
+
+
+<script>
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+const menuBtn = document.getElementById("menuBtn");
+const navbar = document.getElementById("navbar");
+
+if (menuBtn && navbar) {
+
+    menuBtn.addEventListener("click", () => {
+
+        const isOpen =
+            navbar.classList.toggle("mobile-open");
+
+        menuBtn.classList.toggle("active", isOpen);
+
+        menuBtn.setAttribute(
+            "aria-expanded",
+            isOpen
+        );
+
+    });
+
+
+    /* Close menu after clicking a link */
+
+    document.querySelectorAll(".nav-link, .nav-apply")
+        .forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                navbar.classList.remove("mobile-open");
+                menuBtn.classList.remove("active");
+
+                menuBtn.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            });
+
+        });
+
+}
+
+
+/* =========================================================
+   ACTIVE NAVIGATION ON SCROLL
+========================================================= */
+
+const sections = document.querySelectorAll(
+    "section[id], footer[id]"
+);
+
+const navItems = document.querySelectorAll(
+    ".nav-link"
+);
+
+const updateActiveNav = () => {
+
+    let current = "home";
+
+    sections.forEach(section => {
+
+        const sectionTop =
+            section.offsetTop - 180;
+
+        if (window.scrollY >= sectionTop) {
+
+            current = section.id;
+
+        }
+
+    });
+
+    navItems.forEach(link => {
+
+        link.classList.remove("active");
+
+        const target =
+            link.getAttribute("href");
+
+        if (target === "#" + current) {
+
+            link.classList.add("active");
+
+        }
+
+    });
+
+};
+
+
+window.addEventListener(
+    "scroll",
+    updateActiveNav,
+    { passive: true }
+);
+
+updateActiveNav();
+
+</script>
 
 <!-- ================= HERO ================= -->
 
