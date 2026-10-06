@@ -1,269 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AI Camp Flow | Team OpenBox</title>
+<title>AI Camp Flow — Team OpenBox</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-        html,
-        body {
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            font-family: Arial, Helvetica, sans-serif;
-            background: #050505;
-        }
+body {
+    min-height: 100vh;
+    background: #050505;
+    color: white;
+    font-family: Arial, sans-serif;
+}
 
-        /* Main App */
-        .app-container {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            background: #050505;
-        }
+.app {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
 
-        iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
 
-            border: none;
+.fallback {
+    position: absolute;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px;
+    background:
+        radial-gradient(circle at center, #151515, #050505 70%);
+}
 
-            /* Keeps the app behind the branding */
-            z-index: 1;
-        }
+.content {
+    max-width: 500px;
+}
 
-        /* Bottom Branding Banner */
-        .openbox-banner {
-            position: fixed;
+.logo {
+    font-size: 14px;
+    letter-spacing: 4px;
+    opacity: .6;
+    margin-bottom: 20px;
+}
 
-            bottom: 0;
-            left: 0;
+h1 {
+    font-size: 42px;
+    margin-bottom: 12px;
+}
 
-            width: 100%;
-            height: 48px;
+p {
+    opacity: .65;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+.launch {
+    display: inline-block;
+    padding: 15px 28px;
+    border-radius: 12px;
+    background: white;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
 
-            background: rgba(5, 5, 5, 0.92);
+.banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 45px;
 
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-            border-top: 1px solid rgba(255,255,255,0.15);
+    background: rgba(0,0,0,.9);
+    backdrop-filter: blur(10px);
 
-            z-index: 9999;
+    border-top: 1px solid rgba(255,255,255,.15);
 
-            color: white;
+    z-index: 100;
+    
+    font-size: 12px;
+    letter-spacing: 2px;
+}
 
-            font-size: 13px;
-            font-weight: 600;
+.banner span {
+    opacity: .55;
+    margin-right: 7px;
+}
 
-            letter-spacing: 2px;
-
-            text-transform: uppercase;
-
-            box-shadow:
-                0 -5px 30px rgba(0,0,0,0.35);
-        }
-
-        .openbox-banner span {
-            opacity: 0.7;
-            margin-right: 8px;
-        }
-
-        .openbox-banner strong {
-            letter-spacing: 2.5px;
-        }
-
-        /* Small OpenBox glowing dot */
-        .openbox-dot {
-            width: 7px;
-            height: 7px;
-
-            margin-right: 10px;
-
-            border-radius: 50%;
-
-            background: #ffffff;
-
-            box-shadow:
-                0 0 8px rgba(255,255,255,0.8),
-                0 0 18px rgba(255,255,255,0.4);
-        }
-
-        /* Loading Screen */
-        .loader {
-            position: fixed;
-
-            inset: 0;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            background: #050505;
-
-            z-index: 10000;
-
-            transition: opacity 0.5s ease;
-        }
-
-        .loader-content {
-            text-align: center;
-            color: white;
-        }
-
-        .loader-title {
-            font-size: 22px;
-            font-weight: 700;
-            letter-spacing: 3px;
-            margin-bottom: 12px;
-        }
-
-        .loader-subtitle {
-            font-size: 12px;
-            opacity: 0.5;
-            letter-spacing: 1.5px;
-        }
-
-        .loading-line {
-            width: 160px;
-            height: 2px;
-
-            margin: 22px auto 0;
-
-            background: rgba(255,255,255,0.15);
-
-            overflow: hidden;
-        }
-
-        .loading-line::after {
-            content: "";
-
-            display: block;
-
-            width: 50%;
-            height: 100%;
-
-            background: white;
-
-            animation: loading 1.2s infinite ease-in-out;
-        }
-
-        @keyframes loading {
-            0% {
-                transform: translateX(-100%);
-            }
-
-            100% {
-                transform: translateX(300%);
-            }
-        }
-
-        /* Mobile */
-        @media (max-width: 600px) {
-
-            .openbox-banner {
-                height: 42px;
-                font-size: 10px;
-                letter-spacing: 1.5px;
-            }
-
-            .openbox-banner strong {
-                letter-spacing: 2px;
-            }
-
-            .openbox-dot {
-                width: 6px;
-                height: 6px;
-                margin-right: 7px;
-            }
-        }
-
-    </style>
+.banner strong {
+    letter-spacing: 3px;
+}
+</style>
 </head>
 
 <body>
 
-    <!-- Loading screen -->
-    <div class="loader" id="loader">
+<div class="app">
 
-        <div class="loader-content">
+    <iframe
+        id="appFrame"
+        src="https://ai-camp-flow.base44.app/"
+        title="AI Camp Flow">
+    </iframe>
 
-            <div class="loader-title">
-                AI CAMP FLOW
+    <div class="fallback" id="fallback">
+
+        <div class="content">
+
+            <div class="logo">
+                TEAM OPENBOX
             </div>
 
-            <div class="loader-subtitle">
-                POWERED BY TEAM OPENBOX
-            </div>
+            <h1>AI CAMP FLOW</h1>
 
-            <div class="loading-line"></div>
+            <p>
+                The workshop dashboard cannot be displayed
+                inside this frame. Open the application directly
+                to continue.
+            </p>
+
+            <a
+                class="launch"
+                href="https://ai-camp-flow.base44.app/"
+                target="_blank">
+                LAUNCH AI CAMP
+            </a>
 
         </div>
 
     </div>
 
-
-    <!-- Base44 App -->
-    <div class="app-container">
-
-        <iframe
-            id="aiCampFrame"
-            src="https://ai-camp-flow.base44.app/"
-            title="AI Camp Flow"
-            allow="camera; microphone; fullscreen; clipboard-read; clipboard-write"
-            loading="eager">
-        </iframe>
-
-    </div>
-
-
-    <!-- Team OpenBox Branding -->
-    <div class="openbox-banner">
-
-        <div class="openbox-dot"></div>
-
-        <span>Made by</span>
-
+    <div class="banner">
+        <span>MADE BY</span>
         <strong>TEAM OPENBOX</strong>
-
     </div>
 
-
-    <script>
-
-        const iframe = document.getElementById("aiCampFrame");
-        const loader = document.getElementById("loader");
-
-        iframe.addEventListener("load", function () {
-
-            setTimeout(() => {
-
-                loader.style.opacity = "0";
-
-                setTimeout(() => {
-                    loader.style.display = "none";
-                }, 500);
-
-            }, 400);
-
-        });
-
-    </script>
+</div>
 
 </body>
 </html>
