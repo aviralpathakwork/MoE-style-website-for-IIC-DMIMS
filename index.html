@@ -7221,63 +7221,744 @@ councilItems.forEach((item, index) => {
 ```
 
 
-<!-- ================= FOOTER ================= -->
+```html
+<!-- ================= IIC DMIMS FOOTER ================= -->
 
-<footer id="contact">
+<footer class="iic-footer" id="contact">
+
+    <div class="footer-glow"></div>
 
     <div class="footer-container">
 
-        <div>
+        <!-- BRAND -->
+        <div class="footer-brand">
 
             <img
-                src="https://iic.mic.gov.in/assets/assets/images/iiclogo.png"
-                alt="IIC Logo"
+                src="https://iic.mic.gov.in/assets/institute/images/logoiic.png"
+                alt="Institution's Innovation Council Logo"
                 class="footer-logo"
             >
 
-            <p>
-                Institution's Innovation Council
-            </p>
+            <h3>
+                Institution's
+                <span>Innovation Council</span>
+            </h3>
 
             <p>
                 DMIMS
             </p>
 
-        </div>
-
-
-        <div>
-
-            <h3>Quick Links</h3>
-
-            <a href="#about">About</a>
-            <a href="#activities">Activities</a>
-            <a href="#roles">Roles</a>
-            <a href="#apply">Join IIC</a>
+            <div class="footer-tagline">
+                INNOVATION • ENTREPRENEURSHIP • LEADERSHIP
+            </div>
 
         </div>
 
 
-        <div>
+        <!-- QUICK LINKS -->
+        <div class="footer-column">
 
-            <h3>Connect</h3>
+            <div class="footer-heading">
+                <span></span>
+                NAVIGATION
+            </div>
+
+            <h4>Quick Links</h4>
+
+            <a href="#home">Home <b>↗</b></a>
+            <a href="#about">About IIC <b>↗</b></a>
+            <a href="#roles">Student Council <b>↗</b></a>
+            <a href="#contact">Contact <b>↗</b></a>
+
+        </div>
+
+
+        <!-- IIC -->
+        <div class="footer-column">
+
+            <div class="footer-heading">
+                <span></span>
+                EXPLORE
+            </div>
+
+            <h4>IIC Ecosystem</h4>
+
+            <a href="#about">Innovation <b>↗</b></a>
+            <a href="#about">Entrepreneurship <b>↗</b></a>
+            <a href="#roles">Leadership <b>↗</b></a>
+            <a href="https://iic.mic.gov.in/" target="_blank" rel="noopener">
+                IIC Portal <b>↗</b>
+            </a>
+
+        </div>
+
+
+        <!-- CONNECT -->
+        <div class="footer-column footer-connect">
+
+            <div class="footer-heading">
+                <span></span>
+                CONNECT
+            </div>
+
+            <h4>Let's Build the Future.</h4>
 
             <p>
-                Innovation • Entrepreneurship • Leadership
+                A student-led ecosystem where ideas are transformed
+                into innovation, initiatives and impact.
             </p>
+
+            <a
+                href="https://iicdmims.vercel.app/join.html"
+                target="_blank"
+                rel="noopener"
+                class="footer-join"
+            >
+                JOIN IIC
+                <strong>→</strong>
+            </a>
 
         </div>
 
     </div>
 
 
-    <div class="copyright">
+    <!-- FOOTER BOTTOM -->
 
-        © 2026 IIC DMIMS. All Rights Reserved.
+    <div class="footer-bottom">
+
+        <div class="footer-bottom-left">
+
+            <span class="footer-dot"></span>
+
+            <span>
+                DMIMS • IIC STUDENT COUNCIL
+            </span>
+
+        </div>
+
+        <div class="footer-bottom-right">
+
+            © 2026 IIC DMIMS
+            <span>•</span>
+            ALL RIGHTS RESERVED
+
+        </div>
+
+    </div>
+
+
+    <!-- MADE BY -->
+
+    <div class="footer-made">
+
+        <span>POWERED BY</span>
+
+        <strong>
+            TEAM OPENBOX
+        </strong>
 
     </div>
 
 </footer>
+
+
+<style>
+
+/* =========================================================
+   IIC FOOTER
+========================================================= */
+
+.iic-footer {
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 90px 7% 25px;
+
+    background: #031126;
+
+    color: #ffffff;
+
+    border-top: 1px solid rgba(255,255,255,.08);
+
+}
+
+
+/* BACKGROUND */
+
+.iic-footer::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,.018) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.018) 1px,
+            transparent 1px
+        );
+
+    background-size: 55px 55px;
+
+}
+
+
+.footer-glow {
+
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    right: -200px;
+    bottom: -250px;
+
+    border-radius: 50%;
+
+    background: #f58220;
+
+    filter: blur(120px);
+
+    opacity: .08;
+
+    pointer-events: none;
+
+}
+
+
+/* =========================================================
+   MAIN FOOTER GRID
+========================================================= */
+
+.footer-container {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 1250px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1.5fr
+        .8fr
+        .9fr
+        1.2fr;
+
+    gap: 60px;
+
+    padding-bottom: 70px;
+
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.footer-brand {
+
+    max-width: 320px;
+
+}
+
+.footer-logo {
+
+    width: 95px;
+
+    height: auto;
+
+    object-fit: contain;
+
+    margin-bottom: 25px;
+
+    filter:
+        drop-shadow(
+            0 8px 20px rgba(0,0,0,.25)
+        );
+
+}
+
+
+.footer-brand h3 {
+
+    margin: 0;
+
+    max-width: 280px;
+
+    font-size: 22px;
+
+    line-height: 1.15;
+
+    letter-spacing: -.5px;
+
+    font-weight: 750;
+
+}
+
+
+.footer-brand h3 span {
+
+    display: block;
+
+    color: #f58220;
+
+}
+
+
+.footer-brand p {
+
+    margin: 12px 0 22px;
+
+    color: #788aa2;
+
+    font-size: 13px;
+
+}
+
+
+.footer-tagline {
+
+    display: inline-block;
+
+    padding: 8px 11px;
+
+    border: 1px solid rgba(245,130,32,.2);
+
+    background: rgba(245,130,32,.04);
+
+    color: #a9b7c9;
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+/* =========================================================
+   FOOTER COLUMNS
+========================================================= */
+
+.footer-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-bottom: 14px;
+
+    color: #f58220;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+}
+
+
+.footer-heading span {
+
+    width: 20px;
+
+    height: 1px;
+
+    background: #f58220;
+
+}
+
+
+.footer-column h4 {
+
+    margin: 0 0 22px;
+
+    font-size: 17px;
+
+    font-weight: 650;
+
+}
+
+
+.footer-column a {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    width: 100%;
+
+    margin-bottom: 13px;
+
+    color: #7f91a9;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    transition: .3s ease;
+
+}
+
+
+.footer-column a b {
+
+    color: #4e617a;
+
+    font-size: 12px;
+
+    font-weight: 400;
+
+    transition: .3s ease;
+
+}
+
+
+.footer-column a:hover {
+
+    color: #ffffff;
+
+    transform: translateX(4px);
+
+}
+
+
+.footer-column a:hover b {
+
+    color: #f58220;
+
+    transform: translate(2px,-2px);
+
+}
+
+
+/* =========================================================
+   CONNECT
+========================================================= */
+
+.footer-connect p {
+
+    max-width: 270px;
+
+    color: #788aa2;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+
+    margin: 0 0 22px;
+
+}
+
+
+.footer-join {
+
+    display: inline-flex !important;
+
+    justify-content: center !important;
+
+    gap: 20px;
+
+    width: auto !important;
+
+    padding: 12px 15px;
+
+    background: #f58220;
+
+    color: #ffffff !important;
+
+    font-size: 10px !important;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    transform: none !important;
+
+}
+
+
+.footer-join strong {
+
+    font-size: 16px;
+
+    font-weight: 400;
+
+    transition: .3s ease;
+
+}
+
+
+.footer-join:hover {
+
+    box-shadow:
+        0 12px 30px rgba(245,130,32,.2);
+
+}
+
+
+.footer-join:hover strong {
+
+    transform: translateX(4px);
+
+}
+
+
+/* =========================================================
+   FOOTER BOTTOM
+========================================================= */
+
+.footer-bottom {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 1250px;
+
+    margin: auto;
+
+    padding: 20px 0;
+
+    border-top: 1px solid rgba(255,255,255,.08);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+}
+
+
+.footer-bottom-left {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    color: #61748d;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+.footer-dot {
+
+    width: 6px;
+
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #f58220;
+
+    box-shadow:
+        0 0 12px rgba(245,130,32,.7);
+
+}
+
+
+.footer-bottom-right {
+
+    color: #4e6179;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+
+}
+
+
+.footer-bottom-right span {
+
+    color: #f58220;
+
+    margin: 0 5px;
+
+}
+
+
+/* =========================================================
+   MADE BY
+========================================================= */
+
+.footer-made {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 1250px;
+
+    margin: auto;
+
+    padding-top: 16px;
+
+    text-align: center;
+
+    border-top: 1px solid rgba(255,255,255,.04);
+
+}
+
+
+.footer-made span {
+
+    color: #43556d;
+
+    font-size: 7px;
+
+    letter-spacing: 1.5px;
+
+    margin-right: 7px;
+
+}
+
+
+.footer-made strong {
+
+    color: #f58220;
+
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .footer-container {
+
+        grid-template-columns:
+            1.4fr
+            1fr
+            1fr;
+
+    }
+
+    .footer-connect {
+
+        grid-column: span 3;
+
+        border-top: 1px solid rgba(255,255,255,.08);
+
+        padding-top: 35px;
+
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .iic-footer {
+
+        padding: 70px 6% 20px;
+
+    }
+
+    .footer-container {
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 45px 30px;
+
+        padding-bottom: 50px;
+
+    }
+
+    .footer-brand {
+
+        grid-column: span 2;
+
+    }
+
+    .footer-connect {
+
+        grid-column: span 2;
+
+    }
+
+    .footer-bottom {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+    .footer-bottom-right {
+
+        line-height: 1.8;
+
+    }
+
+}
+
+
+@media (max-width: 430px) {
+
+    .footer-container {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .footer-brand,
+    .footer-connect {
+
+        grid-column: span 1;
+
+    }
+
+    .footer-logo {
+
+        width: 85px;
+
+    }
+
+}
+
+</style>
+
+
 
 
 <script>
