@@ -1246,65 +1246,1486 @@ footer {
 
 <!-- ================= HERO ================= -->
 
-<section class="hero" id="home">
+```html
+<!-- =========================
+     DMIMS IIC HERO SECTION
+========================= -->
 
-    <div class="hero-container">
+<section class="iic-hero" id="home">
 
-        <div class="hero-content">
+    <!-- Background decoration -->
+    <div class="hero-grid"></div>
+    <div class="hero-glow glow-one"></div>
+    <div class="hero-glow glow-two"></div>
 
-            <span class="official-tag">
+    <div class="iic-hero-container">
+
+        <!-- LEFT CONTENT -->
+        <div class="iic-hero-content">
+
+            <div class="iic-official-tag">
+                <span class="tag-dot"></span>
                 MINISTRY OF EDUCATION INITIATIVE
-            </span>
+            </div>
 
-            <h2>
-                Institution's
-                <span>Innovation Council</span>
-            </h2>
+            <div class="hero-mini-label">
+                DMIMS • INSTITUTION'S INNOVATION COUNCIL
+            </div>
 
-            <p>
+            <h1>
+                Where
+                <span>Ideas</span>
+                Become
+                <strong>Impact.</strong>
+            </h1>
+
+            <p class="hero-description">
                 Developing a culture of innovation, entrepreneurship,
-                creativity and leadership among students at DMIMS.
+                creativity and leadership among the next generation
+                of changemakers at DMIMS.
             </p>
 
-            <div class="hero-buttons">
+            <!-- Buttons -->
+            <div class="iic-hero-buttons">
 
-                <a href="#about" class="btn primary-btn">
-                    Explore IIC
+                <a href="#about" class="iic-btn iic-primary">
+                    <span>Explore IIC</span>
+                    <span class="btn-arrow">↗</span>
                 </a>
 
                 <a
                     href="https://iicdmims.vercel.app/join.html"
                     target="_blank"
-                    class="btn outline-btn"
+                    rel="noopener noreferrer"
+                    class="iic-btn iic-outline"
                 >
                     Join the Council
+                    <span class="btn-arrow">→</span>
                 </a>
+
+            </div>
+
+            <!-- Small stats -->
+            <div class="hero-stats">
+
+                <div class="hero-stat">
+                    <strong>01</strong>
+                    <span>Innovation<br>Community</span>
+                </div>
+
+                <div class="stat-line"></div>
+
+                <div class="hero-stat">
+                    <strong>∞</strong>
+                    <span>Ideas to<br>Explore</span>
+                </div>
+
+                <div class="stat-line"></div>
+
+                <div class="hero-stat">
+                    <strong>01</strong>
+                    <span>Mission<br>to Impact</span>
+                </div>
 
             </div>
 
         </div>
 
 
-        <div class="hero-card">
+        <!-- RIGHT VISUAL -->
+        <div class="iic-hero-visual">
 
-            <div class="innovation-icon">
-                💡
+            <!-- Orbit -->
+            <div class="innovation-orbit orbit-one"></div>
+            <div class="innovation-orbit orbit-two"></div>
+            <div class="innovation-orbit orbit-three"></div>
+
+            <!-- Main card -->
+            <div class="innovation-card">
+
+                <div class="card-top">
+
+                    <div class="innovation-badge">
+                        <span>✦</span>
+                    </div>
+
+                    <span class="card-label">
+                        IIC • DMIMS
+                    </span>
+
+                </div>
+
+                <div class="innovation-symbol">
+                    <span>💡</span>
+                </div>
+
+                <h2>
+                    IDEA
+                    <span>→</span>
+                    INNOVATION
+                    <span>→</span>
+                    IMPACT
+                </h2>
+
+                <p>
+                    Turning student ideas into meaningful
+                    initiatives, ventures and solutions.
+                </p>
+
+                <div class="card-footer">
+
+                    <span>
+                        INNOVATE
+                    </span>
+
+                    <span class="footer-dot"></span>
+
+                    <span>
+                        CREATE
+                    </span>
+
+                    <span class="footer-dot"></span>
+
+                    <span>
+                        LEAD
+                    </span>
+
+                </div>
+
             </div>
 
-            <h3>
-                IDEA → INNOVATION → IMPACT
-            </h3>
 
-            <p>
-                Turning student ideas into meaningful initiatives,
-                ventures and solutions.
-            </p>
+            <!-- Floating idea cards -->
+            <div class="floating-card floating-one">
+                <span>🚀</span>
+                <div>
+                    <strong>Startups</strong>
+                    <small>Build & Launch</small>
+                </div>
+            </div>
+
+            <div class="floating-card floating-two">
+                <span>⚡</span>
+                <div>
+                    <strong>Innovation</strong>
+                    <small>Think Different</small>
+                </div>
+            </div>
+
+            <div class="floating-card floating-three">
+                <span>🎯</span>
+                <div>
+                    <strong>Leadership</strong>
+                    <small>Create Impact</small>
+                </div>
+            </div>
 
         </div>
 
     </div>
 
+
+    <!-- Bottom scroll indicator -->
+    <div class="hero-scroll">
+
+        <span>SCROLL TO EXPLORE</span>
+
+        <div class="scroll-line">
+            <span></span>
+        </div>
+
+    </div>
+
 </section>
+
+
+<style>
+
+/* =================================
+   DMIMS IIC HERO
+================================= */
+
+.iic-hero {
+
+    --iic-blue: #071c3d;
+    --iic-blue-light: #0b2d5c;
+    --iic-orange: #f58220;
+    --iic-orange-light: #ff9d45;
+    --iic-white: #ffffff;
+    --iic-muted: #aab8cc;
+
+    position: relative;
+    min-height: 760px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 78% 45%,
+            rgba(245,130,32,.13),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(31,95,170,.15),
+            transparent 30%
+        ),
+        var(--iic-blue);
+
+    color: var(--iic-white);
+
+    isolation: isolate;
+}
+
+
+/* =================================
+   GRID BACKGROUND
+================================= */
+
+.hero-grid {
+
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.035) 1px,
+            transparent 1px
+        );
+
+    background-size: 55px 55px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent 90%
+        );
+
+    pointer-events: none;
+
+    z-index: -3;
+}
+
+
+/* =================================
+   GLOW
+================================= */
+
+.hero-glow {
+
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    border-radius: 50%;
+
+    filter: blur(100px);
+
+    pointer-events: none;
+
+    z-index: -2;
+}
+
+.glow-one {
+
+    top: -180px;
+    right: -100px;
+
+    background: rgba(245,130,32,.15);
+}
+
+.glow-two {
+
+    bottom: -220px;
+    left: -120px;
+
+    background: rgba(29,91,165,.2);
+}
+
+
+/* =================================
+   CONTAINER
+================================= */
+
+.iic-hero-container {
+
+    width: min(1200px, 92%);
+
+    margin: auto;
+
+    min-height: 760px;
+
+    display: grid;
+
+    grid-template-columns:
+        1.05fr
+        .95fr;
+
+    align-items: center;
+
+    gap: 50px;
+}
+
+
+/* =================================
+   LEFT CONTENT
+================================= */
+
+.iic-hero-content {
+
+    padding-top: 25px;
+
+    animation:
+        heroContentIn .9s ease forwards;
+
+}
+
+@keyframes heroContentIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* Official tag */
+
+.iic-official-tag {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 9px 15px;
+
+    border-radius: 50px;
+
+    border: 1px solid
+        rgba(245,130,32,.35);
+
+    background:
+        rgba(245,130,32,.07);
+
+    color: #ffb16f;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.6px;
+
+    margin-bottom: 25px;
+
+}
+
+.tag-dot {
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background:
+        var(--iic-orange);
+
+    box-shadow:
+        0 0 12px
+        var(--iic-orange);
+
+}
+
+
+/* Mini label */
+
+.hero-mini-label {
+
+    color: #8092ad;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 2.5px;
+
+    margin-bottom: 13px;
+}
+
+
+/* Heading */
+
+.iic-hero h1 {
+
+    max-width: 720px;
+
+    margin: 0;
+
+    font-size:
+        clamp(48px, 6vw, 82px);
+
+    line-height: .98;
+
+    font-weight: 700;
+
+    letter-spacing: -3px;
+
+}
+
+.iic-hero h1 span {
+
+    display: inline-block;
+
+    color:
+        var(--iic-orange);
+
+    position: relative;
+
+}
+
+.iic-hero h1 span::after {
+
+    content: "";
+
+    position: absolute;
+
+    height: 5px;
+
+    width: 70%;
+
+    left: 2px;
+    bottom: -5px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--iic-orange),
+            transparent
+        );
+
+}
+
+.iic-hero h1 strong {
+
+    display: block;
+
+    font-weight: 700;
+
+    color: #e8eef7;
+
+}
+
+
+/* Description */
+
+.hero-description {
+
+    max-width: 580px;
+
+    margin-top: 28px;
+
+    color: var(--iic-muted);
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =================================
+   BUTTONS
+================================= */
+
+.iic-hero-buttons {
+
+    display: flex;
+
+    gap: 13px;
+
+    margin-top: 32px;
+
+}
+
+.iic-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 14px;
+
+    min-height: 52px;
+
+    padding:
+        0 20px;
+
+    border-radius: 7px;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition:
+        .3s ease;
+
+}
+
+.iic-primary {
+
+    background:
+        var(--iic-orange);
+
+    color: white;
+
+    box-shadow:
+        0 10px 35px
+        rgba(245,130,32,.22);
+
+}
+
+.iic-primary:hover {
+
+    transform:
+        translateY(-3px);
+
+    background:
+        var(--iic-orange-light);
+
+    box-shadow:
+        0 15px 40px
+        rgba(245,130,32,.3);
+
+}
+
+.iic-outline {
+
+    color: white;
+
+    border:
+        1px solid
+        rgba(255,255,255,.2);
+
+    background:
+        rgba(255,255,255,.03);
+
+}
+
+.iic-outline:hover {
+
+    border-color:
+        var(--iic-orange);
+
+    color:
+        var(--iic-orange);
+
+    transform:
+        translateY(-3px);
+
+}
+
+.btn-arrow {
+
+    font-size: 18px;
+
+    transition:
+        transform .3s ease;
+
+}
+
+.iic-btn:hover .btn-arrow {
+
+    transform:
+        translateX(4px);
+
+}
+
+
+/* =================================
+   STATS
+================================= */
+
+.hero-stats {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+
+    margin-top: 48px;
+
+}
+
+.hero-stat {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+.hero-stat strong {
+
+    font-size: 24px;
+
+    color: white;
+
+}
+
+.hero-stat span {
+
+    color: #8292a9;
+
+    font-size: 9px;
+
+    line-height: 1.4;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+}
+
+.stat-line {
+
+    height: 30px;
+
+    width: 1px;
+
+    background:
+        rgba(255,255,255,.12);
+
+}
+
+
+/* =================================
+   RIGHT VISUAL
+================================= */
+
+.iic-hero-visual {
+
+    position: relative;
+
+    height: 580px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+/* =================================
+   ORBITS
+================================= */
+
+.innovation-orbit {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(255,255,255,.09);
+
+}
+
+.orbit-one {
+
+    width: 470px;
+    height: 470px;
+
+    animation:
+        orbitRotate 24s linear infinite;
+
+}
+
+.orbit-two {
+
+    width: 350px;
+    height: 350px;
+
+    border-color:
+        rgba(245,130,32,.12);
+
+    animation:
+        orbitRotate 18s linear infinite reverse;
+
+}
+
+.orbit-three {
+
+    width: 570px;
+    height: 570px;
+
+    border-style: dashed;
+
+    opacity: .35;
+
+    animation:
+        orbitRotate 35s linear infinite;
+
+}
+
+@keyframes orbitRotate {
+
+    from {
+        transform:
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+
+}
+
+
+/* =================================
+   MAIN CARD
+================================= */
+
+.innovation-card {
+
+    position: relative;
+
+    width: 390px;
+
+    min-height: 390px;
+
+    padding: 34px;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.10),
+            rgba(255,255,255,.035)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.16);
+
+    box-shadow:
+        0 35px 80px
+        rgba(0,0,0,.35),
+
+        inset 0 1px 0
+        rgba(255,255,255,.08);
+
+    backdrop-filter:
+        blur(20px);
+
+    -webkit-backdrop-filter:
+        blur(20px);
+
+    z-index: 5;
+
+    animation:
+        cardFloat 5s ease-in-out infinite;
+
+}
+
+@keyframes cardFloat {
+
+    0%,100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-12px);
+    }
+
+}
+
+
+/* Card top */
+
+.card-top {
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items: center;
+
+}
+
+.innovation-badge {
+
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background:
+        rgba(245,130,32,.13);
+
+    border:
+        1px solid
+        rgba(245,130,32,.25);
+
+    color:
+        var(--iic-orange);
+
+    font-size: 20px;
+
+}
+
+.card-label {
+
+    color:
+        #8c9bb0;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* Main symbol */
+
+.innovation-symbol {
+
+    width: 105px;
+    height: 105px;
+
+    margin:
+        45px auto 28px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(245,130,32,.22),
+            rgba(245,130,32,.04) 65%,
+            transparent 70%
+        );
+
+    border:
+        1px solid
+        rgba(245,130,32,.25);
+
+    font-size: 48px;
+
+    box-shadow:
+        0 0 60px
+        rgba(245,130,32,.12);
+
+}
+
+.innovation-card h2 {
+
+    text-align: center;
+
+    font-size: 15px;
+
+    letter-spacing: 2px;
+
+    line-height: 2;
+
+}
+
+.innovation-card h2 span {
+
+    color:
+        var(--iic-orange);
+
+    padding:
+        0 3px;
+
+}
+
+.innovation-card p {
+
+    text-align: center;
+
+    margin-top: 12px;
+
+    color:
+        #8796aa;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+}
+
+
+/* Card footer */
+
+.card-footer {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-top: 30px;
+
+    color:
+        #aab7c8;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+}
+
+.footer-dot {
+
+    width: 3px;
+    height: 3px;
+
+    border-radius: 50%;
+
+    background:
+        var(--iic-orange);
+
+}
+
+
+/* =================================
+   FLOATING CARDS
+================================= */
+
+.floating-card {
+
+    position: absolute;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    padding:
+        12px 15px;
+
+    border-radius: 12px;
+
+    background:
+        rgba(7,28,61,.78);
+
+    border:
+        1px solid
+        rgba(255,255,255,.12);
+
+    box-shadow:
+        0 15px 40px
+        rgba(0,0,0,.3);
+
+    backdrop-filter:
+        blur(15px);
+
+    z-index: 8;
+
+}
+
+.floating-card > span {
+
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background:
+        rgba(245,130,32,.1);
+
+}
+
+.floating-card strong {
+
+    display: block;
+
+    font-size: 11px;
+
+}
+
+.floating-card small {
+
+    display: block;
+
+    margin-top: 3px;
+
+    color:
+        #7d8da3;
+
+    font-size: 8px;
+
+}
+
+.floating-one {
+
+    top: 90px;
+    right: 10px;
+
+    animation:
+        floatOne 4s ease-in-out infinite;
+
+}
+
+.floating-two {
+
+    left: -5px;
+    top: 240px;
+
+    animation:
+        floatTwo 5s ease-in-out infinite;
+
+}
+
+.floating-three {
+
+    bottom: 70px;
+    right: 15px;
+
+    animation:
+        floatThree 4.5s ease-in-out infinite;
+
+}
+
+@keyframes floatOne {
+
+    0%,100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-10px);
+    }
+
+}
+
+@keyframes floatTwo {
+
+    0%,100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(9px);
+    }
+
+}
+
+@keyframes floatThree {
+
+    0%,100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-8px);
+    }
+
+}
+
+
+/* =================================
+   SCROLL
+================================= */
+
+.hero-scroll {
+
+    position: absolute;
+
+    bottom: 25px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color:
+        #65768d;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+}
+
+.scroll-line {
+
+    width: 60px;
+
+    height: 1px;
+
+    background:
+        rgba(255,255,255,.15);
+
+    overflow: hidden;
+
+}
+
+.scroll-line span {
+
+    display: block;
+
+    width: 20px;
+
+    height: 1px;
+
+    background:
+        var(--iic-orange);
+
+    animation:
+        scrollMove 2s ease-in-out infinite;
+
+}
+
+@keyframes scrollMove {
+
+    0% {
+        transform:
+            translateX(-25px);
+    }
+
+    100% {
+        transform:
+            translateX(65px);
+    }
+
+}
+
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 950px) {
+
+    .iic-hero-container {
+
+        grid-template-columns: 1fr;
+
+        padding:
+            80px 0 100px;
+
+        text-align: center;
+
+    }
+
+    .iic-hero-content {
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+    }
+
+    .hero-description {
+
+        max-width: 650px;
+
+    }
+
+    .iic-hero-visual {
+
+        height: 500px;
+
+    }
+
+    .hero-stats {
+
+        justify-content: center;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .iic-hero {
+
+        min-height: auto;
+
+    }
+
+    .iic-hero-container {
+
+        width: 90%;
+
+        min-height: auto;
+
+        padding:
+            110px 0 90px;
+
+    }
+
+    .iic-hero h1 {
+
+        font-size: 49px;
+
+        letter-spacing: -2px;
+
+    }
+
+    .hero-description {
+
+        font-size: 14px;
+
+        line-height: 1.7;
+
+    }
+
+    .iic-hero-buttons {
+
+        flex-direction: column;
+
+        width: 100%;
+
+    }
+
+    .iic-btn {
+
+        width: 100%;
+
+    }
+
+    .hero-stats {
+
+        gap: 12px;
+
+    }
+
+    .hero-stat span {
+
+        font-size: 7px;
+
+    }
+
+    .hero-stat strong {
+
+        font-size: 19px;
+
+    }
+
+    .iic-hero-visual {
+
+        height: 450px;
+
+        transform:
+            scale(.82);
+
+        margin-top: -30px;
+
+    }
+
+    .innovation-card {
+
+        width: 350px;
+
+    }
+
+    .floating-two {
+
+        left: -25px;
+
+    }
+
+    .floating-one {
+
+        right: -20px;
+
+    }
+
+    .floating-three {
+
+        right: -15px;
+
+    }
+
+    .hero-scroll {
+
+        display: none;
+
+    }
+
+}
+
+
+/* =================================
+   REDUCED MOTION
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        scroll-behavior:
+            auto !important;
+
+    }
+
+}
+
+</style>
+
+
+<script>
+
+/* =================================
+   DMIMS IIC HERO INTERACTION
+================================= */
+
+(function () {
+
+    const card =
+        document.querySelector(
+            ".innovation-card"
+        );
+
+    if (!card) return;
+
+
+    /* Subtle mouse movement */
+
+    document.addEventListener(
+        "mousemove",
+        function (event) {
+
+            if (window.innerWidth < 950)
+                return;
+
+            const x =
+                (event.clientX /
+                    window.innerWidth -
+                    0.5);
+
+            const y =
+                (event.clientY /
+                    window.innerHeight -
+                    0.5);
+
+            const moveX = x * 8;
+            const moveY = y * 8;
+
+            card.style.transform =
+                `translate(${moveX}px, ${moveY}px)`;
+
+        }
+    );
+
+
+    /* Reset when mouse leaves */
+
+    document.addEventListener(
+        "mouseleave",
+        function () {
+
+            card.style.transform =
+                "";
+
+        }
+    );
+
+})();
+
+</script>
+```
+
+### What this version changes
+
+* **Official IIC/DMIMS feel** rather than a generic corporate hero.
+* **Deep blue + IIC orange** visual system.
+* Animated **innovation orbit** around the main card.
+* Floating **Startups / Innovation / Leadership** cards.
+* Stronger headline: **“Where Ideas Become Impact.”**
+* IIC's **Idea → Innovation → Impact** concept remains central.
+* Responsive for **desktop, tablet and mobile**.
+* Subtle mouse interaction on the innovation card.
+* No external libraries, so you can paste it directly into your existing site.
+* Your existing **Explore IIC** and **Join the Council** links are preserved.
+
 
 
 <!-- ================= INSTITUTE INFO ================= -->
