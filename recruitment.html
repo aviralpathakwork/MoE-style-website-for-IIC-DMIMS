@@ -1,0 +1,1717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>IIC DMIMS | Recruitment Assessment</title>
+
+<style>
+:root{
+    --navy:#071c3d;
+    --navy2:#0c2c58;
+    --orange:#f58220;
+    --orange2:#ff9d45;
+    --white:#ffffff;
+    --light:#f5f7fa;
+    --text:#172033;
+    --muted:#667085;
+    --border:#e3e8ef;
+    --green:#15803d;
+    --shadow:0 15px 40px rgba(7,28,61,.10);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Inter,Segoe UI,Arial,sans-serif;
+    background:var(--light);
+    color:var(--text);
+    line-height:1.6;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(7,28,61,.96);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.navbar{
+    width:min(1180px,92%);
+    margin:auto;
+    height:72px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:white;
+}
+
+.brand img{
+    width:48px;
+    height:48px;
+    object-fit:contain;
+}
+
+.brand h2{
+    font-size:16px;
+    line-height:1.2;
+}
+
+.brand span{
+    display:block;
+    color:#aebbd0;
+    font-size:11px;
+    margin-top:3px;
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+    align-items:center;
+}
+
+.nav-links a{
+    color:#dbe4f2;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:600;
+}
+
+.nav-links a:hover{
+    color:var(--orange2);
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    position:relative;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at 80% 20%,rgba(245,130,32,.15),transparent 30%),
+        linear-gradient(135deg,#071c3d,#0c2c58);
+    color:white;
+    padding:95px 0 90px;
+}
+
+.hero-grid{
+    position:absolute;
+    inset:0;
+    background-image:
+        linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+    background-size:50px 50px;
+    pointer-events:none;
+}
+
+.hero-container{
+    width:min(1100px,92%);
+    margin:auto;
+    position:relative;
+    z-index:2;
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 15px;
+    border:1px solid rgba(245,130,32,.4);
+    background:rgba(245,130,32,.10);
+    color:#ffb36f;
+    border-radius:30px;
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:.8px;
+    text-transform:uppercase;
+    margin-bottom:22px;
+}
+
+.hero h1{
+    max-width:850px;
+    font-size:clamp(38px,6vw,68px);
+    line-height:1.03;
+    letter-spacing:-2px;
+    margin-bottom:22px;
+}
+
+.hero h1 span{
+    color:var(--orange);
+}
+
+.hero p{
+    max-width:720px;
+    color:#cbd6e5;
+    font-size:18px;
+}
+
+.hero-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+    margin-top:35px;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:13px 21px;
+    border-radius:9px;
+    text-decoration:none;
+    font-weight:800;
+    font-size:14px;
+    border:1px solid transparent;
+    transition:.25s;
+}
+
+.btn-primary{
+    background:var(--orange);
+    color:white;
+}
+
+.btn-primary:hover{
+    background:var(--orange2);
+    transform:translateY(-2px);
+}
+
+.btn-outline{
+    border-color:rgba(255,255,255,.25);
+    color:white;
+}
+
+.btn-outline:hover{
+    background:rgba(255,255,255,.08);
+}
+
+/* ================= COMMON ================= */
+
+section{
+    padding:80px 0;
+}
+
+.container{
+    width:min(1100px,92%);
+    margin:auto;
+}
+
+.section-label{
+    color:var(--orange);
+    font-size:12px;
+    font-weight:900;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    margin-bottom:9px;
+}
+
+.section-title{
+    font-size:38px;
+    color:var(--navy);
+    line-height:1.15;
+    margin-bottom:14px;
+}
+
+.section-subtitle{
+    color:var(--muted);
+    max-width:700px;
+}
+
+/* ================= IMPORTANT NOTICE ================= */
+
+.notice{
+    margin-top:-35px;
+    position:relative;
+    z-index:10;
+}
+
+.notice-card{
+    background:white;
+    border-radius:16px;
+    box-shadow:var(--shadow);
+    padding:28px;
+    border-left:5px solid var(--orange);
+    display:flex;
+    gap:20px;
+    align-items:flex-start;
+}
+
+.notice-icon{
+    width:48px;
+    height:48px;
+    flex-shrink:0;
+    border-radius:12px;
+    background:#fff1e7;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:23px;
+}
+
+.notice h3{
+    color:var(--navy);
+    margin-bottom:5px;
+}
+
+.notice p{
+    color:var(--muted);
+}
+
+/* ================= HOW IT WORKS ================= */
+
+.steps{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+    margin-top:35px;
+}
+
+.step{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:15px;
+    padding:24px;
+    box-shadow:0 7px 25px rgba(7,28,61,.05);
+}
+
+.step-number{
+    width:38px;
+    height:38px;
+    border-radius:10px;
+    background:var(--navy);
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:900;
+    margin-bottom:17px;
+}
+
+.step h3{
+    font-size:17px;
+    color:var(--navy);
+    margin-bottom:7px;
+}
+
+.step p{
+    color:var(--muted);
+    font-size:14px;
+}
+
+/* ================= ASSIGNMENT ================= */
+
+.assignment-section{
+    background:white;
+}
+
+.assignment-box{
+    margin-top:35px;
+    background:var(--navy);
+    color:white;
+    padding:35px;
+    border-radius:18px;
+    position:relative;
+    overflow:hidden;
+}
+
+.assignment-box:after{
+    content:"";
+    position:absolute;
+    width:250px;
+    height:250px;
+    border-radius:50%;
+    background:rgba(245,130,32,.12);
+    right:-90px;
+    top:-90px;
+}
+
+.assignment-box h3{
+    font-size:25px;
+    margin-bottom:12px;
+}
+
+.assignment-box p{
+    color:#ccd7e7;
+}
+
+.assignment-points{
+    margin-top:25px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+}
+
+.point{
+    padding:15px;
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.09);
+    border-radius:10px;
+    font-size:14px;
+}
+
+/* ================= ROLE TASKS ================= */
+
+.role-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+    margin-top:35px;
+}
+
+.role-card{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:15px;
+    padding:24px;
+    transition:.25s;
+}
+
+.role-card:hover{
+    transform:translateY(-3px);
+    box-shadow:var(--shadow);
+    border-color:#ccd5e2;
+}
+
+.role-top{
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    margin-bottom:15px;
+}
+
+.role-icon{
+    width:45px;
+    height:45px;
+    flex-shrink:0;
+    background:#fff1e7;
+    border-radius:11px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:21px;
+}
+
+.role-card h3{
+    color:var(--navy);
+    font-size:18px;
+}
+
+.role-card .role-label{
+    font-size:11px;
+    color:var(--orange);
+    font-weight:800;
+    text-transform:uppercase;
+}
+
+.role-card p{
+    font-size:14px;
+    color:var(--muted);
+    margin-bottom:13px;
+}
+
+.task{
+    padding:13px;
+    background:#f7f9fc;
+    border-radius:9px;
+    font-size:13px;
+    color:#364152;
+}
+
+.task strong{
+    color:var(--navy);
+}
+
+/* ================= COMMON TASK ================= */
+
+.common-task{
+    margin-top:30px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.task-large{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:15px;
+    padding:28px;
+}
+
+.task-large h3{
+    color:var(--navy);
+    margin-bottom:10px;
+}
+
+.task-large p{
+    color:var(--muted);
+    font-size:14px;
+}
+
+.task-list{
+    margin-top:17px;
+    display:grid;
+    gap:8px;
+}
+
+.task-list div{
+    padding:10px 12px;
+    background:#f7f9fc;
+    border-radius:8px;
+    font-size:13px;
+}
+
+/* ================= NO AI ================= */
+
+.no-ai{
+    background:#fff7ed;
+    border-top:1px solid #fed7aa;
+    border-bottom:1px solid #fed7aa;
+}
+
+.no-ai-card{
+    background:white;
+    border:1px solid #fed7aa;
+    border-radius:18px;
+    padding:35px;
+    box-shadow:0 10px 30px rgba(245,130,32,.07);
+}
+
+.no-ai-head{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:15px;
+}
+
+.no-ai-icon{
+    width:52px;
+    height:52px;
+    border-radius:13px;
+    background:#fff0df;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:25px;
+}
+
+.no-ai h2{
+    color:var(--navy);
+}
+
+.no-ai p{
+    color:#596579;
+}
+
+.no-ai-rules{
+    margin-top:23px;
+    display:grid;
+    gap:10px;
+}
+
+.no-ai-rule{
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+    font-size:14px;
+}
+
+.check{
+    color:var(--green);
+    font-weight:900;
+}
+
+/* ================= DOCUMENT ================= */
+
+.document{
+    background:white;
+}
+
+.document-layout{
+    margin-top:35px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.doc-card{
+    border:1px solid var(--border);
+    border-radius:15px;
+    padding:27px;
+}
+
+.doc-card h3{
+    color:var(--navy);
+    margin-bottom:13px;
+}
+
+.doc-card ul{
+    list-style:none;
+    display:grid;
+    gap:9px;
+}
+
+.doc-card li{
+    font-size:14px;
+    color:var(--muted);
+    padding-left:22px;
+    position:relative;
+}
+
+.doc-card li:before{
+    content:"✓";
+    position:absolute;
+    left:0;
+    color:var(--orange);
+    font-weight:900;
+}
+
+/* ================= EVALUATION ================= */
+
+.evaluation{
+    background:#f6f8fb;
+}
+
+.score-table{
+    margin-top:30px;
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 8px 25px rgba(7,28,61,.05);
+}
+
+.score-table th{
+    background:var(--navy);
+    color:white;
+    text-align:left;
+    padding:16px;
+    font-size:13px;
+}
+
+.score-table td{
+    padding:16px;
+    border-bottom:1px solid var(--border);
+    font-size:14px;
+}
+
+.score-table td:last-child{
+    font-weight:900;
+    color:var(--orange);
+}
+
+/* ================= SUBMISSION ================= */
+
+.submission{
+    background:var(--navy);
+    color:white;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+}
+
+.submission:before{
+    content:"";
+    position:absolute;
+    width:450px;
+    height:450px;
+    border-radius:50%;
+    background:rgba(245,130,32,.10);
+    left:-180px;
+    bottom:-250px;
+}
+
+.submission-container{
+    position:relative;
+    z-index:2;
+}
+
+.submission h2{
+    font-size:40px;
+    margin-bottom:12px;
+}
+
+.submission p{
+    color:#c7d2e2;
+    max-width:700px;
+    margin:0 auto;
+}
+
+.submission-box{
+    margin:30px auto 0;
+    max-width:650px;
+    padding:25px;
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:14px;
+    text-align:left;
+}
+
+.submission-box div{
+    padding:9px 0;
+    color:#d7e0ec;
+}
+
+.submit-btn{
+    margin-top:25px;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#04142d;
+    color:#9faec2;
+    text-align:center;
+    padding:28px 15px;
+    font-size:13px;
+}
+
+footer strong{
+    color:white;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:850px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .steps{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .role-grid,
+    .common-task,
+    .document-layout{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:600px){
+
+    .hero{
+        padding:70px 0;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    section{
+        padding:60px 0;
+    }
+
+    .steps{
+        grid-template-columns:1fr;
+    }
+
+    .assignment-points{
+        grid-template-columns:1fr;
+    }
+
+    .assignment-box{
+        padding:25px;
+    }
+
+    .notice-card{
+        flex-direction:column;
+    }
+
+    .submission h2{
+        font-size:31px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+<nav class="navbar">
+
+    <div class="brand">
+
+        <img
+            src="https://iic.mic.gov.in/assets/assets/images/iiclogo.png"
+            alt="IIC Logo"
+        >
+
+        <div>
+            <h2>IIC DMIMS</h2>
+            <span>Institution's Innovation Council</span>
+        </div>
+
+    </div>
+
+    <div class="nav-links">
+        <a href="#assignment">Assignment</a>
+        <a href="#roles">Role Tasks</a>
+        <a href="#rules">Rules</a>
+        <a href="#submit">Submit</a>
+    </div>
+
+</nav>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+<div class="hero-grid"></div>
+
+<div class="hero-container">
+
+    <div class="badge">
+        🚀 IIC DMIMS Recruitment 2026
+    </div>
+
+    <h1>
+        Don't Just Tell Us<br>
+        <span>Show Us What You Can Do.</span>
+    </h1>
+
+    <p>
+        Welcome to the IIC DMIMS Core Team Recruitment Assessment.
+        This is your opportunity to demonstrate your creativity,
+        initiative, problem-solving ability and ownership through
+        a practical assignment.
+    </p>
+
+    <div class="hero-buttons">
+
+        <a href="#assignment" class="btn btn-primary">
+            View Assignment →
+        </a>
+
+        <a href="#rules" class="btn btn-outline">
+            Read Instructions
+        </a>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ================= NOTICE ================= -->
+
+<div class="notice">
+
+<div class="container">
+
+<div class="notice-card">
+
+    <div class="notice-icon">📢</div>
+
+    <div>
+
+        <h3>This is not an interview.</h3>
+
+        <p>
+            We are not looking for people who simply say
+            "I can do it." We want to see how you think,
+            how you solve a problem and how you take initiative.
+            Your assignment will help us understand which
+            responsibility area suits you best.
+        </p>
+
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ================= PROCESS ================= -->
+
+<section>
+
+<div class="container">
+
+    <div class="section-label">Selection Process</div>
+
+    <h2 class="section-title">
+        How It Works
+    </h2>
+
+    <p class="section-subtitle">
+        A simple practical selection process designed to identify
+        students who are genuinely interested in contributing to IIC.
+    </p>
+
+
+    <div class="steps">
+
+        <div class="step">
+
+            <div class="step-number">01</div>
+
+            <h3>Choose Your Role</h3>
+
+            <p>
+                Select your preferred IIC responsibility area
+                based on your interest and skills.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">02</div>
+
+            <h3>Do the Assignment</h3>
+
+            <p>
+                Prepare a short practical document based on
+                your selected role.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">03</div>
+
+            <h3>Submit</h3>
+
+            <p>
+                Submit your original work in the required format
+                before the deadline.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">04</div>
+
+            <h3>Evaluation</h3>
+
+            <p>
+                The IIC team will evaluate your thinking,
+                creativity, ownership and role suitability.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ================= ASSIGNMENT ================= -->
+
+<section class="assignment-section" id="assignment">
+
+<div class="container">
+
+    <div class="section-label">Your Challenge</div>
+
+    <h2 class="section-title">
+        The IIC Recruitment Assignment
+    </h2>
+
+    <p class="section-subtitle">
+        Prepare a short document that demonstrates how you would
+        contribute to IIC DMIMS in your preferred responsibility area.
+    </p>
+
+
+    <div class="assignment-box">
+
+        <h3>
+            🎯 Your Task
+        </h3>
+
+        <p>
+            Choose your preferred IIC role and create a practical
+            action plan showing what you would actually do if you
+            were selected.
+        </p>
+
+
+        <div class="assignment-points">
+
+            <div class="point">
+                💡 What would you do?
+            </div>
+
+            <div class="point">
+                🎯 What problem would you solve?
+            </div>
+
+            <div class="point">
+                🛠️ How would you execute it?
+            </div>
+
+            <div class="point">
+                📊 What result would you expect?
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ================= COMMON TASK ================= -->
+
+<section>
+
+<div class="container">
+
+    <div class="section-label">Part A</div>
+
+    <h2 class="section-title">
+        Common IIC Challenge
+    </h2>
+
+    <p class="section-subtitle">
+        Every applicant must complete this part regardless
+        of their selected role.
+    </p>
+
+
+    <div class="common-task">
+
+        <div class="task-large">
+
+            <h3>🚀 Imagine This</h3>
+
+            <p>
+                IIC DMIMS wants to increase student participation
+                in innovation, entrepreneurship and startup
+                activities.
+            </p>
+
+            <p style="margin-top:10px;">
+                Design <strong>one activity</strong> that IIC can
+                conduct within the next 30 days.
+            </p>
+
+        </div>
+
+
+        <div class="task-large">
+
+            <h3>Include These Points</h3>
+
+            <div class="task-list">
+
+                <div>1. Activity name</div>
+
+                <div>2. Problem / objective</div>
+
+                <div>3. Target students</div>
+
+                <div>4. How the activity will work</div>
+
+                <div>5. Resources required</div>
+
+                <div>6. Expected outcome</div>
+
+                <div>7. How you will promote it</div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ================= ROLE TASKS ================= -->
+
+<section id="roles">
+
+<div class="container">
+
+    <div class="section-label">Part B</div>
+
+    <h2 class="section-title">
+        Choose Your Role & Complete the Task
+    </h2>
+
+    <p class="section-subtitle">
+        Choose the role that genuinely interests you.
+        You do not need to have professional experience.
+        We are evaluating your thinking and initiative.
+    </p>
+
+
+    <div class="role-grid">
+
+
+        <!-- STARTUP -->
+
+        <div class="role-card">
+
+            <div class="role-top">
+
+                <div class="role-icon">🚀</div>
+
+                <div>
+                    <div class="role-label">KRA</div>
+                    <h3>Start-up Coordinator</h3>
+                </div>
+
+            </div>
+
+            <p>
+                Build and encourage a student startup and
+                entrepreneurship ecosystem.
+            </p>
+
+            <div class="task">
+                <strong>Assignment:</strong><br>
+                Identify 3 possible student startup ideas and
+                explain how IIC could help each idea move forward.
+            </div>
+
+        </div>
+
+
+        <!-- INTERNSHIP -->
+
+        <div class="role-card">
+
+            <div class="role-top">
+
+                <div class="role-icon">💼</div>
+
+                <div>
+                    <div class="role-label">KRA</div>
+                    <h3>Internship Coordinator</h3>
+                </div>
+
+            </div>
+
+            <p>
+                Create practical exposure and internship
+                opportunities for students.
+            </p>
+
+            <div class="task">
+                <strong>Assignment:</strong><br>
+                Identify 3 types of organisations that could
+                provide internships and write a sample outreach
+                message to one organisation.
+            </div>
+
+        </div>
+
+
+        <!-- IPR -->
+
+        <div class="role-card">
+
+            <div class="role-top">
+
+                <div class="role-icon">💡</div>
+
+                <div>
+                    <div class="role-label">KRA</div>
+                    <h3>IPR Coordinator</h3>
+                </div>
+
+            </div>
+
+            <p>
+                Promote awareness of patents, copyrights,
+                trademarks and intellectual property.
+            </p>
+
+            <div class="task">
+                <strong>Assignment:</strong><br>
+                Explain Patent, Copyright and Trademark in
+                simple student language with one example of each.
+            </div>
+
+        </div>
+
+
+        <!-- GRAPHICS -->
+
+        <div class="role-card">
+
+            <div class="role-top">
+
+                <div class="role-icon">🎨</div>
+
+                <div>
+                    <div class="role-label">KRA</div>
+                    <h3>Graphics & Creative</h3>
+                </div>
+
+            </div>
+
+            <p>
+                Create visual communication and branding for IIC.
+            </p>
+
+            <div class="task">
+                <strong>Assignment:</strong><br>
+                Create one original IIC event poster for a
+                hypothetical innovation/startup event.
+            </div>
+
+        </div>
+
+
+        <!-- YUKTI -->
+
+        <div class="role-card">
+
+            <div class="role-top">
+
+                <div class="role-icon">🧠</div>
+
+                <div>
+                    <div class="role-label">KRA</div>
+                    <h3>YUKTI Coordinator</h3>
+                </div>
+
+            </div>
+
+            <p>
+                Encourage students to participate in innovation
+                challenges and idea-based activities.
+            </p>
+
+            <div class="task">
+                <strong>Assignment:</strong><br>
+                Design one innovation challenge for DMIMS students.
+                Explain the problem statement, rules and expected
+                outcome.
+            </div>
+
+        </div>
+
+
+        <!-- WISE -->
+
+        <div class="role-card">
+
+            <div class="role-top">
+
+                <div class="role-icon">👩‍💼</div>
+
+                <div>
+                    <div class="role-label">KRA</div>
+                    <h3>Student Lead – WISE</h3>
+                </div>
+
+            </div>
+
+            <p>
+                Encourage women students to participate in
+                innovation and entrepreneurship.
+            </p>
+
+            <div class="task">
+                <strong>Assignment:</strong><br>
+                Design one initiative that could encourage more
+                women students at DMIMS to explore innovation,
+                startups or entrepreneurship.
+            </div>
+
+        </div>
+
+
+        <!-- ARIIA -->
+
+        <div class="role-card">
+
+            <div class="role-top">
+
+                <div class="role-icon">📊</div>
+
+                <div>
+                    <div class="role-label">KRA</div>
+                    <h3>ARIIA Coordinator</h3>
+                </div>
+
+            </div>
+
+            <p>
+                Support innovation-related data collection,
+                evidence and institutional documentation.
+            </p>
+
+            <div class="task">
+                <strong>Assignment:</strong><br>
+                Design a simple spreadsheet structure for tracking
+                IIC innovation activities, participation and
+                achievements.
+            </div>
+
+        </div>
+
+
+        <!-- ALUMNI -->
+
+        <div class="role-card">
+
+            <div class="role-top">
+
+                <div class="role-icon">🤝</div>
+
+                <div>
+                    <div class="role-label">KRA</div>
+                    <h3>Alumni Coordinator</h3>
+                </div>
+
+            </div>
+
+            <p>
+                Build meaningful connections between IIC,
+                alumni and industry professionals.
+            </p>
+
+            <div class="task">
+                <strong>Assignment:</strong><br>
+                Create a simple plan to identify, approach and
+                involve 5 alumni for mentoring or interaction.
+            </div>
+
+        </div>
+
+
+        <!-- SOCIAL MEDIA -->
+
+        <div class="role-card">
+
+            <div class="role-top">
+
+                <div class="role-icon">📱</div>
+
+                <div>
+                    <div class="role-label">KRA</div>
+                    <h3>Social Media Coordinator</h3>
+                </div>
+
+            </div>
+
+            <p>
+                Build awareness and digital presence for IIC DMIMS.
+            </p>
+
+            <div class="task">
+                <strong>Assignment:</strong><br>
+                Create 3 social media content ideas and write
+                one complete caption for an IIC activity.
+            </div>
+
+        </div>
+
+
+        <!-- DOCUMENTATION -->
+
+        <div class="role-card">
+
+            <div class="role-top">
+
+                <div class="role-icon">🧑‍💻</div>
+
+                <div>
+                    <div class="role-label">KRA</div>
+                    <h3>Documentation & Reporting</h3>
+                </div>
+
+            </div>
+
+            <p>
+                Make sure IIC activities have proper records,
+                evidence and reports.
+            </p>
+
+            <div class="task">
+                <strong>Assignment:</strong><br>
+                Create a one-page event documentation checklist
+                covering attendance, photographs, report,
+                certificates and evidence.
+            </div>
+
+        </div>
+
+
+        <!-- CONVENOR -->
+
+        <div class="role-card">
+
+            <div class="role-top">
+
+                <div class="role-icon">👑</div>
+
+                <div>
+                    <div class="role-label">System Integration</div>
+                    <h3>IIC Convenor</h3>
+                </div>
+
+            </div>
+
+            <p>
+                Ensure different responsibility areas work
+                together through a clear operating system.
+            </p>
+
+            <div class="task">
+                <strong>Assignment:</strong><br>
+                Design a simple IIC operating flow:
+                <strong>Input → KRA → Process → Output → Control
+                → Feedback → Improvement.</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ================= NO AI ================= -->
+
+<section class="no-ai" id="rules">
+
+<div class="container">
+
+    <div class="no-ai-card">
+
+        <div class="no-ai-head">
+
+            <div class="no-ai-icon">🚫</div>
+
+            <div>
+                <h2>Important: No AI Use</h2>
+            </div>
+
+        </div>
+
+        <p>
+            This assessment is designed to understand
+            <strong>your own thinking, creativity and initiative.</strong>
+            Therefore, your submitted document must be your
+            original work.
+        </p>
+
+
+        <div class="no-ai-rules">
+
+            <div class="no-ai-rule">
+                <span class="check">✓</span>
+                <span>Do the assignment yourself.</span>
+            </div>
+
+            <div class="no-ai-rule">
+                <span class="check">✓</span>
+                <span>Do not use ChatGPT, Gemini, Claude, Copilot or other AI tools to generate your submission.</span>
+            </div>
+
+            <div class="no-ai-rule">
+                <span class="check">✓</span>
+                <span>You may use normal internet research for understanding a topic, but the final work must be written in your own words.</span>
+            </div>
+
+            <div class="no-ai-rule">
+                <span class="check">✓</span>
+                <span>Do not copy another applicant's work.</span>
+            </div>
+
+            <div class="no-ai-rule">
+                <span class="check">✓</span>
+                <span>We value genuine thinking more than perfect English or fancy design.</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ================= DOCUMENT FORMAT ================= -->
+
+<section class="document">
+
+<div class="container">
+
+    <div class="section-label">Submission Format</div>
+
+    <h2 class="section-title">
+        What Should Your Document Look Like?
+    </h2>
+
+    <p class="section-subtitle">
+        Keep it simple. We are evaluating your ideas,
+        not the number of pages.
+    </p>
+
+
+    <div class="document-layout">
+
+        <div class="doc-card">
+
+            <h3>📄 Recommended Format</h3>
+
+            <ul>
+
+                <li>PDF format</li>
+
+                <li>Maximum 3–5 pages</li>
+
+                <li>Clearly mention your name</li>
+
+                <li>Mention your preferred role</li>
+
+                <li>Use clear headings</li>
+
+                <li>Keep the information structured</li>
+
+                <li>Use your own words</li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="doc-card">
+
+            <h3>✨ What We Look For</h3>
+
+            <ul>
+
+                <li>Original thinking</li>
+
+                <li>Practical ideas</li>
+
+                <li>Problem-solving ability</li>
+
+                <li>Initiative</li>
+
+                <li>Clarity of thought</li>
+
+                <li>Understanding of your selected role</li>
+
+                <li>Willingness to take ownership</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ================= EVALUATION ================= -->
+
+<section class="evaluation">
+
+<div class="container">
+
+    <div class="section-label">Evaluation</div>
+
+    <h2 class="section-title">
+        How Your Assignment Will Be Evaluated
+    </h2>
+
+    <p class="section-subtitle">
+        There is no need to make your document unnecessarily
+        complicated. Strong thinking matters more than decoration.
+    </p>
+
+
+    <table class="score-table">
+
+        <thead>
+
+            <tr>
+                <th>Parameter</th>
+                <th>What We Check</th>
+                <th>Marks</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <td>Role Understanding</td>
+                <td>Do you understand what your selected role involves?</td>
+                <td>10</td>
+            </tr>
+
+            <tr>
+                <td>Problem Solving</td>
+                <td>Can you identify a problem and suggest a practical solution?</td>
+                <td>10</td>
+            </tr>
+
+            <tr>
+                <td>Creativity</td>
+                <td>Is your approach thoughtful and different?</td>
+                <td>5</td>
+            </tr>
+
+            <tr>
+                <td>Initiative</td>
+                <td>Have you gone beyond basic instructions?</td>
+                <td>5</td>
+            </tr>
+
+            <tr>
+                <td>Clarity</td>
+                <td>Can you explain your idea clearly?</td>
+                <td>5</td>
+            </tr>
+
+            <tr>
+                <td>Practicality</td>
+                <td>Can your idea realistically be implemented at DMIMS?</td>
+                <td>5</td>
+            </tr>
+
+            <tr>
+                <td><strong>Total</strong></td>
+                <td><strong>Maximum Score</strong></td>
+                <td><strong>40</strong></td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</div>
+
+</section>
+
+
+<!-- ================= SUBMISSION ================= -->
+
+<section class="submission" id="submit">
+
+<div class="container submission-container">
+
+    <div class="section-label">
+        Final Step
+    </div>
+
+    <h2>
+        Ready to Show Us?
+    </h2>
+
+    <p>
+        Complete your assignment, convert it into PDF and submit
+        it through the official submission form.
+    </p>
+
+
+    <div class="submission-box">
+
+        <div>
+            📌 <strong>File:</strong>
+            YourName_IIC_Assessment.pdf
+        </div>
+
+        <div>
+            📄 <strong>Format:</strong>
+            PDF
+        </div>
+
+        <div>
+            📑 <strong>Length:</strong>
+            Maximum 3–5 pages
+        </div>
+
+        <div>
+            ✍️ <strong>Work:</strong>
+            Completely original
+        </div>
+
+        <div>
+            🚫 <strong>AI:</strong>
+            Not permitted
+        </div>
+
+    </div>
+
+
+    <!-- CHANGE THIS LINK TO YOUR GOOGLE FORM -->
+
+    <a
+        href="https://tally.so/r/Zjq0Dv"
+        target="_blank"
+        class="btn btn-primary submit-btn"
+    >
+        Submit Your Assessment →
+    </a>
+
+</div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+        <strong>IIC DMIMS</strong> · Institution's Innovation Council
+    </p>
+
+    <p style="margin-top:5px;">
+        Innovation · Entrepreneurship · Leadership · Impact
+    </p>
+
+    <p style="margin-top:12px;font-size:11px;">
+        © 2026 IIC DMIMS
+    </p>
+
+</footer>
+
+</body>
+</html>
