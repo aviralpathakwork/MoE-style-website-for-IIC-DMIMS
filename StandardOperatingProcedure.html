@@ -1,0 +1,4889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>IIC DMIMS | Core Team SOP & Roles</title>
+
+<meta name="description"
+content="IIC DMIMS Core Team Standard Operating Procedure, hierarchy, roles, responsibilities, reporting structure and operating guidelines.">
+
+<style>
+
+/* =========================================================
+   IIC DMIMS — SOP MASTER THEME
+========================================================= */
+
+:root{
+    --navy:#071c3d;
+    --navy2:#0c2c58;
+    --navy3:#123b6d;
+
+    --orange:#f58220;
+    --orange2:#ff9d45;
+    --orange-soft:#fff1e5;
+
+    --white:#ffffff;
+    --black:#07111f;
+
+    --text:#27364a;
+    --muted:#718096;
+
+    --bg:#f6f8fb;
+    --border:#e3e8ef;
+
+    --success:#159957;
+    --red:#d64545;
+
+    --shadow-sm:0 5px 20px rgba(7,28,61,.07);
+    --shadow-md:0 15px 40px rgba(7,28,61,.12);
+    --shadow-lg:0 25px 70px rgba(7,28,61,.18);
+
+    --radius:18px;
+    --transition:.3s ease;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:
+        Inter,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+
+    color:var(--text);
+    background:var(--bg);
+    line-height:1.65;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button,
+input{
+    font-family:inherit;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+.container{
+    width:min(1200px,92%);
+    margin:auto;
+}
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.topbar{
+    background:var(--orange);
+    color:white;
+
+    text-align:center;
+
+    padding:9px 15px;
+
+    font-size:12px;
+    font-weight:800;
+
+    letter-spacing:.5px;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header{
+    position:sticky;
+    top:0;
+
+    z-index:1000;
+
+    background:rgba(7,28,61,.97);
+
+    backdrop-filter:blur(14px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.navbar{
+    min-height:76px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:30px;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:13px;
+}
+
+.logo{
+    width:48px;
+    height:48px;
+
+    object-fit:contain;
+
+    background:white;
+
+    border-radius:10px;
+
+    padding:5px;
+}
+
+.brand h2{
+    color:white;
+
+    font-size:15px;
+
+    line-height:1.2;
+}
+
+.brand span{
+    display:block;
+
+    color:var(--orange2);
+
+    font-size:10px;
+
+    font-weight:800;
+
+    letter-spacing:1.3px;
+
+    margin-top:4px;
+}
+
+.nav{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+.nav a{
+    color:#d6e0ed;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    transition:var(--transition);
+}
+
+.nav a:hover{
+    color:var(--orange2);
+}
+
+.nav .join{
+    background:var(--orange);
+
+    color:white;
+
+    padding:10px 17px;
+
+    border-radius:9px;
+}
+
+.menu{
+    display:none;
+
+    border:none;
+
+    background:none;
+
+    color:white;
+
+    font-size:26px;
+
+    cursor:pointer;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    position:relative;
+
+    overflow:hidden;
+
+    padding:105px 0 90px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #071c3d 0%,
+            #061a38 100%
+        );
+
+    color:white;
+}
+
+.grid{
+    position:absolute;
+    inset:0;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        );
+
+    background-size:55px 55px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent 95%
+        );
+
+    -webkit-mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent 95%
+        );
+}
+
+.glow{
+    position:absolute;
+
+    width:450px;
+    height:450px;
+
+    border-radius:50%;
+
+    filter:blur(110px);
+
+    pointer-events:none;
+}
+
+.glow.one{
+    right:-200px;
+    top:-100px;
+
+    background:rgba(245,130,32,.13);
+}
+
+.glow.two{
+    left:-200px;
+    bottom:-250px;
+
+    background:rgba(27,88,160,.15);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+
+    display:grid;
+
+    grid-template-columns:1.25fr .75fr;
+
+    gap:70px;
+
+    align-items:center;
+}
+
+.badge{
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:8px 13px;
+
+    border-radius:30px;
+
+    background:rgba(245,130,32,.12);
+
+    border:1px solid rgba(245,130,32,.3);
+
+    color:var(--orange2);
+
+    font-size:11px;
+
+    font-weight:900;
+
+    text-transform:uppercase;
+
+    letter-spacing:1.3px;
+}
+
+.badge::before{
+    content:"";
+
+    width:7px;
+    height:7px;
+
+    background:var(--orange);
+
+    border-radius:50%;
+
+    box-shadow:0 0 12px var(--orange);
+}
+
+.hero h1{
+    margin-top:22px;
+
+    font-size:clamp(40px,6vw,68px);
+
+    line-height:1.05;
+
+    letter-spacing:-2px;
+}
+
+.hero h1 span{
+    color:var(--orange);
+}
+
+.hero-description{
+    margin-top:22px;
+
+    max-width:720px;
+
+    color:#aebdd0;
+
+    font-size:17px;
+}
+
+.hero-buttons{
+    display:flex;
+
+    gap:12px;
+
+    margin-top:30px;
+}
+
+.btn{
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:8px;
+
+    padding:13px 20px;
+
+    border-radius:10px;
+
+    font-size:13px;
+
+    font-weight:800;
+
+    transition:var(--transition);
+}
+
+.btn-primary{
+    background:var(--orange);
+
+    color:white;
+}
+
+.btn-primary:hover{
+    background:var(--orange2);
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 25px rgba(245,130,32,.25);
+}
+
+.btn-outline{
+    border:1px solid rgba(255,255,255,.18);
+
+    color:white;
+}
+
+.btn-outline:hover{
+    background:rgba(255,255,255,.07);
+}
+
+/* =========================================================
+   HERO CARD
+========================================================= */
+
+.command-card{
+    background:rgba(255,255,255,.055);
+
+    border:1px solid rgba(255,255,255,.1);
+
+    border-radius:24px;
+
+    padding:30px;
+
+    backdrop-filter:blur(15px);
+
+    box-shadow:var(--shadow-lg);
+}
+
+.command-top{
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding-bottom:20px;
+
+    border-bottom:1px solid rgba(255,255,255,.09);
+}
+
+.command-icon{
+    width:55px;
+    height:55px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:14px;
+
+    background:var(--orange);
+
+    font-size:25px;
+}
+
+.command-top h3{
+    color:white;
+
+    font-size:18px;
+}
+
+.command-top p{
+    color:#9eacc0;
+
+    font-size:12px;
+}
+
+.command-list{
+    margin-top:22px;
+
+    list-style:none;
+
+    display:grid;
+
+    gap:13px;
+}
+
+.command-list li{
+    color:#c7d2df;
+
+    font-size:13px;
+
+    padding-left:22px;
+
+    position:relative;
+}
+
+.command-list li::before{
+    content:"✓";
+
+    position:absolute;
+
+    left:0;
+
+    color:var(--orange);
+
+    font-weight:900;
+}
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.section{
+    padding:95px 0;
+}
+
+.section.white{
+    background:white;
+}
+
+.section-head{
+    max-width:750px;
+
+    margin-bottom:45px;
+}
+
+.section-label{
+    color:var(--orange);
+
+    font-size:11px;
+
+    font-weight:900;
+
+    letter-spacing:1.7px;
+
+    text-transform:uppercase;
+}
+
+.section-head h2{
+    color:var(--navy);
+
+    font-size:clamp(30px,4vw,44px);
+
+    line-height:1.15;
+
+    letter-spacing:-.8px;
+
+    margin-top:8px;
+}
+
+.section-head p{
+    color:var(--muted);
+
+    margin-top:14px;
+
+    font-size:15px;
+}
+
+/* =========================================================
+   SOP OVERVIEW
+========================================================= */
+
+.sop-grid{
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:17px;
+}
+
+.sop-card{
+    background:white;
+
+    border:1px solid var(--border);
+
+    border-radius:17px;
+
+    padding:27px;
+
+    transition:var(--transition);
+}
+
+.sop-card:hover{
+    transform:translateY(-6px);
+
+    border-color:rgba(245,130,32,.4);
+
+    box-shadow:var(--shadow-md);
+}
+
+.sop-number{
+    color:var(--orange);
+
+    font-size:11px;
+
+    font-weight:900;
+
+    letter-spacing:1px;
+}
+
+.sop-card h3{
+    color:var(--navy);
+
+    margin:10px 0 7px;
+
+    font-size:18px;
+}
+
+.sop-card p{
+    color:var(--muted);
+
+    font-size:13px;
+}
+
+/* =========================================================
+   HIERARCHY
+========================================================= */
+
+.hierarchy{
+    background:var(--bg);
+}
+
+.hierarchy-box{
+    max-width:900px;
+
+    margin:auto;
+
+    text-align:center;
+}
+
+.convenor{
+    display:inline-block;
+
+    min-width:300px;
+
+    padding:25px 35px;
+
+    background:var(--navy);
+
+    color:white;
+
+    border-radius:18px;
+
+    box-shadow:var(--shadow-lg);
+
+    position:relative;
+}
+
+.convenor .icon{
+    font-size:28px;
+}
+
+.convenor h3{
+    margin-top:8px;
+
+    font-size:20px;
+}
+
+.convenor p{
+    color:#aebdd0;
+
+    font-size:12px;
+
+    margin-top:5px;
+}
+
+.connector{
+    width:2px;
+
+    height:50px;
+
+    background:var(--orange);
+
+    margin:auto;
+}
+
+.team-line{
+    height:2px;
+
+    background:var(--orange);
+
+    width:88%;
+
+    margin:auto;
+}
+
+.team-grid{
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:15px;
+
+    margin-top:0;
+}
+
+.team-box{
+    background:white;
+
+    border:1px solid var(--border);
+
+    border-radius:14px;
+
+    padding:18px;
+
+    position:relative;
+}
+
+.team-box::before{
+    content:"";
+
+    position:absolute;
+
+    width:2px;
+    height:15px;
+
+    background:var(--orange);
+
+    top:-15px;
+
+    left:50%;
+}
+
+.team-box strong{
+    color:var(--navy);
+
+    display:block;
+
+    font-size:14px;
+}
+
+.team-box span{
+    color:var(--muted);
+
+    display:block;
+
+    font-size:11px;
+
+    margin-top:3px;
+}
+
+/* =========================================================
+   AUTHORITY / RESPONSIBILITY
+========================================================= */
+
+.responsibility-grid{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:20px;
+}
+
+.responsibility-box{
+    background:white;
+
+    border:1px solid var(--border);
+
+    border-radius:17px;
+
+    padding:28px;
+}
+
+.responsibility-box h3{
+    color:var(--navy);
+
+    font-size:18px;
+
+    margin-bottom:15px;
+}
+
+.check-list{
+    list-style:none;
+
+    display:grid;
+
+    gap:10px;
+}
+
+.check-list li{
+    position:relative;
+
+    padding-left:25px;
+
+    color:var(--text);
+
+    font-size:13px;
+}
+
+.check-list li::before{
+    content:"✓";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    color:var(--orange);
+
+    font-weight:900;
+}
+
+/* =========================================================
+   ROLES
+========================================================= */
+
+.roles{
+    background:var(--bg);
+}
+
+.role-tools{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+
+    margin-bottom:25px;
+}
+
+.search{
+    position:relative;
+
+    max-width:550px;
+
+    flex:1;
+}
+
+.search span{
+    position:absolute;
+
+    left:15px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    color:var(--muted);
+}
+
+.search input{
+    width:100%;
+
+    padding:15px 18px 15px 43px;
+
+    background:white;
+
+    border:1px solid var(--border);
+
+    border-radius:12px;
+
+    outline:none;
+
+    color:var(--text);
+}
+
+.search input:focus{
+    border-color:var(--orange);
+
+    box-shadow:
+        0 0 0 4px rgba(245,130,32,.08);
+}
+
+.role-count{
+    color:var(--muted);
+
+    font-size:12px;
+
+    font-weight:800;
+}
+
+.role-list{
+    display:grid;
+
+    gap:12px;
+}
+
+.role{
+    background:white;
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    overflow:hidden;
+
+    transition:var(--transition);
+}
+
+.role:hover{
+    border-color:rgba(245,130,32,.35);
+
+    box-shadow:var(--shadow-sm);
+}
+
+.role-header{
+    width:100%;
+
+    border:none;
+
+    background:white;
+
+    padding:20px 23px;
+
+    display:grid;
+
+    grid-template-columns:55px 1fr 30px;
+
+    align-items:center;
+
+    gap:14px;
+
+    text-align:left;
+
+    cursor:pointer;
+}
+
+.role-number{
+    width:42px;
+    height:42px;
+
+    display:grid;
+
+    place-items:center;
+
+    background:var(--orange-soft);
+
+    color:var(--orange);
+
+    border-radius:11px;
+
+    font-size:12px;
+
+    font-weight:900;
+}
+
+.role-title h3{
+    color:var(--navy);
+
+    font-size:16px;
+}
+
+.role-title p{
+    color:var(--muted);
+
+    font-size:12px;
+
+    margin-top:2px;
+}
+
+.arrow{
+    color:var(--navy);
+
+    transition:transform .3s;
+}
+
+.role.active .arrow{
+    transform:rotate(180deg);
+
+    color:var(--orange);
+}
+
+.role.active .role-header{
+    background:var(--navy);
+}
+
+.role.active .role-title h3{
+    color:white;
+}
+
+.role.active .role-title p{
+    color:#9eacc0;
+}
+
+.role.active .role-number{
+    background:var(--orange);
+
+    color:white;
+}
+
+.role-body{
+    display:none;
+
+    background:var(--navy);
+
+    color:white;
+
+    padding:3px 25px 28px 94px;
+}
+
+.role.active .role-body{
+    display:block;
+}
+
+.role-description{
+    color:#c5d1df;
+
+    font-size:13px;
+
+    margin-bottom:22px;
+}
+
+.role-columns{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:35px;
+}
+
+.role-body h4{
+    color:var(--orange2);
+
+    font-size:11px;
+
+    letter-spacing:1.3px;
+
+    text-transform:uppercase;
+
+    margin-bottom:12px;
+}
+
+.role-body ul{
+    list-style:none;
+
+    display:grid;
+
+    gap:9px;
+}
+
+.role-body li{
+    position:relative;
+
+    color:#d7e0e9;
+
+    font-size:12.5px;
+
+    padding-left:21px;
+}
+
+.role-body li::before{
+    content:"✓";
+
+    position:absolute;
+
+    left:0;
+
+    color:var(--orange);
+
+    font-weight:900;
+}
+
+.best{
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:13px;
+
+    padding:19px;
+}
+
+.best p{
+    color:#c5d1df;
+
+    font-size:12.5px;
+}
+
+.tags{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:6px;
+
+    margin-top:14px;
+}
+
+.tag{
+    padding:5px 9px;
+
+    border-radius:20px;
+
+    background:rgba(245,130,32,.12);
+
+    color:var(--orange2);
+
+    font-size:10px;
+
+    font-weight:800;
+}
+
+.no-result{
+    display:none;
+
+    text-align:center;
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:15px;
+
+    color:var(--muted);
+}
+
+/* =========================================================
+   SOP OPERATING CYCLE
+========================================================= */
+
+.cycle{
+    background:white;
+}
+
+.cycle-grid{
+    display:grid;
+
+    grid-template-columns:repeat(5,1fr);
+
+    gap:15px;
+}
+
+.cycle-card{
+    padding:25px 20px;
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    text-align:center;
+}
+
+.cycle-icon{
+    width:50px;
+    height:50px;
+
+    display:grid;
+
+    place-items:center;
+
+    margin:auto;
+
+    border-radius:13px;
+
+    background:var(--orange-soft);
+
+    color:var(--orange);
+
+    font-size:21px;
+}
+
+.cycle-card h3{
+    color:var(--navy);
+
+    font-size:15px;
+
+    margin-top:13px;
+}
+
+.cycle-card p{
+    color:var(--muted);
+
+    font-size:11px;
+
+    margin-top:6px;
+}
+
+/* =========================================================
+   WEEKLY / MONTHLY
+========================================================= */
+
+.schedule{
+    background:var(--bg);
+}
+
+.schedule-grid{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:20px;
+}
+
+.schedule-card{
+    background:white;
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    padding:30px;
+}
+
+.schedule-card h3{
+    color:var(--navy);
+
+    font-size:19px;
+
+    margin-bottom:15px;
+}
+
+.schedule-card .frequency{
+    display:inline-block;
+
+    background:var(--orange-soft);
+
+    color:var(--orange);
+
+    padding:5px 9px;
+
+    border-radius:20px;
+
+    font-size:10px;
+
+    font-weight:900;
+
+    margin-bottom:15px;
+}
+
+/* =========================================================
+   EVENT SOP
+========================================================= */
+
+.event-flow{
+    display:grid;
+
+    grid-template-columns:repeat(6,1fr);
+
+    gap:10px;
+}
+
+.event-step{
+    position:relative;
+
+    padding:22px 12px;
+
+    border:1px solid var(--border);
+
+    background:white;
+
+    border-radius:14px;
+
+    text-align:center;
+}
+
+.event-step strong{
+    display:block;
+
+    color:var(--orange);
+
+    font-size:10px;
+
+    letter-spacing:1px;
+}
+
+.event-step h4{
+    color:var(--navy);
+
+    margin-top:8px;
+
+    font-size:13px;
+}
+
+.event-step p{
+    color:var(--muted);
+
+    font-size:10px;
+
+    margin-top:5px;
+}
+
+/* =========================================================
+   DOCUMENTATION
+========================================================= */
+
+.documentation{
+    background:var(--navy);
+
+    color:white;
+}
+
+.documentation .section-head h2{
+    color:white;
+}
+
+.documentation .section-head p{
+    color:#aebdd0;
+}
+
+.doc-grid{
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:15px;
+}
+
+.doc-card{
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:16px;
+
+    padding:25px;
+}
+
+.doc-card h3{
+    color:white;
+
+    font-size:16px;
+
+    margin-bottom:8px;
+}
+
+.doc-card p{
+    color:#aebdd0;
+
+    font-size:12px;
+}
+
+/* =========================================================
+   CODE OF CONDUCT
+========================================================= */
+
+.conduct{
+    background:white;
+}
+
+.conduct-grid{
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:15px;
+}
+
+.conduct-item{
+    border:1px solid var(--border);
+
+    border-radius:14px;
+
+    padding:19px;
+
+    display:flex;
+
+    gap:12px;
+}
+
+.conduct-icon{
+    color:var(--orange);
+
+    font-weight:900;
+}
+
+.conduct-item h4{
+    color:var(--navy);
+
+    font-size:14px;
+}
+
+.conduct-item p{
+    color:var(--muted);
+
+    font-size:11px;
+
+    margin-top:3px;
+}
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta-section{
+    padding:90px 0;
+
+    background:var(--bg);
+}
+
+.cta{
+    position:relative;
+
+    overflow:hidden;
+
+    padding:65px;
+
+    border-radius:25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--navy),
+            var(--navy2)
+        );
+
+    box-shadow:var(--shadow-lg);
+
+    color:white;
+}
+
+.cta::after{
+    content:"";
+
+    position:absolute;
+
+    width:400px;
+    height:400px;
+
+    right:-200px;
+    top:-200px;
+
+    border-radius:50%;
+
+    background:rgba(245,130,32,.12);
+
+    filter:blur(30px);
+}
+
+.cta-content{
+    position:relative;
+
+    z-index:2;
+
+    max-width:720px;
+}
+
+.cta h2{
+    font-size:clamp(30px,4vw,45px);
+
+    line-height:1.15;
+}
+
+.cta p{
+    color:#b9c7d7;
+
+    margin-top:13px;
+
+    font-size:15px;
+}
+
+.cta-buttons{
+    display:flex;
+
+    gap:12px;
+
+    margin-top:25px;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer{
+    background:#04142d;
+
+    color:#9eacc0;
+
+    padding:55px 0 23px;
+}
+
+.footer-grid{
+    display:grid;
+
+    grid-template-columns:1.5fr 1fr 1fr;
+
+    gap:45px;
+
+    padding-bottom:35px;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.footer-brand{
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:15px;
+}
+
+.footer-brand img{
+    width:43px;
+    height:43px;
+
+    padding:5px;
+
+    border-radius:8px;
+
+    background:white;
+}
+
+.footer h3{
+    color:white;
+
+    font-size:14px;
+
+    margin-bottom:13px;
+}
+
+.footer p{
+    font-size:12px;
+
+    max-width:420px;
+}
+
+.footer ul{
+    list-style:none;
+
+    display:grid;
+
+    gap:7px;
+}
+
+.footer li{
+    font-size:12px;
+}
+
+.footer li a:hover{
+    color:var(--orange);
+}
+
+.footer-bottom{
+    padding-top:20px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    font-size:11px;
+}
+
+/* =========================================================
+   BACK TOP
+========================================================= */
+
+.back-top{
+    position:fixed;
+
+    right:20px;
+    bottom:20px;
+
+    width:44px;
+    height:44px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:var(--orange);
+
+    color:white;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:var(--transition);
+
+    z-index:900;
+}
+
+.back-top.show{
+    opacity:1;
+    visibility:visible;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1000px){
+
+    .hero-content{
+        grid-template-columns:1fr;
+    }
+
+    .sop-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .team-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .cycle-grid{
+        grid-template-columns:1fr 1fr 1fr;
+    }
+
+    .event-flow{
+        grid-template-columns:1fr 1fr 1fr;
+    }
+
+    .doc-grid{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:760px){
+
+    .menu{
+        display:block;
+    }
+
+    .nav{
+        position:absolute;
+
+        top:76px;
+        left:0;
+        right:0;
+
+        display:none;
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+        background:var(--navy);
+
+        padding:15px 5%;
+    }
+
+    .nav.active{
+        display:flex;
+    }
+
+    .nav a{
+        padding:10px 0;
+    }
+
+    .nav .join{
+        text-align:center;
+    }
+
+    .hero{
+        padding:75px 0;
+    }
+
+    .hero h1{
+        font-size:43px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+    }
+
+    .btn{
+        width:100%;
+    }
+
+    .sop-grid{
+        grid-template-columns:1fr;
+    }
+
+    .team-grid{
+        grid-template-columns:1fr;
+    }
+
+    .team-line{
+        width:2px;
+        height:20px;
+    }
+
+    .team-box::before{
+        top:-20px;
+    }
+
+    .responsibility-grid{
+        grid-template-columns:1fr;
+    }
+
+    .role-tools{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .search{
+        max-width:none;
+    }
+
+    .role-header{
+        grid-template-columns:44px 1fr 25px;
+
+        padding:17px;
+    }
+
+    .role-body{
+        padding:5px 17px 25px;
+    }
+
+    .role-columns{
+        grid-template-columns:1fr;
+    }
+
+    .cycle-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .event-flow{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .schedule-grid{
+        grid-template-columns:1fr;
+    }
+
+    .doc-grid{
+        grid-template-columns:1fr;
+    }
+
+    .conduct-grid{
+        grid-template-columns:1fr;
+    }
+
+    .cta{
+        padding:40px 25px;
+    }
+
+    .cta-buttons{
+        flex-direction:column;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+
+        gap:8px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     TOP BAR
+===================================================== -->
+
+<div class="topbar">
+
+    🚀 IIC DMIMS • STANDARD OPERATING PROCEDURE • CORE TEAM
+
+</div>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="header">
+
+<div class="container navbar">
+
+<a
+href="https://iicdmims.vercel.app/"
+class="brand"
+>
+
+<img
+src="https://iic.mic.gov.in/assets/assets/images/iiclogo.png"
+alt="IIC Logo"
+class="logo"
+>
+
+<div>
+
+<h2>
+Institution's Innovation Council
+</h2>
+
+<span>
+DMIMS • CORE TEAM
+</span>
+
+</div>
+
+</a>
+
+
+<button
+class="menu"
+id="menuBtn"
+>
+☰
+</button>
+
+
+<nav
+class="nav"
+id="nav"
+>
+
+<a href="https://iicdmims.vercel.app/">
+Home
+</a>
+
+<a href="#structure">
+Structure
+</a>
+
+<a href="#roles">
+Roles
+</a>
+
+<a href="#sop">
+SOP
+</a>
+
+<a href="#conduct">
+Guidelines
+</a>
+
+<a
+href="https://iicdmims.vercel.app/join.html"
+class="join"
+>
+Join IIC →
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+<div class="grid"></div>
+
+<div class="glow one"></div>
+<div class="glow two"></div>
+
+
+<div class="container hero-content">
+
+
+<div>
+
+<div class="badge">
+IIC DMIMS • CORE TEAM SOP
+</div>
+
+
+<h1>
+
+Build.
+<span>Innovate.</span>
+Lead.
+
+</h1>
+
+
+<p class="hero-description">
+
+A clear operating framework for the IIC DMIMS Core Team —
+defining who manages what, how teams coordinate,
+how activities are executed and how every initiative
+is documented.
+
+</p>
+
+
+<div class="hero-buttons">
+
+<a
+href="#roles"
+class="btn btn-primary"
+>
+Explore Roles →
+</a>
+
+<a
+href="#structure"
+class="btn btn-outline"
+>
+View Structure
+</a>
+
+</div>
+
+</div>
+
+
+<div class="command-card">
+
+<div class="command-top">
+
+<div class="command-icon">
+👑
+</div>
+
+<div>
+
+<h3>
+IIC Convenor
+</h3>
+
+<p>
+Overall Council Management
+</p>
+
+</div>
+
+</div>
+
+
+<ul class="command-list">
+
+<li>
+Overall supervision of IIC activities
+</li>
+
+<li>
+Coordinates all Core Team verticals
+</li>
+
+<li>
+Reviews plans, progress and outcomes
+</li>
+
+<li>
+Ensures institutional coordination
+</li>
+
+<li>
+Approves major initiatives and activities
+</li>
+
+<li>
+Maintains overall accountability
+</li>
+
+</ul>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     SOP INTRO
+===================================================== -->
+
+<section
+class="section white"
+id="sop"
+>
+
+<div class="container">
+
+<div class="section-head">
+
+<span class="section-label">
+Standard Operating Procedure
+</span>
+
+<h2>
+How the IIC Core Team operates
+</h2>
+
+<p>
+
+This SOP establishes clear ownership, reporting,
+coordination and execution responsibilities so that
+every IIC initiative has a responsible person behind it.
+
+</p>
+
+</div>
+
+
+<div class="sop-grid">
+
+
+<div class="sop-card">
+
+<span class="sop-number">
+01 • PLAN
+</span>
+
+<h3>
+Plan
+</h3>
+
+<p>
+Identify objectives, activities, timelines,
+resources and responsible team members.
+</p>
+
+</div>
+
+
+<div class="sop-card">
+
+<span class="sop-number">
+02 • COORDINATE
+</span>
+
+<h3>
+Coordinate
+</h3>
+
+<p>
+Work with other coordinators, volunteers,
+faculty and external stakeholders.
+</p>
+
+</div>
+
+
+<div class="sop-card">
+
+<span class="sop-number">
+03 • EXECUTE
+</span>
+
+<h3>
+Execute
+</h3>
+
+<p>
+Convert ideas into workshops, events,
+competitions, campaigns and initiatives.
+</p>
+
+</div>
+
+
+<div class="sop-card">
+
+<span class="sop-number">
+04 • REPORT
+</span>
+
+<h3>
+Report
+</h3>
+
+<p>
+Document activities, outcomes, participation,
+evidence and achievements.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     HIERARCHY
+===================================================== -->
+
+<section
+class="section hierarchy"
+id="structure"
+>
+
+<div class="container">
+
+<div class="section-head">
+
+<span class="section-label">
+Management Structure
+</span>
+
+<h2>
+One Convenor. Multiple Verticals. One Mission.
+</h2>
+
+<p>
+
+The IIC Convenor oversees the complete council,
+while every coordinator owns a specific functional vertical.
+
+</p>
+
+</div>
+
+
+<div class="hierarchy-box">
+
+
+<div class="convenor">
+
+<div class="icon">
+👑
+</div>
+
+<h3>
+IIC Convenor
+</h3>
+
+<p>
+Overall Manager • Supervisor • Coordinator
+</p>
+
+</div>
+
+
+<div class="connector"></div>
+
+<div class="team-line"></div>
+
+
+<div class="team-grid">
+
+
+<div class="team-box">
+<strong>
+🚀 Start-up
+</strong>
+<span>
+Startup ecosystem
+</span>
+</div>
+
+
+<div class="team-box">
+<strong>
+💼 Internship
+</strong>
+<span>
+Industry opportunities
+</span>
+</div>
+
+
+<div class="team-box">
+<strong>
+💡 IPR
+</strong>
+<span>
+Intellectual property
+</span>
+</div>
+
+
+<div class="team-box">
+<strong>
+🎨 Creative
+</strong>
+<span>
+Design & branding
+</span>
+</div>
+
+
+<div class="team-box">
+<strong>
+🧠 YUKTI
+</strong>
+<span>
+Innovation challenges
+</span>
+</div>
+
+
+<div class="team-box">
+<strong>
+👩‍💼 WISE
+</strong>
+<span>
+Women in innovation
+</span>
+</div>
+
+
+<div class="team-box">
+<strong>
+📊 ARIIA
+</strong>
+<span>
+Data & documentation
+</span>
+</div>
+
+
+<div class="team-box">
+<strong>
+🤝 Alumni
+</strong>
+<span>
+Alumni ecosystem
+</span>
+</div>
+
+
+<div class="team-box">
+<strong>
+📱 Social Media
+</strong>
+<span>
+Digital presence
+</span>
+</div>
+
+
+<div class="team-box">
+<strong>
+🎤 Events
+</strong>
+<span>
+Execution & outreach
+</span>
+</div>
+
+
+<div class="team-box">
+<strong>
+🧑‍💻 Documentation
+</strong>
+<span>
+Reports & evidence
+</span>
+</div>
+
+
+<div class="team-box">
+<strong>
+👥 Volunteers
+</strong>
+<span>
+Execution support
+</span>
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     CONVENOR RESPONSIBILITY
+===================================================== -->
+
+<section class="section white">
+
+<div class="container">
+
+<div class="section-head">
+
+<span class="section-label">
+Leadership
+</span>
+
+<h2>
+IIC Convenor — Overall Management
+</h2>
+
+<p>
+
+The Convenor acts as the central point of coordination
+for the Core Team and ensures that every vertical works
+towards the same IIC objectives.
+
+</p>
+
+</div>
+
+
+<div class="responsibility-grid">
+
+
+<div class="responsibility-box">
+
+<h3>
+👑 Management Responsibilities
+</h3>
+
+<ul class="check-list">
+
+<li>
+Supervise all IIC Core Team activities.
+</li>
+
+<li>
+Assign responsibilities and coordinate verticals.
+</li>
+
+<li>
+Review proposed activities and initiatives.
+</li>
+
+<li>
+Coordinate with relevant faculty/institutional authorities.
+</li>
+
+<li>
+Set priorities and activity timelines.
+</li>
+
+<li>
+Monitor progress of every coordinator.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="responsibility-box">
+
+<h3>
+📊 Review & Accountability
+</h3>
+
+<ul class="check-list">
+
+<li>
+Conduct regular Core Team meetings.
+</li>
+
+<li>
+Review weekly/monthly progress.
+</li>
+
+<li>
+Identify delays or inactive responsibilities.
+</li>
+
+<li>
+Resolve coordination issues between teams.
+</li>
+
+<li>
+Review event reports and documentation.
+</li>
+
+<li>
+Maintain overall accountability of the council.
+</li>
+
+</ul>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     ROLES
+===================================================== -->
+
+<section
+class="section roles"
+id="roles"
+>
+
+<div class="container">
+
+<div class="section-head">
+
+<span class="section-label">
+Core Team SOP
+</span>
+
+<h2>
+Roles & Responsibilities
+</h2>
+
+<p>
+
+Every coordinator has ownership of a vertical.
+However, major activities should be coordinated
+with the Convenor and relevant team members.
+
+</p>
+
+</div>
+
+
+<div class="role-tools">
+
+<div class="search">
+
+<span>⌕</span>
+
+<input
+type="text"
+id="search"
+placeholder="Search role, skill or responsibility..."
+>
+
+</div>
+
+<div
+class="role-count"
+id="count"
+>
+Showing 11 roles
+</div>
+
+</div>
+
+
+<div
+class="role-list"
+id="roleList"
+>
+
+
+<!-- =====================================================
+     01 STARTUP
+===================================================== -->
+
+<div class="role">
+
+<button class="role-header">
+
+<div class="role-number">
+01
+</div>
+
+<div class="role-title">
+
+<h3>
+🚀 Start-up Coordinator
+</h3>
+
+<p>
+Build the startup ecosystem among DMIMS students.
+</p>
+
+</div>
+
+<div class="arrow">
+↓
+</div>
+
+</button>
+
+
+<div class="role-body">
+
+<p class="role-description">
+
+The Start-up Coordinator identifies students with
+startup/business ideas and connects them with the
+right mentors, incubators, competitions and opportunities.
+
+</p>
+
+
+<div class="role-columns">
+
+<div>
+
+<h4>
+Responsibilities
+</h4>
+
+<ul>
+
+<li>
+Find students with startup/business ideas.
+</li>
+
+<li>
+Maintain a database of student entrepreneurs.
+</li>
+
+<li>
+Connect ideas with mentors and incubators.
+</li>
+
+<li>
+Identify startup competitions.
+</li>
+
+<li>
+Organise startup pitching sessions.
+</li>
+
+<li>
+Help students prepare basic pitch decks.
+</li>
+
+<li>
+Conduct entrepreneurship workshops.
+</li>
+
+<li>
+Identify potential student startups.
+</li>
+
+<li>
+Encourage hackathon participation.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="best">
+
+<h4>
+Best For
+</h4>
+
+<p>
+Students interested in startups, business,
+entrepreneurship and networking.
+</p>
+
+<div class="tags">
+
+<span class="tag">Startups</span>
+<span class="tag">Business</span>
+<span class="tag">Entrepreneurship</span>
+<span class="tag">Networking</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     02 INTERNSHIP
+===================================================== -->
+
+<div class="role">
+
+<button class="role-header">
+
+<div class="role-number">
+02
+</div>
+
+<div class="role-title">
+
+<h3>
+💼 Internship Coordinator
+</h3>
+
+<p>
+Create internship and practical exposure opportunities.
+</p>
+
+</div>
+
+<div class="arrow">
+↓
+</div>
+
+</button>
+
+
+<div class="role-body">
+
+<p class="role-description">
+
+The Internship Coordinator builds relationships with
+startups, companies and organisations and connects
+students with practical exposure opportunities.
+
+</p>
+
+
+<div class="role-columns">
+
+<div>
+
+<h4>
+Responsibilities
+</h4>
+
+<ul>
+
+<li>
+Find companies offering internships.
+</li>
+
+<li>
+Build relationships with founders and HRs.
+</li>
+
+<li>
+Share relevant opportunities with students.
+</li>
+
+<li>
+Maintain an internship database.
+</li>
+
+<li>
+Coordinate company interaction sessions.
+</li>
+
+<li>
+Support internship fairs.
+</li>
+
+<li>
+Organise startup networking events.
+</li>
+
+<li>
+Track participation and outcomes.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="best">
+
+<h4>
+Best For
+</h4>
+
+<p>
+Students strong in communication, networking
+and professional coordination.
+</p>
+
+<div class="tags">
+
+<span class="tag">Communication</span>
+<span class="tag">Networking</span>
+<span class="tag">HR</span>
+<span class="tag">Coordination</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     03 IPR
+===================================================== -->
+
+<div class="role">
+
+<button class="role-header">
+
+<div class="role-number">
+03
+</div>
+
+<div class="role-title">
+
+<h3>
+💡 IPR Coordinator
+</h3>
+
+<p>
+Promote awareness of intellectual property rights.
+</p>
+
+</div>
+
+<div class="arrow">
+↓
+</div>
+
+</button>
+
+
+<div class="role-body">
+
+<p class="role-description">
+
+IPR means Intellectual Property Rights. This vertical
+creates awareness around patents, copyrights,
+trademarks, designs and related innovation protection.
+
+</p>
+
+
+<div class="role-columns">
+
+<div>
+
+<h4>
+Responsibilities
+</h4>
+
+<ul>
+
+<li>
+Organise IPR awareness sessions.
+</li>
+
+<li>
+Explain basic patent concepts.
+</li>
+
+<li>
+Explain copyright and trademark concepts.
+</li>
+
+<li>
+Identify innovations with IP potential.
+</li>
+
+<li>
+Connect innovators with experts.
+</li>
+
+<li>
+Promote IPR initiatives.
+</li>
+
+<li>
+Maintain IPR activity records.
+</li>
+
+<li>
+Create simple educational content.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="best">
+
+<h4>
+Example</h4>
+
+<p>
+
+Student develops a unique product or business idea →
+the coordinator helps them understand whether the
+creation may have intellectual-property protection options.
+
+</p>
+
+<div class="tags">
+
+<span class="tag">IPR</span>
+<span class="tag">Law</span>
+<span class="tag">Research</span>
+<span class="tag">Innovation</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     04 CREATIVE
+===================================================== -->
+
+<div class="role">
+
+<button class="role-header">
+
+<div class="role-number">
+04
+</div>
+
+<div class="role-title">
+
+<h3>
+🎨 Graphics & Creative Coordinator
+</h3>
+
+<p>
+Make IIC communication professional and visually consistent.
+</p>
+
+</div>
+
+<div class="arrow">
+↓
+</div>
+
+</button>
+
+
+<div class="role-body">
+
+<p class="role-description">
+
+The Creative Coordinator manages the visual identity
+of IIC across events, social media, presentations
+and campaigns.
+
+</p>
+
+
+<div class="role-columns">
+
+<div>
+
+<h4>
+Responsibilities
+</h4>
+
+<ul>
+
+<li>
+Design IIC event posters.
+</li>
+
+<li>
+Create certificates and invitations.
+</li>
+
+<li>
+Create banners and event branding.
+</li>
+
+<li>
+Design presentation templates.
+</li>
+
+<li>
+Create pitch-deck templates.
+</li>
+
+<li>
+Create social media creatives.
+</li>
+
+<li>
+Maintain visual consistency.
+</li>
+
+<li>
+Design recruitment campaigns.
+</li>
+
+<li>
+Support competition branding.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="best">
+
+<h4>
+Best For
+</h4>
+
+<p>
+Students comfortable with Canva, Photoshop,
+Illustrator, Figma, video editing and visual design.
+</p>
+
+<div class="tags">
+
+<span class="tag">Canva</span>
+<span class="tag">Figma</span>
+<span class="tag">Photoshop</span>
+<span class="tag">Video</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     05 YUKTI
+===================================================== -->
+
+<div class="role">
+
+<button class="role-header">
+
+<div class="role-number">
+05
+</div>
+
+<div class="role-title">
+
+<h3>
+🧠 YUKTI Coordinator
+</h3>
+
+<p>
+Help ideas move towards innovation platforms and competitions.
+</p>
+
+</div>
+
+<div class="arrow">
+↓
+</div>
+
+</button>
+
+
+<div class="role-body">
+
+<p class="role-description">
+
+The YUKTI Coordinator identifies promising ideas and
+helps students participate in innovation challenges,
+competitions, hackathons and mentoring opportunities.
+
+</p>
+
+
+<div class="role-columns">
+
+<div>
+
+<h4>
+Responsibilities
+</h4>
+
+<ul>
+
+<li>
+Identify promising student ideas.
+</li>
+
+<li>
+Encourage innovation challenge participation.
+</li>
+
+<li>
+Explain submission requirements.
+</li>
+
+<li>
+Coordinate idea competitions.
+</li>
+
+<li>
+Coordinate hackathons.
+</li>
+
+<li>
+Maintain innovation records.
+</li>
+
+<li>
+Connect promising ideas with mentors.
+</li>
+
+<li>
+Track participation and outcomes.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="best">
+
+<h4>
+Best For
+</h4>
+
+<p>
+Students interested in innovation, competitions,
+problem solving and discovering new ideas.
+</p>
+
+<div class="tags">
+
+<span class="tag">Innovation</span>
+<span class="tag">Competitions</span>
+<span class="tag">Ideas</span>
+<span class="tag">Problem Solving</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     06 WISE
+===================================================== -->
+
+<div class="role">
+
+<button class="role-header">
+
+<div class="role-number">
+06
+</div>
+
+<div class="role-title">
+
+<h3>
+👩‍💼 Student Lead – WISE
+</h3>
+
+<p>
+Encourage women students in innovation and entrepreneurship.
+</p>
+
+</div>
+
+<div class="arrow">
+↓
+</div>
+
+</button>
+
+
+<div class="role-body">
+
+<p class="role-description">
+
+WISE is positioned here as a women-focused innovation
+and entrepreneurship initiative that encourages participation,
+leadership, networking and startup development.
+
+</p>
+
+
+<div class="role-columns">
+
+<div>
+
+<h4>
+Responsibilities
+</h4>
+
+<ul>
+
+<li>
+Identify women students interested in entrepreneurship.
+</li>
+
+<li>
+Organise women-focused innovation sessions.
+</li>
+
+<li>
+Invite women founders and entrepreneurs.
+</li>
+
+<li>
+Promote women-led startups.
+</li>
+
+<li>
+Highlight women innovators.
+</li>
+
+<li>
+Encourage competition participation.
+</li>
+
+<li>
+Build a supportive networking community.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="best">
+
+<h4>
+Best For
+</h4>
+
+<p>
+Students who enjoy community building,
+networking and social initiatives.
+</p>
+
+<div class="tags">
+
+<span class="tag">Community</span>
+<span class="tag">Leadership</span>
+<span class="tag">Networking</span>
+<span class="tag">Women in Innovation</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     07 ARIIA
+===================================================== -->
+
+<div class="role">
+
+<button class="role-header">
+
+<div class="role-number">
+07
+</div>
+
+<div class="role-title">
+
+<h3>
+📊 ARIIA Coordinator
+</h3>
+
+<p>
+Support innovation documentation and institutional data.
+</p>
+
+</div>
+
+<div class="arrow">
+↓
+</div>
+
+</button>
+
+
+<div class="role-body">
+
+<p class="role-description">
+
+The ARIIA Coordinator supports organised collection
+of information, records, evidence and achievements
+related to institutional innovation activities.
+
+</p>
+
+
+<div class="role-columns">
+
+<div>
+
+<h4>
+Responsibilities
+</h4>
+
+<ul>
+
+<li>
+Collect innovation activity information.
+</li>
+
+<li>
+Maintain event and participation records.
+</li>
+
+<li>
+Coordinate data collection.
+</li>
+
+<li>
+Maintain photographs and reports.
+</li>
+
+<li>
+Maintain supporting evidence.
+</li>
+
+<li>
+Track startup achievements.
+</li>
+
+<li>
+Track innovation achievements.
+</li>
+
+<li>
+Maintain organised documentation.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="best">
+
+<h4>
+Important</h4>
+
+<p>
+
+This is primarily a
+<strong>documentation + data</strong>
+responsibility and not simply an event role.
+
+</p>
+
+<div class="tags">
+
+<span class="tag">Excel</span>
+<span class="tag">Google Sheets</span>
+<span class="tag">Data</span>
+<span class="tag">Documentation</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     08 ALUMNI
+===================================================== -->
+
+<div class="role">
+
+<button class="role-header">
+
+<div class="role-number">
+08
+</div>
+
+<div class="role-title">
+
+<h3>
+🤝 Alumni Coordinator
+</h3>
+
+<p>
+Bring alumni into the IIC ecosystem.
+</p>
+
+</div>
+
+<div class="arrow">
+↓
+</div>
+
+</button>
+
+
+<div class="role-body">
+
+<p class="role-description">
+
+The Alumni Coordinator builds long-term relationships
+with DMIMS alumni who can contribute as speakers,
+mentors, judges, founders or industry connections.
+
+</p>
+
+
+<div class="role-columns">
+
+<div>
+
+<h4>
+Responsibilities
+</h4>
+
+<ul>
+
+<li>
+Identify alumni entrepreneurs.
+</li>
+
+<li>
+Identify alumni founders and professionals.
+</li>
+
+<li>
+Maintain an alumni database.
+</li>
+
+<li>
+Contact alumni for talks.
+</li>
+
+<li>
+Coordinate mentoring sessions.
+</li>
+
+<li>
+Organise alumni-founder interactions.
+</li>
+
+<li>
+Invite alumni as judges.
+</li>
+
+<li>
+Explore internship opportunities.
+</li>
+
+<li>
+Build long-term relationships.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="best">
+
+<h4>
+Example</h4>
+
+<p>
+
+DMIMS alumnus → startup founder →
+IIC invitation → founder mentors students.
+
+</p>
+
+<div class="tags">
+
+<span class="tag">Alumni</span>
+<span class="tag">Mentoring</span>
+<span class="tag">Networking</span>
+<span class="tag">Industry</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     09 SOCIAL MEDIA
+===================================================== -->
+
+<div class="role">
+
+<button class="role-header">
+
+<div class="role-number">
+09
+</div>
+
+<div class="role-title">
+
+<h3>
+📱 Social Media Coordinator
+</h3>
+
+<p>
+Make sure people know what IIC DMIMS is doing.
+</p>
+
+</div>
+
+<div class="arrow">
+↓
+</div>
+
+</button>
+
+
+<div class="role-body">
+
+<p class="role-description">
+
+The Social Media Coordinator manages IIC's digital
+presence and turns activities, achievements and
+student stories into engaging content.
+
+</p>
+
+
+<div class="role-columns">
+
+<div>
+
+<h4>
+Responsibilities
+</h4>
+
+<ul>
+
+<li>
+Manage IIC Instagram and LinkedIn channels.
+</li>
+
+<li>
+Create content calendars.
+</li>
+
+<li>
+Promote upcoming events.
+</li>
+
+<li>
+Cover events through photos and videos.
+</li>
+
+<li>
+Create reels.
+</li>
+
+<li>
+Post student achievements.
+</li>
+
+<li>
+Highlight startups and innovators.
+</li>
+
+<li>
+Increase student engagement.
+</li>
+
+<li>
+Coordinate with Creative team.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="best">
+
+<h4>
+Content Ideas</h4>
+
+<p>
+
+Student Startup of the Month,
+Innovation Spotlight, Founder Friday,
+Idea Challenge and DMIMS Innovation Achievement.
+
+</p>
+
+<div class="tags">
+
+<span class="tag">Instagram</span>
+<span class="tag">LinkedIn</span>
+<span class="tag">Reels</span>
+<span class="tag">Digital Marketing</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     10 EVENT
+===================================================== -->
+
+<div class="role">
+
+<button class="role-header">
+
+<div class="role-number">
+10
+</div>
+
+<div class="role-title">
+
+<h3>
+🎤 Event & Outreach Coordinator
+</h3>
+
+<p>
+Actually make IIC events happen.
+</p>
+
+</div>
+
+<div class="arrow">
+↓
+</div>
+
+</button>
+
+
+<div class="role-body">
+
+<p class="role-description">
+
+The Event & Outreach Coordinator converts plans
+into properly executed IIC activities and manages
+people, venues, speakers and on-ground execution.
+
+</p>
+
+
+<div class="role-columns">
+
+<div>
+
+<h4>
+Responsibilities
+</h4>
+
+<ul>
+
+<li>
+Plan event timelines.
+</li>
+
+<li>
+Coordinate venues.
+</li>
+
+<li>
+Manage registrations.
+</li>
+
+<li>
+Coordinate speakers.
+</li>
+
+<li>
+Handle volunteers.
+</li>
+
+<li>
+Manage on-ground execution.
+</li>
+
+<li>
+Coordinate hospitality.
+</li>
+
+<li>
+Ensure events start and end properly.
+</li>
+
+<li>
+Collect participant feedback.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="best">
+
+<h4>
+Best For</h4>
+
+<p>
+Active and responsible students who enjoy
+people handling, coordination and execution.
+</p>
+
+<div class="tags">
+
+<span class="tag">Events</span>
+<span class="tag">Execution</span>
+<span class="tag">Leadership</span>
+<span class="tag">Outreach</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     11 DOCUMENTATION
+===================================================== -->
+
+<div class="role">
+
+<button class="role-header">
+
+<div class="role-number">
+11
+</div>
+
+<div class="role-title">
+
+<h3>
+🧑‍💻 Documentation & Reporting Coordinator
+</h3>
+
+<p>
+Ensure every IIC activity has proper documentation.
+</p>
+
+</div>
+
+<div class="arrow">
+↓
+</div>
+
+</button>
+
+
+<div class="role-body">
+
+<p class="role-description">
+
+This role ensures that every initiative has proper
+reports, attendance, photographs, videos, certificates,
+evidence and organised records.
+
+</p>
+
+
+<div class="role-columns">
+
+<div>
+
+<h4>
+Responsibilities
+</h4>
+
+<ul>
+
+<li>
+Maintain event reports.
+</li>
+
+<li>
+Collect photographs and videos.
+</li>
+
+<li>
+Maintain attendance.
+</li>
+
+<li>
+Prepare activity summaries.
+</li>
+
+<li>
+Maintain Google Drive folders.
+</li>
+
+<li>
+Maintain event calendar.
+</li>
+
+<li>
+Collect certificates and evidence.
+</li>
+
+<li>
+Coordinate with ARIIA.
+</li>
+
+<li>
+Support IIC documentation requirements.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="best">
+
+<h4>
+Best For</h4>
+
+<p>
+Organised, consistent and detail-oriented students
+who are comfortable with reports and data.
+</p>
+
+<div class="tags">
+
+<span class="tag">Reports</span>
+<span class="tag">Google Drive</span>
+<span class="tag">Documentation</span>
+<span class="tag">Data</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<div
+class="no-result"
+id="noResult"
+>
+
+<h3>
+No role found
+</h3>
+
+<p>
+Try another keyword or skill.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     OPERATING CYCLE
+===================================================== -->
+
+<section class="section cycle">
+
+<div class="container">
+
+<div class="section-head">
+
+<span class="section-label">
+Core Team Workflow
+</span>
+
+<h2>
+Every initiative follows a simple cycle.
+</h2>
+
+</div>
+
+
+<div class="cycle-grid">
+
+
+<div class="cycle-card">
+
+<div class="cycle-icon">
+💡
+</div>
+
+<h3>
+Identify
+</h3>
+
+<p>
+Find ideas, opportunities and student needs.
+</p>
+
+</div>
+
+
+<div class="cycle-card">
+
+<div class="cycle-icon">
+📝
+</div>
+
+<h3>
+Plan
+</h3>
+
+<p>
+Create objectives, timeline and responsibilities.
+</p>
+
+</div>
+
+
+<div class="cycle-card">
+
+<div class="cycle-icon">
+🤝
+</div>
+
+<h3>
+Coordinate
+</h3>
+
+<p>
+Bring together the required teams and stakeholders.
+</p>
+
+</div>
+
+
+<div class="cycle-card">
+
+<div class="cycle-icon">
+🚀
+</div>
+
+<h3>
+Execute
+</h3>
+
+<p>
+Conduct the activity professionally.
+</p>
+
+</div>
+
+
+<div class="cycle-card">
+
+<div class="cycle-icon">
+📊
+</div>
+
+<h3>
+Document
+</h3>
+
+<p>
+Record outcomes and maintain evidence.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     WEEKLY / MONTHLY SOP
+===================================================== -->
+
+<section class="section schedule">
+
+<div class="container">
+
+<div class="section-head">
+
+<span class="section-label">
+Operating Rhythm
+</span>
+
+<h2>
+Weekly & Monthly Responsibilities
+</h2>
+
+<p>
+The team should maintain a predictable working rhythm
+instead of becoming active only before events.
+</p>
+
+</div>
+
+
+<div class="schedule-grid">
+
+
+<div class="schedule-card">
+
+<span class="frequency">
+WEEKLY
+</span>
+
+<h3>
+Core Team Review
+</h3>
+
+<ul class="check-list">
+
+<li>
+Review current activities.
+</li>
+
+<li>
+Update progress of each vertical.
+</li>
+
+<li>
+Discuss upcoming events.
+</li>
+
+<li>
+Identify pending responsibilities.
+</li>
+
+<li>
+Share opportunities and student ideas.
+</li>
+
+<li>
+Escalate problems to the Convenor.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="schedule-card">
+
+<span class="frequency">
+MONTHLY
+</span>
+
+<h3>
+IIC Performance Review
+</h3>
+
+<ul class="check-list">
+
+<li>
+Review activities completed.
+</li>
+
+<li>
+Review participation numbers.
+</li>
+
+<li>
+Review startup/innovation outcomes.
+</li>
+
+<li>
+Review social media performance.
+</li>
+
+<li>
+Review documentation status.
+</li>
+
+<li>
+Plan next month's initiatives.
+</li>
+
+</ul>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     EVENT SOP
+===================================================== -->
+
+<section class="section white">
+
+<div class="container">
+
+<div class="section-head">
+
+<span class="section-label">
+Event SOP
+</span>
+
+<h2>
+How an IIC event should move from idea to execution.
+</h2>
+
+</div>
+
+
+<div class="event-flow">
+
+
+<div class="event-step">
+
+<strong>
+01
+</strong>
+
+<h4>
+Idea
+</h4>
+
+<p>
+Identify the purpose.
+</p>
+
+</div>
+
+
+<div class="event-step">
+
+<strong>
+02
+</strong>
+
+<h4>
+Approval
+</h4>
+
+<p>
+Discuss with Convenor.
+</p>
+
+</div>
+
+
+<div class="event-step">
+
+<strong>
+03
+</strong>
+
+<h4>
+Planning
+</h4>
+
+<p>
+Venue, speaker, timeline.
+</p>
+
+</div>
+
+
+<div class="event-step">
+
+<strong>
+04
+</strong>
+
+<h4>
+Promotion
+</h4>
+
+<p>
+Creative + Social Media.
+</p>
+
+</div>
+
+
+<div class="event-step">
+
+<strong>
+05
+</strong>
+
+<h4>
+Execution
+</h4>
+
+<p>
+Event & volunteers.
+</p>
+
+</div>
+
+
+<div class="event-step">
+
+<strong>
+06
+</strong>
+
+<h4>
+Report
+</h4>
+
+<p>
+Documentation + outcomes.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     DOCUMENTATION
+===================================================== -->
+
+<section class="section documentation">
+
+<div class="container">
+
+<div class="section-head">
+
+<span class="section-label">
+Documentation SOP
+</span>
+
+<h2>
+If it happened, document it.
+</h2>
+
+<p>
+Every major IIC activity should leave behind an organised
+record that can be reviewed later.
+</p>
+
+</div>
+
+
+<div class="doc-grid">
+
+
+<div class="doc-card">
+
+<h3>
+📸 Photos & Videos
+</h3>
+
+<p>
+Event photographs, videos, speaker photographs
+and relevant visual evidence.
+</p>
+
+</div>
+
+
+<div class="doc-card">
+
+<h3>
+📝 Event Report
+</h3>
+
+<p>
+Purpose, date, venue, speakers, activities,
+participation and outcomes.
+</p>
+
+</div>
+
+
+<div class="doc-card">
+
+<h3>
+👥 Attendance
+</h3>
+
+<p>
+Maintain participant and volunteer attendance
+where applicable.
+</p>
+
+</div>
+
+
+<div class="doc-card">
+
+<h3>
+🏆 Achievements
+</h3>
+
+<p>
+Record student startups, competitions,
+awards, recognitions and outcomes.
+</p>
+
+</div>
+
+
+<div class="doc-card">
+
+<h3>
+📁 Google Drive
+</h3>
+
+<p>
+Keep reports, certificates, photographs and
+supporting evidence organised.
+</p>
+
+</div>
+
+
+<div class="doc-card">
+
+<h3>
+📊 Data
+</h3>
+
+<p>
+Maintain structured records so information
+can be retrieved when required.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     CODE OF CONDUCT
+===================================================== -->
+
+<section
+class="section conduct"
+id="conduct"
+>
+
+<div class="container">
+
+<div class="section-head">
+
+<span class="section-label">
+Core Team Guidelines
+</span>
+
+<h2>
+How an IIC member is expected to work.
+</h2>
+
+</div>
+
+
+<div class="conduct-grid">
+
+
+<div class="conduct-item">
+
+<div class="conduct-icon">
+01
+</div>
+
+<div>
+
+<h4>
+Take Ownership
+</h4>
+
+<p>
+If you accept a responsibility, follow it through until completion.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="conduct-item">
+
+<div class="conduct-icon">
+02
+</div>
+
+<div>
+
+<h4>
+Communicate
+</h4>
+
+<p>
+Keep the Convenor and relevant team members updated.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="conduct-item">
+
+<div class="conduct-icon">
+03
+</div>
+
+<div>
+
+<h4>
+Meet Deadlines
+</h4>
+
+<p>
+Respect timelines, especially before events and submissions.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="conduct-item">
+
+<div class="conduct-icon">
+04
+</div>
+
+<div>
+
+<h4>
+Work as One Team
+</h4>
+
+<p>
+Coordinators should collaborate rather than work in isolated groups.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="conduct-item">
+
+<div class="conduct-icon">
+05
+</div>
+
+<div>
+
+<h4>
+Be Professional
+</h4>
+
+<p>
+Maintain proper communication and behaviour with students,
+faculty, guests and external stakeholders.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="conduct-item">
+
+<div class="conduct-icon">
+06
+</div>
+
+<div>
+
+<h4>
+Document Your Work
+</h4>
+
+<p>
+Activities should be properly recorded and evidence should
+not be left until the end of the year.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="conduct-item">
+
+<div class="conduct-icon">
+07
+</div>
+
+<div>
+
+<h4>
+Ask When Stuck
+</h4>
+
+<p>
+Problems should be communicated early instead of remaining hidden.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="conduct-item">
+
+<div class="conduct-icon">
+08
+</div>
+
+<div>
+
+<h4>
+Represent IIC Responsibly
+</h4>
+
+<p>
+Every Core Team member represents IIC DMIMS when interacting
+with students and external stakeholders.
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="cta-section">
+
+<div class="container">
+
+<div class="cta">
+
+<div class="cta-content">
+
+<h2>
+Don't just hold a designation.
+Own a responsibility.
+</h2>
+
+<p>
+
+IIC DMIMS needs students who are willing to take initiative,
+work with people, learn through execution and build an
+innovation culture together.
+
+</p>
+
+
+<div class="cta-buttons">
+
+<a
+href="https://iicdmims.vercel.app/join.html"
+class="btn btn-primary"
+>
+Join IIC DMIMS →
+</a>
+
+<a
+href="#roles"
+class="btn btn-outline"
+>
+Explore Roles
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+<div class="container">
+
+<div class="footer-grid">
+
+
+<div>
+
+<div class="footer-brand">
+
+<img
+src="https://iic.mic.gov.in/assets/assets/images/iiclogo.png"
+alt="IIC Logo"
+>
+
+<div>
+
+<strong style="color:white;">
+IIC DMIMS
+</strong>
+
+<div style="font-size:10px;">
+Institution's Innovation Council
+</div>
+
+</div>
+
+</div>
+
+<p>
+
+Building a culture of innovation, entrepreneurship,
+creativity and leadership at DMIMS.
+
+</p>
+
+</div>
+
+
+<div>
+
+<h3>
+Core Team
+</h3>
+
+<ul>
+
+<li>
+<a href="#roles">
+Start-up
+</a>
+</li>
+
+<li>
+<a href="#roles">
+Internship
+</a>
+</li>
+
+<li>
+<a href="#roles">
+IPR
+</a>
+</li>
+
+<li>
+<a href="#roles">
+Creative
+</a>
+</li>
+
+<li>
+<a href="#roles">
+YUKTI
+</a>
+</li>
+
+</ul>
+
+</div>
+
+
+<div>
+
+<h3>
+Management
+</h3>
+
+<ul>
+
+<li>
+<a href="#structure">
+IIC Convenor
+</a>
+</li>
+
+<li>
+<a href="#sop">
+Operating SOP
+</a>
+</li>
+
+<li>
+<a href="#conduct">
+Guidelines
+</a>
+</li>
+
+<li>
+<a href="https://iicdmims.vercel.app/join.html">
+Join IIC
+</a>
+</li>
+
+</ul>
+
+</div>
+
+
+</div>
+
+
+<div class="footer-bottom">
+
+<span>
+© 2026 IIC DMIMS. All Rights Reserved.
+</span>
+
+<span>
+Innovation • Entrepreneurship • Leadership
+</span>
+
+</div>
+
+</div>
+
+</footer>
+
+
+<!-- =====================================================
+     BACK TO TOP
+===================================================== -->
+
+<button
+class="back-top"
+id="backTop"
+>
+↑
+</button>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+/* =========================================================
+   MOBILE NAVIGATION
+========================================================= */
+
+const menuBtn =
+document.getElementById("menuBtn");
+
+const nav =
+document.getElementById("nav");
+
+menuBtn.addEventListener("click",()=>{
+
+    nav.classList.toggle("active");
+
+    menuBtn.textContent =
+        nav.classList.contains("active")
+        ? "✕"
+        : "☰";
+
+});
+
+
+document.querySelectorAll(".nav a")
+.forEach(link=>{
+
+    link.addEventListener("click",()=>{
+
+        nav.classList.remove("active");
+
+        menuBtn.textContent="☰";
+
+    });
+
+});
+
+
+/* =========================================================
+   ROLE ACCORDION
+========================================================= */
+
+const roles =
+document.querySelectorAll(".role");
+
+
+roles.forEach(role=>{
+
+    const header =
+        role.querySelector(".role-header");
+
+
+    header.addEventListener("click",()=>{
+
+        const active =
+            role.classList.contains("active");
+
+
+        roles.forEach(item=>{
+            item.classList.remove("active");
+        });
+
+
+        if(!active){
+
+            role.classList.add("active");
+
+        }
+
+    });
+
+});
+
+
+/* =========================================================
+   ROLE SEARCH
+========================================================= */
+
+const search =
+document.getElementById("search");
+
+const count =
+document.getElementById("count");
+
+const noResult =
+document.getElementById("noResult");
+
+
+search.addEventListener("input",()=>{
+
+    const value =
+        search.value
+        .toLowerCase()
+        .trim();
+
+
+    let visible=0;
+
+
+    roles.forEach(role=>{
+
+        const text =
+            role.innerText.toLowerCase();
+
+
+        if(text.includes(value)){
+
+            role.style.display="";
+            visible++;
+
+        }else{
+
+            role.style.display="none";
+
+        }
+
+    });
+
+
+    count.textContent =
+        `Showing ${visible} role${visible!==1?"s":""}`;
+
+
+    noResult.style.display =
+        visible===0
+        ? "block"
+        : "none";
+
+});
+
+
+/* =========================================================
+   BACK TO TOP
+========================================================= */
+
+const backTop =
+document.getElementById("backTop");
+
+
+window.addEventListener("scroll",()=>{
+
+    if(window.scrollY>500){
+
+        backTop.classList.add("show");
+
+    }else{
+
+        backTop.classList.remove("show");
+
+    }
+
+});
+
+
+backTop.addEventListener("click",()=>{
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+});
+
+
+/* =========================================================
+   ESCAPE — CLOSE ALL
+========================================================= */
+
+document.addEventListener("keydown",(event)=>{
+
+    if(event.key==="Escape"){
+
+        roles.forEach(role=>{
+            role.classList.remove("active");
+        });
+
+        search.value="";
+
+        roles.forEach(role=>{
+            role.style.display="";
+        });
+
+        count.textContent="Showing 11 roles";
+
+        noResult.style.display="none";
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
