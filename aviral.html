@@ -1,0 +1,1502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>IIC DMIMS | Sample Student Assessment - Aviral Pathak</title>
+
+<style>
+:root{
+    --navy:#071c3d;
+    --navy2:#0c2c58;
+    --orange:#f58220;
+    --orange2:#ff9d45;
+    --white:#ffffff;
+    --light:#f5f7fa;
+    --text:#172033;
+    --muted:#667085;
+    --border:#dfe5ec;
+    --green:#16803c;
+}
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#dfe3e8;
+    color:var(--text);
+    line-height:1.6;
+}
+
+/* ================= PRINT ================= */
+
+@page{
+    size:A4;
+    margin:0;
+}
+
+.page{
+    width:210mm;
+    min-height:297mm;
+    margin:20px auto;
+    background:white;
+    padding:22mm 20mm;
+    position:relative;
+    box-shadow:0 5px 25px rgba(0,0,0,.12);
+    page-break-after:always;
+}
+
+.page:last-child{
+    page-break-after:auto;
+}
+
+@media print{
+
+    body{
+        background:white;
+    }
+
+    .page{
+        margin:0;
+        box-shadow:none;
+    }
+
+    .print-button{
+        display:none;
+    }
+}
+
+/* ================= PRINT BUTTON ================= */
+
+.print-button{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    z-index:100;
+    border:0;
+    padding:13px 20px;
+    border-radius:8px;
+    background:var(--orange);
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    box-shadow:0 5px 20px rgba(0,0,0,.2);
+}
+
+.print-button:hover{
+    background:var(--orange2);
+}
+
+/* ================= HEADER ================= */
+
+.doc-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding-bottom:15px;
+    border-bottom:2px solid var(--navy);
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.brand img{
+    width:55px;
+    height:55px;
+    object-fit:contain;
+}
+
+.brand h2{
+    color:var(--navy);
+    font-size:18px;
+}
+
+.brand p{
+    color:var(--muted);
+    font-size:11px;
+}
+
+.document-type{
+    text-align:right;
+    font-size:11px;
+    color:var(--muted);
+}
+
+.document-type strong{
+    color:var(--orange);
+    display:block;
+    font-size:13px;
+}
+
+/* ================= COVER ================= */
+
+.cover{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.cover-content{
+    margin-top:40px;
+}
+
+.badge{
+    display:inline-block;
+    background:#fff0e5;
+    color:var(--orange);
+    padding:7px 13px;
+    border-radius:20px;
+    font-size:11px;
+    font-weight:bold;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+.cover h1{
+    font-size:42px;
+    color:var(--navy);
+    line-height:1.1;
+    margin:20px 0 10px;
+}
+
+.cover h1 span{
+    color:var(--orange);
+}
+
+.cover-subtitle{
+    color:var(--muted);
+    font-size:18px;
+    max-width:600px;
+}
+
+.student-box{
+    margin-top:45px;
+    border:1px solid var(--border);
+    border-left:5px solid var(--orange);
+    padding:22px;
+    background:#fafbfd;
+}
+
+.student-box div{
+    margin:7px 0;
+}
+
+.student-box strong{
+    color:var(--navy);
+    display:inline-block;
+    width:145px;
+}
+
+.cover-note{
+    margin-top:40px;
+    padding:17px;
+    background:var(--navy);
+    color:white;
+    border-radius:8px;
+    font-size:13px;
+}
+
+.cover-note strong{
+    color:#ffb56f;
+}
+
+/* ================= PAGE TITLES ================= */
+
+.page-label{
+    color:var(--orange);
+    font-size:11px;
+    font-weight:bold;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    margin-bottom:7px;
+}
+
+h1.page-title{
+    font-size:30px;
+    color:var(--navy);
+    margin-bottom:10px;
+}
+
+.page-intro{
+    color:var(--muted);
+    font-size:14px;
+    margin-bottom:25px;
+}
+
+/* ================= SECTION ================= */
+
+.section{
+    margin-top:25px;
+}
+
+.section-title{
+    font-size:18px;
+    color:var(--navy);
+    border-left:4px solid var(--orange);
+    padding-left:10px;
+    margin-bottom:12px;
+}
+
+p{
+    font-size:13.5px;
+}
+
+ul{
+    margin:10px 0 0 20px;
+}
+
+li{
+    font-size:13px;
+    margin:7px 0;
+}
+
+/* ================= INFO CARDS ================= */
+
+.info-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+}
+
+.info-card{
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:17px;
+    background:#fbfcfe;
+}
+
+.info-card h3{
+    font-size:14px;
+    color:var(--navy);
+    margin-bottom:7px;
+}
+
+.info-card p{
+    color:var(--muted);
+}
+
+/* ================= IDEA BOX ================= */
+
+.idea-box{
+    background:#f7f9fc;
+    border:1px solid var(--border);
+    padding:20px;
+    border-radius:8px;
+    margin-top:12px;
+}
+
+.idea-box h3{
+    color:var(--navy);
+    font-size:17px;
+    margin-bottom:8px;
+}
+
+.highlight{
+    color:var(--orange);
+    font-weight:bold;
+}
+
+/* ================= PROCESS ================= */
+
+.process{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:8px;
+    margin-top:15px;
+}
+
+.process div{
+    background:var(--navy);
+    color:white;
+    text-align:center;
+    padding:13px 5px;
+    border-radius:7px;
+    font-size:11px;
+    font-weight:bold;
+}
+
+.process div span{
+    display:block;
+    color:#ffb56f;
+    font-size:9px;
+    margin-top:3px;
+}
+
+/* ================= TABLE ================= */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:15px;
+}
+
+th{
+    background:var(--navy);
+    color:white;
+    text-align:left;
+    padding:10px;
+    font-size:11px;
+}
+
+td{
+    padding:10px;
+    border:1px solid var(--border);
+    font-size:11.5px;
+    vertical-align:top;
+}
+
+td:first-child{
+    font-weight:bold;
+    color:var(--navy);
+}
+
+/* ================= TIMELINE ================= */
+
+.timeline{
+    margin-top:15px;
+}
+
+.timeline-item{
+    display:grid;
+    grid-template-columns:75px 1fr;
+    margin-bottom:13px;
+}
+
+.timeline-day{
+    font-weight:bold;
+    color:var(--orange);
+    font-size:12px;
+}
+
+.timeline-content{
+    border-left:2px solid var(--border);
+    padding-left:15px;
+}
+
+.timeline-content strong{
+    color:var(--navy);
+    font-size:13px;
+}
+
+.timeline-content p{
+    color:var(--muted);
+    margin-top:3px;
+}
+
+/* ================= OUTCOME ================= */
+
+.outcome-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-top:15px;
+}
+
+.outcome{
+    padding:16px;
+    background:#f7f9fc;
+    border:1px solid var(--border);
+    border-radius:7px;
+}
+
+.outcome strong{
+    color:var(--navy);
+    display:block;
+    margin-bottom:4px;
+}
+
+.outcome span{
+    font-size:12px;
+    color:var(--muted);
+}
+
+/* ================= FOOTER ================= */
+
+.page-footer{
+    position:absolute;
+    bottom:12mm;
+    left:20mm;
+    right:20mm;
+    border-top:1px solid var(--border);
+    padding-top:7px;
+    display:flex;
+    justify-content:space-between;
+    color:#8993a3;
+    font-size:9px;
+}
+
+/* ================= FINAL ================= */
+
+.final-box{
+    background:var(--navy);
+    color:white;
+    padding:30px;
+    border-radius:10px;
+    margin-top:30px;
+}
+
+.final-box h2{
+    color:white;
+    margin-bottom:10px;
+}
+
+.final-box p{
+    color:#cbd6e4;
+}
+
+.signature{
+    margin-top:45px;
+    border-top:1px solid var(--border);
+    padding-top:15px;
+    width:220px;
+}
+
+.signature strong{
+    color:var(--navy);
+}
+
+@media(max-width:800px){
+
+    .page{
+        width:100%;
+        min-height:auto;
+        margin:0;
+        padding:30px 25px 70px;
+    }
+
+    .info-grid,
+    .outcome-grid{
+        grid-template-columns:1fr;
+    }
+
+    .process{
+        grid-template-columns:1fr 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<button class="print-button" onclick="window.print()">
+    🖨 Save / Print PDF
+</button>
+
+
+<!-- =====================================================
+     PAGE 1 — COVER
+===================================================== -->
+
+<div class="page cover">
+
+    <div class="doc-header">
+
+        <div class="brand">
+
+            <img
+                src="https://iic.mic.gov.in/assets/assets/images/iiclogo.png"
+                alt="IIC Logo"
+            >
+
+            <div>
+                <h2>IIC DMIMS</h2>
+                <p>Institution's Innovation Council</p>
+            </div>
+
+        </div>
+
+        <div class="document-type">
+
+            <strong>RECRUITMENT ASSESSMENT</strong>
+
+            Sample Student Submission<br>
+            Academic Year 2026–27
+
+        </div>
+
+    </div>
+
+
+    <div class="cover-content">
+
+        <span class="badge">
+            Sample Assignment
+        </span>
+
+        <h1>
+            Building a Student<br>
+            <span>Startup Ecosystem</span>
+        </h1>
+
+        <p class="cover-subtitle">
+            A practical action plan for IIC DMIMS
+        </p>
+
+
+        <div class="student-box">
+
+            <div>
+                <strong>Student Name:</strong>
+                Aviral Pathak
+            </div>
+
+            <div>
+                <strong>Preferred Role:</strong>
+                Start-up Coordinator
+            </div>
+
+            <div>
+                <strong>Second Preference:</strong>
+                Social Media Coordinator
+            </div>
+
+            <div>
+                <strong>Institute:</strong>
+                DMIMS
+            </div>
+
+            <div>
+                <strong>Assessment:</strong>
+                IIC Core Team Recruitment
+            </div>
+
+        </div>
+
+
+        <div class="cover-note">
+
+            <strong>Purpose of this document:</strong><br>
+
+            To demonstrate how I would identify student startup
+            ideas, connect students with opportunities and create
+            practical entrepreneurship activities through IIC DMIMS.
+
+        </div>
+
+    </div>
+
+
+    <div class="page-footer">
+
+        <span>IIC DMIMS • Recruitment Assessment</span>
+        <span>01</span>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     PAGE 2 — UNDERSTANDING THE ROLE
+===================================================== -->
+
+<div class="page">
+
+    <div class="doc-header">
+
+        <div class="brand">
+
+            <img
+                src="https://iic.mic.gov.in/assets/assets/images/iiclogo.png"
+                alt="IIC Logo"
+            >
+
+            <div>
+                <h2>IIC DMIMS</h2>
+                <p>Start-up Coordinator Assessment</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div style="margin-top:30px;">
+
+        <div class="page-label">
+            01 • Role Understanding
+        </div>
+
+        <h1 class="page-title">
+            What Does a Start-up Coordinator Do?
+        </h1>
+
+        <p class="page-intro">
+
+            My understanding is that the Start-up Coordinator should
+            not only organise startup events. The role should help
+            identify students who have ideas and create a path for
+            those ideas to move forward.
+
+        </p>
+
+
+        <div class="info-grid">
+
+            <div class="info-card">
+
+                <h3>🔎 Identify</h3>
+
+                <p>
+                    Find students who have business ideas,
+                    startup interests or solutions to real problems.
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <h3>🤝 Connect</h3>
+
+                <p>
+                    Connect students with mentors, founders,
+                    incubators, competitions and useful resources.
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <h3>🎤 Enable</h3>
+
+                <p>
+                    Create pitching opportunities where students
+                    can explain and test their ideas.
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <h3>📈 Track</h3>
+
+                <p>
+                    Maintain a simple database of ideas, founders,
+                    activities and progress.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="section">
+
+            <h2 class="section-title">
+                My Approach
+            </h2>
+
+            <p>
+
+                If I am selected, I would focus on creating a system
+                where a student does not feel that their idea ends
+                after one event. The objective would be to create a
+                journey from an idea to validation, mentorship and
+                possible execution.
+
+            </p>
+
+
+            <div class="process">
+
+                <div>
+                    IDEA
+                    <span>Student thought</span>
+                </div>
+
+                <div>
+                    VALIDATE
+                    <span>Understand problem</span>
+                </div>
+
+                <div>
+                    CONNECT
+                    <span>Mentor / ecosystem</span>
+                </div>
+
+                <div>
+                    ACTION
+                    <span>Prototype / pitch</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="section">
+
+            <h2 class="section-title">
+                Why This Role?
+            </h2>
+
+            <p>
+
+                I am interested in entrepreneurship and I like the
+                process of taking an idea and converting it into
+                something practical. I also think students may have
+                good ideas but may not know whom to approach or what
+                their next step should be.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="page-footer">
+
+        <span>IIC DMIMS • Aviral Pathak</span>
+        <span>02</span>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     PAGE 3 — COMMON CHALLENGE
+===================================================== -->
+
+<div class="page">
+
+    <div class="doc-header">
+
+        <div class="brand">
+
+            <img
+                src="https://iic.mic.gov.in/assets/assets/images/iiclogo.png"
+                alt="IIC Logo"
+            >
+
+            <div>
+                <h2>IIC DMIMS</h2>
+                <p>Common IIC Challenge</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div style="margin-top:30px;">
+
+        <div class="page-label">
+            02 • Common Challenge
+        </div>
+
+        <h1 class="page-title">
+            IDEA TO IMPACT — DMIMS
+        </h1>
+
+        <p class="page-intro">
+
+            IIC wants to increase student participation in
+            innovation and entrepreneurship. My proposed activity
+            is designed to make students participate without
+            requiring them to already have a complete startup.
+
+        </p>
+
+
+        <div class="idea-box">
+
+            <h3>
+                🚀 Activity: IDEA TO IMPACT
+            </h3>
+
+            <p>
+
+                A one-week student challenge where participants
+                identify a real problem, develop a simple solution,
+                validate it with other students and present their
+                idea at a final pitch session.
+
+            </p>
+
+        </div>
+
+
+        <div class="section">
+
+            <h2 class="section-title">
+                Problem
+            </h2>
+
+            <p>
+
+                Many students may have ideas but do not know how to
+                start. Some may also believe that they need a
+                complete business plan before approaching an
+                entrepreneurship initiative.
+
+            </p>
+
+        </div>
+
+
+        <div class="section">
+
+            <h2 class="section-title">
+                Objective
+            </h2>
+
+            <ul>
+
+                <li>Encourage students to identify real problems.</li>
+
+                <li>Introduce students to basic startup thinking.</li>
+
+                <li>Give students an opportunity to present ideas.</li>
+
+                <li>Identify promising student innovators.</li>
+
+                <li>Connect selected ideas with mentors.</li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="section">
+
+            <h2 class="section-title">
+                Target Students
+            </h2>
+
+            <p>
+
+                The activity can be open to all DMIMS students,
+                especially students interested in startups,
+                innovation, business, technology and social impact.
+
+            </p>
+
+        </div>
+
+
+        <div class="section">
+
+            <h2 class="section-title">
+                Expected Output
+            </h2>
+
+            <div class="outcome-grid">
+
+                <div class="outcome">
+
+                    <strong>Student Ideas</strong>
+
+                    <span>
+                        Collection of practical problems and
+                        possible solutions.
+                    </span>
+
+                </div>
+
+                <div class="outcome">
+
+                    <strong>Shortlisted Ideas</strong>
+
+                    <span>
+                        Promising ideas selected for further support.
+                    </span>
+
+                </div>
+
+                <div class="outcome">
+
+                    <strong>Student Pitching</strong>
+
+                    <span>
+                        Students get practical presentation exposure.
+                    </span>
+
+                </div>
+
+                <div class="outcome">
+
+                    <strong>Mentorship</strong>
+
+                    <span>
+                        Selected teams can be connected to mentors.
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="page-footer">
+
+        <span>IIC DMIMS • Aviral Pathak</span>
+        <span>03</span>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     PAGE 4 — EXECUTION PLAN
+===================================================== -->
+
+<div class="page">
+
+    <div class="doc-header">
+
+        <div class="brand">
+
+            <img
+                src="https://iic.mic.gov.in/assets/assets/images/iiclogo.png"
+                alt="IIC Logo"
+            >
+
+            <div>
+                <h2>IIC DMIMS</h2>
+                <p>Execution Plan</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div style="margin-top:30px;">
+
+        <div class="page-label">
+            03 • Execution
+        </div>
+
+        <h1 class="page-title">
+            How I Would Execute It
+        </h1>
+
+        <p class="page-intro">
+
+            I would keep the activity simple enough for students
+            to participate while still creating useful outputs
+            for IIC.
+
+        </p>
+
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <div class="timeline-day">
+                    DAY 1
+                </div>
+
+                <div class="timeline-content">
+
+                    <strong>Problem Hunt</strong>
+
+                    <p>
+                        Students identify one problem they observe
+                        in college, society, business or daily life.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-day">
+                    DAY 2
+                </div>
+
+                <div class="timeline-content">
+
+                    <strong>Idea Development</strong>
+
+                    <p>
+                        Students explain who faces the problem,
+                        why it matters and what solution they propose.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-day">
+                    DAY 3
+                </div>
+
+                <div class="timeline-content">
+
+                    <strong>Validation</strong>
+
+                    <p>
+                        Students speak to potential users and collect
+                        basic feedback about their idea.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-day">
+                    DAY 4
+                </div>
+
+                <div class="timeline-content">
+
+                    <strong>Mentor Interaction</strong>
+
+                    <p>
+                        IIC can arrange a short interaction with an
+                        entrepreneur, faculty member or mentor.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-day">
+                    DAY 5
+                </div>
+
+                <div class="timeline-content">
+
+                    <strong>Pitch Preparation</strong>
+
+                    <p>
+                        Students prepare a short presentation covering
+                        problem, solution, target user and next step.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-day">
+                    DAY 7
+                </div>
+
+                <div class="timeline-content">
+
+                    <strong>Idea Pitch Day</strong>
+
+                    <p>
+                        Shortlisted students present their ideas to a
+                        small panel and receive feedback.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="section">
+
+            <h2 class="section-title">
+                Resources Required
+            </h2>
+
+            <table>
+
+                <tr>
+                    <th>Resource</th>
+                    <th>Purpose</th>
+                </tr>
+
+                <tr>
+                    <td>Classroom / Seminar Hall</td>
+                    <td>Mentor session and final pitch.</td>
+                </tr>
+
+                <tr>
+                    <td>Google Form</td>
+                    <td>Idea registration and participant details.</td>
+                </tr>
+
+                <tr>
+                    <td>Google Sheet</td>
+                    <td>Track ideas, participants and progress.</td>
+                </tr>
+
+                <tr>
+                    <td>Mentor / Entrepreneur</td>
+                    <td>Give practical feedback.</td>
+                </tr>
+
+                <tr>
+                    <td>IIC Team</td>
+                    <td>Coordination, promotion and documentation.</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <div class="page-footer">
+
+        <span>IIC DMIMS • Aviral Pathak</span>
+        <span>04</span>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     PAGE 5 — PROMOTION + MEASUREMENT
+===================================================== -->
+
+<div class="page">
+
+    <div class="doc-header">
+
+        <div class="brand">
+
+            <img
+                src="https://iic.mic.gov.in/assets/assets/images/iiclogo.png"
+                alt="IIC Logo"
+            >
+
+            <div>
+                <h2>IIC DMIMS</h2>
+                <p>Promotion & Measurement</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div style="margin-top:30px;">
+
+        <div class="page-label">
+            04 • Promotion & Results
+        </div>
+
+        <h1 class="page-title">
+            How I Would Promote the Activity
+        </h1>
+
+        <p class="page-intro">
+
+            The promotion should make students feel that they are
+            being invited to solve a problem, not simply attend
+            another college event.
+
+        </p>
+
+
+        <div class="info-grid">
+
+            <div class="info-card">
+
+                <h3>📱 WhatsApp</h3>
+
+                <p>
+                    Short message with a clear challenge,
+                    deadline and registration link.
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <h3>📸 Instagram</h3>
+
+                <p>
+                    Poster + short reel explaining the challenge
+                    in student-friendly language.
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <h3>🎤 Classroom Promotion</h3>
+
+                <p>
+                    Personally explain the challenge in classes
+                    and encourage students with ideas to apply.
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <h3>👥 Student Network</h3>
+
+                <p>
+                    Ask IIC volunteers and class representatives
+                    to reach students directly.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="section">
+
+            <h2 class="section-title">
+                Example Promotion Message
+            </h2>
+
+            <div class="idea-box">
+
+                <p>
+
+                    <strong>Have you ever noticed a problem and
+                    thought, "Someone should solve this"?</strong>
+
+                    <br><br>
+
+                    Now try to solve it.
+
+                    <br><br>
+
+                    Join <span class="highlight">IDEA TO IMPACT</span>
+                    by IIC DMIMS and turn one real-world problem
+                    into a practical idea.
+
+                    <br><br>
+
+                    No startup experience required.
+                    Just bring a problem worth solving.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="section">
+
+            <h2 class="section-title">
+                How I Would Measure Success
+            </h2>
+
+            <table>
+
+                <tr>
+                    <th>Metric</th>
+                    <th>What I Would Track</th>
+                </tr>
+
+                <tr>
+                    <td>Registrations</td>
+                    <td>Number of students who register.</td>
+                </tr>
+
+                <tr>
+                    <td>Participation</td>
+                    <td>Number of students who actually complete the challenge.</td>
+                </tr>
+
+                <tr>
+                    <td>Ideas Generated</td>
+                    <td>Total number of ideas submitted.</td>
+                </tr>
+
+                <tr>
+                    <td>Shortlisted Ideas</td>
+                    <td>Ideas that show potential for further development.</td>
+                </tr>
+
+                <tr>
+                    <td>Mentor Connections</td>
+                    <td>Number of students connected with mentors.</td>
+                </tr>
+
+                <tr>
+                    <td>Follow-up</td>
+                    <td>Number of ideas that continue after the activity.</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <div class="page-footer">
+
+        <span>IIC DMIMS • Aviral Pathak</span>
+        <span>05</span>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     PAGE 6 — CONCLUSION
+===================================================== -->
+
+<div class="page">
+
+    <div class="doc-header">
+
+        <div class="brand">
+
+            <img
+                src="https://iic.mic.gov.in/assets/assets/images/iiclogo.png"
+                alt="IIC Logo"
+            >
+
+            <div>
+                <h2>IIC DMIMS</h2>
+                <p>Student Assessment</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div style="margin-top:55px;">
+
+        <div class="page-label">
+            05 • Conclusion
+        </div>
+
+        <h1 class="page-title">
+            What I Would Bring to IIC
+        </h1>
+
+        <p class="page-intro">
+
+            My approach would be to focus on action rather than
+            only conducting events.
+
+        </p>
+
+
+        <div class="final-box">
+
+            <h2>
+                Idea → Action → Learning → Impact
+            </h2>
+
+            <p>
+
+                I believe IIC can become a platform where students
+                can test their ideas, meet people who can help them
+                and learn how entrepreneurship actually works.
+
+                <br><br>
+
+                If selected as Start-up Coordinator, I would like
+                to contribute by finding these students, creating
+                opportunities for them and making sure promising
+                ideas do not stop after the first conversation.
+
+            </p>
+
+        </div>
+
+
+        <div class="section">
+
+            <h2 class="section-title">
+                My First 30 Days
+            </h2>
+
+            <ul>
+
+                <li>
+                    Create a basic database of students interested
+                    in startups and entrepreneurship.
+                </li>
+
+                <li>
+                    Identify at least one student activity that
+                    can be conducted quickly.
+                </li>
+
+                <li>
+                    Find potential founders/mentors who can interact
+                    with DMIMS students.
+                </li>
+
+                <li>
+                    Start collecting student startup ideas.
+                </li>
+
+                <li>
+                    Build a simple follow-up system for promising ideas.
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="signature">
+
+            <strong>Aviral Pathak</strong><br>
+
+            Applicant<br>
+
+            IIC DMIMS Core Team Recruitment
+
+        </div>
+
+    </div>
+
+
+    <div class="page-footer">
+
+        <span>IIC DMIMS • Recruitment Assessment</span>
+        <span>06</span>
+
+    </div>
+
+</div>
+
+
+</body>
+</html>
