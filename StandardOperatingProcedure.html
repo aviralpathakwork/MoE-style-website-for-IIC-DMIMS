@@ -25,7 +25,6 @@
     --light:#f5f7fa;
     --border:#dfe5ec;
     --green:#157347;
-    --red:#b42318;
 
     --page-width:210mm;
     --page-height:297mm;
@@ -52,6 +51,7 @@ body{
         sans-serif;
     line-height:1.55;
 }
+
 
 /* =========================================================
    CONTROL BAR
@@ -89,6 +89,7 @@ body{
     background:var(--orange);
 }
 
+
 /* =========================================================
    A4 PAGE
 ========================================================= */
@@ -109,6 +110,7 @@ body{
 
     overflow:hidden;
 }
+
 
 /* =========================================================
    PAGE HEADER / FOOTER
@@ -171,6 +173,7 @@ body{
     font-size:8px;
     color:#7b8797;
 }
+
 
 /* =========================================================
    COVER PAGE
@@ -302,6 +305,7 @@ body{
     font-size:9px;
 }
 
+
 /* =========================================================
    TYPOGRAPHY
 ========================================================= */
@@ -351,6 +355,7 @@ h4{
 
     margin-bottom:6px;
 }
+
 
 /* =========================================================
    CONTENT BOXES
@@ -421,6 +426,7 @@ h4{
     margin-bottom:4px;
 }
 
+
 /* =========================================================
    OPERATING SYSTEM
 ========================================================= */
@@ -479,6 +485,7 @@ h4{
 
     font-weight:bold;
 }
+
 
 /* =========================================================
    CONVENOR
@@ -568,8 +575,9 @@ h4{
     margin-top:3px;
 }
 
+
 /* =========================================================
-   ROLE CARDS
+   ROLE FILTER
 ========================================================= */
 
 .role-filter{
@@ -608,6 +616,11 @@ h4{
 
     border-color:var(--orange);
 }
+
+
+/* =========================================================
+   ROLE CARDS
+========================================================= */
 
 .roles{
     display:grid;
@@ -733,8 +746,9 @@ h4{
     color:var(--orange);
 }
 
+
 /* =========================================================
-   KRA TABLE
+   TABLE
 ========================================================= */
 
 .table-wrap{
@@ -781,8 +795,9 @@ td:first-child{
     color:var(--navy);
 }
 
+
 /* =========================================================
-   PROCESS STEPS
+   PROCESS
 ========================================================= */
 
 .process{
@@ -848,6 +863,7 @@ td:first-child{
     color:var(--muted);
 }
 
+
 /* =========================================================
    KPI
 ========================================================= */
@@ -888,6 +904,7 @@ td:first-child{
     color:#c7d0df;
 }
 
+
 /* =========================================================
    CHECKLIST
 ========================================================= */
@@ -921,6 +938,7 @@ td:first-child{
 
     margin-right:7px;
 }
+
 
 /* =========================================================
    FINAL PAGE
@@ -981,6 +999,7 @@ td:first-child{
     color:var(--orange2);
 }
 
+
 /* =========================================================
    PRINT
 ========================================================= */
@@ -1029,6 +1048,7 @@ td:first-child{
         break-inside:avoid;
     }
 }
+
 
 /* =========================================================
    RESPONSIVE
@@ -1623,133 +1643,91 @@ td:first-child{
         <div class="process">
 
             <div class="process-step">
-
                 <div class="process-number">1</div>
-
                 <div class="process-content">
-
                     <strong>INPUT</strong>
-
                     <p>
                         A student idea, opportunity, requirement,
                         event proposal, partnership opportunity,
                         innovation challenge or institutional need
                         enters the system.
                     </p>
-
                 </div>
-
             </div>
 
 
             <div class="process-step">
-
                 <div class="process-number">2</div>
-
                 <div class="process-content">
-
                     <strong>IDENTIFY RESPONSIBILITY</strong>
-
                     <p>
                         The relevant KRA owner is identified.
                         If multiple KRAs are involved, a primary
                         owner and supporting roles are defined.
                     </p>
-
                 </div>
-
             </div>
 
 
             <div class="process-step">
-
                 <div class="process-number">3</div>
-
                 <div class="process-content">
-
                     <strong>PLAN</strong>
-
                     <p>
                         Define objective, people involved, timeline,
                         resources, expected output and success measure.
                     </p>
-
                 </div>
-
             </div>
 
 
             <div class="process-step">
-
                 <div class="process-number">4</div>
-
                 <div class="process-content">
-
                     <strong>EXECUTE</strong>
-
                     <p>
                         The responsible team carries out the activity
                         while coordinating with other relevant KRAs.
                     </p>
-
                 </div>
-
             </div>
 
 
             <div class="process-step">
-
                 <div class="process-number">5</div>
-
                 <div class="process-content">
-
                     <strong>OUTPUT</strong>
-
                     <p>
                         The activity produces a defined outcome:
                         event, participant engagement, startup lead,
                         internship opportunity, innovation submission,
                         content, report, connection or other result.
                     </p>
-
                 </div>
-
             </div>
 
 
             <div class="process-step">
-
                 <div class="process-number">6</div>
-
                 <div class="process-content">
-
                     <strong>CONTROL & REVIEW</strong>
-
                     <p>
                         The output is reviewed for completion,
                         quality, documentation and measurable impact.
                     </p>
-
                 </div>
-
             </div>
 
 
             <div class="process-step">
-
                 <div class="process-number">7</div>
-
                 <div class="process-content">
-
                     <strong>LEARN & IMPROVE</strong>
-
                     <p>
                         Feedback, problems and lessons are recorded
                         and used to improve the next cycle.
                     </p>
-
                 </div>
-
             </div>
 
         </div>
@@ -1806,7 +1784,7 @@ td:first-child{
         </h2>
 
         <p class="lead">
-            Each role owns a specific KRA. Ownership means taking
+            Each coordinator owns a specific KRA. Ownership means taking
             responsibility for generating useful outputs — not working
             independently from the rest of the council.
         </p>
@@ -1814,27 +1792,33 @@ td:first-child{
 
         <div class="role-filter">
 
-            <button class="filter-btn active" onclick="filterRoles('all',this)">
+            <button class="filter-btn active"
+                    onclick="filterRoles('all',this)">
                 All
             </button>
 
-            <button class="filter-btn" onclick="filterRoles('innovation',this)">
+            <button class="filter-btn"
+                    onclick="filterRoles('innovation',this)">
                 Innovation
             </button>
 
-            <button class="filter-btn" onclick="filterRoles('industry',this)">
+            <button class="filter-btn"
+                    onclick="filterRoles('industry',this)">
                 Industry
             </button>
 
-            <button class="filter-btn" onclick="filterRoles('creative',this)">
+            <button class="filter-btn"
+                    onclick="filterRoles('creative',this)">
                 Creative
             </button>
 
-            <button class="filter-btn" onclick="filterRoles('community',this)">
+            <button class="filter-btn"
+                    onclick="filterRoles('community',this)">
                 Community
             </button>
 
-            <button class="filter-btn" onclick="filterRoles('operations',this)">
+            <button class="filter-btn"
+                    onclick="filterRoles('operations',this)">
                 Operations
             </button>
 
@@ -1844,11 +1828,12 @@ td:first-child{
         <div class="roles">
 
 
-            <!-- STARTUP -->
+            <!-- STARTUP COORDINATOR -->
 
             <div class="role" data-category="innovation">
 
-                <div class="role-top" onclick="toggleRole(this.parentElement)">
+                <div class="role-top"
+                     onclick="toggleRole(this.parentElement)">
 
                     <div class="role-icon">🚀</div>
 
@@ -1898,11 +1883,13 @@ td:first-child{
             </div>
 
 
-            <!-- INTERNSHIP -->
+
+            <!-- INTERNSHIP COORDINATOR -->
 
             <div class="role" data-category="industry">
 
-                <div class="role-top" onclick="toggleRole(this.parentElement)">
+                <div class="role-top"
+                     onclick="toggleRole(this.parentElement)">
 
                     <div class="role-icon">💼</div>
 
@@ -1952,11 +1939,13 @@ td:first-child{
             </div>
 
 
-            <!-- IPR -->
+
+            <!-- IPR COORDINATOR -->
 
             <div class="role" data-category="innovation">
 
-                <div class="role-top" onclick="toggleRole(this.parentElement)">
+                <div class="role-top"
+                     onclick="toggleRole(this.parentElement)">
 
                     <div class="role-icon">💡</div>
 
@@ -2005,11 +1994,13 @@ td:first-child{
             </div>
 
 
+
             <!-- GRAPHICS -->
 
             <div class="role" data-category="creative">
 
-                <div class="role-top" onclick="toggleRole(this.parentElement)">
+                <div class="role-top"
+                     onclick="toggleRole(this.parentElement)">
 
                     <div class="role-icon">🎨</div>
 
@@ -2057,11 +2048,13 @@ td:first-child{
             </div>
 
 
+
             <!-- YUKTI -->
 
             <div class="role" data-category="innovation">
 
-                <div class="role-top" onclick="toggleRole(this.parentElement)">
+                <div class="role-top"
+                     onclick="toggleRole(this.parentElement)">
 
                     <div class="role-icon">🧠</div>
 
@@ -2111,11 +2104,13 @@ td:first-child{
             </div>
 
 
+
             <!-- WISE -->
 
             <div class="role" data-category="community">
 
-                <div class="role-top" onclick="toggleRole(this.parentElement)">
+                <div class="role-top"
+                     onclick="toggleRole(this.parentElement)">
 
                     <div class="role-icon">👩‍💼</div>
 
@@ -2163,11 +2158,13 @@ td:first-child{
             </div>
 
 
+
             <!-- ARIIA -->
 
             <div class="role" data-category="operations">
 
-                <div class="role-top" onclick="toggleRole(this.parentElement)">
+                <div class="role-top"
+                     onclick="toggleRole(this.parentElement)">
 
                     <div class="role-icon">📊</div>
 
@@ -2215,11 +2212,13 @@ td:first-child{
             </div>
 
 
+
             <!-- ALUMNI -->
 
             <div class="role" data-category="industry">
 
-                <div class="role-top" onclick="toggleRole(this.parentElement)">
+                <div class="role-top"
+                     onclick="toggleRole(this.parentElement)">
 
                     <div class="role-icon">🤝</div>
 
@@ -2268,11 +2267,13 @@ td:first-child{
             </div>
 
 
-            <!-- SOCIAL -->
+
+            <!-- SOCIAL MEDIA -->
 
             <div class="role" data-category="creative">
 
-                <div class="role-top" onclick="toggleRole(this.parentElement)">
+                <div class="role-top"
+                     onclick="toggleRole(this.parentElement)">
 
                     <div class="role-icon">📱</div>
 
@@ -2322,65 +2323,13 @@ td:first-child{
             </div>
 
 
-            <!-- EVENT -->
-
-            <div class="role" data-category="operations">
-
-                <div class="role-top" onclick="toggleRole(this.parentElement)">
-
-                    <div class="role-icon">🎤</div>
-
-                    <div>
-                        <div class="role-name">
-                            Event & Outreach Coordinator
-                        </div>
-
-                        <div class="role-category">
-                            Operations • Execution
-                        </div>
-                    </div>
-
-                    <div class="role-arrow">▼</div>
-
-                </div>
-
-                <div class="role-content">
-
-                    <h4>Key Responsibility</h4>
-
-                    <p class="lead">
-                        Convert IIC plans into properly executed
-                        events and outreach activities.
-                    </p>
-
-                    <h4>Responsibilities</h4>
-
-                    <ul>
-                        <li>Prepare event timelines.</li>
-                        <li>Coordinate venues and registrations.</li>
-                        <li>Coordinate speakers and participants.</li>
-                        <li>Assign volunteers.</li>
-                        <li>Handle on-ground execution.</li>
-                        <li>Coordinate hospitality and logistics.</li>
-                        <li>Collect feedback after activities.</li>
-                    </ul>
-
-                    <div class="role-output">
-                        <strong>Expected Output:</strong>
-                        Smoothly executed events, participant engagement
-                        and completed activity feedback.
-                    </div>
-
-                </div>
-
-            </div>
-
 
             <!-- DOCUMENTATION -->
 
             <div class="role" data-category="operations">
 
-                <div class="role-top" onclick="toggleRole(this.parentElement)">
+                <div class="role-top"
+                     onclick="toggleRole(this.parentElement)">
 
                     <div class="role-icon">🧑‍💻</div>
 
@@ -2428,6 +2377,7 @@ td:first-child{
 
             </div>
 
+
         </div>
 
     </div>
@@ -2443,7 +2393,7 @@ td:first-child{
 
 
 <!-- =====================================================
-     PAGE 6 — ROLE OUTPUT MATRIX
+     PAGE 6 — OUTPUT MATRIX
 ====================================================== -->
 
 <section class="page">
@@ -2556,12 +2506,6 @@ td:first-child{
                         <td>Social Media</td>
                         <td>Digital communication</td>
                         <td>Content / reach / engagement</td>
-                    </tr>
-
-                    <tr>
-                        <td>Event & Outreach</td>
-                        <td>Executed activities</td>
-                        <td>Events / participation / feedback</td>
                     </tr>
 
                     <tr>
@@ -2879,14 +2823,13 @@ td:first-child{
         <div class="info-box">
 
             <h3>
-                Example: Student Startup Event
+                Example: Student Startup Pitching Activity
             </h3>
 
             <p>
-                A startup pitching event may involve the
+                A startup pitching activity may involve the
                 <strong>Start-up Coordinator</strong> for startup identification,
-                <strong>Event & Outreach</strong> for execution,
-                <strong>Graphics</strong> for branding,
+                <strong>Graphics & Creative</strong> for branding,
                 <strong>Social Media</strong> for promotion,
                 <strong>Alumni</strong> for founder connections and
                 <strong>Documentation</strong> for records.
@@ -2987,10 +2930,10 @@ td:first-child{
 
             <p>
                 <strong>
-                    Not “Who is senior?”
+                    Not "Who is senior?"
                     <br>
-                    But “Who owns what, what support is required,
-                    and what outcome are we creating?”
+                    But "Who owns what, what support is required,
+                    and what outcome are we creating?"
                 </strong>
             </p>
 
@@ -3100,18 +3043,15 @@ td:first-child{
             <table>
 
                 <thead>
+
                     <tr>
                         <th>Need</th>
                         <th>Possible Volunteer Support</th>
                     </tr>
+
                 </thead>
 
                 <tbody>
-
-                    <tr>
-                        <td>Event</td>
-                        <td>Registration, logistics, hospitality, photography</td>
-                    </tr>
 
                     <tr>
                         <td>Social Media</td>
@@ -3136,6 +3076,11 @@ td:first-child{
                     <tr>
                         <td>Innovation</td>
                         <td>Research, idea discovery, competition outreach</td>
+                    </tr>
+
+                    <tr>
+                        <td>Creative</td>
+                        <td>Posters, presentations, video editing, visual content</td>
                     </tr>
 
                 </tbody>
@@ -3275,27 +3220,38 @@ td:first-child{
         <div class="three-column">
 
             <div class="card">
+
                 <h4>Students</h4>
+
                 <p>
                     More students discover opportunities to innovate,
                     build, participate and connect.
                 </p>
+
             </div>
 
+
             <div class="card">
+
                 <h4>Core Team</h4>
+
                 <p>
                     Members gain real experience in ownership,
                     leadership, coordination and execution.
                 </p>
+
             </div>
 
+
             <div class="card">
+
                 <h4>IIC</h4>
+
                 <p>
                     Activities become organised, measurable,
                     documented and continuously improving.
                 </p>
+
             </div>
 
         </div>
@@ -3500,7 +3456,7 @@ td:first-child{
         <div class="final-line"></div>
 
         <p>
-            IIC is not defined only by the number of events conducted.
+            IIC is not defined only by the number of activities conducted.
             It is defined by the opportunities created, students engaged,
             ideas supported, connections built and outcomes generated.
         </p>
@@ -3526,22 +3482,28 @@ td:first-child{
 
         </div>
 
+
         <div style="
             margin-top:55px;
             font-size:11px;
             color:#9eacc0;
         ">
+
             IIC DMIMS • Core Team Roles & Responsibilities
             <br>
             Standard Operating Procedure • 2026
+
         </div>
 
     </div>
 
 
-    <div class="page-footer" style="color:#9eacc0;border-color:rgba(255,255,255,.2)">
+    <div class="page-footer"
+         style="color:#9eacc0;border-color:rgba(255,255,255,.2)">
+
         <span>IIC DMIMS</span>
         <span>12</span>
+
     </div>
 
 </section>
