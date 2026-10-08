@@ -4,49 +4,36 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>IIC DMIMS | Core Team SOP & Roles</title>
-
-<meta name="description"
-content="IIC DMIMS Core Team Standard Operating Procedure, hierarchy, roles, responsibilities, reporting structure and operating guidelines.">
+<title>IIC DMIMS — Core Team SOP</title>
 
 <style>
 
 /* =========================================================
-   IIC DMIMS — SOP MASTER THEME
+   IIC DMIMS — SOP DESIGN SYSTEM
+   A4 / PDF STYLE WEB DOCUMENT
 ========================================================= */
 
 :root{
     --navy:#071c3d;
     --navy2:#0c2c58;
-    --navy3:#123b6d;
-
     --orange:#f58220;
     --orange2:#ff9d45;
-    --orange-soft:#fff1e5;
-
     --white:#ffffff;
-    --black:#07111f;
 
-    --text:#27364a;
-    --muted:#718096;
+    --text:#172235;
+    --muted:#667085;
+    --light:#f5f7fa;
+    --border:#dfe5ec;
+    --green:#157347;
+    --red:#b42318;
 
-    --bg:#f6f8fb;
-    --border:#e3e8ef;
+    --page-width:210mm;
+    --page-height:297mm;
 
-    --success:#159957;
-    --red:#d64545;
-
-    --shadow-sm:0 5px 20px rgba(7,28,61,.07);
-    --shadow-md:0 15px 40px rgba(7,28,61,.12);
-    --shadow-lg:0 25px 70px rgba(7,28,61,.18);
-
-    --radius:18px;
-    --transition:.3s ease;
+    --shadow:0 15px 40px rgba(7,28,61,.12);
 }
 
 *{
-    margin:0;
-    padding:0;
     box-sizing:border-box;
 }
 
@@ -55,1693 +42,1061 @@ html{
 }
 
 body{
+    margin:0;
+    background:#dfe4ea;
+    color:var(--text);
     font-family:
         Inter,
         "Segoe UI",
-        Roboto,
         Arial,
         sans-serif;
-
-    color:var(--text);
-    background:var(--bg);
-    line-height:1.65;
-}
-
-a{
-    text-decoration:none;
-    color:inherit;
-}
-
-button,
-input{
-    font-family:inherit;
-}
-
-img{
-    max-width:100%;
-    display:block;
-}
-
-.container{
-    width:min(1200px,92%);
-    margin:auto;
+    line-height:1.55;
 }
 
 /* =========================================================
-   TOP BAR
+   CONTROL BAR
 ========================================================= */
 
-.topbar{
-    background:var(--orange);
-    color:white;
-
-    text-align:center;
-
-    padding:9px 15px;
-
-    font-size:12px;
-    font-weight:800;
-
-    letter-spacing:.5px;
-}
-
-/* =========================================================
-   HEADER
-========================================================= */
-
-.header{
+.control-bar{
     position:sticky;
     top:0;
-
     z-index:1000;
 
-    background:rgba(7,28,61,.97);
+    display:flex;
+    justify-content:center;
+    gap:10px;
 
-    backdrop-filter:blur(14px);
+    padding:12px;
 
-    border-bottom:1px solid rgba(255,255,255,.08);
+    background:rgba(7,28,61,.96);
+    backdrop-filter:blur(10px);
 }
 
-.navbar{
-    min-height:76px;
+.control-bar button{
+    border:1px solid rgba(255,255,255,.2);
+    background:rgba(255,255,255,.08);
+    color:white;
 
+    padding:9px 15px;
+    border-radius:7px;
+
+    cursor:pointer;
+    font-size:13px;
+    font-weight:600;
+}
+
+.control-bar button:hover{
+    background:var(--orange);
+}
+
+/* =========================================================
+   A4 PAGE
+========================================================= */
+
+.page{
+    width:var(--page-width);
+    min-height:var(--page-height);
+
+    margin:25px auto;
+
+    background:white;
+
+    position:relative;
+
+    padding:18mm 17mm;
+
+    box-shadow:var(--shadow);
+
+    overflow:hidden;
+}
+
+/* =========================================================
+   PAGE HEADER / FOOTER
+========================================================= */
+
+.page-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding-bottom:10px;
+
+    border-bottom:2px solid var(--navy);
+}
+
+.header-brand{
     display:flex;
     align-items:center;
+    gap:10px;
+}
+
+.header-brand img{
+    width:45px;
+    height:45px;
+    object-fit:contain;
+}
+
+.header-title{
+    font-size:11px;
+    font-weight:800;
+    color:var(--navy);
+    letter-spacing:.7px;
+    text-transform:uppercase;
+}
+
+.header-sub{
+    font-size:9px;
+    color:var(--muted);
+}
+
+.page-number{
+    font-size:10px;
+    color:var(--muted);
+    font-weight:700;
+}
+
+.page-footer{
+    position:absolute;
+    bottom:9mm;
+    left:17mm;
+    right:17mm;
+
+    display:flex;
     justify-content:space-between;
 
-    gap:30px;
+    border-top:1px solid var(--border);
+
+    padding-top:7px;
+
+    font-size:8px;
+    color:#7b8797;
 }
 
-.brand{
+/* =========================================================
+   COVER PAGE
+========================================================= */
+
+.cover{
+    background:
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(245,130,32,.18),
+            transparent 30%
+        ),
+        linear-gradient(
+            145deg,
+            var(--navy),
+            #06152e
+        );
+
+    color:white;
+
     display:flex;
-    align-items:center;
-    gap:13px;
+    flex-direction:column;
+    justify-content:center;
 }
 
-.logo{
-    width:48px;
-    height:48px;
+.cover .page-header{
+    border-color:rgba(255,255,255,.25);
+}
+
+.cover .header-title,
+.cover .header-sub,
+.cover .page-number{
+    color:white;
+}
+
+.cover-content{
+    margin-top:55px;
+}
+
+.cover-logo{
+    width:95px;
+    height:95px;
 
     object-fit:contain;
 
     background:white;
 
-    border-radius:10px;
+    padding:10px;
 
-    padding:5px;
+    border-radius:15px;
+
+    margin-bottom:30px;
 }
 
-.brand h2{
-    color:white;
+.document-label{
+    display:inline-block;
 
-    font-size:15px;
+    border:1px solid rgba(255,255,255,.3);
 
-    line-height:1.2;
-}
+    background:rgba(255,255,255,.07);
 
-.brand span{
-    display:block;
+    padding:7px 13px;
 
-    color:var(--orange2);
-
-    font-size:10px;
-
-    font-weight:800;
-
-    letter-spacing:1.3px;
-
-    margin-top:4px;
-}
-
-.nav{
-    display:flex;
-    align-items:center;
-    gap:25px;
-}
-
-.nav a{
-    color:#d6e0ed;
-
-    font-size:13px;
-
-    font-weight:700;
-
-    transition:var(--transition);
-}
-
-.nav a:hover{
-    color:var(--orange2);
-}
-
-.nav .join{
-    background:var(--orange);
-
-    color:white;
-
-    padding:10px 17px;
-
-    border-radius:9px;
-}
-
-.menu{
-    display:none;
-
-    border:none;
-
-    background:none;
-
-    color:white;
-
-    font-size:26px;
-
-    cursor:pointer;
-}
-
-/* =========================================================
-   HERO
-========================================================= */
-
-.hero{
-    position:relative;
-
-    overflow:hidden;
-
-    padding:105px 0 90px;
-
-    background:
-        linear-gradient(
-            180deg,
-            #071c3d 0%,
-            #061a38 100%
-        );
-
-    color:white;
-}
-
-.grid{
-    position:absolute;
-    inset:0;
-
-    background-image:
-        linear-gradient(
-            rgba(255,255,255,.025) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(255,255,255,.025) 1px,
-            transparent 1px
-        );
-
-    background-size:55px 55px;
-
-    mask-image:
-        linear-gradient(
-            to bottom,
-            black,
-            transparent 95%
-        );
-
-    -webkit-mask-image:
-        linear-gradient(
-            to bottom,
-            black,
-            transparent 95%
-        );
-}
-
-.glow{
-    position:absolute;
-
-    width:450px;
-    height:450px;
-
-    border-radius:50%;
-
-    filter:blur(110px);
-
-    pointer-events:none;
-}
-
-.glow.one{
-    right:-200px;
-    top:-100px;
-
-    background:rgba(245,130,32,.13);
-}
-
-.glow.two{
-    left:-200px;
-    bottom:-250px;
-
-    background:rgba(27,88,160,.15);
-}
-
-.hero-content{
-    position:relative;
-    z-index:2;
-
-    display:grid;
-
-    grid-template-columns:1.25fr .75fr;
-
-    gap:70px;
-
-    align-items:center;
-}
-
-.badge{
-    display:inline-flex;
-
-    align-items:center;
-
-    gap:8px;
-
-    padding:8px 13px;
-
-    border-radius:30px;
-
-    background:rgba(245,130,32,.12);
-
-    border:1px solid rgba(245,130,32,.3);
-
-    color:var(--orange2);
+    border-radius:5px;
 
     font-size:11px;
+    font-weight:800;
 
-    font-weight:900;
-
-    text-transform:uppercase;
-
-    letter-spacing:1.3px;
+    letter-spacing:1.5px;
 }
 
-.badge::before{
-    content:"";
+.cover h1{
+    font-size:39px;
+    line-height:1.08;
 
-    width:7px;
-    height:7px;
+    max-width:650px;
 
-    background:var(--orange);
-
-    border-radius:50%;
-
-    box-shadow:0 0 12px var(--orange);
+    margin:20px 0 15px;
 }
 
-.hero h1{
-    margin-top:22px;
-
-    font-size:clamp(40px,6vw,68px);
-
-    line-height:1.05;
-
-    letter-spacing:-2px;
+.cover h1 span{
+    color:var(--orange2);
 }
 
-.hero h1 span{
-    color:var(--orange);
+.cover-description{
+    max-width:650px;
+
+    color:#c7d0df;
+
+    font-size:15px;
 }
 
-.hero-description{
-    margin-top:22px;
+.cover-system{
+    margin-top:55px;
 
-    max-width:720px;
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
 
-    color:#aebdd0;
-
-    font-size:17px;
-}
-
-.hero-buttons{
-    display:flex;
-
-    gap:12px;
-
-    margin-top:30px;
-}
-
-.btn{
-    display:inline-flex;
-
-    align-items:center;
-    justify-content:center;
-
-    gap:8px;
-
-    padding:13px 20px;
+    border:1px solid rgba(255,255,255,.2);
 
     border-radius:10px;
 
+    overflow:hidden;
+}
+
+.system-box{
+    padding:16px 10px;
+    text-align:center;
+
+    border-right:1px solid rgba(255,255,255,.15);
+}
+
+.system-box:last-child{
+    border-right:0;
+}
+
+.system-box strong{
+    display:block;
     font-size:13px;
-
-    font-weight:800;
-
-    transition:var(--transition);
 }
 
-.btn-primary{
-    background:var(--orange);
+.system-box small{
+    display:block;
 
-    color:white;
-}
+    margin-top:5px;
 
-.btn-primary:hover{
-    background:var(--orange2);
+    color:#aebbd0;
 
-    transform:translateY(-3px);
-
-    box-shadow:0 10px 25px rgba(245,130,32,.25);
-}
-
-.btn-outline{
-    border:1px solid rgba(255,255,255,.18);
-
-    color:white;
-}
-
-.btn-outline:hover{
-    background:rgba(255,255,255,.07);
+    font-size:9px;
 }
 
 /* =========================================================
-   HERO CARD
+   TYPOGRAPHY
 ========================================================= */
 
-.command-card{
-    background:rgba(255,255,255,.055);
-
-    border:1px solid rgba(255,255,255,.1);
-
-    border-radius:24px;
-
-    padding:30px;
-
-    backdrop-filter:blur(15px);
-
-    box-shadow:var(--shadow-lg);
-}
-
-.command-top{
-    display:flex;
-
-    align-items:center;
-
-    gap:15px;
-
-    padding-bottom:20px;
-
-    border-bottom:1px solid rgba(255,255,255,.09);
-}
-
-.command-icon{
-    width:55px;
-    height:55px;
-
-    display:grid;
-
-    place-items:center;
-
-    border-radius:14px;
-
-    background:var(--orange);
+h2{
+    color:var(--navy);
 
     font-size:25px;
+
+    margin:0 0 8px;
 }
 
-.command-top h3{
-    color:white;
+h3{
+    color:var(--navy);
 
-    font-size:18px;
+    font-size:17px;
+
+    margin:0 0 7px;
 }
 
-.command-top p{
-    color:#9eacc0;
+h4{
+    color:var(--navy);
 
-    font-size:12px;
-}
-
-.command-list{
-    margin-top:22px;
-
-    list-style:none;
-
-    display:grid;
-
-    gap:13px;
-}
-
-.command-list li{
-    color:#c7d2df;
+    margin:0 0 5px;
 
     font-size:13px;
-
-    padding-left:22px;
-
-    position:relative;
 }
 
-.command-list li::before{
-    content:"✓";
+.lead{
+    color:var(--muted);
 
-    position:absolute;
+    font-size:12px;
 
-    left:0;
-
-    color:var(--orange);
-
-    font-weight:900;
-}
-
-/* =========================================================
-   SECTION
-========================================================= */
-
-.section{
-    padding:95px 0;
-}
-
-.section.white{
-    background:white;
-}
-
-.section-head{
-    max-width:750px;
-
-    margin-bottom:45px;
+    margin-top:0;
 }
 
 .section-label{
     color:var(--orange);
 
-    font-size:11px;
+    text-transform:uppercase;
+
+    font-size:9px;
 
     font-weight:900;
 
-    letter-spacing:1.7px;
+    letter-spacing:1.5px;
 
-    text-transform:uppercase;
-}
-
-.section-head h2{
-    color:var(--navy);
-
-    font-size:clamp(30px,4vw,44px);
-
-    line-height:1.15;
-
-    letter-spacing:-.8px;
-
-    margin-top:8px;
-}
-
-.section-head p{
-    color:var(--muted);
-
-    margin-top:14px;
-
-    font-size:15px;
+    margin-bottom:6px;
 }
 
 /* =========================================================
-   SOP OVERVIEW
+   CONTENT BOXES
 ========================================================= */
 
-.sop-grid{
+.info-box{
+    background:var(--light);
+
+    border:1px solid var(--border);
+
+    border-left:4px solid var(--orange);
+
+    padding:15px;
+
+    border-radius:7px;
+
+    margin:14px 0;
+}
+
+.info-box p{
+    margin:4px 0;
+
+    font-size:11px;
+}
+
+.two-column{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:14px;
+}
+
+.three-column{
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:10px;
+}
+
+.card{
+    border:1px solid var(--border);
+
+    border-radius:8px;
+
+    padding:13px;
+
+    background:white;
+}
+
+.card p{
+    margin:4px 0;
+
+    font-size:10px;
+
+    color:var(--muted);
+}
+
+.card ul{
+    margin:7px 0 0;
+    padding-left:16px;
+}
+
+.card li{
+    font-size:10px;
+
+    margin-bottom:4px;
+}
+
+/* =========================================================
+   OPERATING SYSTEM
+========================================================= */
+
+.system-flow{
+    display:grid;
+
+    grid-template-columns:
+        1fr 35px
+        1fr 35px
+        1fr 35px
+        1fr 35px
+        1fr;
+
+    align-items:center;
+
+    margin:25px 0;
+}
+
+.flow-box{
+    background:var(--navy);
+
+    color:white;
+
+    min-height:80px;
+
+    padding:12px 8px;
+
+    border-radius:8px;
+
+    text-align:center;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.flow-box strong{
+    font-size:12px;
+}
+
+.flow-box small{
+    color:#bfcbe0;
+
+    font-size:8px;
+
+    margin-top:4px;
+}
+
+.flow-arrow{
+    text-align:center;
+
+    font-size:20px;
+
+    color:var(--orange);
+
+    font-weight:bold;
+}
+
+/* =========================================================
+   CONVENOR
+========================================================= */
+
+.convenor{
+    border:2px solid var(--orange);
+
+    border-radius:10px;
+
+    overflow:hidden;
+
+    margin:18px 0;
+}
+
+.convenor-header{
+    background:var(--navy);
+
+    color:white;
+
+    padding:17px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+}
+
+.convenor-header h3{
+    color:white;
+
+    margin:0;
+}
+
+.convenor-badge{
+    background:var(--orange);
+
+    color:white;
+
+    padding:5px 9px;
+
+    border-radius:4px;
+
+    font-size:9px;
+
+    font-weight:800;
+}
+
+.convenor-body{
+    padding:17px;
+
+    background:#fff;
+}
+
+.convenor-grid{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:10px;
+}
+
+.responsibility{
+    border:1px solid var(--border);
+
+    padding:11px;
+
+    border-radius:6px;
+}
+
+.responsibility strong{
+    display:block;
+
+    font-size:11px;
+
+    color:var(--navy);
+}
+
+.responsibility span{
+    display:block;
+
+    font-size:9px;
+
+    color:var(--muted);
+
+    margin-top:3px;
+}
+
+/* =========================================================
+   ROLE CARDS
+========================================================= */
+
+.role-filter{
+    display:flex;
+
+    gap:6px;
+
+    flex-wrap:wrap;
+
+    margin:15px 0;
+}
+
+.filter-btn{
+    border:1px solid var(--border);
+
+    background:white;
+
+    color:var(--navy);
+
+    padding:6px 10px;
+
+    border-radius:5px;
+
+    font-size:9px;
+
+    font-weight:700;
+
+    cursor:pointer;
+}
+
+.filter-btn.active,
+.filter-btn:hover{
+    background:var(--orange);
+
+    color:white;
+
+    border-color:var(--orange);
+}
+
+.roles{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:10px;
+}
+
+.role{
+    border:1px solid var(--border);
+
+    border-radius:8px;
+
+    overflow:hidden;
+
+    background:white;
+}
+
+.role-top{
+    padding:12px;
+
+    cursor:pointer;
+
+    display:flex;
+
+    gap:10px;
+
+    align-items:center;
+}
+
+.role-icon{
+    width:34px;
+    height:34px;
+
+    flex-shrink:0;
+
+    background:#fff3e9;
+
+    color:var(--orange);
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:6px;
+
+    font-size:17px;
+}
+
+.role-name{
+    font-size:12px;
+
+    font-weight:800;
+
+    color:var(--navy);
+}
+
+.role-category{
+    font-size:8px;
+
+    color:var(--muted);
+
+    text-transform:uppercase;
+
+    letter-spacing:.6px;
+}
+
+.role-arrow{
+    margin-left:auto;
+
+    color:var(--muted);
+
+    transition:.2s;
+}
+
+.role.open .role-arrow{
+    transform:rotate(180deg);
+}
+
+.role-content{
+    display:none;
+
+    padding:0 12px 13px;
+
+    border-top:1px solid var(--border);
+}
+
+.role.open .role-content{
+    display:block;
+}
+
+.role-content h4{
+    margin-top:12px;
+}
+
+.role-content ul{
+    margin:4px 0;
+
+    padding-left:17px;
+}
+
+.role-content li{
+    font-size:9.5px;
+
+    margin-bottom:4px;
+}
+
+.role-output{
+    background:#f7f9fb;
+
+    padding:8px;
+
+    margin-top:9px;
+
+    border-radius:5px;
+
+    font-size:9px;
+}
+
+.role-output strong{
+    color:var(--orange);
+}
+
+/* =========================================================
+   KRA TABLE
+========================================================= */
+
+.table-wrap{
+    overflow:hidden;
+
+    border:1px solid var(--border);
+
+    border-radius:8px;
+}
+
+table{
+    width:100%;
+
+    border-collapse:collapse;
+
+    font-size:9px;
+}
+
+th{
+    background:var(--navy);
+
+    color:white;
+
+    text-align:left;
+
+    padding:9px;
+}
+
+td{
+    padding:8px;
+
+    border-bottom:1px solid var(--border);
+
+    vertical-align:top;
+}
+
+tr:last-child td{
+    border-bottom:0;
+}
+
+td:first-child{
+    font-weight:800;
+
+    color:var(--navy);
+}
+
+/* =========================================================
+   PROCESS STEPS
+========================================================= */
+
+.process{
+    counter-reset:step;
+
+    display:grid;
+
+    gap:10px;
+
+    margin-top:15px;
+}
+
+.process-step{
+    display:grid;
+
+    grid-template-columns:35px 1fr;
+
+    gap:10px;
+
+    align-items:start;
+}
+
+.process-number{
+    width:30px;
+    height:30px;
+
+    border-radius:50%;
+
+    background:var(--orange);
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:11px;
+
+    font-weight:900;
+}
+
+.process-content{
+    border:1px solid var(--border);
+
+    border-radius:7px;
+
+    padding:10px;
+}
+
+.process-content strong{
+    color:var(--navy);
+
+    font-size:11px;
+}
+
+.process-content p{
+    margin:3px 0 0;
+
+    font-size:9px;
+
+    color:var(--muted);
+}
+
+/* =========================================================
+   KPI
+========================================================= */
+
+.kpi-grid{
     display:grid;
 
     grid-template-columns:repeat(4,1fr);
 
-    gap:17px;
-}
-
-.sop-card{
-    background:white;
-
-    border:1px solid var(--border);
-
-    border-radius:17px;
-
-    padding:27px;
-
-    transition:var(--transition);
-}
-
-.sop-card:hover{
-    transform:translateY(-6px);
-
-    border-color:rgba(245,130,32,.4);
-
-    box-shadow:var(--shadow-md);
-}
-
-.sop-number{
-    color:var(--orange);
-
-    font-size:11px;
-
-    font-weight:900;
-
-    letter-spacing:1px;
-}
-
-.sop-card h3{
-    color:var(--navy);
-
-    margin:10px 0 7px;
-
-    font-size:18px;
-}
-
-.sop-card p{
-    color:var(--muted);
-
-    font-size:13px;
-}
-
-/* =========================================================
-   HIERARCHY
-========================================================= */
-
-.hierarchy{
-    background:var(--bg);
-}
-
-.hierarchy-box{
-    max-width:900px;
-
-    margin:auto;
-
-    text-align:center;
-}
-
-.convenor{
-    display:inline-block;
-
-    min-width:300px;
-
-    padding:25px 35px;
-
-    background:var(--navy);
-
-    color:white;
-
-    border-radius:18px;
-
-    box-shadow:var(--shadow-lg);
-
-    position:relative;
-}
-
-.convenor .icon{
-    font-size:28px;
-}
-
-.convenor h3{
-    margin-top:8px;
-
-    font-size:20px;
-}
-
-.convenor p{
-    color:#aebdd0;
-
-    font-size:12px;
-
-    margin-top:5px;
-}
-
-.connector{
-    width:2px;
-
-    height:50px;
-
-    background:var(--orange);
-
-    margin:auto;
-}
-
-.team-line{
-    height:2px;
-
-    background:var(--orange);
-
-    width:88%;
-
-    margin:auto;
-}
-
-.team-grid{
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:15px;
-
-    margin-top:0;
-}
-
-.team-box{
-    background:white;
-
-    border:1px solid var(--border);
-
-    border-radius:14px;
-
-    padding:18px;
-
-    position:relative;
-}
-
-.team-box::before{
-    content:"";
-
-    position:absolute;
-
-    width:2px;
-    height:15px;
-
-    background:var(--orange);
-
-    top:-15px;
-
-    left:50%;
-}
-
-.team-box strong{
-    color:var(--navy);
-
-    display:block;
-
-    font-size:14px;
-}
-
-.team-box span{
-    color:var(--muted);
-
-    display:block;
-
-    font-size:11px;
-
-    margin-top:3px;
-}
-
-/* =========================================================
-   AUTHORITY / RESPONSIBILITY
-========================================================= */
-
-.responsibility-grid{
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-
-    gap:20px;
-}
-
-.responsibility-box{
-    background:white;
-
-    border:1px solid var(--border);
-
-    border-radius:17px;
-
-    padding:28px;
-}
-
-.responsibility-box h3{
-    color:var(--navy);
-
-    font-size:18px;
-
-    margin-bottom:15px;
-}
-
-.check-list{
-    list-style:none;
-
-    display:grid;
-
-    gap:10px;
-}
-
-.check-list li{
-    position:relative;
-
-    padding-left:25px;
-
-    color:var(--text);
-
-    font-size:13px;
-}
-
-.check-list li::before{
-    content:"✓";
-
-    position:absolute;
-
-    left:0;
-
-    top:0;
-
-    color:var(--orange);
-
-    font-weight:900;
-}
-
-/* =========================================================
-   ROLES
-========================================================= */
-
-.roles{
-    background:var(--bg);
-}
-
-.role-tools{
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    gap:20px;
-
-    margin-bottom:25px;
-}
-
-.search{
-    position:relative;
-
-    max-width:550px;
-
-    flex:1;
-}
-
-.search span{
-    position:absolute;
-
-    left:15px;
-
-    top:50%;
-
-    transform:translateY(-50%);
-
-    color:var(--muted);
-}
-
-.search input{
-    width:100%;
-
-    padding:15px 18px 15px 43px;
-
-    background:white;
-
-    border:1px solid var(--border);
-
-    border-radius:12px;
-
-    outline:none;
-
-    color:var(--text);
-}
-
-.search input:focus{
-    border-color:var(--orange);
-
-    box-shadow:
-        0 0 0 4px rgba(245,130,32,.08);
-}
-
-.role-count{
-    color:var(--muted);
-
-    font-size:12px;
-
-    font-weight:800;
-}
-
-.role-list{
-    display:grid;
-
-    gap:12px;
-}
-
-.role{
-    background:white;
-
-    border:1px solid var(--border);
-
-    border-radius:16px;
-
-    overflow:hidden;
-
-    transition:var(--transition);
-}
-
-.role:hover{
-    border-color:rgba(245,130,32,.35);
-
-    box-shadow:var(--shadow-sm);
-}
-
-.role-header{
-    width:100%;
-
-    border:none;
-
-    background:white;
-
-    padding:20px 23px;
-
-    display:grid;
-
-    grid-template-columns:55px 1fr 30px;
-
-    align-items:center;
-
-    gap:14px;
-
-    text-align:left;
-
-    cursor:pointer;
-}
-
-.role-number{
-    width:42px;
-    height:42px;
-
-    display:grid;
-
-    place-items:center;
-
-    background:var(--orange-soft);
-
-    color:var(--orange);
-
-    border-radius:11px;
-
-    font-size:12px;
-
-    font-weight:900;
-}
-
-.role-title h3{
-    color:var(--navy);
-
-    font-size:16px;
-}
-
-.role-title p{
-    color:var(--muted);
-
-    font-size:12px;
-
-    margin-top:2px;
-}
-
-.arrow{
-    color:var(--navy);
-
-    transition:transform .3s;
-}
-
-.role.active .arrow{
-    transform:rotate(180deg);
-
-    color:var(--orange);
-}
-
-.role.active .role-header{
-    background:var(--navy);
-}
-
-.role.active .role-title h3{
-    color:white;
-}
-
-.role.active .role-title p{
-    color:#9eacc0;
-}
-
-.role.active .role-number{
-    background:var(--orange);
-
-    color:white;
-}
-
-.role-body{
-    display:none;
-
-    background:var(--navy);
-
-    color:white;
-
-    padding:3px 25px 28px 94px;
-}
-
-.role.active .role-body{
-    display:block;
-}
-
-.role-description{
-    color:#c5d1df;
-
-    font-size:13px;
-
-    margin-bottom:22px;
-}
-
-.role-columns{
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-
-    gap:35px;
-}
-
-.role-body h4{
-    color:var(--orange2);
-
-    font-size:11px;
-
-    letter-spacing:1.3px;
-
-    text-transform:uppercase;
-
-    margin-bottom:12px;
-}
-
-.role-body ul{
-    list-style:none;
-
-    display:grid;
-
     gap:9px;
+
+    margin-top:15px;
 }
 
-.role-body li{
-    position:relative;
+.kpi{
+    background:var(--navy);
 
-    color:#d7e0e9;
+    color:white;
 
-    font-size:12.5px;
+    padding:13px 8px;
 
-    padding-left:21px;
+    border-radius:7px;
+
+    text-align:center;
 }
 
-.role-body li::before{
-    content:"✓";
+.kpi strong{
+    display:block;
 
-    position:absolute;
-
-    left:0;
-
-    color:var(--orange);
-
-    font-weight:900;
-}
-
-.best{
-    background:rgba(255,255,255,.05);
-
-    border:1px solid rgba(255,255,255,.08);
-
-    border-radius:13px;
-
-    padding:19px;
-}
-
-.best p{
-    color:#c5d1df;
-
-    font-size:12.5px;
-}
-
-.tags{
-    display:flex;
-
-    flex-wrap:wrap;
-
-    gap:6px;
-
-    margin-top:14px;
-}
-
-.tag{
-    padding:5px 9px;
-
-    border-radius:20px;
-
-    background:rgba(245,130,32,.12);
+    font-size:18px;
 
     color:var(--orange2);
-
-    font-size:10px;
-
-    font-weight:800;
 }
 
-.no-result{
-    display:none;
+.kpi span{
+    font-size:8px;
 
-    text-align:center;
-
-    background:white;
-
-    padding:40px;
-
-    border-radius:15px;
-
-    color:var(--muted);
+    color:#c7d0df;
 }
 
 /* =========================================================
-   SOP OPERATING CYCLE
+   CHECKLIST
 ========================================================= */
 
-.cycle{
-    background:white;
-}
-
-.cycle-grid{
-    display:grid;
-
-    grid-template-columns:repeat(5,1fr);
-
-    gap:15px;
-}
-
-.cycle-card{
-    padding:25px 20px;
-
-    border:1px solid var(--border);
-
-    border-radius:16px;
-
-    text-align:center;
-}
-
-.cycle-icon{
-    width:50px;
-    height:50px;
-
-    display:grid;
-
-    place-items:center;
-
-    margin:auto;
-
-    border-radius:13px;
-
-    background:var(--orange-soft);
-
-    color:var(--orange);
-
-    font-size:21px;
-}
-
-.cycle-card h3{
-    color:var(--navy);
-
-    font-size:15px;
-
-    margin-top:13px;
-}
-
-.cycle-card p{
-    color:var(--muted);
-
-    font-size:11px;
-
-    margin-top:6px;
-}
-
-/* =========================================================
-   WEEKLY / MONTHLY
-========================================================= */
-
-.schedule{
-    background:var(--bg);
-}
-
-.schedule-grid{
+.checklist{
     display:grid;
 
     grid-template-columns:1fr 1fr;
 
-    gap:20px;
+    gap:8px;
+
+    margin-top:12px;
 }
 
-.schedule-card{
-    background:white;
-
+.check{
     border:1px solid var(--border);
 
-    border-radius:18px;
+    padding:9px;
 
-    padding:30px;
+    border-radius:6px;
+
+    font-size:9px;
 }
 
-.schedule-card h3{
-    color:var(--navy);
+.check::before{
+    content:"✓";
 
-    font-size:19px;
-
-    margin-bottom:15px;
-}
-
-.schedule-card .frequency{
-    display:inline-block;
-
-    background:var(--orange-soft);
-
-    color:var(--orange);
-
-    padding:5px 9px;
-
-    border-radius:20px;
-
-    font-size:10px;
+    color:var(--green);
 
     font-weight:900;
 
-    margin-bottom:15px;
+    margin-right:7px;
 }
 
 /* =========================================================
-   EVENT SOP
+   FINAL PAGE
 ========================================================= */
 
-.event-flow{
-    display:grid;
-
-    grid-template-columns:repeat(6,1fr);
-
-    gap:10px;
-}
-
-.event-step{
-    position:relative;
-
-    padding:22px 12px;
-
-    border:1px solid var(--border);
-
-    background:white;
-
-    border-radius:14px;
-
-    text-align:center;
-}
-
-.event-step strong{
-    display:block;
-
-    color:var(--orange);
-
-    font-size:10px;
-
-    letter-spacing:1px;
-}
-
-.event-step h4{
-    color:var(--navy);
-
-    margin-top:8px;
-
-    font-size:13px;
-}
-
-.event-step p{
-    color:var(--muted);
-
-    font-size:10px;
-
-    margin-top:5px;
-}
-
-/* =========================================================
-   DOCUMENTATION
-========================================================= */
-
-.documentation{
-    background:var(--navy);
-
-    color:white;
-}
-
-.documentation .section-head h2{
-    color:white;
-}
-
-.documentation .section-head p{
-    color:#aebdd0;
-}
-
-.doc-grid{
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:15px;
-}
-
-.doc-card{
-    background:rgba(255,255,255,.05);
-
-    border:1px solid rgba(255,255,255,.08);
-
-    border-radius:16px;
-
-    padding:25px;
-}
-
-.doc-card h3{
-    color:white;
-
-    font-size:16px;
-
-    margin-bottom:8px;
-}
-
-.doc-card p{
-    color:#aebdd0;
-
-    font-size:12px;
-}
-
-/* =========================================================
-   CODE OF CONDUCT
-========================================================= */
-
-.conduct{
-    background:white;
-}
-
-.conduct-grid{
-    display:grid;
-
-    grid-template-columns:repeat(2,1fr);
-
-    gap:15px;
-}
-
-.conduct-item{
-    border:1px solid var(--border);
-
-    border-radius:14px;
-
-    padding:19px;
-
-    display:flex;
-
-    gap:12px;
-}
-
-.conduct-icon{
-    color:var(--orange);
-
-    font-weight:900;
-}
-
-.conduct-item h4{
-    color:var(--navy);
-
-    font-size:14px;
-}
-
-.conduct-item p{
-    color:var(--muted);
-
-    font-size:11px;
-
-    margin-top:3px;
-}
-
-/* =========================================================
-   CTA
-========================================================= */
-
-.cta-section{
-    padding:90px 0;
-
-    background:var(--bg);
-}
-
-.cta{
-    position:relative;
-
-    overflow:hidden;
-
-    padding:65px;
-
-    border-radius:25px;
-
+.final-page{
     background:
         linear-gradient(
-            135deg,
+            150deg,
             var(--navy),
-            var(--navy2)
+            #06152e
         );
 
-    box-shadow:var(--shadow-lg);
-
-    color:white;
-}
-
-.cta::after{
-    content:"";
-
-    position:absolute;
-
-    width:400px;
-    height:400px;
-
-    right:-200px;
-    top:-200px;
-
-    border-radius:50%;
-
-    background:rgba(245,130,32,.12);
-
-    filter:blur(30px);
-}
-
-.cta-content{
-    position:relative;
-
-    z-index:2;
-
-    max-width:720px;
-}
-
-.cta h2{
-    font-size:clamp(30px,4vw,45px);
-
-    line-height:1.15;
-}
-
-.cta p{
-    color:#b9c7d7;
-
-    margin-top:13px;
-
-    font-size:15px;
-}
-
-.cta-buttons{
-    display:flex;
-
-    gap:12px;
-
-    margin-top:25px;
-}
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-.footer{
-    background:#04142d;
-
-    color:#9eacc0;
-
-    padding:55px 0 23px;
-}
-
-.footer-grid{
-    display:grid;
-
-    grid-template-columns:1.5fr 1fr 1fr;
-
-    gap:45px;
-
-    padding-bottom:35px;
-
-    border-bottom:1px solid rgba(255,255,255,.08);
-}
-
-.footer-brand{
-    display:flex;
-
-    align-items:center;
-
-    gap:12px;
-
-    margin-bottom:15px;
-}
-
-.footer-brand img{
-    width:43px;
-    height:43px;
-
-    padding:5px;
-
-    border-radius:8px;
-
-    background:white;
-}
-
-.footer h3{
     color:white;
 
-    font-size:14px;
-
-    margin-bottom:13px;
-}
-
-.footer p{
-    font-size:12px;
-
-    max-width:420px;
-}
-
-.footer ul{
-    list-style:none;
-
-    display:grid;
-
-    gap:7px;
-}
-
-.footer li{
-    font-size:12px;
-}
-
-.footer li a:hover{
-    color:var(--orange);
-}
-
-.footer-bottom{
-    padding-top:20px;
-
     display:flex;
 
-    justify-content:space-between;
+    flex-direction:column;
 
-    font-size:11px;
+    justify-content:center;
+
+    text-align:center;
 }
 
-/* =========================================================
-   BACK TOP
-========================================================= */
+.final-page h2{
+    color:white;
 
-.back-top{
-    position:fixed;
+    font-size:32px;
+}
 
-    right:20px;
-    bottom:20px;
+.final-page p{
+    color:#c5d0df;
 
-    width:44px;
-    height:44px;
+    max-width:580px;
 
-    border:none;
+    margin:10px auto;
+}
 
-    border-radius:50%;
+.final-line{
+    width:70px;
+
+    height:3px;
 
     background:var(--orange);
 
-    color:white;
-
-    font-size:18px;
-
-    cursor:pointer;
-
-    opacity:0;
-    visibility:hidden;
-
-    transition:var(--transition);
-
-    z-index:900;
+    margin:20px auto;
 }
 
-.back-top.show{
-    opacity:1;
-    visibility:visible;
+.final-system{
+    font-size:18px;
+
+    font-weight:800;
+
+    margin-top:35px;
+}
+
+.final-system span{
+    color:var(--orange2);
+}
+
+/* =========================================================
+   PRINT
+========================================================= */
+
+@page{
+    size:A4;
+    margin:0;
+}
+
+@media print{
+
+    body{
+        background:white;
+    }
+
+    .control-bar{
+        display:none;
+    }
+
+    .page{
+        width:210mm;
+        min-height:297mm;
+
+        margin:0;
+
+        box-shadow:none;
+
+        page-break-after:always;
+
+        break-after:page;
+    }
+
+    .page:last-child{
+        page-break-after:auto;
+    }
+
+    .role-content{
+        display:block !important;
+    }
+
+    .role-arrow{
+        display:none;
+    }
+
+    .role{
+        break-inside:avoid;
+    }
 }
 
 /* =========================================================
    RESPONSIVE
 ========================================================= */
 
-@media(max-width:1000px){
+@media(max-width:900px){
 
-    .hero-content{
-        grid-template-columns:1fr;
+    body{
+        background:white;
     }
 
-    .sop-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .team-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .cycle-grid{
-        grid-template-columns:1fr 1fr 1fr;
-    }
-
-    .event-flow{
-        grid-template-columns:1fr 1fr 1fr;
-    }
-
-    .doc-grid{
-        grid-template-columns:1fr 1fr;
-    }
-}
-
-@media(max-width:760px){
-
-    .menu{
-        display:block;
-    }
-
-    .nav{
-        position:absolute;
-
-        top:76px;
-        left:0;
-        right:0;
-
-        display:none;
-
-        flex-direction:column;
-
-        align-items:stretch;
-
-        background:var(--navy);
-
-        padding:15px 5%;
-    }
-
-    .nav.active{
-        display:flex;
-    }
-
-    .nav a{
-        padding:10px 0;
-    }
-
-    .nav .join{
-        text-align:center;
-    }
-
-    .hero{
-        padding:75px 0;
-    }
-
-    .hero h1{
-        font-size:43px;
-    }
-
-    .hero-buttons{
-        flex-direction:column;
-    }
-
-    .btn{
+    .page{
         width:100%;
+
+        min-height:auto;
+
+        margin:0;
+
+        padding:30px 20px 60px;
+
+        box-shadow:none;
     }
 
-    .sop-grid{
+    .page-footer{
+        position:relative;
+
+        left:auto;
+        right:auto;
+        bottom:auto;
+
+        margin-top:35px;
+    }
+
+    .system-flow{
+        grid-template-columns:1fr;
+
+        gap:5px;
+    }
+
+    .flow-arrow{
+        transform:rotate(90deg);
+    }
+
+    .roles,
+    .two-column,
+    .convenor-grid,
+    .checklist{
         grid-template-columns:1fr;
     }
 
-    .team-grid{
+    .three-column{
         grid-template-columns:1fr;
     }
 
-    .team-line{
-        width:2px;
-        height:20px;
-    }
-
-    .team-box::before{
-        top:-20px;
-    }
-
-    .responsibility-grid{
-        grid-template-columns:1fr;
-    }
-
-    .role-tools{
-        flex-direction:column;
-        align-items:stretch;
-    }
-
-    .search{
-        max-width:none;
-    }
-
-    .role-header{
-        grid-template-columns:44px 1fr 25px;
-
-        padding:17px;
-    }
-
-    .role-body{
-        padding:5px 17px 25px;
-    }
-
-    .role-columns{
-        grid-template-columns:1fr;
-    }
-
-    .cycle-grid{
+    .kpi-grid{
         grid-template-columns:1fr 1fr;
     }
 
-    .event-flow{
+    .cover h1{
+        font-size:31px;
+    }
+
+    .cover-system{
         grid-template-columns:1fr 1fr;
     }
 
-    .schedule-grid{
-        grid-template-columns:1fr;
-    }
-
-    .doc-grid{
-        grid-template-columns:1fr;
-    }
-
-    .conduct-grid{
-        grid-template-columns:1fr;
-    }
-
-    .cta{
-        padding:40px 25px;
-    }
-
-    .cta-buttons{
-        flex-direction:column;
-    }
-
-    .footer-grid{
-        grid-template-columns:1fr;
-    }
-
-    .footer-bottom{
-        flex-direction:column;
-
-        gap:8px;
+    .system-box{
+        border-bottom:1px solid rgba(255,255,255,.15);
     }
 }
 
@@ -1753,3135 +1108,2530 @@ img{
 
 
 <!-- =====================================================
-     TOP BAR
-===================================================== -->
+     CONTROL BAR
+====================================================== -->
 
-<div class="topbar">
+<div class="control-bar">
 
-    🚀 IIC DMIMS • STANDARD OPERATING PROCEDURE • CORE TEAM
+    <button onclick="window.print()">
+        🖨 Print / Save PDF
+    </button>
+
+    <button onclick="expandAll()">
+        ＋ Expand All
+    </button>
+
+    <button onclick="collapseAll()">
+        − Collapse All
+    </button>
 
 </div>
+
 
 
 <!-- =====================================================
-     HEADER
-===================================================== -->
+     PAGE 1 — COVER
+====================================================== -->
 
-<header class="header">
+<section class="page cover">
 
-<div class="container navbar">
+    <div class="page-header">
 
-<a
-href="https://iicdmims.vercel.app/"
-class="brand"
->
+        <div class="header-brand">
 
-<img
-src="https://iic.mic.gov.in/assets/assets/images/iiclogo.png"
-alt="IIC Logo"
-class="logo"
->
+            <img
+                src="https://iic.mic.gov.in/assets/assets/images/iiclogo.png"
+                alt="IIC Logo"
+            >
 
-<div>
+            <div>
+                <div class="header-title">
+                    Institution's Innovation Council
+                </div>
 
-<h2>
-Institution's Innovation Council
-</h2>
+                <div class="header-sub">
+                    DMIMS • Innovation • Entrepreneurship • Leadership
+                </div>
+            </div>
 
-<span>
-DMIMS • CORE TEAM
-</span>
+        </div>
 
-</div>
+        <div class="page-number">
+            SOP • 01
+        </div>
 
-</a>
+    </div>
 
 
-<button
-class="menu"
-id="menuBtn"
->
-☰
-</button>
+    <div class="cover-content">
 
+        <img
+            class="cover-logo"
+            src="https://iic.mic.gov.in/assets/assets/images/iiclogo.png"
+            alt="IIC DMIMS"
+        >
 
-<nav
-class="nav"
-id="nav"
->
+        <div class="document-label">
+            STANDARD OPERATING PROCEDURE
+        </div>
 
-<a href="https://iicdmims.vercel.app/">
-Home
-</a>
+        <h1>
+            IIC DMIMS
+            <span>Core Team</span>
+            <br>
+            Roles & Responsibilities
+        </h1>
 
-<a href="#structure">
-Structure
-</a>
+        <p class="cover-description">
+            A responsibility-driven operating framework designed to
+            convert ideas, student participation and institutional
+            opportunities into measurable innovation outcomes.
+        </p>
 
-<a href="#roles">
-Roles
-</a>
 
-<a href="#sop">
-SOP
-</a>
+        <div class="cover-system">
 
-<a href="#conduct">
-Guidelines
-</a>
+            <div class="system-box">
+                <strong>INPUT</strong>
+                <small>Ideas • Needs • Opportunities</small>
+            </div>
 
-<a
-href="https://iicdmims.vercel.app/join.html"
-class="join"
->
-Join IIC →
-</a>
+            <div class="system-box">
+                <strong>PROCESS</strong>
+                <small>Planning • Coordination</small>
+            </div>
 
-</nav>
+            <div class="system-box">
+                <strong>OUTPUT</strong>
+                <small>Activities • Outcomes</small>
+            </div>
 
-</div>
+            <div class="system-box">
+                <strong>CONTROL</strong>
+                <small>Review • Tracking</small>
+            </div>
 
-</header>
+            <div class="system-box">
+                <strong>IMPROVE</strong>
+                <small>Feedback • Learning</small>
+            </div>
 
+        </div>
 
-<!-- =====================================================
-     HERO
-===================================================== -->
+    </div>
 
-<section class="hero">
 
-<div class="grid"></div>
-
-<div class="glow one"></div>
-<div class="glow two"></div>
-
-
-<div class="container hero-content">
-
-
-<div>
-
-<div class="badge">
-IIC DMIMS • CORE TEAM SOP
-</div>
-
-
-<h1>
-
-Build.
-<span>Innovate.</span>
-Lead.
-
-</h1>
-
-
-<p class="hero-description">
-
-A clear operating framework for the IIC DMIMS Core Team —
-defining who manages what, how teams coordinate,
-how activities are executed and how every initiative
-is documented.
-
-</p>
-
-
-<div class="hero-buttons">
-
-<a
-href="#roles"
-class="btn btn-primary"
->
-Explore Roles →
-</a>
-
-<a
-href="#structure"
-class="btn btn-outline"
->
-View Structure
-</a>
-
-</div>
-
-</div>
-
-
-<div class="command-card">
-
-<div class="command-top">
-
-<div class="command-icon">
-👑
-</div>
-
-<div>
-
-<h3>
-IIC Convenor
-</h3>
-
-<p>
-Overall Council Management
-</p>
-
-</div>
-
-</div>
-
-
-<ul class="command-list">
-
-<li>
-Overall supervision of IIC activities
-</li>
-
-<li>
-Coordinates all Core Team verticals
-</li>
-
-<li>
-Reviews plans, progress and outcomes
-</li>
-
-<li>
-Ensures institutional coordination
-</li>
-
-<li>
-Approves major initiatives and activities
-</li>
-
-<li>
-Maintains overall accountability
-</li>
-
-</ul>
-
-</div>
-
-
-</div>
+    <div class="page-footer">
+        <span>IIC DMIMS • Core Team SOP</span>
+        <span>2026</span>
+    </div>
 
 </section>
 
 
+
 <!-- =====================================================
-     SOP INTRO
-===================================================== -->
+     PAGE 2 — PURPOSE
+====================================================== -->
 
-<section
-class="section white"
-id="sop"
->
+<section class="page">
 
-<div class="container">
+    <div class="page-header">
 
-<div class="section-head">
+        <div class="header-brand">
 
-<span class="section-label">
-Standard Operating Procedure
-</span>
+            <img
+                src="https://iic.mic.gov.in/assets/assets/images/iiclogo.png"
+                alt="IIC"
+            >
 
-<h2>
-How the IIC Core Team operates
-</h2>
+            <div>
+                <div class="header-title">IIC DMIMS</div>
+                <div class="header-sub">Core Team Operating Framework</div>
+            </div>
 
-<p>
+        </div>
 
-This SOP establishes clear ownership, reporting,
-coordination and execution responsibilities so that
-every IIC initiative has a responsible person behind it.
+        <div class="page-number">
+            SOP • 02
+        </div>
 
-</p>
-
-</div>
+    </div>
 
 
-<div class="sop-grid">
+    <div style="margin-top:25px">
+
+        <div class="section-label">
+            01 • PURPOSE
+        </div>
+
+        <h2>
+            Why This SOP Exists
+        </h2>
+
+        <p class="lead">
+            The purpose of this SOP is to define how the IIC Core Team
+            converts responsibility into action without creating an
+            unnecessary hierarchy between roles.
+        </p>
 
 
-<div class="sop-card">
+        <div class="info-box">
 
-<span class="sop-number">
-01 • PLAN
-</span>
+            <h3>
+                One Council. Multiple Responsibility Areas.
+            </h3>
 
-<h3>
-Plan
-</h3>
+            <p>
+                Each coordinator owns a specific responsibility area.
+                Roles are not isolated departments. They are connected
+                parts of one operating system.
+            </p>
 
-<p>
-Identify objectives, activities, timelines,
-resources and responsible team members.
-</p>
+            <p>
+                The IIC Convenor ensures that these responsibility areas
+                receive the right inputs, move through a defined process,
+                produce useful outputs and remain continuously reviewed.
+            </p>
 
-</div>
-
-
-<div class="sop-card">
-
-<span class="sop-number">
-02 • COORDINATE
-</span>
-
-<h3>
-Coordinate
-</h3>
-
-<p>
-Work with other coordinators, volunteers,
-faculty and external stakeholders.
-</p>
-
-</div>
+        </div>
 
 
-<div class="sop-card">
-
-<span class="sop-number">
-03 • EXECUTE
-</span>
-
-<h3>
-Execute
-</h3>
-
-<p>
-Convert ideas into workshops, events,
-competitions, campaigns and initiatives.
-</p>
-
-</div>
+        <h3 style="margin-top:25px">
+            Operating Principles
+        </h3>
 
 
-<div class="sop-card">
+        <div class="three-column">
 
-<span class="sop-number">
-04 • REPORT
-</span>
+            <div class="card">
+                <h4>Ownership</h4>
+                <p>
+                    Every responsibility area must have a clear owner
+                    and measurable output.
+                </p>
+            </div>
 
-<h3>
-Report
-</h3>
+            <div class="card">
+                <h4>Collaboration</h4>
+                <p>
+                    Coordinators work together whenever an activity
+                    crosses multiple responsibility areas.
+                </p>
+            </div>
 
-<p>
-Document activities, outcomes, participation,
-evidence and achievements.
-</p>
+            <div class="card">
+                <h4>Accountability</h4>
+                <p>
+                    Work should be visible, trackable and reviewable.
+                </p>
+            </div>
 
-</div>
+            <div class="card">
+                <h4>Execution</h4>
+                <p>
+                    Ideas are valuable only when converted into action
+                    and outcomes.
+                </p>
+            </div>
+
+            <div class="card">
+                <h4>Documentation</h4>
+                <p>
+                    Every major activity should leave behind usable
+                    records and evidence.
+                </p>
+            </div>
+
+            <div class="card">
+                <h4>Improvement</h4>
+                <p>
+                    Feedback should continuously improve the system.
+                </p>
+            </div>
+
+        </div>
 
 
-</div>
+        <h3 style="margin-top:25px">
+            The IIC Operating Equation
+        </h3>
 
-</div>
+        <div class="system-flow">
+
+            <div class="flow-box">
+                <strong>INPUT</strong>
+                <small>Ideas, requests, opportunities</small>
+            </div>
+
+            <div class="flow-arrow">→</div>
+
+            <div class="flow-box">
+                <strong>PROCESS</strong>
+                <small>Plan, assign, coordinate</small>
+            </div>
+
+            <div class="flow-arrow">→</div>
+
+            <div class="flow-box">
+                <strong>OUTPUT</strong>
+                <small>Events, connections, outcomes</small>
+            </div>
+
+            <div class="flow-arrow">→</div>
+
+            <div class="flow-box">
+                <strong>CONTROL</strong>
+                <small>Review, measure, document</small>
+            </div>
+
+            <div class="flow-arrow">→</div>
+
+            <div class="flow-box">
+                <strong>IMPROVE</strong>
+                <small>Feedback & iteration</small>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="page-footer">
+        <span>IIC DMIMS • Operating Principles</span>
+        <span>02</span>
+    </div>
 
 </section>
 
 
+
 <!-- =====================================================
-     HIERARCHY
-===================================================== -->
+     PAGE 3 — CONVENOR
+====================================================== -->
 
-<section
-class="section hierarchy"
-id="structure"
->
+<section class="page">
 
-<div class="container">
+    <div class="page-header">
 
-<div class="section-head">
+        <div class="header-brand">
 
-<span class="section-label">
-Management Structure
-</span>
+            <img
+                src="https://iic.mic.gov.in/assets/assets/images/iiclogo.png"
+                alt="IIC"
+            >
 
-<h2>
-One Convenor. Multiple Verticals. One Mission.
-</h2>
+            <div>
+                <div class="header-title">IIC DMIMS</div>
+                <div class="header-sub">Operating Control</div>
+            </div>
 
-<p>
+        </div>
 
-The IIC Convenor oversees the complete council,
-while every coordinator owns a specific functional vertical.
+        <div class="page-number">
+            SOP • 03
+        </div>
 
-</p>
-
-</div>
+    </div>
 
 
-<div class="hierarchy-box">
+    <div style="margin-top:25px">
+
+        <div class="section-label">
+            02 • SYSTEM CONTROL
+        </div>
+
+        <h2>
+            IIC Convenor
+        </h2>
+
+        <p class="lead">
+            The Convenor is the system integrator of the IIC Core Team.
+            The role is not designed as a traditional command hierarchy.
+        </p>
 
 
-<div class="convenor">
+        <div class="convenor">
 
-<div class="icon">
-👑
-</div>
+            <div class="convenor-header">
 
-<h3>
-IIC Convenor
-</h3>
+                <div>
+                    <h3>
+                        👑 IIC Convenor
+                    </h3>
 
-<p>
-Overall Manager • Supervisor • Coordinator
-</p>
+                    <div style="font-size:9px;color:#c7d0df">
+                        System Coordination • Review • Integration • Control
+                    </div>
+                </div>
 
-</div>
+                <div class="convenor-badge">
+                    SYSTEM OWNER
+                </div>
 
-
-<div class="connector"></div>
-
-<div class="team-line"></div>
-
-
-<div class="team-grid">
+            </div>
 
 
-<div class="team-box">
-<strong>
-🚀 Start-up
-</strong>
-<span>
-Startup ecosystem
-</span>
-</div>
+            <div class="convenor-body">
+
+                <div class="convenor-grid">
+
+                    <div class="responsibility">
+                        <strong>01. Build the System</strong>
+                        <span>
+                            Create processes through which ideas and
+                            responsibilities move from input to output.
+                        </span>
+                    </div>
+
+                    <div class="responsibility">
+                        <strong>02. Connect KRAs</strong>
+                        <span>
+                            Ensure different responsibility areas
+                            work together instead of functioning in silos.
+                        </span>
+                    </div>
+
+                    <div class="responsibility">
+                        <strong>03. Review Progress</strong>
+                        <span>
+                            Monitor whether responsibilities are being
+                            converted into actual outputs.
+                        </span>
+                    </div>
+
+                    <div class="responsibility">
+                        <strong>04. Remove Bottlenecks</strong>
+                        <span>
+                            Identify delays, confusion, duplication or
+                            resource gaps and help resolve them.
+                        </span>
+                    </div>
+
+                    <div class="responsibility">
+                        <strong>05. Coordinate Resources</strong>
+                        <span>
+                            Connect people, mentors, speakers, students,
+                            opportunities and institutional resources.
+                        </span>
+                    </div>
+
+                    <div class="responsibility">
+                        <strong>06. Maintain Standards</strong>
+                        <span>
+                            Ensure activities follow agreed processes,
+                            timelines and documentation standards.
+                        </span>
+                    </div>
+
+                    <div class="responsibility">
+                        <strong>07. Review Outputs</strong>
+                        <span>
+                            Check what was achieved, what was missed
+                            and what should happen next.
+                        </span>
+                    </div>
+
+                    <div class="responsibility">
+                        <strong>08. Improve the System</strong>
+                        <span>
+                            Use feedback and performance data to improve
+                            how IIC operates over time.
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
 
 
-<div class="team-box">
-<strong>
-💼 Internship
-</strong>
-<span>
-Industry opportunities
-</span>
-</div>
+        <div class="info-box">
+
+            <h3>
+                Convenor's Core Question
+            </h3>
+
+            <p>
+                <strong>
+                    "What input has come in, who is processing it,
+                    what output is expected, what has actually happened,
+                    and what needs to be improved?"
+                </strong>
+            </p>
+
+        </div>
+
+    </div>
 
 
-<div class="team-box">
-<strong>
-💡 IPR
-</strong>
-<span>
-Intellectual property
-</span>
-</div>
-
-
-<div class="team-box">
-<strong>
-🎨 Creative
-</strong>
-<span>
-Design & branding
-</span>
-</div>
-
-
-<div class="team-box">
-<strong>
-🧠 YUKTI
-</strong>
-<span>
-Innovation challenges
-</span>
-</div>
-
-
-<div class="team-box">
-<strong>
-👩‍💼 WISE
-</strong>
-<span>
-Women in innovation
-</span>
-</div>
-
-
-<div class="team-box">
-<strong>
-📊 ARIIA
-</strong>
-<span>
-Data & documentation
-</span>
-</div>
-
-
-<div class="team-box">
-<strong>
-🤝 Alumni
-</strong>
-<span>
-Alumni ecosystem
-</span>
-</div>
-
-
-<div class="team-box">
-<strong>
-📱 Social Media
-</strong>
-<span>
-Digital presence
-</span>
-</div>
-
-
-<div class="team-box">
-<strong>
-🎤 Events
-</strong>
-<span>
-Execution & outreach
-</span>
-</div>
-
-
-<div class="team-box">
-<strong>
-🧑‍💻 Documentation
-</strong>
-<span>
-Reports & evidence
-</span>
-</div>
-
-
-<div class="team-box">
-<strong>
-👥 Volunteers
-</strong>
-<span>
-Execution support
-</span>
-</div>
-
-
-</div>
-
-</div>
-
-</div>
+    <div class="page-footer">
+        <span>IIC DMIMS • Convenor Operating Responsibility</span>
+        <span>03</span>
+    </div>
 
 </section>
 
 
+
 <!-- =====================================================
-     CONVENOR RESPONSIBILITY
-===================================================== -->
+     PAGE 4 — PROCESS
+====================================================== -->
 
-<section class="section white">
+<section class="page">
 
-<div class="container">
+    <div class="page-header">
 
-<div class="section-head">
+        <div class="header-brand">
 
-<span class="section-label">
-Leadership
-</span>
+            <img
+                src="https://iic.mic.gov.in/assets/assets/images/iiclogo.png"
+                alt="IIC"
+            >
 
-<h2>
-IIC Convenor — Overall Management
-</h2>
+            <div>
+                <div class="header-title">IIC DMIMS</div>
+                <div class="header-sub">Workflow & Control System</div>
+            </div>
 
-<p>
+        </div>
 
-The Convenor acts as the central point of coordination
-for the Core Team and ensures that every vertical works
-towards the same IIC objectives.
+        <div class="page-number">
+            SOP • 04
+        </div>
 
-</p>
-
-</div>
-
-
-<div class="responsibility-grid">
+    </div>
 
 
-<div class="responsibility-box">
+    <div style="margin-top:25px">
 
-<h3>
-👑 Management Responsibilities
-</h3>
+        <div class="section-label">
+            03 • WORKFLOW
+        </div>
 
-<ul class="check-list">
+        <h2>
+            How IIC Work Moves
+        </h2>
 
-<li>
-Supervise all IIC Core Team activities.
-</li>
-
-<li>
-Assign responsibilities and coordinate verticals.
-</li>
-
-<li>
-Review proposed activities and initiatives.
-</li>
-
-<li>
-Coordinate with relevant faculty/institutional authorities.
-</li>
-
-<li>
-Set priorities and activity timelines.
-</li>
-
-<li>
-Monitor progress of every coordinator.
-</li>
-
-</ul>
-
-</div>
+        <p class="lead">
+            Every major activity should pass through a simple,
+            repeatable operating cycle.
+        </p>
 
 
-<div class="responsibility-box">
+        <div class="process">
 
-<h3>
-📊 Review & Accountability
-</h3>
+            <div class="process-step">
 
-<ul class="check-list">
+                <div class="process-number">1</div>
 
-<li>
-Conduct regular Core Team meetings.
-</li>
+                <div class="process-content">
 
-<li>
-Review weekly/monthly progress.
-</li>
+                    <strong>INPUT</strong>
 
-<li>
-Identify delays or inactive responsibilities.
-</li>
+                    <p>
+                        A student idea, opportunity, requirement,
+                        event proposal, partnership opportunity,
+                        innovation challenge or institutional need
+                        enters the system.
+                    </p>
 
-<li>
-Resolve coordination issues between teams.
-</li>
+                </div>
 
-<li>
-Review event reports and documentation.
-</li>
-
-<li>
-Maintain overall accountability of the council.
-</li>
-
-</ul>
-
-</div>
+            </div>
 
 
-</div>
+            <div class="process-step">
 
-</div>
+                <div class="process-number">2</div>
+
+                <div class="process-content">
+
+                    <strong>IDENTIFY RESPONSIBILITY</strong>
+
+                    <p>
+                        The relevant KRA owner is identified.
+                        If multiple KRAs are involved, a primary
+                        owner and supporting roles are defined.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="process-step">
+
+                <div class="process-number">3</div>
+
+                <div class="process-content">
+
+                    <strong>PLAN</strong>
+
+                    <p>
+                        Define objective, people involved, timeline,
+                        resources, expected output and success measure.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="process-step">
+
+                <div class="process-number">4</div>
+
+                <div class="process-content">
+
+                    <strong>EXECUTE</strong>
+
+                    <p>
+                        The responsible team carries out the activity
+                        while coordinating with other relevant KRAs.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="process-step">
+
+                <div class="process-number">5</div>
+
+                <div class="process-content">
+
+                    <strong>OUTPUT</strong>
+
+                    <p>
+                        The activity produces a defined outcome:
+                        event, participant engagement, startup lead,
+                        internship opportunity, innovation submission,
+                        content, report, connection or other result.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="process-step">
+
+                <div class="process-number">6</div>
+
+                <div class="process-content">
+
+                    <strong>CONTROL & REVIEW</strong>
+
+                    <p>
+                        The output is reviewed for completion,
+                        quality, documentation and measurable impact.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="process-step">
+
+                <div class="process-number">7</div>
+
+                <div class="process-content">
+
+                    <strong>LEARN & IMPROVE</strong>
+
+                    <p>
+                        Feedback, problems and lessons are recorded
+                        and used to improve the next cycle.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="page-footer">
+        <span>IIC DMIMS • Input to Output Process</span>
+        <span>04</span>
+    </div>
 
 </section>
 
 
-<!-- =====================================================
-     ROLES
-===================================================== -->
-
-<section
-class="section roles"
-id="roles"
->
-
-<div class="container">
-
-<div class="section-head">
-
-<span class="section-label">
-Core Team SOP
-</span>
-
-<h2>
-Roles & Responsibilities
-</h2>
-
-<p>
-
-Every coordinator has ownership of a vertical.
-However, major activities should be coordinated
-with the Convenor and relevant team members.
-
-</p>
-
-</div>
-
-
-<div class="role-tools">
-
-<div class="search">
-
-<span>⌕</span>
-
-<input
-type="text"
-id="search"
-placeholder="Search role, skill or responsibility..."
->
-
-</div>
-
-<div
-class="role-count"
-id="count"
->
-Showing 11 roles
-</div>
-
-</div>
-
-
-<div
-class="role-list"
-id="roleList"
->
-
 
 <!-- =====================================================
-     01 STARTUP
-===================================================== -->
+     PAGE 5 — ROLES
+====================================================== -->
 
-<div class="role">
+<section class="page">
 
-<button class="role-header">
+    <div class="page-header">
 
-<div class="role-number">
-01
-</div>
+        <div class="header-brand">
 
-<div class="role-title">
+            <img
+                src="https://iic.mic.gov.in/assets/assets/images/iiclogo.png"
+                alt="IIC"
+            >
 
-<h3>
-🚀 Start-up Coordinator
-</h3>
+            <div>
+                <div class="header-title">IIC DMIMS</div>
+                <div class="header-sub">Key Responsibility Areas</div>
+            </div>
 
-<p>
-Build the startup ecosystem among DMIMS students.
-</p>
+        </div>
 
-</div>
+        <div class="page-number">
+            SOP • 05
+        </div>
 
-<div class="arrow">
-↓
-</div>
+    </div>
 
-</button>
 
+    <div style="margin-top:25px">
 
-<div class="role-body">
+        <div class="section-label">
+            04 • CORE TEAM
+        </div>
 
-<p class="role-description">
+        <h2>
+            Key Responsibility Areas
+        </h2>
 
-The Start-up Coordinator identifies students with
-startup/business ideas and connects them with the
-right mentors, incubators, competitions and opportunities.
+        <p class="lead">
+            Each role owns a specific KRA. Ownership means taking
+            responsibility for generating useful outputs — not working
+            independently from the rest of the council.
+        </p>
 
-</p>
 
+        <div class="role-filter">
 
-<div class="role-columns">
+            <button class="filter-btn active" onclick="filterRoles('all',this)">
+                All
+            </button>
 
-<div>
+            <button class="filter-btn" onclick="filterRoles('innovation',this)">
+                Innovation
+            </button>
 
-<h4>
-Responsibilities
-</h4>
+            <button class="filter-btn" onclick="filterRoles('industry',this)">
+                Industry
+            </button>
 
-<ul>
+            <button class="filter-btn" onclick="filterRoles('creative',this)">
+                Creative
+            </button>
 
-<li>
-Find students with startup/business ideas.
-</li>
+            <button class="filter-btn" onclick="filterRoles('community',this)">
+                Community
+            </button>
 
-<li>
-Maintain a database of student entrepreneurs.
-</li>
+            <button class="filter-btn" onclick="filterRoles('operations',this)">
+                Operations
+            </button>
 
-<li>
-Connect ideas with mentors and incubators.
-</li>
+        </div>
 
-<li>
-Identify startup competitions.
-</li>
 
-<li>
-Organise startup pitching sessions.
-</li>
+        <div class="roles">
 
-<li>
-Help students prepare basic pitch decks.
-</li>
 
-<li>
-Conduct entrepreneurship workshops.
-</li>
+            <!-- STARTUP -->
 
-<li>
-Identify potential student startups.
-</li>
+            <div class="role" data-category="innovation">
 
-<li>
-Encourage hackathon participation.
-</li>
+                <div class="role-top" onclick="toggleRole(this.parentElement)">
 
-</ul>
+                    <div class="role-icon">🚀</div>
 
-</div>
+                    <div>
+                        <div class="role-name">
+                            Start-up Coordinator
+                        </div>
 
+                        <div class="role-category">
+                            Innovation • Entrepreneurship
+                        </div>
+                    </div>
 
-<div class="best">
+                    <div class="role-arrow">▼</div>
 
-<h4>
-Best For
-</h4>
+                </div>
 
-<p>
-Students interested in startups, business,
-entrepreneurship and networking.
-</p>
+                <div class="role-content">
 
-<div class="tags">
+                    <h4>Key Responsibility</h4>
 
-<span class="tag">Startups</span>
-<span class="tag">Business</span>
-<span class="tag">Entrepreneurship</span>
-<span class="tag">Networking</span>
+                    <p class="lead">
+                        Build a student startup and entrepreneurship
+                        ecosystem within DMIMS.
+                    </p>
 
-</div>
+                    <h4>Responsibilities</h4>
 
-</div>
+                    <ul>
+                        <li>Identify students with startup/business ideas.</li>
+                        <li>Maintain a student entrepreneur database.</li>
+                        <li>Connect ideas with mentors and relevant opportunities.</li>
+                        <li>Organise startup pitching sessions.</li>
+                        <li>Support basic pitch-deck development.</li>
+                        <li>Conduct startup and entrepreneurship activities.</li>
+                        <li>Encourage participation in startup competitions.</li>
+                    </ul>
 
-</div>
+                    <div class="role-output">
+                        <strong>Expected Output:</strong>
+                        Startup leads, founder connections, pitch sessions,
+                        mentorship opportunities and student startup pipeline.
+                    </div>
 
-</div>
+                </div>
 
-</div>
+            </div>
 
 
-<!-- =====================================================
-     02 INTERNSHIP
-===================================================== -->
+            <!-- INTERNSHIP -->
 
-<div class="role">
+            <div class="role" data-category="industry">
 
-<button class="role-header">
+                <div class="role-top" onclick="toggleRole(this.parentElement)">
 
-<div class="role-number">
-02
-</div>
+                    <div class="role-icon">💼</div>
 
-<div class="role-title">
+                    <div>
+                        <div class="role-name">
+                            Internship Coordinator
+                        </div>
 
-<h3>
-💼 Internship Coordinator
-</h3>
+                        <div class="role-category">
+                            Industry • Career Exposure
+                        </div>
+                    </div>
 
-<p>
-Create internship and practical exposure opportunities.
-</p>
+                    <div class="role-arrow">▼</div>
 
-</div>
+                </div>
 
-<div class="arrow">
-↓
-</div>
+                <div class="role-content">
 
-</button>
+                    <h4>Key Responsibility</h4>
 
+                    <p class="lead">
+                        Create internship and practical exposure
+                        opportunities for students.
+                    </p>
 
-<div class="role-body">
+                    <h4>Responsibilities</h4>
 
-<p class="role-description">
+                    <ul>
+                        <li>Identify startups and organisations offering internships.</li>
+                        <li>Build relationships with founders and HR teams.</li>
+                        <li>Share relevant opportunities with students.</li>
+                        <li>Maintain an internship opportunity database.</li>
+                        <li>Coordinate company interactions.</li>
+                        <li>Support internship fairs and networking sessions.</li>
+                        <li>Track participation and outcomes.</li>
+                    </ul>
 
-The Internship Coordinator builds relationships with
-startups, companies and organisations and connects
-students with practical exposure opportunities.
+                    <div class="role-output">
+                        <strong>Expected Output:</strong>
+                        Verified opportunities, company connections,
+                        student participation and internship outcomes.
+                    </div>
 
-</p>
+                </div>
 
+            </div>
 
-<div class="role-columns">
 
-<div>
+            <!-- IPR -->
 
-<h4>
-Responsibilities
-</h4>
+            <div class="role" data-category="innovation">
 
-<ul>
+                <div class="role-top" onclick="toggleRole(this.parentElement)">
 
-<li>
-Find companies offering internships.
-</li>
+                    <div class="role-icon">💡</div>
 
-<li>
-Build relationships with founders and HRs.
-</li>
+                    <div>
+                        <div class="role-name">
+                            IPR Coordinator
+                        </div>
 
-<li>
-Share relevant opportunities with students.
-</li>
+                        <div class="role-category">
+                            Innovation • Intellectual Property
+                        </div>
+                    </div>
 
-<li>
-Maintain an internship database.
-</li>
+                    <div class="role-arrow">▼</div>
 
-<li>
-Coordinate company interaction sessions.
-</li>
+                </div>
 
-<li>
-Support internship fairs.
-</li>
+                <div class="role-content">
 
-<li>
-Organise startup networking events.
-</li>
+                    <h4>Key Responsibility</h4>
 
-<li>
-Track participation and outcomes.
-</li>
+                    <p class="lead">
+                        Build awareness around intellectual property
+                        and identify innovations with IP potential.
+                    </p>
 
-</ul>
+                    <h4>Responsibilities</h4>
 
-</div>
+                    <ul>
+                        <li>Organise IPR awareness sessions.</li>
+                        <li>Promote awareness of patents, copyrights, trademarks and designs.</li>
+                        <li>Identify student innovations with potential IP value.</li>
+                        <li>Connect innovators with appropriate experts.</li>
+                        <li>Create educational IPR content.</li>
+                        <li>Maintain relevant records.</li>
+                    </ul>
 
+                    <div class="role-output">
+                        <strong>Expected Output:</strong>
+                        IPR awareness, innovation identification,
+                        expert connections and documented IP-related activities.
+                    </div>
 
-<div class="best">
+                </div>
 
-<h4>
-Best For
-</h4>
+            </div>
 
-<p>
-Students strong in communication, networking
-and professional coordination.
-</p>
 
-<div class="tags">
+            <!-- GRAPHICS -->
 
-<span class="tag">Communication</span>
-<span class="tag">Networking</span>
-<span class="tag">HR</span>
-<span class="tag">Coordination</span>
+            <div class="role" data-category="creative">
 
-</div>
+                <div class="role-top" onclick="toggleRole(this.parentElement)">
 
-</div>
+                    <div class="role-icon">🎨</div>
 
-</div>
+                    <div>
+                        <div class="role-name">
+                            Graphics & Creative Coordinator
+                        </div>
 
-</div>
+                        <div class="role-category">
+                            Creative • Branding
+                        </div>
+                    </div>
 
-</div>
+                    <div class="role-arrow">▼</div>
 
+                </div>
 
-<!-- =====================================================
-     03 IPR
-===================================================== -->
+                <div class="role-content">
 
-<div class="role">
+                    <h4>Key Responsibility</h4>
 
-<button class="role-header">
+                    <p class="lead">
+                        Maintain the professional visual identity
+                        of IIC DMIMS.
+                    </p>
 
-<div class="role-number">
-03
-</div>
+                    <h4>Responsibilities</h4>
 
-<div class="role-title">
+                    <ul>
+                        <li>Create event posters and promotional creatives.</li>
+                        <li>Design certificates and invitations.</li>
+                        <li>Create presentation and pitch-deck templates.</li>
+                        <li>Develop social media creatives.</li>
+                        <li>Maintain visual consistency.</li>
+                        <li>Support event branding and campaigns.</li>
+                    </ul>
 
-<h3>
-💡 IPR Coordinator
-</h3>
+                    <div class="role-output">
+                        <strong>Expected Output:</strong>
+                        Professional, consistent and timely IIC visual communication.
+                    </div>
 
-<p>
-Promote awareness of intellectual property rights.
-</p>
+                </div>
 
-</div>
+            </div>
 
-<div class="arrow">
-↓
-</div>
 
-</button>
+            <!-- YUKTI -->
 
+            <div class="role" data-category="innovation">
 
-<div class="role-body">
+                <div class="role-top" onclick="toggleRole(this.parentElement)">
 
-<p class="role-description">
+                    <div class="role-icon">🧠</div>
 
-IPR means Intellectual Property Rights. This vertical
-creates awareness around patents, copyrights,
-trademarks, designs and related innovation protection.
+                    <div>
+                        <div class="role-name">
+                            YUKTI Coordinator
+                        </div>
 
-</p>
+                        <div class="role-category">
+                            Innovation • Competitions
+                        </div>
+                    </div>
 
+                    <div class="role-arrow">▼</div>
 
-<div class="role-columns">
+                </div>
 
-<div>
+                <div class="role-content">
 
-<h4>
-Responsibilities
-</h4>
+                    <h4>Key Responsibility</h4>
 
-<ul>
+                    <p class="lead">
+                        Support students in innovation challenges,
+                        idea competitions and relevant innovation platforms.
+                    </p>
 
-<li>
-Organise IPR awareness sessions.
-</li>
+                    <h4>Responsibilities</h4>
 
-<li>
-Explain basic patent concepts.
-</li>
+                    <ul>
+                        <li>Identify promising student ideas.</li>
+                        <li>Encourage participation in innovation challenges.</li>
+                        <li>Coordinate hackathons and idea competitions.</li>
+                        <li>Support submission processes.</li>
+                        <li>Connect innovators with mentors.</li>
+                        <li>Maintain participation records.</li>
+                        <li>Track outcomes.</li>
+                    </ul>
 
-<li>
-Explain copyright and trademark concepts.
-</li>
+                    <div class="role-output">
+                        <strong>Expected Output:</strong>
+                        Student participation, innovation submissions,
+                        competition entries and tracked outcomes.
+                    </div>
 
-<li>
-Identify innovations with IP potential.
-</li>
+                </div>
 
-<li>
-Connect innovators with experts.
-</li>
+            </div>
 
-<li>
-Promote IPR initiatives.
-</li>
 
-<li>
-Maintain IPR activity records.
-</li>
+            <!-- WISE -->
 
-<li>
-Create simple educational content.
-</li>
+            <div class="role" data-category="community">
 
-</ul>
+                <div class="role-top" onclick="toggleRole(this.parentElement)">
 
-</div>
+                    <div class="role-icon">👩‍💼</div>
 
+                    <div>
+                        <div class="role-name">
+                            Student Lead – WISE
+                        </div>
 
-<div class="best">
+                        <div class="role-category">
+                            Community • Women in Innovation
+                        </div>
+                    </div>
 
-<h4>
-Example</h4>
+                    <div class="role-arrow">▼</div>
 
-<p>
+                </div>
 
-Student develops a unique product or business idea →
-the coordinator helps them understand whether the
-creation may have intellectual-property protection options.
+                <div class="role-content">
 
-</p>
+                    <h4>Key Responsibility</h4>
 
-<div class="tags">
+                    <p class="lead">
+                        Encourage participation of women students
+                        in innovation and entrepreneurship.
+                    </p>
 
-<span class="tag">IPR</span>
-<span class="tag">Law</span>
-<span class="tag">Research</span>
-<span class="tag">Innovation</span>
+                    <h4>Responsibilities</h4>
 
-</div>
+                    <ul>
+                        <li>Identify interested women students.</li>
+                        <li>Organise focused innovation sessions.</li>
+                        <li>Connect students with women founders and entrepreneurs.</li>
+                        <li>Promote women-led startups and innovations.</li>
+                        <li>Encourage competition participation.</li>
+                        <li>Build a supportive peer network.</li>
+                    </ul>
 
-</div>
+                    <div class="role-output">
+                        <strong>Expected Output:</strong>
+                        Participation, networking, mentoring and women-led innovation initiatives.
+                    </div>
 
-</div>
+                </div>
 
-</div>
+            </div>
 
-</div>
 
+            <!-- ARIIA -->
 
-<!-- =====================================================
-     04 CREATIVE
-===================================================== -->
+            <div class="role" data-category="operations">
 
-<div class="role">
+                <div class="role-top" onclick="toggleRole(this.parentElement)">
 
-<button class="role-header">
+                    <div class="role-icon">📊</div>
 
-<div class="role-number">
-04
-</div>
+                    <div>
+                        <div class="role-name">
+                            ARIIA Coordinator
+                        </div>
 
-<div class="role-title">
+                        <div class="role-category">
+                            Data • Innovation Documentation
+                        </div>
+                    </div>
 
-<h3>
-🎨 Graphics & Creative Coordinator
-</h3>
+                    <div class="role-arrow">▼</div>
 
-<p>
-Make IIC communication professional and visually consistent.
-</p>
+                </div>
 
-</div>
+                <div class="role-content">
 
-<div class="arrow">
-↓
-</div>
+                    <h4>Key Responsibility</h4>
 
-</button>
+                    <p class="lead">
+                        Support systematic collection and organisation
+                        of innovation-related institutional information.
+                    </p>
 
+                    <h4>Responsibilities</h4>
 
-<div class="role-body">
+                    <ul>
+                        <li>Collect innovation activity information.</li>
+                        <li>Maintain participation and activity records.</li>
+                        <li>Coordinate evidence collection.</li>
+                        <li>Maintain photographs, reports and supporting documents.</li>
+                        <li>Track startup and innovation achievements.</li>
+                        <li>Maintain organised data throughout the year.</li>
+                    </ul>
 
-<p class="role-description">
+                    <div class="role-output">
+                        <strong>Expected Output:</strong>
+                        Accurate, organised and retrievable innovation-related records.
+                    </div>
 
-The Creative Coordinator manages the visual identity
-of IIC across events, social media, presentations
-and campaigns.
+                </div>
 
-</p>
+            </div>
 
 
-<div class="role-columns">
+            <!-- ALUMNI -->
 
-<div>
+            <div class="role" data-category="industry">
 
-<h4>
-Responsibilities
-</h4>
+                <div class="role-top" onclick="toggleRole(this.parentElement)">
 
-<ul>
+                    <div class="role-icon">🤝</div>
 
-<li>
-Design IIC event posters.
-</li>
+                    <div>
+                        <div class="role-name">
+                            Alumni Coordinator
+                        </div>
 
-<li>
-Create certificates and invitations.
-</li>
+                        <div class="role-category">
+                            Community • Networking
+                        </div>
+                    </div>
 
-<li>
-Create banners and event branding.
-</li>
+                    <div class="role-arrow">▼</div>
 
-<li>
-Design presentation templates.
-</li>
+                </div>
 
-<li>
-Create pitch-deck templates.
-</li>
+                <div class="role-content">
 
-<li>
-Create social media creatives.
-</li>
+                    <h4>Key Responsibility</h4>
 
-<li>
-Maintain visual consistency.
-</li>
+                    <p class="lead">
+                        Build meaningful connections between alumni
+                        and the IIC ecosystem.
+                    </p>
 
-<li>
-Design recruitment campaigns.
-</li>
+                    <h4>Responsibilities</h4>
 
-<li>
-Support competition branding.
-</li>
+                    <ul>
+                        <li>Identify alumni entrepreneurs and professionals.</li>
+                        <li>Maintain an alumni database.</li>
+                        <li>Invite alumni for talks and mentoring.</li>
+                        <li>Coordinate alumni-founder interactions.</li>
+                        <li>Invite suitable alumni as mentors or judges.</li>
+                        <li>Identify industry and internship opportunities.</li>
+                    </ul>
 
-</ul>
+                    <div class="role-output">
+                        <strong>Expected Output:</strong>
+                        Active alumni network, mentorship, speakers,
+                        industry connections and opportunities.
+                    </div>
 
-</div>
+                </div>
 
+            </div>
 
-<div class="best">
 
-<h4>
-Best For
-</h4>
+            <!-- SOCIAL -->
 
-<p>
-Students comfortable with Canva, Photoshop,
-Illustrator, Figma, video editing and visual design.
-</p>
+            <div class="role" data-category="creative">
 
-<div class="tags">
+                <div class="role-top" onclick="toggleRole(this.parentElement)">
 
-<span class="tag">Canva</span>
-<span class="tag">Figma</span>
-<span class="tag">Photoshop</span>
-<span class="tag">Video</span>
+                    <div class="role-icon">📱</div>
 
-</div>
+                    <div>
+                        <div class="role-name">
+                            Social Media Coordinator
+                        </div>
 
-</div>
+                        <div class="role-category">
+                            Creative • Digital Communication
+                        </div>
+                    </div>
 
-</div>
+                    <div class="role-arrow">▼</div>
 
-</div>
+                </div>
 
-</div>
+                <div class="role-content">
 
+                    <h4>Key Responsibility</h4>
 
-<!-- =====================================================
-     05 YUKTI
-===================================================== -->
+                    <p class="lead">
+                        Communicate IIC's activities, opportunities
+                        and achievements to the student community.
+                    </p>
 
-<div class="role">
+                    <h4>Responsibilities</h4>
 
-<button class="role-header">
+                    <ul>
+                        <li>Manage social media communication.</li>
+                        <li>Create content calendars.</li>
+                        <li>Promote events and opportunities.</li>
+                        <li>Coordinate photography and video coverage.</li>
+                        <li>Create reels and short-form content.</li>
+                        <li>Highlight student achievements.</li>
+                        <li>Coordinate with Graphics & Creative.</li>
+                    </ul>
 
-<div class="role-number">
-05
-</div>
+                    <div class="role-output">
+                        <strong>Expected Output:</strong>
+                        Consistent digital presence, reach, engagement
+                        and awareness of IIC opportunities.
+                    </div>
 
-<div class="role-title">
+                </div>
 
-<h3>
-🧠 YUKTI Coordinator
-</h3>
+            </div>
 
-<p>
-Help ideas move towards innovation platforms and competitions.
-</p>
 
-</div>
+            <!-- EVENT -->
 
-<div class="arrow">
-↓
-</div>
+            <div class="role" data-category="operations">
 
-</button>
+                <div class="role-top" onclick="toggleRole(this.parentElement)">
 
+                    <div class="role-icon">🎤</div>
 
-<div class="role-body">
+                    <div>
+                        <div class="role-name">
+                            Event & Outreach Coordinator
+                        </div>
 
-<p class="role-description">
+                        <div class="role-category">
+                            Operations • Execution
+                        </div>
+                    </div>
 
-The YUKTI Coordinator identifies promising ideas and
-helps students participate in innovation challenges,
-competitions, hackathons and mentoring opportunities.
+                    <div class="role-arrow">▼</div>
 
-</p>
+                </div>
 
+                <div class="role-content">
 
-<div class="role-columns">
+                    <h4>Key Responsibility</h4>
 
-<div>
+                    <p class="lead">
+                        Convert IIC plans into properly executed
+                        events and outreach activities.
+                    </p>
 
-<h4>
-Responsibilities
-</h4>
+                    <h4>Responsibilities</h4>
 
-<ul>
+                    <ul>
+                        <li>Prepare event timelines.</li>
+                        <li>Coordinate venues and registrations.</li>
+                        <li>Coordinate speakers and participants.</li>
+                        <li>Assign volunteers.</li>
+                        <li>Handle on-ground execution.</li>
+                        <li>Coordinate hospitality and logistics.</li>
+                        <li>Collect feedback after activities.</li>
+                    </ul>
 
-<li>
-Identify promising student ideas.
-</li>
+                    <div class="role-output">
+                        <strong>Expected Output:</strong>
+                        Smoothly executed events, participant engagement
+                        and completed activity feedback.
+                    </div>
 
-<li>
-Encourage innovation challenge participation.
-</li>
+                </div>
 
-<li>
-Explain submission requirements.
-</li>
+            </div>
 
-<li>
-Coordinate idea competitions.
-</li>
 
-<li>
-Coordinate hackathons.
-</li>
+            <!-- DOCUMENTATION -->
 
-<li>
-Maintain innovation records.
-</li>
+            <div class="role" data-category="operations">
 
-<li>
-Connect promising ideas with mentors.
-</li>
+                <div class="role-top" onclick="toggleRole(this.parentElement)">
 
-<li>
-Track participation and outcomes.
-</li>
+                    <div class="role-icon">🧑‍💻</div>
 
-</ul>
+                    <div>
+                        <div class="role-name">
+                            Documentation & Reporting Coordinator
+                        </div>
 
-</div>
+                        <div class="role-category">
+                            Operations • Records
+                        </div>
+                    </div>
 
+                    <div class="role-arrow">▼</div>
 
-<div class="best">
+                </div>
 
-<h4>
-Best For
-</h4>
+                <div class="role-content">
 
-<p>
-Students interested in innovation, competitions,
-problem solving and discovering new ideas.
-</p>
+                    <h4>Key Responsibility</h4>
 
-<div class="tags">
+                    <p class="lead">
+                        Ensure that IIC activities are properly recorded,
+                        documented and retrievable.
+                    </p>
 
-<span class="tag">Innovation</span>
-<span class="tag">Competitions</span>
-<span class="tag">Ideas</span>
-<span class="tag">Problem Solving</span>
+                    <h4>Responsibilities</h4>
 
-</div>
+                    <ul>
+                        <li>Prepare event reports.</li>
+                        <li>Maintain photographs and videos.</li>
+                        <li>Track attendance.</li>
+                        <li>Maintain activity summaries.</li>
+                        <li>Organise Google Drive folders.</li>
+                        <li>Maintain event calendars.</li>
+                        <li>Maintain certificates and supporting evidence.</li>
+                    </ul>
 
-</div>
+                    <div class="role-output">
+                        <strong>Expected Output:</strong>
+                        Complete and organised documentation for every major activity.
+                    </div>
 
-</div>
+                </div>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
+    </div>
 
-<!-- =====================================================
-     06 WISE
-===================================================== -->
 
-<div class="role">
-
-<button class="role-header">
-
-<div class="role-number">
-06
-</div>
-
-<div class="role-title">
-
-<h3>
-👩‍💼 Student Lead – WISE
-</h3>
-
-<p>
-Encourage women students in innovation and entrepreneurship.
-</p>
-
-</div>
-
-<div class="arrow">
-↓
-</div>
-
-</button>
-
-
-<div class="role-body">
-
-<p class="role-description">
-
-WISE is positioned here as a women-focused innovation
-and entrepreneurship initiative that encourages participation,
-leadership, networking and startup development.
-
-</p>
-
-
-<div class="role-columns">
-
-<div>
-
-<h4>
-Responsibilities
-</h4>
-
-<ul>
-
-<li>
-Identify women students interested in entrepreneurship.
-</li>
-
-<li>
-Organise women-focused innovation sessions.
-</li>
-
-<li>
-Invite women founders and entrepreneurs.
-</li>
-
-<li>
-Promote women-led startups.
-</li>
-
-<li>
-Highlight women innovators.
-</li>
-
-<li>
-Encourage competition participation.
-</li>
-
-<li>
-Build a supportive networking community.
-</li>
-
-</ul>
-
-</div>
-
-
-<div class="best">
-
-<h4>
-Best For
-</h4>
-
-<p>
-Students who enjoy community building,
-networking and social initiatives.
-</p>
-
-<div class="tags">
-
-<span class="tag">Community</span>
-<span class="tag">Leadership</span>
-<span class="tag">Networking</span>
-<span class="tag">Women in Innovation</span>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- =====================================================
-     07 ARIIA
-===================================================== -->
-
-<div class="role">
-
-<button class="role-header">
-
-<div class="role-number">
-07
-</div>
-
-<div class="role-title">
-
-<h3>
-📊 ARIIA Coordinator
-</h3>
-
-<p>
-Support innovation documentation and institutional data.
-</p>
-
-</div>
-
-<div class="arrow">
-↓
-</div>
-
-</button>
-
-
-<div class="role-body">
-
-<p class="role-description">
-
-The ARIIA Coordinator supports organised collection
-of information, records, evidence and achievements
-related to institutional innovation activities.
-
-</p>
-
-
-<div class="role-columns">
-
-<div>
-
-<h4>
-Responsibilities
-</h4>
-
-<ul>
-
-<li>
-Collect innovation activity information.
-</li>
-
-<li>
-Maintain event and participation records.
-</li>
-
-<li>
-Coordinate data collection.
-</li>
-
-<li>
-Maintain photographs and reports.
-</li>
-
-<li>
-Maintain supporting evidence.
-</li>
-
-<li>
-Track startup achievements.
-</li>
-
-<li>
-Track innovation achievements.
-</li>
-
-<li>
-Maintain organised documentation.
-</li>
-
-</ul>
-
-</div>
-
-
-<div class="best">
-
-<h4>
-Important</h4>
-
-<p>
-
-This is primarily a
-<strong>documentation + data</strong>
-responsibility and not simply an event role.
-
-</p>
-
-<div class="tags">
-
-<span class="tag">Excel</span>
-<span class="tag">Google Sheets</span>
-<span class="tag">Data</span>
-<span class="tag">Documentation</span>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- =====================================================
-     08 ALUMNI
-===================================================== -->
-
-<div class="role">
-
-<button class="role-header">
-
-<div class="role-number">
-08
-</div>
-
-<div class="role-title">
-
-<h3>
-🤝 Alumni Coordinator
-</h3>
-
-<p>
-Bring alumni into the IIC ecosystem.
-</p>
-
-</div>
-
-<div class="arrow">
-↓
-</div>
-
-</button>
-
-
-<div class="role-body">
-
-<p class="role-description">
-
-The Alumni Coordinator builds long-term relationships
-with DMIMS alumni who can contribute as speakers,
-mentors, judges, founders or industry connections.
-
-</p>
-
-
-<div class="role-columns">
-
-<div>
-
-<h4>
-Responsibilities
-</h4>
-
-<ul>
-
-<li>
-Identify alumni entrepreneurs.
-</li>
-
-<li>
-Identify alumni founders and professionals.
-</li>
-
-<li>
-Maintain an alumni database.
-</li>
-
-<li>
-Contact alumni for talks.
-</li>
-
-<li>
-Coordinate mentoring sessions.
-</li>
-
-<li>
-Organise alumni-founder interactions.
-</li>
-
-<li>
-Invite alumni as judges.
-</li>
-
-<li>
-Explore internship opportunities.
-</li>
-
-<li>
-Build long-term relationships.
-</li>
-
-</ul>
-
-</div>
-
-
-<div class="best">
-
-<h4>
-Example</h4>
-
-<p>
-
-DMIMS alumnus → startup founder →
-IIC invitation → founder mentors students.
-
-</p>
-
-<div class="tags">
-
-<span class="tag">Alumni</span>
-<span class="tag">Mentoring</span>
-<span class="tag">Networking</span>
-<span class="tag">Industry</span>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- =====================================================
-     09 SOCIAL MEDIA
-===================================================== -->
-
-<div class="role">
-
-<button class="role-header">
-
-<div class="role-number">
-09
-</div>
-
-<div class="role-title">
-
-<h3>
-📱 Social Media Coordinator
-</h3>
-
-<p>
-Make sure people know what IIC DMIMS is doing.
-</p>
-
-</div>
-
-<div class="arrow">
-↓
-</div>
-
-</button>
-
-
-<div class="role-body">
-
-<p class="role-description">
-
-The Social Media Coordinator manages IIC's digital
-presence and turns activities, achievements and
-student stories into engaging content.
-
-</p>
-
-
-<div class="role-columns">
-
-<div>
-
-<h4>
-Responsibilities
-</h4>
-
-<ul>
-
-<li>
-Manage IIC Instagram and LinkedIn channels.
-</li>
-
-<li>
-Create content calendars.
-</li>
-
-<li>
-Promote upcoming events.
-</li>
-
-<li>
-Cover events through photos and videos.
-</li>
-
-<li>
-Create reels.
-</li>
-
-<li>
-Post student achievements.
-</li>
-
-<li>
-Highlight startups and innovators.
-</li>
-
-<li>
-Increase student engagement.
-</li>
-
-<li>
-Coordinate with Creative team.
-</li>
-
-</ul>
-
-</div>
-
-
-<div class="best">
-
-<h4>
-Content Ideas</h4>
-
-<p>
-
-Student Startup of the Month,
-Innovation Spotlight, Founder Friday,
-Idea Challenge and DMIMS Innovation Achievement.
-
-</p>
-
-<div class="tags">
-
-<span class="tag">Instagram</span>
-<span class="tag">LinkedIn</span>
-<span class="tag">Reels</span>
-<span class="tag">Digital Marketing</span>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- =====================================================
-     10 EVENT
-===================================================== -->
-
-<div class="role">
-
-<button class="role-header">
-
-<div class="role-number">
-10
-</div>
-
-<div class="role-title">
-
-<h3>
-🎤 Event & Outreach Coordinator
-</h3>
-
-<p>
-Actually make IIC events happen.
-</p>
-
-</div>
-
-<div class="arrow">
-↓
-</div>
-
-</button>
-
-
-<div class="role-body">
-
-<p class="role-description">
-
-The Event & Outreach Coordinator converts plans
-into properly executed IIC activities and manages
-people, venues, speakers and on-ground execution.
-
-</p>
-
-
-<div class="role-columns">
-
-<div>
-
-<h4>
-Responsibilities
-</h4>
-
-<ul>
-
-<li>
-Plan event timelines.
-</li>
-
-<li>
-Coordinate venues.
-</li>
-
-<li>
-Manage registrations.
-</li>
-
-<li>
-Coordinate speakers.
-</li>
-
-<li>
-Handle volunteers.
-</li>
-
-<li>
-Manage on-ground execution.
-</li>
-
-<li>
-Coordinate hospitality.
-</li>
-
-<li>
-Ensure events start and end properly.
-</li>
-
-<li>
-Collect participant feedback.
-</li>
-
-</ul>
-
-</div>
-
-
-<div class="best">
-
-<h4>
-Best For</h4>
-
-<p>
-Active and responsible students who enjoy
-people handling, coordination and execution.
-</p>
-
-<div class="tags">
-
-<span class="tag">Events</span>
-<span class="tag">Execution</span>
-<span class="tag">Leadership</span>
-<span class="tag">Outreach</span>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- =====================================================
-     11 DOCUMENTATION
-===================================================== -->
-
-<div class="role">
-
-<button class="role-header">
-
-<div class="role-number">
-11
-</div>
-
-<div class="role-title">
-
-<h3>
-🧑‍💻 Documentation & Reporting Coordinator
-</h3>
-
-<p>
-Ensure every IIC activity has proper documentation.
-</p>
-
-</div>
-
-<div class="arrow">
-↓
-</div>
-
-</button>
-
-
-<div class="role-body">
-
-<p class="role-description">
-
-This role ensures that every initiative has proper
-reports, attendance, photographs, videos, certificates,
-evidence and organised records.
-
-</p>
-
-
-<div class="role-columns">
-
-<div>
-
-<h4>
-Responsibilities
-</h4>
-
-<ul>
-
-<li>
-Maintain event reports.
-</li>
-
-<li>
-Collect photographs and videos.
-</li>
-
-<li>
-Maintain attendance.
-</li>
-
-<li>
-Prepare activity summaries.
-</li>
-
-<li>
-Maintain Google Drive folders.
-</li>
-
-<li>
-Maintain event calendar.
-</li>
-
-<li>
-Collect certificates and evidence.
-</li>
-
-<li>
-Coordinate with ARIIA.
-</li>
-
-<li>
-Support IIC documentation requirements.
-</li>
-
-</ul>
-
-</div>
-
-
-<div class="best">
-
-<h4>
-Best For</h4>
-
-<p>
-Organised, consistent and detail-oriented students
-who are comfortable with reports and data.
-</p>
-
-<div class="tags">
-
-<span class="tag">Reports</span>
-<span class="tag">Google Drive</span>
-<span class="tag">Documentation</span>
-<span class="tag">Data</span>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-</div>
-
-
-<div
-class="no-result"
-id="noResult"
->
-
-<h3>
-No role found
-</h3>
-
-<p>
-Try another keyword or skill.
-</p>
-
-</div>
-
-</div>
+    <div class="page-footer">
+        <span>IIC DMIMS • Key Responsibility Areas</span>
+        <span>05</span>
+    </div>
 
 </section>
 
 
+
 <!-- =====================================================
-     OPERATING CYCLE
-===================================================== -->
+     PAGE 6 — ROLE OUTPUT MATRIX
+====================================================== -->
 
-<section class="section cycle">
+<section class="page">
 
-<div class="container">
+    <div class="page-header">
 
-<div class="section-head">
+        <div class="header-brand">
 
-<span class="section-label">
-Core Team Workflow
-</span>
+            <img
+                src="https://iic.mic.gov.in/assets/assets/images/iiclogo.png"
+                alt="IIC"
+            >
 
-<h2>
-Every initiative follows a simple cycle.
-</h2>
+            <div>
+                <div class="header-title">IIC DMIMS</div>
+                <div class="header-sub">Responsibility & Output Matrix</div>
+            </div>
 
-</div>
+        </div>
 
+        <div class="page-number">
+            SOP • 06
+        </div>
 
-<div class="cycle-grid">
-
-
-<div class="cycle-card">
-
-<div class="cycle-icon">
-💡
-</div>
-
-<h3>
-Identify
-</h3>
-
-<p>
-Find ideas, opportunities and student needs.
-</p>
-
-</div>
+    </div>
 
 
-<div class="cycle-card">
+    <div style="margin-top:25px">
 
-<div class="cycle-icon">
-📝
-</div>
+        <div class="section-label">
+            05 • ACCOUNTABILITY
+        </div>
 
-<h3>
-Plan
-</h3>
+        <h2>
+            KRA → Output Matrix
+        </h2>
 
-<p>
-Create objectives, timeline and responsibilities.
-</p>
-
-</div>
-
-
-<div class="cycle-card">
-
-<div class="cycle-icon">
-🤝
-</div>
-
-<h3>
-Coordinate
-</h3>
-
-<p>
-Bring together the required teams and stakeholders.
-</p>
-
-</div>
+        <p class="lead">
+            A role should not be measured only by how busy the coordinator
+            is. It should be measured by what useful output the responsibility
+            area produces.
+        </p>
 
 
-<div class="cycle-card">
+        <div class="table-wrap">
 
-<div class="cycle-icon">
-🚀
-</div>
+            <table>
 
-<h3>
-Execute
-</h3>
+                <thead>
 
-<p>
-Conduct the activity professionally.
-</p>
+                    <tr>
+                        <th>Responsibility Area</th>
+                        <th>Primary Output</th>
+                        <th>Useful Measure</th>
+                    </tr>
 
-</div>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Start-up</td>
+                        <td>Startup leads, pitches, mentor connections</td>
+                        <td>Ideas identified / connections / activities</td>
+                    </tr>
+
+                    <tr>
+                        <td>Internship</td>
+                        <td>Internship opportunities</td>
+                        <td>Opportunities / companies / student outcomes</td>
+                    </tr>
+
+                    <tr>
+                        <td>IPR</td>
+                        <td>IP awareness and innovation identification</td>
+                        <td>Sessions / innovations identified / expert links</td>
+                    </tr>
+
+                    <tr>
+                        <td>Graphics</td>
+                        <td>Visual communication</td>
+                        <td>Creatives delivered / quality / turnaround</td>
+                    </tr>
+
+                    <tr>
+                        <td>YUKTI</td>
+                        <td>Innovation competition participation</td>
+                        <td>Ideas / submissions / participation</td>
+                    </tr>
+
+                    <tr>
+                        <td>WISE</td>
+                        <td>Women-focused innovation participation</td>
+                        <td>Participants / activities / connections</td>
+                    </tr>
+
+                    <tr>
+                        <td>ARIIA</td>
+                        <td>Organised innovation data</td>
+                        <td>Completeness / accuracy / retrieval</td>
+                    </tr>
+
+                    <tr>
+                        <td>Alumni</td>
+                        <td>Alumni connections</td>
+                        <td>Contacts / mentors / sessions</td>
+                    </tr>
+
+                    <tr>
+                        <td>Social Media</td>
+                        <td>Digital communication</td>
+                        <td>Content / reach / engagement</td>
+                    </tr>
+
+                    <tr>
+                        <td>Event & Outreach</td>
+                        <td>Executed activities</td>
+                        <td>Events / participation / feedback</td>
+                    </tr>
+
+                    <tr>
+                        <td>Documentation</td>
+                        <td>Complete activity records</td>
+                        <td>Reports / evidence / organised archive</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
 
 
-<div class="cycle-card">
-
-<div class="cycle-icon">
-📊
-</div>
-
-<h3>
-Document
-</h3>
-
-<p>
-Record outcomes and maintain evidence.
-</p>
-
-</div>
+        <h3 style="margin-top:25px">
+            Minimum Control Questions
+        </h3>
 
 
-</div>
+        <div class="checklist">
 
-</div>
+            <div class="check">
+                Is the responsibility clearly owned?
+            </div>
+
+            <div class="check">
+                Is there a defined expected output?
+            </div>
+
+            <div class="check">
+                Is the activity being tracked?
+            </div>
+
+            <div class="check">
+                Are supporting roles identified?
+            </div>
+
+            <div class="check">
+                Is the deadline visible?
+            </div>
+
+            <div class="check">
+                Is documentation being created?
+            </div>
+
+            <div class="check">
+                Has the output been reviewed?
+            </div>
+
+            <div class="check">
+                Has feedback been captured?
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="page-footer">
+        <span>IIC DMIMS • Accountability Framework</span>
+        <span>06</span>
+    </div>
 
 </section>
 
 
+
 <!-- =====================================================
-     WEEKLY / MONTHLY SOP
-===================================================== -->
+     PAGE 7 — CONTROL SYSTEM
+====================================================== -->
 
-<section class="section schedule">
+<section class="page">
 
-<div class="container">
+    <div class="page-header">
 
-<div class="section-head">
+        <div class="header-brand">
 
-<span class="section-label">
-Operating Rhythm
-</span>
+            <img
+                src="https://iic.mic.gov.in/assets/assets/images/iiclogo.png"
+                alt="IIC"
+            >
 
-<h2>
-Weekly & Monthly Responsibilities
-</h2>
+            <div>
+                <div class="header-title">IIC DMIMS</div>
+                <div class="header-sub">Control & Review System</div>
+            </div>
 
-<p>
-The team should maintain a predictable working rhythm
-instead of becoming active only before events.
-</p>
+        </div>
 
-</div>
+        <div class="page-number">
+            SOP • 07
+        </div>
 
-
-<div class="schedule-grid">
-
-
-<div class="schedule-card">
-
-<span class="frequency">
-WEEKLY
-</span>
-
-<h3>
-Core Team Review
-</h3>
-
-<ul class="check-list">
-
-<li>
-Review current activities.
-</li>
-
-<li>
-Update progress of each vertical.
-</li>
-
-<li>
-Discuss upcoming events.
-</li>
-
-<li>
-Identify pending responsibilities.
-</li>
-
-<li>
-Share opportunities and student ideas.
-</li>
-
-<li>
-Escalate problems to the Convenor.
-</li>
-
-</ul>
-
-</div>
+    </div>
 
 
-<div class="schedule-card">
+    <div style="margin-top:25px">
 
-<span class="frequency">
-MONTHLY
-</span>
+        <div class="section-label">
+            06 • CONTROL
+        </div>
 
-<h3>
-IIC Performance Review
-</h3>
+        <h2>
+            How the System Stays on Track
+        </h2>
 
-<ul class="check-list">
-
-<li>
-Review activities completed.
-</li>
-
-<li>
-Review participation numbers.
-</li>
-
-<li>
-Review startup/innovation outcomes.
-</li>
-
-<li>
-Review social media performance.
-</li>
-
-<li>
-Review documentation status.
-</li>
-
-<li>
-Plan next month's initiatives.
-</li>
-
-</ul>
-
-</div>
+        <p class="lead">
+            The purpose of control is not to micromanage coordinators.
+            It is to make sure work does not disappear between planning
+            and execution.
+        </p>
 
 
-</div>
+        <div class="two-column">
 
-</div>
+            <div class="card">
+
+                <h3>
+                    Weekly
+                </h3>
+
+                <ul>
+                    <li>What is currently active?</li>
+                    <li>What is blocked?</li>
+                    <li>What support is required?</li>
+                    <li>What is due next?</li>
+                </ul>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    Monthly
+                </h3>
+
+                <ul>
+                    <li>What was completed?</li>
+                    <li>What output was generated?</li>
+                    <li>What opportunities were created?</li>
+                    <li>What needs improvement?</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <h3 style="margin-top:25px">
+            Core Control Dashboard
+        </h3>
+
+
+        <div class="kpi-grid">
+
+            <div class="kpi">
+                <strong>INPUT</strong>
+                <span>Ideas & opportunities received</span>
+            </div>
+
+            <div class="kpi">
+                <strong>ACTIVE</strong>
+                <span>Activities in process</span>
+            </div>
+
+            <div class="kpi">
+                <strong>OUTPUT</strong>
+                <span>Completed outcomes</span>
+            </div>
+
+            <div class="kpi">
+                <strong>IMPACT</strong>
+                <span>Measured value created</span>
+            </div>
+
+        </div>
+
+
+        <div class="info-box" style="margin-top:25px">
+
+            <h3>
+                Important Rule
+            </h3>
+
+            <p>
+                <strong>
+                    No activity should exist only in someone's memory.
+                </strong>
+            </p>
+
+            <p>
+                Important work should have an owner, deadline,
+                status and final output recorded in the IIC system.
+            </p>
+
+        </div>
+
+
+        <h3 style="margin-top:25px">
+            Recommended Digital System
+        </h3>
+
+
+        <div class="three-column">
+
+            <div class="card">
+                <h4>01 • INPUT</h4>
+                <p>
+                    Google Form / Website submission for ideas,
+                    opportunities, requests and proposals.
+                </p>
+            </div>
+
+            <div class="card">
+                <h4>02 • PROCESS</h4>
+                <p>
+                    Central task board with owner, deadline,
+                    priority and status.
+                </p>
+            </div>
+
+            <div class="card">
+                <h4>03 • OUTPUT</h4>
+                <p>
+                    Reports, events, connections, content,
+                    submissions and measurable outcomes.
+                </p>
+            </div>
+
+            <div class="card">
+                <h4>04 • CONTROL</h4>
+                <p>
+                    Dashboard showing pending, active,
+                    completed and delayed work.
+                </p>
+            </div>
+
+            <div class="card">
+                <h4>05 • DOCUMENT</h4>
+                <p>
+                    Central archive for photographs,
+                    reports, attendance and evidence.
+                </p>
+            </div>
+
+            <div class="card">
+                <h4>06 • REVIEW</h4>
+                <p>
+                    Monthly review of performance,
+                    problems and improvements.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="page-footer">
+        <span>IIC DMIMS • Control System</span>
+        <span>07</span>
+    </div>
 
 </section>
 
 
+
 <!-- =====================================================
-     EVENT SOP
-===================================================== -->
+     PAGE 8 — COLLABORATION
+====================================================== -->
 
-<section class="section white">
+<section class="page">
 
-<div class="container">
+    <div class="page-header">
 
-<div class="section-head">
+        <div class="header-brand">
 
-<span class="section-label">
-Event SOP
-</span>
+            <img
+                src="https://iic.mic.gov.in/assets/assets/images/iiclogo.png"
+                alt="IIC"
+            >
 
-<h2>
-How an IIC event should move from idea to execution.
-</h2>
+            <div>
+                <div class="header-title">IIC DMIMS</div>
+                <div class="header-sub">Cross-Functional Collaboration</div>
+            </div>
 
-</div>
+        </div>
 
+        <div class="page-number">
+            SOP • 08
+        </div>
 
-<div class="event-flow">
-
-
-<div class="event-step">
-
-<strong>
-01
-</strong>
-
-<h4>
-Idea
-</h4>
-
-<p>
-Identify the purpose.
-</p>
-
-</div>
+    </div>
 
 
-<div class="event-step">
+    <div style="margin-top:25px">
 
-<strong>
-02
-</strong>
+        <div class="section-label">
+            07 • COLLABORATION
+        </div>
 
-<h4>
-Approval
-</h4>
+        <h2>
+            No Role Works in Isolation
+        </h2>
 
-<p>
-Discuss with Convenor.
-</p>
-
-</div>
-
-
-<div class="event-step">
-
-<strong>
-03
-</strong>
-
-<h4>
-Planning
-</h4>
-
-<p>
-Venue, speaker, timeline.
-</p>
-
-</div>
+        <p class="lead">
+            Responsibility areas remain distinct, but activities can
+            flow across multiple KRAs.
+        </p>
 
 
-<div class="event-step">
+        <div class="info-box">
 
-<strong>
-04
-</strong>
+            <h3>
+                Example: Student Startup Event
+            </h3>
 
-<h4>
-Promotion
-</h4>
+            <p>
+                A startup pitching event may involve the
+                <strong>Start-up Coordinator</strong> for startup identification,
+                <strong>Event & Outreach</strong> for execution,
+                <strong>Graphics</strong> for branding,
+                <strong>Social Media</strong> for promotion,
+                <strong>Alumni</strong> for founder connections and
+                <strong>Documentation</strong> for records.
+            </p>
 
-<p>
-Creative + Social Media.
-</p>
+            <p>
+                The Convenor ensures that the complete chain works
+                together and that the final output is captured.
+            </p>
 
-</div>
-
-
-<div class="event-step">
-
-<strong>
-05
-</strong>
-
-<h4>
-Execution
-</h4>
-
-<p>
-Event & volunteers.
-</p>
-
-</div>
+        </div>
 
 
-<div class="event-step">
-
-<strong>
-06
-</strong>
-
-<h4>
-Report
-</h4>
-
-<p>
-Documentation + outcomes.
-</p>
-
-</div>
+        <h3 style="margin-top:25px">
+            Collaboration Rule
+        </h3>
 
 
-</div>
+        <div class="process">
 
-</div>
+            <div class="process-step">
+
+                <div class="process-number">A</div>
+
+                <div class="process-content">
+
+                    <strong>PRIMARY OWNER</strong>
+
+                    <p>
+                        One KRA owns the outcome.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="process-step">
+
+                <div class="process-number">B</div>
+
+                <div class="process-content">
+
+                    <strong>SUPPORTING KRAs</strong>
+
+                    <p>
+                        Other responsibility areas provide specific support.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="process-step">
+
+                <div class="process-number">C</div>
+
+                <div class="process-content">
+
+                    <strong>COMMON OUTPUT</strong>
+
+                    <p>
+                        Everyone works toward one defined result rather
+                        than separate individual activities.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="process-step">
+
+                <div class="process-number">D</div>
+
+                <div class="process-content">
+
+                    <strong>REVIEW</strong>
+
+                    <p>
+                        The Convenor reviews the complete activity,
+                        not only one person's contribution.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="info-box">
+
+            <h3>
+                The Goal
+            </h3>
+
+            <p>
+                <strong>
+                    Not “Who is senior?”
+                    <br>
+                    But “Who owns what, what support is required,
+                    and what outcome are we creating?”
+                </strong>
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="page-footer">
+        <span>IIC DMIMS • Collaborative Operating Model</span>
+        <span>08</span>
+    </div>
 
 </section>
 
 
+
 <!-- =====================================================
-     DOCUMENTATION
-===================================================== -->
+     PAGE 9 — VOLUNTEERS
+====================================================== -->
 
-<section class="section documentation">
+<section class="page">
 
-<div class="container">
+    <div class="page-header">
 
-<div class="section-head">
+        <div class="header-brand">
 
-<span class="section-label">
-Documentation SOP
-</span>
+            <img
+                src="https://iic.mic.gov.in/assets/assets/images/iiclogo.png"
+                alt="IIC"
+            >
 
-<h2>
-If it happened, document it.
-</h2>
+            <div>
+                <div class="header-title">IIC DMIMS</div>
+                <div class="header-sub">Core Team & Volunteer System</div>
+            </div>
 
-<p>
-Every major IIC activity should leave behind an organised
-record that can be reviewed later.
-</p>
+        </div>
 
-</div>
+        <div class="page-number">
+            SOP • 09
+        </div>
 
-
-<div class="doc-grid">
-
-
-<div class="doc-card">
-
-<h3>
-📸 Photos & Videos
-</h3>
-
-<p>
-Event photographs, videos, speaker photographs
-and relevant visual evidence.
-</p>
-
-</div>
+    </div>
 
 
-<div class="doc-card">
+    <div style="margin-top:25px">
 
-<h3>
-📝 Event Report
-</h3>
+        <div class="section-label">
+            08 • PARTICIPATION
+        </div>
 
-<p>
-Purpose, date, venue, speakers, activities,
-participation and outcomes.
-</p>
+        <h2>
+            Volunteers as Execution Capacity
+        </h2>
 
-</div>
-
-
-<div class="doc-card">
-
-<h3>
-👥 Attendance
-</h3>
-
-<p>
-Maintain participant and volunteer attendance
-where applicable.
-</p>
-
-</div>
+        <p class="lead">
+            Volunteers expand the execution capacity of each KRA.
+            They are not simply an audience or temporary helpers.
+        </p>
 
 
-<div class="doc-card">
+        <div class="two-column">
 
-<h3>
-🏆 Achievements
-</h3>
+            <div class="card">
 
-<p>
-Record student startups, competitions,
-awards, recognitions and outcomes.
-</p>
+                <h3>
+                    Core Team
+                </h3>
 
-</div>
+                <ul>
+                    <li>Own responsibility areas.</li>
+                    <li>Define activities and outputs.</li>
+                    <li>Coordinate volunteers.</li>
+                    <li>Maintain progress.</li>
+                    <li>Report outcomes.</li>
+                </ul>
 
-
-<div class="doc-card">
-
-<h3>
-📁 Google Drive
-</h3>
-
-<p>
-Keep reports, certificates, photographs and
-supporting evidence organised.
-</p>
-
-</div>
+            </div>
 
 
-<div class="doc-card">
+            <div class="card">
 
-<h3>
-📊 Data
-</h3>
+                <h3>
+                    Volunteers
+                </h3>
 
-<p>
-Maintain structured records so information
-can be retrieved when required.
-</p>
+                <ul>
+                    <li>Support execution.</li>
+                    <li>Participate in activities.</li>
+                    <li>Contribute ideas.</li>
+                    <li>Handle assigned tasks.</li>
+                    <li>Develop skills through real work.</li>
+                </ul>
 
-</div>
+            </div>
+
+        </div>
 
 
-</div>
+        <h3 style="margin-top:25px">
+            Volunteer Allocation
+        </h3>
 
-</div>
+        <div class="table-wrap">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Need</th>
+                        <th>Possible Volunteer Support</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Event</td>
+                        <td>Registration, logistics, hospitality, photography</td>
+                    </tr>
+
+                    <tr>
+                        <td>Social Media</td>
+                        <td>Reels, photography, content ideas, coverage</td>
+                    </tr>
+
+                    <tr>
+                        <td>Startup</td>
+                        <td>Student outreach, idea collection, research</td>
+                    </tr>
+
+                    <tr>
+                        <td>Alumni</td>
+                        <td>Research, communication support, database updates</td>
+                    </tr>
+
+                    <tr>
+                        <td>Documentation</td>
+                        <td>Attendance, reports, photographs, file organisation</td>
+                    </tr>
+
+                    <tr>
+                        <td>Innovation</td>
+                        <td>Research, idea discovery, competition outreach</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <div class="page-footer">
+        <span>IIC DMIMS • Volunteer Integration</span>
+        <span>09</span>
+    </div>
 
 </section>
 
 
+
 <!-- =====================================================
-     CODE OF CONDUCT
-===================================================== -->
+     PAGE 10 — ACCOUNTABILITY
+====================================================== -->
 
-<section
-class="section conduct"
-id="conduct"
->
+<section class="page">
 
-<div class="container">
+    <div class="page-header">
 
-<div class="section-head">
+        <div class="header-brand">
 
-<span class="section-label">
-Core Team Guidelines
-</span>
+            <img
+                src="https://iic.mic.gov.in/assets/assets/images/iiclogo.png"
+                alt="IIC"
+            >
 
-<h2>
-How an IIC member is expected to work.
-</h2>
+            <div>
+                <div class="header-title">IIC DMIMS</div>
+                <div class="header-sub">Accountability Standards</div>
+            </div>
 
-</div>
+        </div>
 
+        <div class="page-number">
+            SOP • 10
+        </div>
 
-<div class="conduct-grid">
+    </div>
 
 
-<div class="conduct-item">
+    <div style="margin-top:25px">
 
-<div class="conduct-icon">
-01
-</div>
+        <div class="section-label">
+            09 • ACCOUNTABILITY
+        </div>
 
-<div>
+        <h2>
+            Core Team Working Standards
+        </h2>
 
-<h4>
-Take Ownership
-</h4>
+        <p class="lead">
+            The purpose of accountability is to create reliability,
+            not pressure.
+        </p>
 
-<p>
-If you accept a responsibility, follow it through until completion.
-</p>
 
-</div>
+        <div class="checklist">
 
-</div>
+            <div class="check">
+                Take ownership of assigned responsibility.
+            </div>
 
+            <div class="check">
+                Communicate delays early.
+            </div>
 
-<div class="conduct-item">
+            <div class="check">
+                Keep information updated.
+            </div>
 
-<div class="conduct-icon">
-02
-</div>
+            <div class="check">
+                Respect deadlines.
+            </div>
 
-<div>
+            <div class="check">
+                Ask for help when required.
+            </div>
 
-<h4>
-Communicate
-</h4>
+            <div class="check">
+                Do not duplicate another role's work unnecessarily.
+            </div>
 
-<p>
-Keep the Convenor and relevant team members updated.
-</p>
+            <div class="check">
+                Give credit to contributors.
+            </div>
 
-</div>
+            <div class="check">
+                Maintain professional communication.
+            </div>
 
-</div>
+            <div class="check">
+                Document completed activities.
+            </div>
 
+            <div class="check">
+                Focus on outcomes, not only activity count.
+            </div>
 
-<div class="conduct-item">
+        </div>
 
-<div class="conduct-icon">
-03
-</div>
 
-<div>
+        <div class="info-box" style="margin-top:25px">
 
-<h4>
-Meet Deadlines
-</h4>
+            <h3>
+                Escalation Principle
+            </h3>
 
-<p>
-Respect timelines, especially before events and submissions.
-</p>
+            <p>
+                If a coordinator is blocked, the objective is not to
+                blame the person. The issue should be identified,
+                communicated and solved through the system.
+            </p>
 
-</div>
+            <p>
+                <strong>
+                    Blocked work → Communicate → Support → Resolve → Continue
+                </strong>
+            </p>
 
-</div>
+        </div>
 
 
-<div class="conduct-item">
+        <h3 style="margin-top:25px">
+            What Success Looks Like
+        </h3>
 
-<div class="conduct-icon">
-04
-</div>
 
-<div>
+        <div class="three-column">
 
-<h4>
-Work as One Team
-</h4>
+            <div class="card">
+                <h4>Students</h4>
+                <p>
+                    More students discover opportunities to innovate,
+                    build, participate and connect.
+                </p>
+            </div>
 
-<p>
-Coordinators should collaborate rather than work in isolated groups.
-</p>
+            <div class="card">
+                <h4>Core Team</h4>
+                <p>
+                    Members gain real experience in ownership,
+                    leadership, coordination and execution.
+                </p>
+            </div>
 
-</div>
+            <div class="card">
+                <h4>IIC</h4>
+                <p>
+                    Activities become organised, measurable,
+                    documented and continuously improving.
+                </p>
+            </div>
 
-</div>
+        </div>
 
+    </div>
 
-<div class="conduct-item">
 
-<div class="conduct-icon">
-05
-</div>
-
-<div>
-
-<h4>
-Be Professional
-</h4>
-
-<p>
-Maintain proper communication and behaviour with students,
-faculty, guests and external stakeholders.
-</p>
-
-</div>
-
-</div>
-
-
-<div class="conduct-item">
-
-<div class="conduct-icon">
-06
-</div>
-
-<div>
-
-<h4>
-Document Your Work
-</h4>
-
-<p>
-Activities should be properly recorded and evidence should
-not be left until the end of the year.
-</p>
-
-</div>
-
-</div>
-
-
-<div class="conduct-item">
-
-<div class="conduct-icon">
-07
-</div>
-
-<div>
-
-<h4>
-Ask When Stuck
-</h4>
-
-<p>
-Problems should be communicated early instead of remaining hidden.
-</p>
-
-</div>
-
-</div>
-
-
-<div class="conduct-item">
-
-<div class="conduct-icon">
-08
-</div>
-
-<div>
-
-<h4>
-Represent IIC Responsibly
-</h4>
-
-<p>
-Every Core Team member represents IIC DMIMS when interacting
-with students and external stakeholders.
-</p>
-
-</div>
-
-</div>
-
-
-</div>
-
-</div>
+    <div class="page-footer">
+        <span>IIC DMIMS • Working Standards</span>
+        <span>10</span>
+    </div>
 
 </section>
 
 
+
 <!-- =====================================================
-     CTA
-===================================================== -->
+     PAGE 11 — 30 / 60 / 90
+====================================================== -->
 
-<section class="cta-section">
+<section class="page">
 
-<div class="container">
+    <div class="page-header">
 
-<div class="cta">
+        <div class="header-brand">
 
-<div class="cta-content">
+            <img
+                src="https://iic.mic.gov.in/assets/assets/images/iiclogo.png"
+                alt="IIC"
+            >
 
-<h2>
-Don't just hold a designation.
-Own a responsibility.
-</h2>
+            <div>
+                <div class="header-title">IIC DMIMS</div>
+                <div class="header-sub">Role Activation Framework</div>
+            </div>
 
-<p>
+        </div>
 
-IIC DMIMS needs students who are willing to take initiative,
-work with people, learn through execution and build an
-innovation culture together.
+        <div class="page-number">
+            SOP • 11
+        </div>
 
-</p>
+    </div>
 
 
-<div class="cta-buttons">
+    <div style="margin-top:25px">
 
-<a
-href="https://iicdmims.vercel.app/join.html"
-class="btn btn-primary"
->
-Join IIC DMIMS →
-</a>
+        <div class="section-label">
+            10 • ACTIVATION
+        </div>
 
-<a
-href="#roles"
-class="btn btn-outline"
->
-Explore Roles
-</a>
+        <h2>
+            30 / 60 / 90 Day Expectations
+        </h2>
 
-</div>
+        <p class="lead">
+            Every coordinator should progressively move from
+            understanding the role to creating measurable outcomes.
+        </p>
 
-</div>
 
-</div>
+        <div class="three-column">
 
-</div>
+            <div class="card">
+
+                <h3>
+                    First 30 Days
+                </h3>
+
+                <h4>Understand</h4>
+
+                <ul>
+                    <li>Understand KRA.</li>
+                    <li>Understand existing system.</li>
+                    <li>Map stakeholders.</li>
+                    <li>Identify opportunities.</li>
+                    <li>Set initial activity plan.</li>
+                </ul>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    60 Days
+                </h3>
+
+                <h4>Execute</h4>
+
+                <ul>
+                    <li>Start activities.</li>
+                    <li>Build databases.</li>
+                    <li>Develop partnerships.</li>
+                    <li>Generate measurable outputs.</li>
+                    <li>Improve coordination.</li>
+                </ul>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    90 Days
+                </h3>
+
+                <h4>Scale</h4>
+
+                <ul>
+                    <li>Evaluate performance.</li>
+                    <li>Scale successful initiatives.</li>
+                    <li>Build repeatable processes.</li>
+                    <li>Train volunteers.</li>
+                    <li>Document learnings.</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="info-box" style="margin-top:25px">
+
+            <h3>
+                The Desired Evolution
+            </h3>
+
+            <p style="text-align:center;font-size:15px">
+
+                <strong>
+                    ROLE
+                    <span style="color:var(--orange)">→</span>
+                    RESPONSIBILITY
+                    <span style="color:var(--orange)">→</span>
+                    SYSTEM
+                    <span style="color:var(--orange)">→</span>
+                    OUTPUT
+                    <span style="color:var(--orange)">→</span>
+                    IMPACT
+                </strong>
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="page-footer">
+        <span>IIC DMIMS • Role Activation</span>
+        <span>11</span>
+    </div>
 
 </section>
 
 
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
-<footer class="footer">
-
-<div class="container">
-
-<div class="footer-grid">
-
-
-<div>
-
-<div class="footer-brand">
-
-<img
-src="https://iic.mic.gov.in/assets/assets/images/iiclogo.png"
-alt="IIC Logo"
->
-
-<div>
-
-<strong style="color:white;">
-IIC DMIMS
-</strong>
-
-<div style="font-size:10px;">
-Institution's Innovation Council
-</div>
-
-</div>
-
-</div>
-
-<p>
-
-Building a culture of innovation, entrepreneurship,
-creativity and leadership at DMIMS.
-
-</p>
-
-</div>
-
-
-<div>
-
-<h3>
-Core Team
-</h3>
-
-<ul>
-
-<li>
-<a href="#roles">
-Start-up
-</a>
-</li>
-
-<li>
-<a href="#roles">
-Internship
-</a>
-</li>
-
-<li>
-<a href="#roles">
-IPR
-</a>
-</li>
-
-<li>
-<a href="#roles">
-Creative
-</a>
-</li>
-
-<li>
-<a href="#roles">
-YUKTI
-</a>
-</li>
-
-</ul>
-
-</div>
-
-
-<div>
-
-<h3>
-Management
-</h3>
-
-<ul>
-
-<li>
-<a href="#structure">
-IIC Convenor
-</a>
-</li>
-
-<li>
-<a href="#sop">
-Operating SOP
-</a>
-</li>
-
-<li>
-<a href="#conduct">
-Guidelines
-</a>
-</li>
-
-<li>
-<a href="https://iicdmims.vercel.app/join.html">
-Join IIC
-</a>
-</li>
-
-</ul>
-
-</div>
-
-
-</div>
-
-
-<div class="footer-bottom">
-
-<span>
-© 2026 IIC DMIMS. All Rights Reserved.
-</span>
-
-<span>
-Innovation • Entrepreneurship • Leadership
-</span>
-
-</div>
-
-</div>
-
-</footer>
-
 
 <!-- =====================================================
-     BACK TO TOP
-===================================================== -->
+     PAGE 12 — FINAL
+====================================================== -->
 
-<button
-class="back-top"
-id="backTop"
->
-↑
-</button>
+<section class="page final-page">
+
+    <div class="page-header">
+
+        <div class="header-brand">
+
+            <img
+                src="https://iic.mic.gov.in/assets/assets/images/iiclogo.png"
+                alt="IIC"
+            >
+
+            <div>
+                <div class="header-title">IIC DMIMS</div>
+                <div class="header-sub">
+                    Institution's Innovation Council
+                </div>
+            </div>
+
+        </div>
+
+        <div class="page-number">
+            SOP • 12
+        </div>
+
+    </div>
 
 
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
+    <div>
+
+        <div class="section-label">
+            IIC DMIMS • CORE TEAM
+        </div>
+
+        <h2>
+            Build the System.
+            <br>
+            Create the Impact.
+        </h2>
+
+        <div class="final-line"></div>
+
+        <p>
+            IIC is not defined only by the number of events conducted.
+            It is defined by the opportunities created, students engaged,
+            ideas supported, connections built and outcomes generated.
+        </p>
+
+        <p>
+            Every responsibility area contributes to the same mission.
+            The Convenor keeps the system connected, controlled and
+            continuously improving.
+        </p>
+
+
+        <div class="final-system">
+
+            <span>INPUT</span>
+            →
+            PROCESS
+            →
+            <span>OUTPUT</span>
+            →
+            CONTROL
+            →
+            <span>IMPACT</span>
+
+        </div>
+
+        <div style="
+            margin-top:55px;
+            font-size:11px;
+            color:#9eacc0;
+        ">
+            IIC DMIMS • Core Team Roles & Responsibilities
+            <br>
+            Standard Operating Procedure • 2026
+        </div>
+
+    </div>
+
+
+    <div class="page-footer" style="color:#9eacc0;border-color:rgba(255,255,255,.2)">
+        <span>IIC DMIMS</span>
+        <span>12</span>
+    </div>
+
+</section>
+
+
 
 <script>
-
-/* =========================================================
-   MOBILE NAVIGATION
-========================================================= */
-
-const menuBtn =
-document.getElementById("menuBtn");
-
-const nav =
-document.getElementById("nav");
-
-menuBtn.addEventListener("click",()=>{
-
-    nav.classList.toggle("active");
-
-    menuBtn.textContent =
-        nav.classList.contains("active")
-        ? "✕"
-        : "☰";
-
-});
-
-
-document.querySelectorAll(".nav a")
-.forEach(link=>{
-
-    link.addEventListener("click",()=>{
-
-        nav.classList.remove("active");
-
-        menuBtn.textContent="☰";
-
-    });
-
-});
-
 
 /* =========================================================
    ROLE ACCORDION
 ========================================================= */
 
-const roles =
-document.querySelectorAll(".role");
+function toggleRole(role){
 
+    role.classList.toggle("open");
 
-roles.forEach(role=>{
-
-    const header =
-        role.querySelector(".role-header");
-
-
-    header.addEventListener("click",()=>{
-
-        const active =
-            role.classList.contains("active");
-
-
-        roles.forEach(item=>{
-            item.classList.remove("active");
-        });
-
-
-        if(!active){
-
-            role.classList.add("active");
-
-        }
-
-    });
-
-});
+}
 
 
 /* =========================================================
-   ROLE SEARCH
+   EXPAND ALL
 ========================================================= */
 
-const search =
-document.getElementById("search");
+function expandAll(){
 
-const count =
-document.getElementById("count");
+    document
+        .querySelectorAll(".role")
+        .forEach(role => {
 
-const noResult =
-document.getElementById("noResult");
+            role.classList.add("open");
 
+        });
 
-search.addEventListener("input",()=>{
-
-    const value =
-        search.value
-        .toLowerCase()
-        .trim();
-
-
-    let visible=0;
-
-
-    roles.forEach(role=>{
-
-        const text =
-            role.innerText.toLowerCase();
-
-
-        if(text.includes(value)){
-
-            role.style.display="";
-            visible++;
-
-        }else{
-
-            role.style.display="none";
-
-        }
-
-    });
-
-
-    count.textContent =
-        `Showing ${visible} role${visible!==1?"s":""}`;
-
-
-    noResult.style.display =
-        visible===0
-        ? "block"
-        : "none";
-
-});
+}
 
 
 /* =========================================================
-   BACK TO TOP
+   COLLAPSE ALL
 ========================================================= */
 
-const backTop =
-document.getElementById("backTop");
+function collapseAll(){
 
+    document
+        .querySelectorAll(".role")
+        .forEach(role => {
 
-window.addEventListener("scroll",()=>{
+            role.classList.remove("open");
 
-    if(window.scrollY>500){
+        });
 
-        backTop.classList.add("show");
-
-    }else{
-
-        backTop.classList.remove("show");
-
-    }
-
-});
-
-
-backTop.addEventListener("click",()=>{
-
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
-
-});
+}
 
 
 /* =========================================================
-   ESCAPE — CLOSE ALL
+   ROLE FILTER
 ========================================================= */
 
-document.addEventListener("keydown",(event)=>{
+function filterRoles(category, button){
 
-    if(event.key==="Escape"){
+    document
+        .querySelectorAll(".filter-btn")
+        .forEach(btn => {
 
-        roles.forEach(role=>{
-            role.classList.remove("active");
+            btn.classList.remove("active");
+
         });
 
-        search.value="";
+    button.classList.add("active");
 
-        roles.forEach(role=>{
-            role.style.display="";
+
+    document
+        .querySelectorAll(".role")
+        .forEach(role => {
+
+            if(
+                category === "all" ||
+                role.dataset.category === category
+            ){
+
+                role.style.display = "";
+
+            }else{
+
+                role.style.display = "none";
+
+            }
+
         });
 
-        count.textContent="Showing 11 roles";
-
-        noResult.style.display="none";
-
-    }
-
-});
+}
 
 </script>
 
