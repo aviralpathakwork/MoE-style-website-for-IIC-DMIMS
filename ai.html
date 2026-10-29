@@ -1,0 +1,1384 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IIC DMIMS | AI Automation Challenge</title>
+
+<style>
+/* ===== GENERAL STYLING ===== */
+:root {
+  --primary: #5138ee;
+  --dark: #15152b;
+  --light: #f5f6ff;
+  --muted: #686981;
+  --green: #19a974;
+  --border: #e6e7f2;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--dark);
+  background: #fff;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.container {
+  width: min(1120px, 90%);
+  margin: auto;
+}
+
+section {
+  padding: 75px 0;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-heading h2 {
+  font-size: clamp(28px, 4vw, 40px);
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.section-heading p {
+  color: var(--muted);
+  max-width: 680px;
+  margin: auto;
+}
+
+.eyebrow {
+  display: inline-block;
+  color: var(--primary);
+  background: #eeebff;
+  padding: 6px 13px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+/* ===== ANNOUNCEMENT BAR ===== */
+.announcement {
+  background: var(--dark);
+  color: white;
+  text-align: center;
+  padding: 10px 45px;
+  font-size: 13px;
+  position: relative;
+}
+
+.announcement strong {
+  color: #c6bcff;
+}
+
+.close-announcement {
+  position: absolute;
+  right: 18px;
+  top: 5px;
+  background: none;
+  border: 0;
+  color: white;
+  font-size: 22px;
+}
+
+/* ===== NAVIGATION ===== */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,255,255,.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+  min-height: 76px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-logo {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  background: var(--primary);
+  color: white;
+  border-radius: 13px;
+  font-weight: 900;
+  font-size: 16px;
+}
+
+.brand-name {
+  font-size: 15px;
+  font-weight: 900;
+  line-height: 1.3;
+}
+
+.brand-name small {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 500;
+  margin-top: 3px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+.nav-cta,
+.btn-primary {
+  display: inline-block;
+  border: 0;
+  background: var(--primary);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 700;
+  transition: .2s;
+}
+
+.nav-cta:hover,
+.btn-primary:hover {
+  transform: translateY(-2px);
+  background: #3922ce;
+}
+
+.menu-toggle {
+  display: none;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 20px;
+}
+
+/* ===== HERO ===== */
+.hero {
+  padding: 85px 0 75px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 90% 10%, #e8e3ff 0, transparent 32%),
+    linear-gradient(135deg, #fbfaff, #f5f6ff);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  align-items: center;
+  gap: 55px;
+}
+
+.hero h1 {
+  font-size: clamp(42px, 6vw, 68px);
+  line-height: 1.06;
+  letter-spacing: -2px;
+  margin-bottom: 22px;
+}
+
+.hero h1 span {
+  color: var(--primary);
+}
+
+.hero-description {
+  color: var(--muted);
+  font-size: 17px;
+  max-width: 570px;
+  margin-bottom: 25px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.btn-secondary {
+  display: inline-block;
+  padding: 11px 18px;
+  border: 1px solid #d9d7ed;
+  border-radius: 10px;
+  background: white;
+  font-weight: 700;
+}
+
+.hero-note {
+  color: #55566e;
+  font-size: 13px;
+}
+
+.hero-visual {
+  background: white;
+  border: 1px solid #e7e5fa;
+  border-radius: 24px;
+  padding: 26px;
+  box-shadow: 0 25px 70px rgba(48, 38, 115, .12);
+  transform: rotate(1deg);
+}
+
+.visual-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.live-label {
+  color: var(--green);
+  font-size: 11px;
+}
+
+.workflow-node {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  padding: 15px;
+  margin-bottom: 12px;
+  background: #fff;
+  animation: float 3s ease-in-out infinite;
+}
+
+.workflow-node:nth-of-type(3) {
+  animation-delay: .3s;
+}
+
+.workflow-node:nth-of-type(4) {
+  animation-delay: .6s;
+}
+
+.node-icon {
+  width: 43px;
+  height: 43px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: #eeeaff;
+  font-size: 21px;
+  flex-shrink: 0;
+}
+
+.workflow-node strong {
+  display: block;
+  font-size: 13px;
+}
+
+.workflow-node small {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.flow-arrow {
+  text-align: center;
+  color: var(--primary);
+  line-height: 1;
+  margin: -3px 0 8px;
+}
+
+.success-box {
+  padding: 12px;
+  background: #e8fbf3;
+  border-radius: 10px;
+  color: #08764b;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+/* ===== IMPORTANT NOTICE ===== */
+.notice-section {
+  padding: 35px 0;
+}
+
+.notice {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  padding: 25px;
+  background: #fff5e8;
+  border: 1px solid #ffe2ba;
+  border-radius: 16px;
+}
+
+.notice-icon {
+  font-size: 30px;
+}
+
+.notice h3 {
+  color: #a44b00;
+  margin-bottom: 5px;
+}
+
+.notice p {
+  color: #755b43;
+  font-size: 14px;
+}
+
+/* ===== GUIDELINES ===== */
+.guidelines-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.info-card {
+  padding: 25px;
+  border: 1px solid var(--border);
+  border-radius: 17px;
+  background: white;
+  transition: .25s;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(30, 25, 90, .08);
+}
+
+.card-icon {
+  width: 49px;
+  height: 49px;
+  border-radius: 13px;
+  background: #efedff;
+  display: grid;
+  place-items: center;
+  font-size: 23px;
+  margin-bottom: 18px;
+}
+
+.info-card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.info-card p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* ===== VIVA TOPICS ===== */
+.topics-section {
+  background: var(--light);
+}
+
+.topics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.topic-card {
+  text-align: left;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  padding: 20px;
+  transition: .2s;
+}
+
+.topic-card:hover,
+.topic-card.active {
+  border-color: var(--primary);
+  box-shadow: 0 8px 25px rgba(81, 56, 238, .10);
+}
+
+.topic-number {
+  font-size: 12px;
+  font-weight: 900;
+  color: var(--primary);
+}
+
+.topic-card h3 {
+  font-size: 15px;
+  margin: 9px 0 6px;
+}
+
+.topic-card p {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.topic-detail {
+  display: none;
+  margin-top: 22px;
+  padding: 25px;
+  background: white;
+  border: 1px solid #dcd6ff;
+  border-radius: 15px;
+}
+
+.topic-detail.show {
+  display: block;
+  animation: appear .25s ease;
+}
+
+.topic-detail h3 {
+  margin-bottom: 8px;
+  color: var(--primary);
+}
+
+.topic-detail p {
+  color: var(--muted);
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== TIMELINE ===== */
+.timeline {
+  max-width: 760px;
+  margin: auto;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 18px;
+  margin-bottom: 25px;
+}
+
+.timeline-number {
+  width: 48px;
+  height: 48px;
+  border-radius: 15px;
+  display: grid;
+  place-items: center;
+  color: var(--primary);
+  background: #efedff;
+  font-weight: 900;
+}
+
+.timeline-item h3 {
+  margin-bottom: 5px;
+}
+
+.timeline-item p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* ===== CHECKLIST ===== */
+.checklist-section {
+  background: #fafaff;
+}
+
+.checklist-box {
+  max-width: 780px;
+  margin: auto;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 28px;
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  font-size: 14px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.progress-track {
+  height: 9px;
+  background: #eeedf6;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 22px;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0;
+  background: var(--green);
+  border-radius: 20px;
+  transition: width .3s;
+}
+
+.check-item {
+  display: flex;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid #eeeef5;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.check-item:last-of-type {
+  border-bottom: none;
+}
+
+.check-item input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--green);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.check-item:has(input:checked) span {
+  color: #77778b;
+  text-decoration: line-through;
+}
+
+.check-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.btn-reset {
+  border: 1px solid var(--border);
+  background: white;
+  padding: 10px 15px;
+  border-radius: 9px;
+  font-weight: 700;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--dark);
+  color: white;
+  padding: 45px 0 25px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+footer p {
+  color: #bcbcd0;
+  font-size: 13px;
+  max-width: 480px;
+  margin-top: 10px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  font-size: 13px;
+}
+
+.footer-links a:hover {
+  color: #c6bcff;
+}
+
+.footer-bottom {
+  border-top: 1px solid #38384d;
+  margin-top: 30px;
+  padding-top: 20px;
+  color: #aaaac1;
+  font-size: 12px;
+  text-align: center;
+}
+
+/* ===== TOAST MESSAGE ===== */
+.toast {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  background: var(--dark);
+  color: white;
+  padding: 14px 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 35px #0002;
+  z-index: 200;
+  opacity: 0;
+  transform: translateY(15px);
+  pointer-events: none;
+  transition: .25s;
+  font-size: 13px;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== MOBILE RESPONSIVENESS ===== */
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .hero-visual {
+    max-width: 560px;
+    width: 100%;
+    margin: auto;
+  }
+
+  .guidelines-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .topics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .nav-links {
+    gap: 14px;
+  }
+}
+
+@media (max-width: 680px) {
+  section {
+    padding: 55px 0;
+  }
+
+  .navbar {
+    min-height: 68px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 22px 5%;
+    border-bottom: 1px solid var(--border);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 17px;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-cta {
+    text-align: center;
+  }
+
+  .hero {
+    padding: 60px 0;
+  }
+
+  .hero h1 {
+    letter-spacing: -1px;
+  }
+
+  .hero-description {
+    font-size: 15px;
+  }
+
+  .guidelines-grid,
+  .topics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .notice {
+    padding: 18px;
+  }
+
+  .checklist-box {
+    padding: 20px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+  }
+
+  .announcement {
+    font-size: 11px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ANNOUNCEMENT -->
+<div class="announcement" id="announcement">
+  <strong>IIC DMIMS AI AUTOMATION CHALLENGE</strong>
+  &nbsp; | &nbsp; Build a working solution, not just a presentation.
+  <button class="close-announcement" id="closeAnnouncement"
+          aria-label="Dismiss announcement">×</button>
+</div>
+
+<!-- NAVIGATION -->
+<header>
+  <div class="container navbar">
+    <a class="brand" href="#home">
+      <div class="brand-logo">IIC</div>
+      <div class="brand-name">
+        IIC DMIMS
+        <small>AI Automation Challenge</small>
+      </div>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle"
+            aria-label="Toggle navigation" aria-expanded="false">☰</button>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#guidelines">Guidelines</a>
+      <a href="#topics">Viva Preparation</a>
+      <a href="#process">Demo Process</a>
+      <a href="#checklist">Checklist</a>
+      <a class="nav-cta" href="#checklist">Get Ready →</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">INNOVATION • AUTOMATION • AI</span>
+      <h1>Build.<br>Automate.<br><span>Demonstrate.</span></h1>
+
+      <p class="hero-description">
+        Welcome to the IIC DMIMS AI Automation Challenge. Create a practical
+        automation project using tools such as n8n, Make, or other suitable
+        software. Solve a real problem and demonstrate how your solution works.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn-primary" href="#guidelines">Explore Guidelines →</a>
+        <a class="btn-secondary" href="#topics">Prepare for Viva</a>
+      </div>
+
+      <p class="hero-note">
+        ✓ Practical demonstration &nbsp; ✓ Explain your logic &nbsp; ✓ Show real value
+      </p>
+    </div>
+
+    <div class="hero-visual">
+      <div class="visual-top">
+        <span>⚡ Your Automation Workflow</span>
+        <span class="live-label">● LIVE FLOW</span>
+      </div>
+
+      <div class="workflow-node">
+        <div class="node-icon">📩</div>
+        <div>
+          <strong>1. Trigger</strong>
+          <small>Receive an input or event</small>
+        </div>
+      </div>
+
+      <div class="flow-arrow">↓</div>
+
+      <div class="workflow-node">
+        <div class="node-icon">⚙️</div>
+        <div>
+          <strong>2. Process</strong>
+          <small>Apply rules and connect tools</small>
+        </div>
+      </div>
+
+      <div class="flow-arrow">↓</div>
+
+      <div class="workflow-node">
+        <div class="node-icon">🤖</div>
+        <div>
+          <strong>3. AI Decision</strong>
+          <small>Analyse, classify or generate content</small>
+        </div>
+      </div>
+
+      <div class="flow-arrow">↓</div>
+
+      <div class="workflow-node">
+        <div class="node-icon">✅</div>
+        <div>
+          <strong>4. Action</strong>
+          <small>Send a message, save data or create a task</small>
+        </div>
+      </div>
+
+      <div class="success-box">✓ Automation workflow completed</div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPORTANT NOTICE -->
+<section class="notice-section">
+  <div class="container">
+    <div class="notice">
+      <div class="notice-icon">📢</div>
+      <div>
+        <h3>Important: NO PPT REQUIRED</h3>
+        <p>
+          Focus on demonstrating your actual project. Be ready to run the
+          automation, explain the workflow, show its output, and answer
+          questions about your decisions. Follow any additional instructions
+          provided by the event organisers.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUIDELINES -->
+<section id="guidelines">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">WHAT THE JUDGES EXPECT</span>
+      <h2>Show your working solution</h2>
+      <p>
+        A good automation project solves a clearly defined problem and
+        demonstrates measurable usefulness.
+      </p>
+    </div>
+
+    <div class="guidelines-grid">
+      <article class="info-card">
+        <div class="card-icon">🎯</div>
+        <h3>1. Identify the Problem</h3>
+        <p>
+          Explain the real-world problem your project solves, who faces it,
+          and why automation is useful.
+        </p>
+      </article>
+
+      <article class="info-card">
+        <div class="card-icon">🔗</div>
+        <h3>2. Explain the Workflow</h3>
+        <p>
+          Show the trigger, input data, processing steps, integrations,
+          conditions, and final output.
+        </p>
+      </article>
+
+      <article class="info-card">
+        <div class="card-icon">🖥️</div>
+        <h3>3. Run a Live Demo</h3>
+        <p>
+          Execute your workflow with sample data and demonstrate that
+          the expected output is actually produced.
+        </p>
+      </article>
+
+      <article class="info-card">
+        <div class="card-icon">🤖</div>
+        <h3>4. Explain the AI</h3>
+        <p>
+          If AI is used, explain what it does, what information it receives,
+          and how you check its output.
+        </p>
+      </article>
+
+      <article class="info-card">
+        <div class="card-icon">📈</div>
+        <h3>5. Show the Value</h3>
+        <p>
+          Describe time saved, manual effort reduced, errors prevented,
+          or improvements for the target user.
+        </p>
+      </article>
+
+      <article class="info-card">
+        <div class="card-icon">🛡️</div>
+        <h3>6. Know the Limitations</h3>
+        <p>
+          Discuss failure cases, privacy, reliability, costs, and how
+          you would improve the project in the future.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- VIVA TOPICS -->
+<section class="topics-section" id="topics">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">INTERACTIVE PREPARATION</span>
+      <h2>Prepare for the Viva</h2>
+      <p>
+        Select a topic to review the questions you should be ready to answer.
+        These are preparation prompts, not a guaranteed judging questionnaire.
+      </p>
+    </div>
+
+    <div class="topics-grid" id="topicsGrid">
+
+      <button class="topic-card" data-topic="0">
+        <span class="topic-number">TOPIC 01</span>
+        <h3>🎯 Business Problem</h3>
+        <p>Understand the need for your project.</p>
+      </button>
+
+      <button class="topic-card" data-topic="1">
+        <span class="topic-number">TOPIC 02</span>
+        <h3>🛠️ Platform Choice</h3>
+        <p>Explain your choice of tools.</p>
+      </button>
+
+      <button class="topic-card" data-topic="2">
+        <span class="topic-number">TOPIC 03</span>
+        <h3>💰 ROI and Benefits</h3>
+        <p>Demonstrate practical value.</p>
+      </button>
+
+      <button class="topic-card" data-topic="3">
+        <span class="topic-number">TOPIC 04</span>
+        <h3>👥 Target Users</h3>
+        <p>Know who benefits from your solution.</p>
+      </button>
+
+      <button class="topic-card" data-topic="4">
+        <span class="topic-number">TOPIC 05</span>
+        <h3>🧠 AI Integration</h3>
+        <p>Explain the role of AI.</p>
+      </button>
+
+      <button class="topic-card" data-topic="5">
+        <span class="topic-number">TOPIC 06</span>
+        <h3>🔄 Execution Process</h3>
+        <p>Explain the flow from start to finish.</p>
+      </button>
+
+      <button class="topic-card" data-topic="6">
+        <span class="topic-number">TOPIC 07</span>
+        <h3>🚀 Scalability</h3>
+        <p>Discuss real-world implementation.</p>
+      </button>
+
+      <button class="topic-card" data-topic="7">
+        <span class="topic-number">TOPIC 08</span>
+        <h3>⚠️ Limitations</h3>
+        <p>Explain failures and improvements.</p>
+      </button>
+
+    </div>
+
+    <div class="topic-detail" id="topicDetail" aria-live="polite">
+      <h3 id="topicTitle">Select a topic</h3>
+      <p id="topicDescription">
+        Select any topic above to see preparation questions.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- DEMO PROCESS -->
+<section id="process">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">YOUR PRESENTATION FLOW</span>
+      <h2>How to demonstrate your project</h2>
+      <p>
+        Use this simple sequence to make your demonstration clear,
+        structured, and easy to understand.
+      </p>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-number">01</div>
+        <div>
+          <h3>Introduce the problem</h3>
+          <p>
+            Briefly explain the problem, the intended user, and what happens
+            when the problem is not solved.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-number">02</div>
+        <div>
+          <h3>Show the workflow architecture</h3>
+          <p>
+            Walk through your nodes, triggers, APIs or integrations,
+            decision branches, and output.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-number">03</div>
+        <div>
+          <h3>Execute a real test</h3>
+          <p>
+            Use prepared sample data and run the automation. Show the
+            resulting message, report, record, or other output.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-number">04</div>
+        <div>
+          <h3>Explain the impact</h3>
+          <p>
+            Describe how the solution saves effort or improves accuracy.
+            Use actual measurements where available.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-number">05</div>
+        <div>
+          <h3>Answer questions confidently</h3>
+          <p>
+            Be prepared to discuss technical choices, errors, security,
+            limitations, and future improvements.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHECKLIST -->
+<section class="checklist-section" id="checklist">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">FINAL PREPARATION</span>
+      <h2>Are you demo-ready?</h2>
+      <p>
+        Tick each item as you complete it. Your progress is saved in this
+        browser on this device.
+      </p>
+    </div>
+
+    <div class="checklist-box">
+      <div class="progress-header">
+        <span>Project readiness</span>
+        <span id="progressText">0 of 6 completed</span>
+      </div>
+
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+
+      <label class="check-item">
+        <input type="checkbox" class="readiness-check" data-id="0">
+        <span>My automation runs successfully from start to finish.</span>
+      </label>
+
+      <label class="check-item">
+        <input type="checkbox" class="readiness-check" data-id="1">
+        <span>I have prepared realistic sample data for the demo.</span>
+      </label>
+
+      <label class="check-item">
+        <input type="checkbox" class="readiness-check" data-id="2">
+        <span>I can explain the problem and the target users.</span>
+      </label>
+
+      <label class="check-item">
+        <input type="checkbox" class="readiness-check" data-id="3">
+        <span>I can explain every major node and integration.</span>
+      </label>
+
+      <label class="check-item">
+        <input type="checkbox" class="readiness-check" data-id="4">
+        <span>I have tested errors and know the limitations.</span>
+      </label>
+
+      <label class="check-item">
+        <input type="checkbox" class="readiness-check" data-id="5">
+        <span>I have prepared my demo environment and backup plan.</span>
+      </label>
+
+      <div class="check-actions">
+        <span id="readinessMessage" style="color:#686981;font-size:13px">
+          Keep going — you're preparing for success!
+        </span>
+        <button class="btn-reset" id="resetChecklist">Reset checklist</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div>
+        <div class="brand">
+          <div class="brand-logo">IIC</div>
+          <div class="brand-name">
+            IIC DMIMS
+            <small style="color:#bcbcd0">AI Automation Challenge</small>
+          </div>
+        </div>
+        <p>
+          Innovate with purpose. Automate with intelligence.
+          Demonstrate solutions that create practical value.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#guidelines">Guidelines</a>
+        <a href="#topics">Viva Preparation</a>
+        <a href="#checklist">Checklist</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © <span id="currentYear"></span> IIC DMIMS | AI Automation Challenge
+      <br>
+      Follow official event instructions for final rules, timings, and evaluation criteria.
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* ===== ANNOUNCEMENT BAR ===== */
+const announcement = document.getElementById("announcement");
+const closeAnnouncement = document.getElementById("closeAnnouncement");
+
+closeAnnouncement.addEventListener("click", () => {
+  announcement.style.display = "none";
+});
+
+/* ===== MOBILE NAVIGATION ===== */
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", () => {
+  const isOpen = navLinks.classList.toggle("open");
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+  menuToggle.textContent = isOpen ? "×" : "☰";
+});
+
+navLinks.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.textContent = "☰";
+  });
+});
+
+/* ===== VIVA TOPIC CONTENT ===== */
+const topicData = [
+  {
+    title: "🎯 Business Problem",
+    description:
+      "Prepare to answer: What problem does your project solve? Who experiences this problem? How is it handled today? Why is automation better than doing it manually? Give one realistic example."
+  },
+  {
+    title: "🛠️ Platform Choice",
+    description:
+      "Prepare to answer: Why did you choose n8n, Make, or another platform? Which features were important? What integrations did you use? What alternatives did you consider? Explain your choice based on your actual project."
+  },
+  {
+    title: "💰 ROI and Benefits",
+    description:
+      "Prepare to answer: How much time could the automation save? What manual steps does it remove? How could you measure its benefits? If you quote time or cost savings, explain how you calculated them and distinguish estimates from measured results."
+  },
+  {
+    title: "👥 Target Users",
+    description:
+      "Prepare to answer: Who would use your solution? What would they need to set up? Would it help students, individuals, businesses, or another group? How would you collect user feedback and improve the solution?"
+  },
+  {
+    title: "🧠 AI Integration",
+    description:
+      "Prepare to answer: Where is AI used? What information does the AI receive? What output does it produce? How do you handle incorrect AI responses? Why is AI necessary instead of ordinary rules or conditions?"
+  },
+  {
+    title: "🔄 Execution Process",
+    description:
+      "Prepare to answer: What starts the workflow? What happens at each step? How does information move between nodes? What happens when a step fails? Demonstrate a successful run and, if possible, a failure case."
+  },
+  {
+    title: "🚀 Scalability",
+    description:
+      "Prepare to answer: Could the solution handle more users or records? What would happen if an API became unavailable? How would you manage permissions, credentials, costs, and sensitive information? What would be required to deploy it in a real organisation?"
+  },
+  {
+    title: "⚠️ Limitations",
+    description:
+      "Prepare to answer: What does your current version not do? What are its technical or practical limitations? What risks exist? What would you improve next? Honest explanations supported by examples are stronger than unsupported claims."
+  }
+];
+
+const topicCards = document.querySelectorAll(".topic-card");
+const topicDetail = document.getElementById("topicDetail");
+const topicTitle = document.getElementById("topicTitle");
+const topicDescription = document.getElementById("topicDescription");
+
+topicCards.forEach(card => {
+  card.addEventListener("click", () => {
+    const index = Number(card.dataset.topic);
+    const topic = topicData[index];
+
+    topicCards.forEach(item => item.classList.remove("active"));
+    card.classList.add("active");
+
+    topicTitle.textContent = topic.title;
+    topicDescription.textContent = topic.description;
+    topicDetail.classList.add("show");
+  });
+});
+
+/* ===== CHECKLIST WITH LOCAL STORAGE ===== */
+const checks = document.querySelectorAll(".readiness-check");
+const progressFill = document.getElementById("progressFill");
+const progressText = document.getElementById("progressText");
+const readinessMessage = document.getElementById("readinessMessage");
+const resetChecklist = document.getElementById("resetChecklist");
+const STORAGE_KEY = "iic-dmims-ai-challenge-checklist";
+
+function readSavedChecklist() {
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    return saved ? JSON.parse(saved) : {};
+  } catch (error) {
+    return {};
+  }
+}
+
+function saveChecklist() {
+  const state = {};
+
+  checks.forEach(check => {
+    state[check.dataset.id] = check.checked;
+  });
+
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  } catch (error) {
+    showToast("Progress cannot be saved in this browser.");
+  }
+}
+
+function updateProgress() {
+  const completed = [...checks].filter(check => check.checked).length;
+  const total = checks.length;
+  const percentage = Math.round((completed / total) * 100);
+
+  progressFill.style.width = percentage + "%";
+  progressText.textContent = completed + " of " + total + " completed";
+
+  if (completed === total) {
+    readinessMessage.textContent = "🎉 All set! Review your demo one last time.";
+  } else if (completed >= 4) {
+    readinessMessage.textContent = "Almost there — finish your final checks.";
+  } else {
+    readinessMessage.textContent = "Keep going — you're preparing for success!";
+  }
+}
+
+const savedState = readSavedChecklist();
+
+checks.forEach(check => {
+  check.checked = savedState[check.dataset.id] === true;
+
+  check.addEventListener("change", () => {
+    saveChecklist();
+    updateProgress();
+
+    if (check.checked) {
+      showToast("Checklist item completed!");
+    }
+  });
+});
+
+resetChecklist.addEventListener("click", () => {
+  checks.forEach(check => {
+    check.checked = false;
+  });
+
+  saveChecklist();
+  updateProgress();
+  showToast("Checklist has been reset.");
+});
+
+updateProgress();
+
+/* ===== TOAST NOTIFICATIONS ===== */
+let toastTimeout;
+
+function showToast(message) {
+  const toast = document.getElementById("toast");
+  toast.textContent = message;
+  toast.classList.add("show");
+
+  clearTimeout(toastTimeout);
+
+  toastTimeout = setTimeout(() => {
+    toast.classList.remove("show");
+  }, 2500);
+}
+
+/* ===== CURRENT YEAR ===== */
+document.getElementById("currentYear").textContent =
+  new Date().getFullYear();
+</script>
+
+</body>
+</html>
