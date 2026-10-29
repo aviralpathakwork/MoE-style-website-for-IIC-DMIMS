@@ -1,0 +1,436 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>IIC DMIMS AI Automation Judging Sheet</title>
+<style>
+@page {
+  size: A4 landscape;
+  margin: 8mm;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #000;
+  background: #fff;
+}
+
+.page {
+  width: 281mm;
+  min-height: 194mm;
+  margin: auto;
+  padding: 3mm;
+  page-break-after: always;
+}
+
+.page:last-child { page-break-after: auto; }
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid #000;
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+}
+
+.logo {
+  border: 2px solid #000;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.heading {
+  flex: 1;
+  text-align: center;
+}
+
+.heading h1 {
+  font-size: 17px;
+  margin: 0 0 4px;
+}
+
+.heading h2 {
+  font-size: 13px;
+  margin: 0 0 4px;
+}
+
+.heading p {
+  font-size: 10px;
+  margin: 0;
+}
+
+.event {
+  border: 1px solid #000;
+  padding: 7px;
+  text-align: center;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  margin: 9px 0;
+}
+
+.instructions {
+  font-size: 9px;
+  margin: 6px 0 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 9px;
+}
+
+th, td {
+  border: 1px solid #000;
+  text-align: center;
+  padding: 5px 3px;
+  overflow-wrap: anywhere;
+}
+
+th {
+  height: 22mm;
+  font-weight: bold;
+  vertical-align: middle;
+}
+
+td {
+  height: 17mm;
+}
+
+.team {
+  width: 35mm;
+  text-align: left;
+  font-weight: bold;
+  padding-left: 6px;
+}
+
+.score { width: 9mm; }
+.total { width: 14mm; font-weight: bold; }
+
+.blank {
+  display: inline-block;
+  width: 25px;
+  height: 14px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+  margin-top: 10px;
+  padding-top: 6px;
+  border-top: 1px solid #000;
+}
+
+.signature {
+  min-width: 45mm;
+  text-align: center;
+  border-top: 1px solid #000;
+  padding-top: 4px;
+}
+
+.criteria {
+  margin: 8px 0 12px;
+}
+
+.criteria td {
+  height: auto;
+  text-align: left;
+  padding: 8px;
+}
+
+.criteria th {
+  height: auto;
+}
+
+.results td {
+  height: 8mm;
+}
+
+.results th {
+  height: auto;
+}
+
+@media screen {
+  body { padding: 15px; }
+  .page { margin-bottom: 20px; border: 1px solid #ccc; }
+}
+
+@media print {
+  body { margin: 0; padding: 0; }
+  .page {
+    width: 100%;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1: TEAMS 1–6 -->
+<section class="page">
+  <div class="header">
+    <div class="logo">IIC</div>
+    <div class="heading">
+      <h1>DMIMS — INSTITUTION'S INNOVATION COUNCIL</h1>
+      <h2>AI AUTOMATION PROJECT COMPETITION</h2>
+      <p>OFFICIAL TEAM EVALUATION & JUDGING SHEET</p>
+    </div>
+    <div class="event">JUDGING SHEET<br>2026–27</div>
+  </div>
+
+  <div class="details">
+    <span>Judge's Name: ________________________</span>
+    <span>Date: ________________</span>
+    <span>Signature: __________________</span>
+  </div>
+
+  <p class="instructions">
+    <b>Instructions:</b> Award 0 or 1 mark for each criterion.
+    Maximum score per team: 10 marks. Write the awarded marks in the blank cells.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th class="team">TEAM NAME</th>
+        <th class="score">BP<br><br>Business Problem & Purpose</th>
+        <th class="score">PT<br><br>Platform & Tool Choice</th>
+        <th class="score">ROI<br><br>Business Value & ROI</th>
+        <th class="score">TU<br><br>Target Users / Department</th>
+        <th class="score">AI<br><br>AI Integration</th>
+        <th class="score">EP<br><br>Execution Process & Architecture</th>
+        <th class="score">IS<br><br>Implementation Strategy</th>
+        <th class="score">SR<br><br>Scalability & Resources</th>
+        <th class="score">LF<br><br>Limitations & Future Scope</th>
+        <th class="score">LD<br><br>Live Demo & Reliability</th>
+        <th class="total">TOTAL<br>/10</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="team">1. Openbox</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td class="team">2. AI Storm</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td class="team">3. AI Automation Hub</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td class="team">4. Automind Squad</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td class="team">5. Automatex</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td class="team">6. The Game Changer</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+
+  <div class="footer">
+    <span>IIC DMIMS | AI Automation Event</span>
+    <span class="signature">Judge's Signature</span>
+    <span>Page 1 of 4</span>
+  </div>
+</section>
+
+<!-- PAGE 2: TEAMS 7–12 -->
+<section class="page">
+  <div class="header">
+    <div class="logo">IIC</div>
+    <div class="heading">
+      <h1>DMIMS — INSTITUTION'S INNOVATION COUNCIL</h1>
+      <h2>AI AUTOMATION PROJECT COMPETITION</h2>
+      <p>OFFICIAL TEAM EVALUATION & JUDGING SHEET</p>
+    </div>
+    <div class="event">JUDGING SHEET<br>2026–27</div>
+  </div>
+
+  <div class="details">
+    <span>Judge's Name: ________________________</span>
+    <span>Date: ________________</span>
+    <span>Signature: __________________</span>
+  </div>
+
+  <p class="instructions">
+    <b>Instructions:</b> Award 0 or 1 mark for each criterion.
+    Maximum score per team: 10 marks. Write the awarded marks in the blank cells.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th class="team">TEAM NAME</th>
+        <th class="score">BP<br><br>Business Problem & Purpose</th>
+        <th class="score">PT<br><br>Platform & Tool Choice</th>
+        <th class="score">ROI<br><br>Business Value & ROI</th>
+        <th class="score">TU<br><br>Target Users / Department</th>
+        <th class="score">AI<br><br>AI Integration</th>
+        <th class="score">EP<br><br>Execution Process & Architecture</th>
+        <th class="score">IS<br><br>Implementation Strategy</th>
+        <th class="score">SR<br><br>Scalability & Resources</th>
+        <th class="score">LF<br><br>Limitations & Future Scope</th>
+        <th class="score">LD<br><br>Live Demo & Reliability</th>
+        <th class="total">TOTAL<br>/10</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="team">7. The Automators</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td class="team">8. BizTech Trio</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td class="team">9. TrialSync</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td class="team">10. NodeNova</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td class="team">11. MBAutomators</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td class="team">12. AutoMeds</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+
+  <div class="footer">
+    <span>IIC DMIMS | AI Automation Event</span>
+    <span class="signature">Judge's Signature</span>
+    <span>Page 2 of 4</span>
+  </div>
+</section>
+
+<!-- PAGE 3: TEAMS 13–16 -->
+<section class="page">
+  <div class="header">
+    <div class="logo">IIC</div>
+    <div class="heading">
+      <h1>DMIMS — INSTITUTION'S INNOVATION COUNCIL</h1>
+      <h2>AI AUTOMATION PROJECT COMPETITION</h2>
+      <p>OFFICIAL TEAM EVALUATION & JUDGING SHEET</p>
+    </div>
+    <div class="event">JUDGING SHEET<br>2026–27</div>
+  </div>
+
+  <div class="details">
+    <span>Judge's Name: ________________________</span>
+    <span>Date: ________________</span>
+    <span>Signature: __________________</span>
+  </div>
+
+  <p class="instructions">
+    <b>Instructions:</b> Award 0 or 1 mark for each criterion.
+    Maximum score per team: 10 marks. Write the awarded marks in the blank cells.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th class="team">TEAM NAME</th>
+        <th class="score">BP<br><br>Business Problem & Purpose</th>
+        <th class="score">PT<br><br>Platform & Tool Choice</th>
+        <th class="score">ROI<br><br>Business Value & ROI</th>
+        <th class="score">TU<br><br>Target Users / Department</th>
+        <th class="score">AI<br><br>AI Integration</th>
+        <th class="score">EP<br><br>Execution Process & Architecture</th>
+        <th class="score">IS<br><br>Implementation Strategy</th>
+        <th class="score">SR<br><br>Scalability & Resources</th>
+        <th class="score">LF<br><br>Limitations & Future Scope</th>
+        <th class="score">LD<br><br>Live Demo & Reliability</th>
+        <th class="total">TOTAL<br>/10</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="team">13. Vision Vector</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td class="team">14. AutoBudget AI</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td class="team">15. Operation Legends</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td class="team">16. Auto Hub</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+
+  <div style="margin-top:12mm;font-size:11px;">
+    <b>Additional remarks:</b>
+    <div style="height:25mm;border:1px solid #000;margin-top:5px;"></div>
+  </div>
+
+  <div class="footer">
+    <span>IIC DMIMS | AI Automation Event</span>
+    <span class="signature">Judge's Signature</span>
+    <span>Page 3 of 4</span>
+  </div>
+</section>
+
+<!-- PAGE 4: SCORING KEY AND RESULTS -->
+<section class="page">
+  <div class="header">
+    <div class="logo">IIC</div>
+    <div class="heading">
+      <h1>DMIMS — INSTITUTION'S INNOVATION COUNCIL</h1>
+      <h2>AI AUTOMATION PROJECT COMPETITION</h2>
+      <p>SCORING REFERENCE & FINAL RESULTS</p>
+    </div>
+    <div class="event">JUDGING SHEET<br>2026–27</div>
+  </div>
+
+  <h3 style="font-size:13px;margin:3px 0;">Evaluation Criteria</h3>
+
+  <table class="criteria">
+    <thead>
+      <tr><th style="width:15mm;">Code</th><th>Criterion</th><th style="width:25mm;">Marks</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>BP</td><td>Business Problem & Purpose</td><td>0–1</td></tr>
+      <tr><td>PT</td><td>Platform & Tool Choice</td><td>0–1</td></tr>
+      <tr><td>ROI</td><td>Business Value & ROI</td><td>0–1</td></tr>
+      <tr><td>TU</td><td>Target Users / Department</td><td>0–1</td></tr>
+      <tr><td>AI</td><td>AI Integration</td><td>0–1</td></tr>
+      <tr><td>EP</td><td>Execution Process & Architecture</td><td>0–1</td></tr>
+      <tr><td>IS</td><td>Implementation Strategy</td><td>0–1</td></tr>
+      <tr><td>SR</td><td>Scalability & Resources</td><td>0–1</td></tr>
+      <tr><td>LF</td><td>Limitations & Future Scope</td><td>0–1</td></tr>
+      <tr><td>LD</td><td>Live Demonstration & Reliability</td><td>0–1</td></tr>
+    </tbody>
+  </table>
+
+  <h3 style="font-size:13px;margin:5px 0;">Final Results Record</h3>
+
+  <table class="results">
+    <thead>
+      <tr>
+        <th style="width:15mm;">Rank</th>
+        <th>Team Name</th>
+        <th style="width:30mm;">Score / 10</th>
+        <th style="width:65mm;">Remarks</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td style="text-align:left;">Openbox</td><td></td><td></td></tr>
+      <tr><td>2</td><td style="text-align:left;">AI Storm</td><td></td><td></td></tr>
+      <tr><td>3</td><td style="text-align:left;">AI Automation Hub</td><td></td><td></td></tr>
+      <tr><td>4</td><td style="text-align:left;">Automind Squad</td><td></td><td></td></tr>
+      <tr><td>5</td><td style="text-align:left;">Automatex</td><td></td><td></td></tr>
+      <tr><td>6</td><td style="text-align:left;">The Game Changer</td><td></td><td></td></tr>
+      <tr><td>7</td><td style="text-align:left;">The Automators</td><td></td><td></td></tr>
+      <tr><td>8</td><td style="text-align:left;">BizTech Trio</td><td></td><td></td></tr>
+      <tr><td>9</td><td style="text-align:left;">TrialSync</td><td></td><td></td></tr>
+      <tr><td>10</td><td style="text-align:left;">NodeNova</td><td></td><td></td></tr>
+      <tr><td>11</td><td style="text-align:left;">MBAutomators</td><td></td><td></td></tr>
+      <tr><td>12</td><td style="text-align:left;">AutoMeds</td><td></td><td></td></tr>
+      <tr><td>13</td><td style="text-align:left;">Vision Vector</td><td></td><td></td></tr>
+      <tr><td>14</td><td style="text-align:left;">AutoBudget AI</td><td></td><td></td></tr>
+      <tr><td>15</td><td style="text-align:left;">Operation Legends</td><td></td><td></td></tr>
+      <tr><td>16</td><td style="text-align:left;">Auto Hub</td><td></td><td></td></tr>
+    </tbody>
+  </table>
+
+  <div class="footer">
+    <span>IIC DMIMS | AI Automation Event</span>
+    <span class="signature">Judge's Signature</span>
+    <span>Page 4 of 4</span>
+  </div>
+</section>
+
+</body>
+</html>
