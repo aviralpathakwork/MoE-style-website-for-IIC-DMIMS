@@ -1,0 +1,1092 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IIC DMIMS | Annual Calendar 2026-27</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #17231f;
+  --dark: #14221d;
+  --green: #254e3b;
+  --lime: #c5e56a;
+  --cream: #f5f4ed;
+  --white: #ffffff;
+  --muted: #78827a;
+  --line: #dce1d8;
+  --orange: #e9a35e;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #e6e9e2;
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.5;
+}
+
+button {
+  font: inherit;
+}
+
+.toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  padding: 14px 25px;
+  background: var(--dark);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toolbar button {
+  background: var(--lime);
+  border: 0;
+  padding: 11px 22px;
+  border-radius: 5px;
+  color: var(--dark);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.toolbar span {
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.document {
+  max-width: 1120px;
+  margin: 35px auto;
+}
+
+.page {
+  width: 100%;
+  min-height: 790px;
+  background: var(--cream);
+  margin-bottom: 25px;
+  padding: 45px 55px;
+  position: relative;
+  overflow: hidden;
+  page-break-after: always;
+}
+
+.page.dark {
+  background: var(--dark);
+  color: white;
+}
+
+.topline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 14px;
+  margin-bottom: 38px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.dark .topline {
+  border-color: #435149;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-mark {
+  width: 31px;
+  height: 31px;
+  border: 1px solid var(--lime);
+  color: var(--lime);
+  display: grid;
+  place-items: center;
+  font-size: 16px;
+}
+
+.eyebrow {
+  color: var(--green);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 13px;
+}
+
+.dark .eyebrow {
+  color: var(--lime);
+}
+
+h1, h2, h3 {
+  font-family: 'Manrope', sans-serif;
+  line-height: 1.12;
+}
+
+h1 {
+  font-size: 65px;
+  letter-spacing: -3.5px;
+  max-width: 800px;
+}
+
+h2 {
+  font-size: 35px;
+  letter-spacing: -1.5px;
+}
+
+h3 {
+  font-size: 17px;
+}
+
+p {
+  font-size: 12px;
+}
+
+.subtitle {
+  font-size: 17px;
+  color: #aebbb0;
+  max-width: 550px;
+  margin-top: 22px;
+  line-height: 1.8;
+}
+
+.lime {
+  color: var(--lime);
+}
+
+.cover {
+  min-height: 790px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cover-content {
+  padding-top: 70px;
+}
+
+.cover-meta {
+  display: flex;
+  gap: 35px;
+  margin-top: 60px;
+  padding-top: 22px;
+  border-top: 1px solid #435149;
+}
+
+.cover-meta div {
+  font-size: 10px;
+  color: #aab8ac;
+  letter-spacing: 1px;
+}
+
+.cover-meta strong {
+  display: block;
+  color: white;
+  font-size: 16px;
+  margin-top: 7px;
+}
+
+.cover-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.cover-symbol {
+  font-size: 125px;
+  color: var(--lime);
+  line-height: 1;
+  opacity: .9;
+}
+
+.cover-footer {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #aab8ac;
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 35px;
+  margin-top: 30px;
+}
+
+.intro-copy {
+  font-size: 14px;
+  line-height: 1.9;
+  color: #66746a;
+}
+
+.mission-card {
+  background: var(--dark);
+  color: white;
+  padding: 28px;
+  min-height: 170px;
+}
+
+.mission-card strong {
+  display: block;
+  color: var(--lime);
+  font-size: 23px;
+  margin: 12px 0;
+}
+
+.pipeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 9px;
+  margin-top: 35px;
+}
+
+.pipeline-item {
+  background: white;
+  padding: 20px 15px;
+  border-top: 3px solid var(--green);
+}
+
+.pipeline-item small {
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.pipeline-item strong {
+  display: block;
+  font-size: 15px;
+  margin-top: 9px;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 25px;
+}
+
+.section-head .quarter {
+  background: var(--green);
+  color: white;
+  padding: 9px 15px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  font-weight: 800;
+}
+
+.section-head p {
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+.thrust {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  background: #e8ebdf;
+  padding: 13px 16px;
+  margin-bottom: 18px;
+  font-size: 12px;
+}
+
+.thrust strong {
+  color: var(--green);
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
+  font-size: 10px;
+}
+
+thead {
+  background: var(--dark);
+  color: white;
+}
+
+th {
+  text-align: left;
+  padding: 12px 10px;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+}
+
+td {
+  padding: 11px 10px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+  line-height: 1.55;
+}
+
+tbody tr:nth-child(even) {
+  background: #eeefe8;
+}
+
+td:first-child {
+  font-weight: 800;
+  color: var(--green);
+}
+
+td strong {
+  font-size: 10px;
+  color: var(--ink);
+}
+
+.level {
+  display: inline-block;
+  padding: 4px 7px;
+  background: #dce9d8;
+  color: #27543a;
+  font-weight: 800;
+  white-space: nowrap;
+  border-radius: 2px;
+}
+
+.mode {
+  color: #66746a;
+  font-weight: 700;
+}
+
+.flagship {
+  margin-top: 23px;
+  background: var(--dark);
+  color: white;
+  padding: 19px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flagship small {
+  color: var(--lime);
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.flagship h3 {
+  margin-top: 7px;
+  font-size: 21px;
+}
+
+.flagship p {
+  color: #b5c0b6;
+  margin-top: 6px;
+}
+
+.flagship .arrow {
+  font-size: 40px;
+  color: var(--lime);
+}
+
+.days-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.day {
+  padding: 13px 15px;
+  background: white;
+  border-left: 3px solid var(--green);
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 12px;
+}
+
+.day-date {
+  color: var(--green);
+  font-weight: 800;
+  font-size: 12px;
+}
+
+.day strong {
+  font-size: 11px;
+}
+
+.day p {
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.stat {
+  padding: 20px;
+  background: white;
+  border-bottom: 3px solid var(--lime);
+}
+
+.stat strong {
+  font-family: 'Manrope';
+  font-size: 30px;
+  display: block;
+  color: var(--green);
+}
+
+.stat span {
+  font-size: 10px;
+  color: var(--muted);
+}
+
+.footer {
+  position: absolute;
+  bottom: 22px;
+  left: 55px;
+  right: 55px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+  color: var(--muted);
+  letter-spacing: 1px;
+}
+
+.dark .footer {
+  border-color: #435149;
+  color: #aab8ac;
+}
+
+.framework {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.framework-card {
+  padding: 22px;
+  background: white;
+  border: 1px solid var(--line);
+}
+
+.framework-card h3 {
+  margin-bottom: 10px;
+  color: var(--green);
+}
+
+.framework-card p {
+  color: #66746a;
+  line-height: 1.8;
+}
+
+.framework-card ul {
+  padding-left: 17px;
+  margin-top: 12px;
+  font-size: 11px;
+  line-height: 1.9;
+}
+
+.note {
+  font-size: 9px;
+  color: var(--muted);
+  margin-top: 15px;
+  line-height: 1.7;
+}
+
+.closing {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 650px;
+}
+
+.closing h2 {
+  font-size: 57px;
+  max-width: 700px;
+}
+
+.closing p {
+  color: #b3c0b5;
+  font-size: 15px;
+  max-width: 550px;
+  line-height: 1.9;
+  margin-top: 25px;
+}
+
+@page {
+  size: A4 landscape;
+  margin: 0;
+}
+
+@media print {
+  body {
+    background: white;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .toolbar {
+    display: none !important;
+  }
+
+  .document {
+    max-width: none;
+    margin: 0;
+  }
+
+  .page {
+    width: 297mm;
+    height: 210mm;
+    min-height: 210mm;
+    margin: 0;
+    padding: 12mm 15mm;
+    overflow: hidden;
+    break-after: page;
+    page-break-after: always;
+  }
+
+  .page:last-child {
+    break-after: auto;
+    page-break-after: auto;
+  }
+
+  .footer {
+    left: 15mm;
+    right: 15mm;
+    bottom: 8mm;
+  }
+
+  table {
+    font-size: 9px;
+  }
+
+  td {
+    padding: 8px;
+  }
+
+  .cover {
+    min-height: 185mm;
+  }
+
+  .cover-content {
+    padding-top: 40px;
+  }
+
+  h1 {
+    font-size: 58px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .document {
+    margin: 10px;
+  }
+
+  .page {
+    padding: 25px;
+    min-height: auto;
+  }
+
+  h1 {
+    font-size: 42px;
+  }
+
+  .intro-grid,
+  .framework {
+    grid-template-columns: 1fr;
+  }
+
+  .pipeline {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .days-grid {
+    grid-template-columns: 1fr;
+  }
+
+  table {
+    min-width: 700px;
+  }
+
+  .table-wrap {
+    overflow-x: auto;
+  }
+
+  .footer {
+    position: static;
+    margin-top: 30px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="toolbar">
+  <span>IIC • DMIMS &nbsp; / &nbsp; CALENDAR 2026–27</span>
+  <button onclick="window.print()">↓ &nbsp; DOWNLOAD PDF</button>
+</div>
+
+<main class="document">
+
+<!-- PAGE 1: COVER -->
+
+<section class="page dark cover">
+  <div>
+    <div class="topline">
+      <div class="logo">
+        <div class="logo-mark">✦</div>
+        <span>IIC DMIMS</span>
+      </div>
+      <span>Ministry of Education Initiative</span>
+    </div>
+
+    <div class="cover-content">
+      <div class="eyebrow">Institution's Innovation Council</div>
+      <h1>Where Ideas<br>Become <span class="lime">Impact.</span></h1>
+
+      <p class="subtitle">
+        A year of innovation, entrepreneurship, creativity
+        and leadership. Developing the next generation of
+        changemakers at DMIMS.
+      </p>
+
+      <div class="cover-meta">
+        <div>ACADEMIC YEAR<strong>2026–27</strong></div>
+        <div>SEMESTER<strong>SEPT 2026 – AUG 2027</strong></div>
+        <div>FRAMEWORK<strong>IIC 9.0</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cover-bottom">
+    <div>
+      <div class="eyebrow">IDEA → INNOVATION → IMPACT</div>
+      <div class="cover-footer">INNOVATE &nbsp; • &nbsp; CREATE &nbsp; • &nbsp; LEAD</div>
+    </div>
+    <div class="cover-symbol">✳</div>
+  </div>
+</section>
+
+<!-- PAGE 2: OVERVIEW -->
+
+<section class="page">
+  <div class="topline">
+    <div class="logo"><div class="logo-mark">✦</div>IIC DMIMS</div>
+    <span>01 / Annual Overview</span>
+  </div>
+
+  <div class="eyebrow">The Year Ahead</div>
+  <h2>From Ideas to Impact.</h2>
+
+  <div class="intro-grid">
+    <p class="intro-copy">
+      The Institution's Innovation Council at DMIMS aims to build
+      a vibrant innovation ecosystem where students discover
+      opportunities, solve real-world problems, develop business
+      ideas and connect with entrepreneurs, mentors and industry.
+      <br><br>
+      The annual calendar follows a structured journey from
+      inspiration and ideation to validation, prototyping,
+      fundraising and startup development.
+    </p>
+
+    <div class="mission-card">
+      <div class="eyebrow">OUR MISSION</div>
+      <strong>Think. Build. Connect.</strong>
+      <p>Empowering students to transform ideas into meaningful
+      initiatives, ventures and solutions.</p>
+    </div>
+  </div>
+
+  <div class="eyebrow" style="margin-top:45px">The Innovation Pipeline</div>
+
+  <div class="pipeline">
+    <div class="pipeline-item">
+      <small>Q1 / SEP–NOV</small>
+      <strong>01. INSPIRE</strong>
+      <p>Discover problems and generate ideas.</p>
+    </div>
+    <div class="pipeline-item">
+      <small>Q2 / DEC–FEB</small>
+      <strong>02. VALIDATE</strong>
+      <p>Test concepts and develop business models.</p>
+    </div>
+    <div class="pipeline-item">
+      <small>Q3 / MAR–MAY</small>
+      <strong>03. BUILD</strong>
+      <p>Develop prototypes and business plans.</p>
+    </div>
+    <div class="pipeline-item">
+      <small>Q4 / JUN–AUG</small>
+      <strong>04. SCALE</strong>
+      <p>Pitch, connect and launch ventures.</p>
+    </div>
+  </div>
+
+  <div class="flagship">
+    <div>
+      <small>OUR ANNUAL JOURNEY</small>
+      <h3>IDEA → INNOVATION → IMPACT</h3>
+      <p>One ecosystem. Four quarters. A thousand possibilities.</p>
+    </div>
+    <div class="arrow">↗</div>
+  </div>
+
+  <div class="footer">
+    <span>IIC DMIMS • ANNUAL ACTIVITY CALENDAR</span>
+    <span>2026–27</span>
+  </div>
+</section>
+
+<!-- PAGE 3: Q1 -->
+
+<section class="page">
+  <div class="topline">
+    <div class="logo"><div class="logo-mark">✦</div>IIC DMIMS</div>
+    <span>02 / Semester I</span>
+  </div>
+
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">September – November 2026</div>
+      <h2>Inspiration & Ideation.</h2>
+      <p>Building an entrepreneurial mindset and discovering opportunities.</p>
+    </div>
+    <div class="quarter">QUARTER 01</div>
+  </div>
+
+  <div class="thrust">
+    <strong>THRUST AREA</strong>
+    <span>Inspiration • Motivation • Ideation</span>
+  </div>
+
+  <div class="table-wrap">
+  <table>
+    <colgroup>
+      <col style="width:5%">
+      <col style="width:39%">
+      <col style="width:8%">
+      <col style="width:13%">
+      <col style="width:35%">
+    </colgroup>
+    <thead>
+      <tr>
+        <th>No.</th><th>Activity / Description</th><th>Level</th>
+        <th>Mode</th><th>Key Outputs / KPIs</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>01</td><td><strong>Think Beyond: Problem Solving & Ideation Workshop</strong><br>Design thinking, brainstorming and opportunity identification.</td><td><span class="level">L2</span></td><td class="mode">Offline</td><td>Participants, problems identified and ideas submitted.</td></tr>
+      <tr><td>02</td><td><strong>My Story: Conversations with Successful Entrepreneurs</strong><br>Founder stories, startup journeys and alumni interactions.</td><td><span class="level">L1</span></td><td class="mode">Offline</td><td>Attendance, engagement and student interactions.</td></tr>
+      <tr><td>03</td><td><strong>AI for Entrepreneurs: Emerging Technologies Workshop</strong><br>Generative AI, automation, analytics and digital tools.</td><td><span class="level">L2</span></td><td class="mode">Offline</td><td>Participants trained, tools explored and use cases developed.</td></tr>
+      <tr><td>04</td><td><strong>Market Matters: Marketing Research & Startup Strategies</strong><br>Customer segmentation, competitor analysis and positioning.</td><td><span class="level">L2</span></td><td class="mode">Offline</td><td>Market research reports, personas and marketing strategies.</td></tr>
+      <tr><td>05</td><td><strong>Problem to Possibility: Field Visit & Problem–Solution Fit</strong><br>Identify problems in businesses, communities and institutions.</td><td><span class="level">L3</span></td><td class="mode">Offline</td><td>Problems identified, solutions proposed and field observations.</td></tr>
+      <tr><td>06</td><td><strong>DMIMS Innovation Challenge: Hackathon & Idea Showcase</strong><br>Inter/intra-institutional innovation competition.</td><td><span class="level">L4</span></td><td class="mode">Offline/Hybrid</td><td>Entries, shortlisted ideas, awards and YUKTI submissions.</td></tr>
+      <tr><td>07</td><td><strong>IPR Made Simple: Intellectual Property Rights</strong><br>Patents, copyrights, trademarks and IP clinics.</td><td><span class="level">L2</span></td><td class="mode">Offline</td><td>Attendees and IP clinic registrations.</td></tr>
+      <tr><td>08</td><td><strong>Innovation Outreach: Entrepreneurship Awareness in Schools</strong><br>Introduce school students to creativity and entrepreneurship.</td><td><span class="level">L2</span></td><td class="mode">Offline</td><td>Schools reached, outreach sessions and participants.</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="flagship">
+    <div><small>Q1 FLAGSHIP EVENT</small><h3>DMIMS IdeaVerse 2026</h3><p>Campus-wide ideation challenge • Expert evaluation • Final pitching • Awards</p></div>
+    <div class="arrow">✳</div>
+  </div>
+
+  <div class="footer"><span>IIC DMIMS • INNOVATE • CREATE • LEAD</span><span>03 / 08</span></div>
+</section>
+
+<!-- PAGE 4: Q2 -->
+
+<section class="page">
+  <div class="topline">
+    <div class="logo"><div class="logo-mark">✦</div>IIC DMIMS</div>
+    <span>03 / Semester I</span>
+  </div>
+
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">December 2026 – February 2027</div>
+      <h2>Validation & Development.</h2>
+      <p>Transforming promising ideas into viable business concepts.</p>
+    </div>
+    <div class="quarter">QUARTER 02</div>
+  </div>
+
+  <div class="thrust">
+    <strong>THRUST AREA</strong>
+    <span>Validation • Concept Development • Feasibility</span>
+  </div>
+
+  <div class="table-wrap">
+  <table>
+    <colgroup><col style="width:5%"><col style="width:39%"><col style="width:8%"><col style="width:13%"><col style="width:35%"></colgroup>
+    <thead><tr><th>No.</th><th>Activity / Description</th><th>Level</th><th>Mode</th><th>Key Outputs / KPIs</th></tr></thead>
+    <tbody>
+      <tr><td>01</td><td><strong>Design to Disrupt: Design Thinking & Rapid Prototyping</strong><br>Human-centred design and prototype development.</td><td><span class="level">L2</span></td><td class="mode">Offline</td><td>Ideas validated, prototypes and teams shortlisted.</td></tr>
+      <tr><td>02</td><td><strong>Business Model Bootcamp: BMC & Business Model Fit</strong><br>Value propositions, customer segments, revenue and costs.</td><td><span class="level">L2</span></td><td class="mode">Offline</td><td>BMCs developed and business concepts presented.</td></tr>
+      <tr><td>03</td><td><strong>From Concept to Commercialisation: TRL, MRL & IRL</strong><br>Technology, manufacturing and investment readiness.</td><td><span class="level">L2</span></td><td class="mode">Offline</td><td>Attendance, readiness assessments and action plans.</td></tr>
+      <tr><td>04</td><td><strong>Startup Law 101: Legal & Ethical Foundations</strong><br>Registration, contracts, compliance, data privacy and ethics.</td><td><span class="level">L2</span></td><td class="mode">Offline</td><td>Student attendance and legal/ethical checklists.</td></tr>
+      <tr><td>05</td><td><strong>Inside the Innovation Ecosystem: Exposure Visit</strong><br>Visit IDEA Labs, Fab Labs, MSME clusters or incubation centres.</td><td><span class="level">L3</span></td><td class="mode">Offline</td><td>Visits, ecosystem connections and incubation linkages.</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="flagship">
+    <div><small>Q2 FLAGSHIP EVENT</small><h3>DMIMS Startup Blueprint</h3><p>Business Model Development Challenge • Customer Discovery • Feasibility Assessment</p></div>
+    <div class="arrow">↗</div>
+  </div>
+
+  <div class="framework">
+    <div class="framework-card"><h3>01 / Validate</h3><p>Teams identify customer needs and test assumptions through market research and interviews.</p></div>
+    <div class="framework-card"><h3>02 / Develop</h3><p>Shortlisted ideas are converted into Business Model Canvases and preliminary business plans.</p></div>
+  </div>
+
+  <div class="footer"><span>IIC DMIMS • INNOVATE • CREATE • LEAD</span><span>04 / 08</span></div>
+</section>
+
+<!-- PAGE 5: Q3 -->
+
+<section class="page">
+  <div class="topline">
+    <div class="logo"><div class="logo-mark">✦</div>IIC DMIMS</div>
+    <span>04 / Semester II</span>
+  </div>
+
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">March – May 2027</div>
+      <h2>Prototype & Build.</h2>
+      <p>Turning validated concepts into tangible solutions and business plans.</p>
+    </div>
+    <div class="quarter">QUARTER 03</div>
+  </div>
+
+  <div class="thrust"><strong>THRUST AREA</strong><span>Prototype • Design • Business Model Development</span></div>
+
+  <div class="table-wrap">
+  <table>
+    <colgroup><col style="width:5%"><col style="width:39%"><col style="width:8%"><col style="width:13%"><col style="width:35%"></colgroup>
+    <thead><tr><th>No.</th><th>Activity / Description</th><th>Level</th><th>Mode</th><th>Key Outputs / KPIs</th></tr></thead>
+    <tbody>
+      <tr><td>01</td><td><strong>Build Your MVP: Product–Market Fit & Prototype Development</strong><br>MVP design, testing and customer feedback.</td><td><span class="level">L2</span></td><td class="mode">Offline</td><td>Functional prototypes, MVPs developed and tested.</td></tr>
+      <tr><td>02</td><td><strong>Funding Your Future: Startup Finance & Fundraising</strong><br>Unit economics, bootstrapping, funding and projections.</td><td><span class="level">L2</span></td><td class="mode">Offline</td><td>Financial plans, budgets and fundraising strategies.</td></tr>
+      <tr><td>03</td><td><strong>Inside the Startup Ecosystem: Incubation & Patent Visit</strong><br>Exposure to incubation, patent and technology transfer centres.</td><td><span class="level">L3</span></td><td class="mode">Offline</td><td>Visits, linkages and incubation referrals.</td></tr>
+      <tr><td>04</td><td><strong>Pitch Perfect: Investor Deck & Pitch Preparation</strong><br>Value proposition, storytelling and investor presentations.</td><td><span class="level">L2</span></td><td class="mode">Offline</td><td>Investor decks, pitches and fundraising use cases.</td></tr>
+      <tr><td>05</td><td><strong>Accelerators & Incubators: Turning Ideas into Ventures</strong><br>Sessions with incubation managers and founders.</td><td><span class="level">L1</span></td><td class="mode">Offline</td><td>Student engagement, incubation applications and referrals.</td></tr>
+      <tr><td>06</td><td><strong>DMIMS B-Plan Championship 2027</strong><br>Business plan competition, mentoring and awards.</td><td><span class="level">L4</span></td><td class="mode">Offline/Hybrid</td><td>Entries, plans, finalists, awards and mentor linkages.</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="flagship">
+    <div><small>Q3 FLAGSHIP EVENT</small><h3>DMIMS VentureSprint 2027</h3><p>Business Plan Championship • Investor Pitching • Expert Mentorship</p></div>
+    <div class="arrow">✳</div>
+  </div>
+
+  <div class="framework">
+    <div class="framework-card"><h3>Competition Tracks</h3><ul><li>AI & Technology Ventures</li><li>Healthcare & Wellness Innovation</li><li>Education & Skill Development</li></ul></div>
+    <div class="framework-card"><h3>More Opportunities</h3><ul><li>Sustainable & Social Innovation</li><li>Marketing, Retail & Digital Business</li><li>Interdisciplinary Business Solutions</li></ul></div>
+  </div>
+
+  <div class="footer"><span>IIC DMIMS • INNOVATE • CREATE • LEAD</span><span>05 / 08</span></div>
+</section>
+
+<!-- PAGE 6: Q4 -->
+
+<section class="page">
+  <div class="topline">
+    <div class="logo"><div class="logo-mark">✦</div>IIC DMIMS</div>
+    <span>05 / Semester II</span>
+  </div>
+
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">June – August 2027</div>
+      <h2>Startup Ecosystem & Scale.</h2>
+      <p>Preparing innovators for launch, investment and sustainable growth.</p>
+    </div>
+    <div class="quarter">QUARTER 04</div>
+  </div>
+
+  <div class="thrust"><strong>THRUST AREA</strong><span>Startup Ecosystem • Commercialisation • Scale-up</span></div>
+
+  <div class="table-wrap">
+  <table>
+    <colgroup><col style="width:5%"><col style="width:39%"><col style="width:8%"><col style="width:13%"><col style="width:35%"></colgroup>
+    <thead><tr><th>No.</th><th>Activity / Description</th><th>Level</th><th>Mode</th><th>Key Outputs / KPIs</th></tr></thead>
+    <tbody>
+      <tr><td>01</td><td><strong>Launch Ready: Prototype Validation & Lean Startup</strong><br>Value proposition, MVP validation and business model refinement.</td><td><span class="level">L2</span></td><td class="mode">Offline</td><td>Validated MVPs, launch-ready teams and feedback.</td></tr>
+      <tr><td>02</td><td><strong>Capital Connect: Angel Investment & VC Funding</strong><br>Funding opportunities, valuation and investor pitches.</td><td><span class="level">L2</span></td><td class="mode">Offline</td><td>Investor presentations and fundraising plans.</td></tr>
+      <tr><td>03</td><td><strong>Startup Ecosystem Connect: Industry Panel Discussion</strong><br>Regional and national entrepreneurs, investors and incubators.</td><td><span class="level">L2</span></td><td class="mode">Offline</td><td>Expert participation, networking and linkages.</td></tr>
+      <tr><td>04</td><td><strong>Beyond Patents: IP Management & Commercialisation</strong><br>IP strategy, licensing and technology transfer.</td><td><span class="level">L2</span></td><td class="mode">Offline</td><td>IP clinic referrals and commercialisation initiatives.</td></tr>
+      <tr><td>05</td><td><strong>DMIMS Startup Showcase & Demo Day 2027</strong><br>Student startup exhibition and investor interaction.</td><td><span class="level">L4</span></td><td class="mode">Offline/Hybrid</td><td>Startups showcased, mentors connected and awards.</td></tr>
+      <tr><td>06</td><td><strong>Innovation Impact Review & Entrepreneurial Alumni Meet</strong><br>Annual review, recognition and alumni mentoring.</td><td><span class="level">L2</span></td><td class="mode">Offline</td><td>Startups tracked, alumni participation and impact report.</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="flagship">
+    <div><small>Q4 FLAGSHIP EVENT</small><h3>DMIMS Innovators' Summit 2027</h3><p>Startup Exhibition • Investor Pitching • Awards • Demo Day</p></div>
+    <div class="arrow">↗</div>
+  </div>
+
+  <div class="framework">
+    <div class="framework-card"><h3>Showcase</h3><p>Prototype demonstrations, startup stalls and founder stories.</p></div>
+    <div class="framework-card"><h3>Connect</h3><p>Investor interaction, expert mentoring and incubation opportunities.</p></div>
+  </div>
+
+  <div class="footer"><span>IIC DMIMS • INNOVATE • CREATE • LEAD</span><span>06 / 08</span></div>
+</section>
+
+<!-- PAGE 7: IMPORTANT DAYS -->
+
+<section class="page">
+  <div class="topline">
+    <div class="logo"><div class="logo-mark">✦</div>IIC DMIMS</div>
+    <span>06 / Special Celebrations</span>
+  </div>
+
+  <div class="eyebrow">IIC 9.0 • Important Days</div>
+  <h2>Celebrate Ideas. Create Impact.</h2>
+  <p style="color:var(--muted);margin-top:10px">Important national and international observances integrated with student-led activities.</p>
+
+  <div class="days-grid">
+    <div class="day"><div class="day-date">15 OCT 2026</div><div><strong>Institution's Innovation Day</strong><p>Ignite Innovation – Student idea presentations.</p></div></div>
+    <div class="day"><div class="day-date">09 NOV 2026</div><div><strong>National Entrepreneurship Day</strong><p>Entrepreneurship in Action – Founder interaction.</p></div></div>
+    <div class="day"><div class="day-date">11 NOV 2026</div><div><strong>National Education Day</strong><p>Reimagining Education – Student innovation challenge.</p></div></div>
+    <div class="day"><div class="day-date">02 DEC 2026</div><div><strong>National Pollution Control Day</strong><p>Greenovation – Sustainable business ideas.</p></div></div>
+    <div class="day"><div class="day-date">14 DEC 2026</div><div><strong>National Energy Conservation Day</strong><p>Energy for Tomorrow – Solutions challenge.</p></div></div>
+    <div class="day"><div class="day-date">12 JAN 2027</div><div><strong>National Youth Day</strong><p>Young Innovators Forum – Youth leadership.</p></div></div>
+    <div class="day"><div class="day-date">16 JAN 2027</div><div><strong>National Startup Day</strong><p>Startup India @ DMIMS – Founder interaction.</p></div></div>
+    <div class="day"><div class="day-date">28 FEB 2027</div><div><strong>National Science Day</strong><p>Science to Solutions – Technology showcase.</p></div></div>
+    <div class="day"><div class="day-date">08 MAR 2027</div><div><strong>International Women's Day</strong><p>Women Who Innovate – Entrepreneurship forum.</p></div></div>
+    <div class="day"><div class="day-date">21 APR 2027</div><div><strong>World Creativity & Innovation Day</strong><p>Creative Minds – Problem-solving challenge.</p></div></div>
+    <div class="day"><div class="day-date">26 APR 2027</div><div><strong>World Intellectual Property Day</strong><p>Protect Your Ideas – IPR awareness.</p></div></div>
+    <div class="day"><div class="day-date">11 MAY 2027</div><div><strong>National Technology Day</strong><p>Technology for Transformation – Showcase.</p></div></div>
+    <div class="day"><div class="day-date">05 JUN 2027</div><div><strong>World Environment Day</strong><p>Business for a Better Planet – Startup challenge.</p></div></div>
+    <div class="day"><div class="day-date">29 JUL 2027</div><div><strong>NEP 2020 Anniversary</strong><p>NEP & Innovation – Multidisciplinary discussion.</p></div></div>
+    <div class="day"><div class="day-date">15 AUG 2027</div><div><strong>Independence Day</strong><p>Atmanirbhar Bharat – Nation-building ideas.</p></div></div>
+    <div class="day"><div class="day-date">21 AUG 2027</div><div><strong>World Entrepreneurs' Day</strong><p>Entrepreneurial Excellence Awards.</p></div></div>
+  </div>
+
+  <p class="note">Dates and observance titles should be verified against official calendars before institutional publication.</p>
+
+  <div class="footer"><span>IIC DMIMS • INNOVATE • CREATE • LEAD</span><span>07 / 08</span></div>
+</section>
+
+<!-- PAGE 8: FRAMEWORK AND CLOSING -->
+
+<section class="page">
+  <div class="topline">
+    <div class="logo"><div class="logo-mark">✦</div>IIC DMIMS</div>
+    <span>07 / Performance Framework</span>
+  </div>
+
+  <div class="eyebrow">Measuring What Matters</div>
+  <h2>From Activity to Impact.</h2>
+  <p style="color:var(--muted);margin-top:10px">Proposed institutional targets for academic year 2026–27.</p>
+
+  <div class="stats">
+    <div class="stat"><strong>500+</strong><span>Cumulative student participations</span></div>
+    <div class="stat"><strong>50+</strong><span>Innovation ideas generated</span></div>
+    <div class="stat"><strong>15+</strong><span>Shortlisted teams</span></div>
+    <div class="stat"><strong>20+</strong><span>Business Model Canvases</span></div>
+    <div class="stat"><strong>10+</strong><span>Prototypes / MVPs</span></div>
+    <div class="stat"><strong>3+</strong><span>Student startups supported</span></div>
+  </div>
+
+  <div class="framework">
+    <div class="framework-card">
+      <h3>Activity Level Classification</h3>
+      <ul>
+        <li>Level 1: 2–4 hours – Expert talks, mentoring.</li>
+        <li>Level 2: 5–8 hours – Workshops, seminars.</li>
+        <li>Level 3: 9–18 hours – Bootcamps, competitions.</li>
+        <li>Level 4: More than 18 hours – Extended hackathons, tech fests.</li>
+      </ul>
+    </div>
+    <div class="framework-card">
+      <h3>Documentation & Compliance</h3>
+      <ul>
+        <li>Approved activity proposals.</li>
+        <li>Posters, invitations and resource person details.</li>
+        <li>Attendance and photographs.</li>
+        <li>Feedback and measurable outcomes.</li>
+        <li>Reports, certificates and evidence.</li>
+        <li>IIC portal uploads and quarterly reviews.</li>
+      </ul>
+    </div>
+    <div class="framework-card">
+      <h3>Suggested Ecosystem Partners</h3>
+      <ul>
+        <li>Nagpur and Vidarbha entrepreneurs.</li>
+        <li>MSMEs and industry professionals.</li>
+        <li>Incubation centres and innovation labs.</li>
+        <li>DMIMS alumni and startup founders.</li>
+        <li>IPR experts and investors.</li>
+      </ul>
+    </div>
+    <div class="framework-card">
+      <h3>Monitoring & Scoring</h3>
+      <ul>
+        <li>Quarterly weightage: 0.25 each.</li>
+        <li>Offline: full assigned activity weightage.</li>
+        <li>Online: 75% of assigned weightage.</li>
+        <li>Calendar contributes 40% of Activity Score.</li>
+        <li>Activity Score contributes 80% of Star Rating.</li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="note">Targets are proposed planning targets. Scoring information is based on the supplied IIC 9.0 framework and should be checked against current official guidelines.</p>
+
+  <div class="footer"><span>IIC DMIMS • ANNUAL ACTIVITY CALENDAR</span><span>08 / 08</span></div>
+</section>
+
+<section class="page dark">
+  <div class="topline">
+    <div class="logo"><div class="logo-mark">✦</div>IIC DMIMS</div>
+    <span>THE NEXT GENERATION OF CHANGE</span>
+  </div>
+
+  <div class="closing">
+    <div class="eyebrow">Our Vision</div>
+    <h2>Don't just think of the future.<br><span class="lime">Build it.</span></h2>
+    <p>
+      A student-led ecosystem where ideas are explored,
+      initiatives are built and meaningful impact is created.
+      Together, let's develop innovators, entrepreneurs
+      and future leaders.
+    </p>
+    <div style="margin-top:50px;color:var(--lime);font-size:13px;font-weight:800;letter-spacing:3px">
+      INNOVATE &nbsp; • &nbsp; CREATE &nbsp; • &nbsp; LEAD
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>INSTITUTION'S INNOVATION COUNCIL • DMIMS</span>
+    <span>© 2026–27</span>
+  </div>
+</section>
+
+</main>
+
+</body>
+</html>
