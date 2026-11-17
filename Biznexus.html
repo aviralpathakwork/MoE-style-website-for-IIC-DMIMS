@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BizNexus 2026 | Business Model Development Event — IIC DMIMS</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        navy: {
+                            950: '#040D1E',
+                            900: '#06152D',
+                            800: '#0A1F44',
+                            700: '#134074',
+                            600: '#1D569E',
+                        },
+                        gold: {
+                            300: '#F3D06B',
+                            400: '#E5C158',
+                            500: '#D4AF37',
+                            600: '#B89225',
+                            700: '#967418',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom subtle animations and glassmorphism utilities */
+        .hero-bg {
+            background: radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.16) 0%, transparent 45%),
+                        radial-gradient(circle at 15% 75%, rgba(29, 86, 158, 0.35) 0%, transparent 50%),
+                        linear-gradient(135deg, #040D1E 0%, #06152D 50%, #0A1F44 100%);
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #F3D06B 0%, #D4AF37 55%, #B89225 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card-hover {
+            transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(6, 21, 45, 0.12), 0 8px 10px -6px rgba(6, 21, 45, 0.08);
+        }
+        .highlight-pulse {
+            animation: sectorPulse 2.2s ease-out;
+        }
+        @keyframes sectorPulse {
+            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.85); border-color: #D4AF37; }
+            50% { box-shadow: 0 0 0 12px rgba(212, 175, 55, 0); border-color: #D4AF37; }
+            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #0A1F44;
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-gold-500 selection:text-navy-950">
+
+    <!-- ==================== NAVIGATION BAR ==================== -->
+    <header class="sticky top-0 z-50 bg-navy-900/95 backdrop-blur-md border-b border-white/10 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Identity: IIC DMIMS + BizNexus 2026 -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center text-navy-950 font-extrabold text-xl shadow-md group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span class="font-display font-extrabold text-white text-xl tracking-tight">BizNexus <span class="text-gold-400">2026</span></span>
+                            <span class="hidden sm:inline-block px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-white/10 text-gold-300 rounded-full border border-gold-400/30">IIC DMIMS</span>
+                        </div>
+                        <p class="text-xs text-slate-300 font-medium">Institution's Innovation Council • DMIMS</p>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-200">
+                    <a href="#pillars" class="hover:text-gold-400 transition-colors">Core Pillars</a>
+                    <a href="#exhibition-models" class="hover:text-gold-400 transition-colors">Top 10 Models</a>
+                    <a href="#sectors-explorer" class="hover:text-gold-400 transition-colors">40 Focus Sectors</a>
+                    <a href="#pitch-guide" class="hover:text-gold-400 transition-colors">10-Point Pitch</a>
+                </nav>
+
+                <!-- CTA & Mobile Toggle -->
+                <div class="flex items-center gap-3">
+                    <a href="https://tally.so/r/q5Gbp8" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-gold-300 via-gold-500 to-gold-600 hover:brightness-105 text-navy-950 font-bold text-sm shadow-md hover:shadow-gold-500/25 transition-all flex items-center gap-2">
+                        <span>Register Team</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                    </a>
+                    <button id="mobile-menu-btn" aria-label="Toggle Menu" class="md:hidden p-2.5 rounded-xl text-slate-200 hover:bg-white/10 transition-colors">
+                        <i class="fa-solid fa-bars text-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-navy-800 border-t border-white/10 px-4 pt-3 pb-5 space-y-2">
+            <a href="#pillars" class="block px-4 py-2.5 rounded-xl text-slate-200 hover:bg-white/10 hover:text-gold-400 font-medium">Core Pillars</a>
+            <a href="#exhibition-models" class="block px-4 py-2.5 rounded-xl text-slate-200 hover:bg-white/10 hover:text-gold-400 font-medium">Top 10 Exhibition Models</a>
+            <a href="#sectors-explorer" class="block px-4 py-2.5 rounded-xl text-slate-200 hover:bg-white/10 hover:text-gold-400 font-medium">40 Focus Sectors Explorer</a>
+            <a href="#pitch-guide" class="block px-4 py-2.5 rounded-xl text-slate-200 hover:bg-white/10 hover:text-gold-400 font-medium">10-Point Pitch Guide</a>
+            <a href="https://tally.so/r/q5Gbp8" target="_blank" rel="noopener noreferrer" class="mt-2 block text-center px-4 py-3 rounded-xl bg-gradient-to-r from-gold-300 to-gold-500 text-navy-950 font-extrabold text-sm">
+                Register Team on Tally Portal <i class="fa-solid fa-arrow-up-right-from-square ml-1.5 text-xs"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero-bg relative overflow-hidden text-white pt-14 pb-20 lg:pt-20 lg:pb-28 border-b border-navy-700">
+        <!-- Decorative Grid Overlay -->
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] opacity-80 pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <!-- Left Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/10 border border-gold-400/30 backdrop-blur-sm">
+                        <span class="w-2 h-2 rounded-full bg-gold-400 animate-ping"></span>
+                        <span class="text-xs sm:text-sm font-semibold tracking-wide text-gold-300 uppercase">
+                            Institution's Innovation Council (IIC) • DMIMS • MoE's Innovation Cell
+                        </span>
+                    </div>
+
+                    <h1 class="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.12]">
+                        BizNexus <span class="gold-gradient-text">2026</span>
+                        <span class="block text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-100 mt-2">
+                            Business Model Development Event
+                        </span>
+                    </h1>
+
+                    <!-- Official Tagline Bar -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2 sm:gap-3 text-sm sm:text-base font-bold tracking-wider uppercase text-gold-300">
+                        <span>Ideate</span>
+                        <span class="text-white/30">|</span>
+                        <span>Model</span>
+                        <span class="text-white/30">|</span>
+                        <span>Innovate</span>
+                        <span class="text-white/30">|</span>
+                        <span>Create Impact</span>
+                    </div>
+
+                    <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        <strong class="text-white">FROM IDEA TO IMPACT:</strong> Identify a problem. Build a solution. Prove the business model. Explore all <span class="text-gold-300 font-semibold">40 official focus sectors</span> and register your team through our official Tally portal.
+                    </p>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="https://tally.so/r/q5Gbp8" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-gradient-to-r from-gold-300 via-gold-500 to-gold-600 hover:brightness-105 text-navy-950 font-extrabold text-base shadow-xl shadow-gold-500/20 transition-all flex items-center justify-center gap-2.5">
+                            <i class="fa-solid fa-rocket"></i>
+                            <span>Register Your Team</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </a>
+                        <a href="#sectors-explorer" class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 border border-white/20 text-white font-semibold text-base transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-layer-group text-gold-300"></i>
+                            <span>Browse All 40 Sectors</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Visual Card: Event Blueprint & Stats -->
+                <div class="lg:col-span-5">
+                    <div class="bg-white/10 backdrop-blur-md border border-white/15 rounded-3xl p-6 sm:p-8 shadow-2xl relative">
+                        <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-6">
+                            <div>
+                                <p class="text-xs uppercase tracking-widest text-gold-400 font-bold">Official Event Blueprint</p>
+                                <h2 class="font-display font-bold text-xl text-white mt-0.5">From Idea To Impact</h2>
+                            </div>
+                            <div class="w-12 h-12 rounded-2xl bg-gold-500/20 border border-gold-400/40 flex items-center justify-center text-gold-400 text-xl">
+                                <i class="fa-solid fa-chart-line"></i>
+                            </div>
+                        </div>
+
+                        <!-- 3 Core Steps -->
+                        <div class="space-y-4 mb-6">
+                            <div class="flex items-start gap-3.5 p-3.5 rounded-2xl bg-navy-950/50 border border-white/10">
+                                <div class="w-8 h-8 rounded-lg bg-gold-500 text-navy-950 font-extrabold flex items-center justify-center shrink-0 text-sm">01</div>
+                                <div>
+                                    <h3 class="font-bold text-white text-sm">Identify a Problem</h3>
+                                    <p class="text-xs text-slate-300 mt-0.5">Select from 40 high-impact sectors in healthcare, tech, sustainability, or commerce.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3.5 p-3.5 rounded-2xl bg-navy-950/50 border border-white/10">
+                                <div class="w-8 h-8 rounded-lg bg-gold-500 text-navy-950 font-extrabold flex items-center justify-center shrink-0 text-sm">02</div>
+                                <div>
+                                    <h3 class="font-bold text-white text-sm">Build a Solution & Prototype</h3>
+                                    <p class="text-xs text-slate-300 mt-0.5">Develop a physical exhibition model or digital MVP demonstrating feasibility.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3.5 p-3.5 rounded-2xl bg-navy-950/50 border border-white/10">
+                                <div class="w-8 h-8 rounded-lg bg-gold-500 text-navy-950 font-extrabold flex items-center justify-center shrink-0 text-sm">03</div>
+                                <div>
+                                    <h3 class="font-bold text-white text-sm">Prove the Business Model</h3>
+                                    <p class="text-xs text-slate-300 mt-0.5">Present revenue streams, unit economics, market strategy & societal impact.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Quick Metrics -->
+                        <div class="grid grid-cols-3 gap-3 pt-2 border-t border-white/10 text-center">
+                            <div class="p-2.5 rounded-xl bg-white/5">
+                                <div class="font-display font-extrabold text-2xl text-gold-400">40</div>
+                                <div class="text-[11px] text-slate-300 font-medium">Focus Sectors</div>
+                            </div>
+                            <div class="p-2.5 rounded-xl bg-white/5">
+                                <div class="font-display font-extrabold text-2xl text-gold-400">10</div>
+                                <div class="text-[11px] text-slate-300 font-medium">Model Tracks</div>
+                            </div>
+                            <div class="p-2.5 rounded-xl bg-white/5">
+                                <div class="font-display font-extrabold text-2xl text-gold-400">10</div>
+                                <div class="text-[11px] text-slate-300 font-medium">Pitch Pillars</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 5 CORE PILLARS RIBBON ==================== -->
+    <section id="pillars" class="relative -mt-10 z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-3xl shadow-xl border border-slate-200/80 p-6 sm:p-8">
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
+                <!-- Pillar 1 -->
+                <div class="flex flex-col items-center text-center p-4 rounded-2xl bg-slate-50 hover:bg-navy-900 hover:text-white group transition-colors border border-slate-100">
+                    <div class="w-12 h-12 rounded-2xl bg-purple-100 text-purple-700 group-hover:bg-gold-500 group-hover:text-navy-950 flex items-center justify-center text-xl mb-3 transition-colors">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-sm sm:text-base">Real Business Problems</h3>
+                    <p class="text-xs text-slate-500 group-hover:text-slate-300 mt-1">Rooted in genuine market & community needs</p>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="flex flex-col items-center text-center p-4 rounded-2xl bg-slate-50 hover:bg-navy-900 hover:text-white group transition-colors border border-slate-100">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-700 group-hover:bg-gold-500 group-hover:text-navy-950 flex items-center justify-center text-xl mb-3 transition-colors">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-sm sm:text-base">Innovative Solutions</h3>
+                    <p class="text-xs text-slate-500 group-hover:text-slate-300 mt-1">Novel technology, process, or service design</p>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="flex flex-col items-center text-center p-4 rounded-2xl bg-slate-50 hover:bg-navy-900 hover:text-white group transition-colors border border-slate-100">
+                    <div class="w-12 h-12 rounded-2xl bg-blue-100 text-blue-700 group-hover:bg-gold-500 group-hover:text-navy-950 flex items-center justify-center text-xl mb-3 transition-colors">
+                        <i class="fa-solid fa-arrow-trend-up"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-sm sm:text-base">Sustainable Models</h3>
+                    <p class="text-xs text-slate-500 group-hover:text-slate-300 mt-1">Financially viable & scalable revenue engines</p>
+                </div>
+
+                <!-- Pillar 4 -->
+                <div class="flex flex-col items-center text-center p-4 rounded-2xl bg-slate-50 hover:bg-navy-900 hover:text-white group transition-colors border border-slate-100">
+                    <div class="w-12 h-12 rounded-2xl bg-indigo-100 text-indigo-700 group-hover:bg-gold-500 group-hover:text-navy-950 flex items-center justify-center text-xl mb-3 transition-colors">
+                        <i class="fa-solid fa-users-gear"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-sm sm:text-base">Industry Relevance</h3>
+                    <p class="text-xs text-slate-500 group-hover:text-slate-300 mt-1">Aligned with modern enterprise & market trends</p>
+                </div>
+
+                <!-- Pillar 5 -->
+                <div class="col-span-2 sm:col-span-1 flex flex-col items-center text-center p-4 rounded-2xl bg-slate-50 hover:bg-navy-900 hover:text-white group transition-colors border border-slate-100">
+                    <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-700 group-hover:bg-gold-500 group-hover:text-navy-950 flex items-center justify-center text-xl mb-3 transition-colors">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-sm sm:text-base">Societal Impact</h3>
+                    <p class="text-xs te
