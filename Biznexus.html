@@ -1,298 +1,1015 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BizNexus 2026 | Business Model Development Event — IIC DMIMS</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Inter & Plus Jakarta Sans -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
-    <!-- Font Awesome 6 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        display: ['Plus Jakarta Sans', 'sans-serif'],
-                    },
-                    colors: {
-                        navy: {
-                            950: '#040D1E',
-                            900: '#06152D',
-                            800: '#0A1F44',
-                            700: '#134074',
-                            600: '#1D569E',
-                        },
-                        gold: {
-                            300: '#F3D06B',
-                            400: '#E5C158',
-                            500: '#D4AF37',
-                            600: '#B89225',
-                            700: '#967418',
-                        }
-                    }
-                }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BizNexus 2026 | Business Model Development Event — IIC DMIMS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            display: ['Cinzel', 'serif'],
+          },
+          colors: {
+            navy: {
+              950: '#040C18',
+              900: '#08182F',
+              850: '#0C213E',
+              800: '#102A4E',
+              700: '#183B6B',
+            },
+            gold: {
+              300: '#FDE08D',
+              400: '#F5C451',
+              500: '#E2A829',
+              600: '#B88114',
             }
+          }
         }
-    </script>
-
-    <style>
-        /* Custom subtle animations and glassmorphism utilities */
-        .hero-bg {
-            background: radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.16) 0%, transparent 45%),
-                        radial-gradient(circle at 15% 75%, rgba(29, 86, 158, 0.35) 0%, transparent 50%),
-                        linear-gradient(135deg, #040D1E 0%, #06152D 50%, #0A1F44 100%);
-        }
-        .gold-gradient-text {
-            background: linear-gradient(135deg, #F3D06B 0%, #D4AF37 55%, #B89225 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .card-hover {
-            transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .card-hover:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 25px -5px rgba(6, 21, 45, 0.12), 0 8px 10px -6px rgba(6, 21, 45, 0.08);
-        }
-        .highlight-pulse {
-            animation: sectorPulse 2.2s ease-out;
-        }
-        @keyframes sectorPulse {
-            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.85); border-color: #D4AF37; }
-            50% { box-shadow: 0 0 0 12px rgba(212, 175, 55, 0); border-color: #D4AF37; }
-            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
-        }
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f1f5f9;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #0A1F44;
-            border-radius: 9999px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #D4AF37;
-        }
-    </style>
+      }
+    };
+  </script>
+  <style>
+    body {
+      background-color: #040C18;
+      color: #F8FAFC;
+    }
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #FFF3C4 0%, #F5C451 45%, #D99B1E 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gold-btn {
+      background: linear-gradient(135deg, #F5C451 0%, #D99B1E 100%);
+      color: #061224;
+      transition: all 0.25s ease;
+    }
+    .gold-btn:hover {
+      filter: brightness(1.08);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px -5px rgba(245, 196, 81, 0.38);
+    }
+    .glass-card {
+      background: rgba(12, 33, 62, 0.72);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(245, 196, 81, 0.16);
+    }
+    .sector-card {
+      background: linear-gradient(180deg, rgba(16, 42, 78, 0.78) 0%, rgba(8, 24, 47, 0.92) 100%);
+      border: 1px solid rgba(245, 196, 81, 0.16);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .sector-card:hover {
+      border-color: rgba(245, 196, 81, 0.55);
+      transform: translateY(-4px);
+      box-shadow: 0 18px 36px -12px rgba(0, 0, 0, 0.65), 0 0 24px rgba(245, 196, 81, 0.12);
+    }
+    .hero-grid-bg {
+      background-image:
+        radial-gradient(circle at 20% 25%, rgba(245, 196, 81, 0.14) 0%, transparent 42%),
+        radial-gradient(circle at 80% 70%, rgba(24, 59, 107, 0.45) 0%, transparent 50%),
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 42px 42px, 42px 42px;
+    }
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #040C18;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #183B6B;
+      border-radius: 999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #E2A829;
+    }
+  </style>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-gold-500 selection:text-navy-950">
+<body class="antialiased selection:bg-gold-400 selection:text-navy-950">
 
-    <!-- ==================== NAVIGATION BAR ==================== -->
-    <header class="sticky top-0 z-50 bg-navy-900/95 backdrop-blur-md border-b border-white/10 shadow-lg">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <!-- Brand Identity: IIC DMIMS + BizNexus 2026 -->
-                <a href="#" class="flex items-center gap-3 group">
-                    <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center text-navy-950 font-extrabold text-xl shadow-md group-hover:scale-105 transition-transform">
-                        <i class="fa-solid fa-lightbulb"></i>
-                    </div>
-                    <div>
-                        <div class="flex items-center gap-2">
-                            <span class="font-display font-extrabold text-white text-xl tracking-tight">BizNexus <span class="text-gold-400">2026</span></span>
-                            <span class="hidden sm:inline-block px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-white/10 text-gold-300 rounded-full border border-gold-400/30">IIC DMIMS</span>
-                        </div>
-                        <p class="text-xs text-slate-300 font-medium">Institution's Innovation Council • DMIMS</p>
-                    </div>
-                </a>
-
-                <!-- Desktop Navigation -->
-                <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-200">
-                    <a href="#pillars" class="hover:text-gold-400 transition-colors">Core Pillars</a>
-                    <a href="#exhibition-models" class="hover:text-gold-400 transition-colors">Top 10 Models</a>
-                    <a href="#sectors-explorer" class="hover:text-gold-400 transition-colors">40 Focus Sectors</a>
-                    <a href="#pitch-guide" class="hover:text-gold-400 transition-colors">10-Point Pitch</a>
-                </nav>
-
-                <!-- CTA & Mobile Toggle -->
-                <div class="flex items-center gap-3">
-                    <a href="https://tally.so/r/q5Gbp8" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-gold-300 via-gold-500 to-gold-600 hover:brightness-105 text-navy-950 font-bold text-sm shadow-md hover:shadow-gold-500/25 transition-all flex items-center gap-2">
-                        <span>Register Team</span>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-                    </a>
-                    <button id="mobile-menu-btn" aria-label="Toggle Menu" class="md:hidden p-2.5 rounded-xl text-slate-200 hover:bg-white/10 transition-colors">
-                        <i class="fa-solid fa-bars text-lg"></i>
-                    </button>
-                </div>
-            </div>
+  <!-- Sticky Navigation -->
+  <header class="sticky top-0 z-50 border-b border-gold-400/15 bg-navy-950/90 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-gold-400 to-gold-600 p-0.5 shadow-lg shadow-gold-500/20">
+          <div class="w-full h-full bg-navy-950 rounded-[10px] flex items-center justify-center">
+            <i data-lucide="lightbulb" class="w-5 h-5 text-gold-400 group-hover:scale-110 transition-transform"></i>
+          </div>
         </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="font-display font-bold text-lg sm:text-xl tracking-wide text-white">BIZNEXUS <span class="text-gold-400">2026</span></span>
+            <span class="hidden sm:inline-block text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded bg-gold-400/15 text-gold-300 border border-gold-400/30">IIC DMIMS</span>
+          </div>
+          <p class="text-[11px] text-slate-400 tracking-wide">Institution's Innovation Council • DMIMS</p>
+        </div>
+      </a>
 
-        <!-- Mobile Navigation Drawer -->
-        <div id="mobile-menu" class="hidden md:hidden bg-navy-800 border-t border-white/10 px-4 pt-3 pb-5 space-y-2">
-            <a href="#pillars" class="block px-4 py-2.5 rounded-xl text-slate-200 hover:bg-white/10 hover:text-gold-400 font-medium">Core Pillars</a>
-            <a href="#exhibition-models" class="block px-4 py-2.5 rounded-xl text-slate-200 hover:bg-white/10 hover:text-gold-400 font-medium">Top 10 Exhibition Models</a>
-            <a href="#sectors-explorer" class="block px-4 py-2.5 rounded-xl text-slate-200 hover:bg-white/10 hover:text-gold-400 font-medium">40 Focus Sectors Explorer</a>
-            <a href="#pitch-guide" class="block px-4 py-2.5 rounded-xl text-slate-200 hover:bg-white/10 hover:text-gold-400 font-medium">10-Point Pitch Guide</a>
-            <a href="https://tally.so/r/q5Gbp8" target="_blank" rel="noopener noreferrer" class="mt-2 block text-center px-4 py-3 rounded-xl bg-gradient-to-r from-gold-300 to-gold-500 text-navy-950 font-extrabold text-sm">
-                Register Team on Tally Portal <i class="fa-solid fa-arrow-up-right-from-square ml-1.5 text-xs"></i>
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-300">
+        <a href="#pillars" class="hover:text-gold-400 transition-colors">Core Pillars</a>
+        <a href="#top-models" class="hover:text-gold-400 transition-colors">Top 10 Models</a>
+        <a href="#all-sectors" class="hover:text-gold-400 transition-colors">All 40 Sectors</a>
+        <a href="#checklist" class="hover:text-gold-400 transition-colors">Pitch Guidelines</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="https://tally.so/r/q5Gbp8" target="_blank" rel="noopener noreferrer" class="gold-btn px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold uppercase tracking-wider inline-flex items-center gap-2 shadow-lg">
+          <span>Register Team</span>
+          <i data-lucide="external-link" class="w-4 h-4"></i>
+        </a>
+        <button id="mobileMenuBtn" class="md:hidden p-2.5 rounded-xl border border-white/10 text-slate-300 hover:text-white" aria-label="Toggle Menu">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Nav -->
+    <div id="mobileMenu" class="hidden md:hidden border-t border-white/10 bg-navy-900 px-4 py-4 space-y-3">
+      <a href="#pillars" class="block py-1.5 text-sm text-slate-200 hover:text-gold-400">Core Pillars</a>
+      <a href="#top-models" class="block py-1.5 text-sm text-slate-200 hover:text-gold-400">Top 10 Exhibition Models</a>
+      <a href="#all-sectors" class="block py-1.5 text-sm text-slate-200 hover:text-gold-400">All 40 Focus Sectors</a>
+      <a href="#checklist" class="block py-1.5 text-sm text-slate-200 hover:text-gold-400">10-Point Pitch Guidelines</a>
+      <a href="https://tally.so/r/q5Gbp8" target="_blank" rel="noopener noreferrer" class="gold-btn w-full py-2.5 rounded-xl text-xs font-extrabold uppercase tracking-wider inline-flex items-center justify-center gap-2">
+        <span>Register Team on Tally</span>
+        <i data-lucide="external-link" class="w-4 h-4"></i>
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden hero-grid-bg border-b border-gold-400/15">
+    <div class="absolute -left-16 top-0 w-72 h-72 bg-gold-500/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute right-0 bottom-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 relative">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-navy-800/90 border border-gold-400/30 text-xs font-semibold text-gold-300">
+            <span class="w-2 h-2 rounded-full bg-gold-400 animate-pulse"></span>
+            <span>INSTITUTION'S INNOVATION COUNCIL (IIC) • DMIMS FLAGSHIP EVENT</span>
+          </div>
+
+          <div class="space-y-2">
+            <h1 class="font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-none text-white">
+              BizNexus <span class="gold-gradient-text">2026</span>
+            </h1>
+            <p class="text-xl sm:text-2xl font-bold text-slate-200 pt-1">
+              Business Model Development Event
+            </p>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-3 text-sm sm:text-base font-bold tracking-widest uppercase text-gold-400">
+            <span>Ideate</span>
+            <span class="text-slate-600">|</span>
+            <span>Model</span>
+            <span class="text-slate-600">|</span>
+            <span>Innovate</span>
+            <span class="text-slate-600">|</span>
+            <span>Create Impact</span>
+          </div>
+
+          <p class="text-slate-300 text-base sm:text-lg max-w-2xl leading-relaxed">
+            From Idea to Impact — Identify a real-world problem, build a working prototype or physical exhibition model, and prove a scalable, sustainable business model across <strong class="text-white">40 high-impact industry sectors</strong>.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a href="https://tally.so/r/q5Gbp8" target="_blank" rel="noopener noreferrer" class="gold-btn px-7 py-4 rounded-xl text-sm font-extrabold uppercase tracking-wider inline-flex items-center gap-2.5 shadow-xl">
+              <span>Register Your Team</span>
+              <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
             </a>
-        </div>
-    </header>
+            <a href="#all-sectors" class="px-6 py-4 rounded-xl text-sm font-bold uppercase tracking-wider border border-gold-400/35 bg-navy-900/80 hover:bg-navy-800 text-white inline-flex items-center gap-2 transition-colors">
+              <i data-lucide="layers" class="w-4 h-4 text-gold-400"></i>
+              <span>Explore All 40 Sectors</span>
+            </a>
+          </div>
 
-    <!-- ==================== HERO SECTION ==================== -->
-    <section class="hero-bg relative overflow-hidden text-white pt-14 pb-20 lg:pt-20 lg:pb-28 border-b border-navy-700">
-        <!-- Decorative Grid Overlay -->
-        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] opacity-80 pointer-events-none"></div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid lg:grid-cols-12 gap-12 items-center">
-                <!-- Left Content -->
-                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                    <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/10 border border-gold-400/30 backdrop-blur-sm">
-                        <span class="w-2 h-2 rounded-full bg-gold-400 animate-ping"></span>
-                        <span class="text-xs sm:text-sm font-semibold tracking-wide text-gold-300 uppercase">
-                            Institution's Innovation Council (IIC) • DMIMS • MoE's Innovation Cell
-                        </span>
-                    </div>
-
-                    <h1 class="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.12]">
-                        BizNexus <span class="gold-gradient-text">2026</span>
-                        <span class="block text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-100 mt-2">
-                            Business Model Development Event
-                        </span>
-                    </h1>
-
-                    <!-- Official Tagline Bar -->
-                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2 sm:gap-3 text-sm sm:text-base font-bold tracking-wider uppercase text-gold-300">
-                        <span>Ideate</span>
-                        <span class="text-white/30">|</span>
-                        <span>Model</span>
-                        <span class="text-white/30">|</span>
-                        <span>Innovate</span>
-                        <span class="text-white/30">|</span>
-                        <span>Create Impact</span>
-                    </div>
-
-                    <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                        <strong class="text-white">FROM IDEA TO IMPACT:</strong> Identify a problem. Build a solution. Prove the business model. Explore all <span class="text-gold-300 font-semibold">40 official focus sectors</span> and register your team through our official Tally portal.
-                    </p>
-
-                    <!-- Action Buttons -->
-                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
-                        <a href="https://tally.so/r/q5Gbp8" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-gradient-to-r from-gold-300 via-gold-500 to-gold-600 hover:brightness-105 text-navy-950 font-extrabold text-base shadow-xl shadow-gold-500/20 transition-all flex items-center justify-center gap-2.5">
-                            <i class="fa-solid fa-rocket"></i>
-                            <span>Register Your Team</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-                        </a>
-                        <a href="#sectors-explorer" class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 border border-white/20 text-white font-semibold text-base transition-all flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-layer-group text-gold-300"></i>
-                            <span>Browse All 40 Sectors</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Right Visual Card: Event Blueprint & Stats -->
-                <div class="lg:col-span-5">
-                    <div class="bg-white/10 backdrop-blur-md border border-white/15 rounded-3xl p-6 sm:p-8 shadow-2xl relative">
-                        <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-6">
-                            <div>
-                                <p class="text-xs uppercase tracking-widest text-gold-400 font-bold">Official Event Blueprint</p>
-                                <h2 class="font-display font-bold text-xl text-white mt-0.5">From Idea To Impact</h2>
-                            </div>
-                            <div class="w-12 h-12 rounded-2xl bg-gold-500/20 border border-gold-400/40 flex items-center justify-center text-gold-400 text-xl">
-                                <i class="fa-solid fa-chart-line"></i>
-                            </div>
-                        </div>
-
-                        <!-- 3 Core Steps -->
-                        <div class="space-y-4 mb-6">
-                            <div class="flex items-start gap-3.5 p-3.5 rounded-2xl bg-navy-950/50 border border-white/10">
-                                <div class="w-8 h-8 rounded-lg bg-gold-500 text-navy-950 font-extrabold flex items-center justify-center shrink-0 text-sm">01</div>
-                                <div>
-                                    <h3 class="font-bold text-white text-sm">Identify a Problem</h3>
-                                    <p class="text-xs text-slate-300 mt-0.5">Select from 40 high-impact sectors in healthcare, tech, sustainability, or commerce.</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-3.5 p-3.5 rounded-2xl bg-navy-950/50 border border-white/10">
-                                <div class="w-8 h-8 rounded-lg bg-gold-500 text-navy-950 font-extrabold flex items-center justify-center shrink-0 text-sm">02</div>
-                                <div>
-                                    <h3 class="font-bold text-white text-sm">Build a Solution & Prototype</h3>
-                                    <p class="text-xs text-slate-300 mt-0.5">Develop a physical exhibition model or digital MVP demonstrating feasibility.</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-3.5 p-3.5 rounded-2xl bg-navy-950/50 border border-white/10">
-                                <div class="w-8 h-8 rounded-lg bg-gold-500 text-navy-950 font-extrabold flex items-center justify-center shrink-0 text-sm">03</div>
-                                <div>
-                                    <h3 class="font-bold text-white text-sm">Prove the Business Model</h3>
-                                    <p class="text-xs text-slate-300 mt-0.5">Present revenue streams, unit economics, market strategy & societal impact.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Quick Metrics -->
-                        <div class="grid grid-cols-3 gap-3 pt-2 border-t border-white/10 text-center">
-                            <div class="p-2.5 rounded-xl bg-white/5">
-                                <div class="font-display font-extrabold text-2xl text-gold-400">40</div>
-                                <div class="text-[11px] text-slate-300 font-medium">Focus Sectors</div>
-                            </div>
-                            <div class="p-2.5 rounded-xl bg-white/5">
-                                <div class="font-display font-extrabold text-2xl text-gold-400">10</div>
-                                <div class="text-[11px] text-slate-300 font-medium">Model Tracks</div>
-                            </div>
-                            <div class="p-2.5 rounded-xl bg-white/5">
-                                <div class="font-display font-extrabold text-2xl text-gold-400">10</div>
-                                <div class="text-[11px] text-slate-300 font-medium">Pitch Pillars</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          <div class="grid grid-cols-3 gap-4 pt-4 max-w-lg">
+            <div class="glass-card rounded-xl p-3.5">
+              <div class="text-2xl sm:text-3xl font-extrabold text-gold-400">40</div>
+              <div class="text-xs text-slate-300 font-medium">Focus Sectors</div>
             </div>
+            <div class="glass-card rounded-xl p-3.5">
+              <div class="text-2xl sm:text-3xl font-extrabold text-gold-400">10</div>
+              <div class="text-xs text-slate-300 font-medium">Exhibition Tracks</div>
+            </div>
+            <div class="glass-card rounded-xl p-3.5">
+              <div class="text-2xl sm:text-3xl font-extrabold text-gold-400">10</div>
+              <div class="text-xs text-slate-300 font-medium">Pitch Parameters</div>
+            </div>
+          </div>
         </div>
-    </section>
 
-    <!-- ==================== 5 CORE PILLARS RIBBON ==================== -->
-    <section id="pillars" class="relative -mt-10 z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="bg-white rounded-3xl shadow-xl border border-slate-200/80 p-6 sm:p-8">
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
-                <!-- Pillar 1 -->
-                <div class="flex flex-col items-center text-center p-4 rounded-2xl bg-slate-50 hover:bg-navy-900 hover:text-white group transition-colors border border-slate-100">
-                    <div class="w-12 h-12 rounded-2xl bg-purple-100 text-purple-700 group-hover:bg-gold-500 group-hover:text-navy-950 flex items-center justify-center text-xl mb-3 transition-colors">
-                        <i class="fa-solid fa-bullseye"></i>
-                    </div>
-                    <h3 class="font-display font-bold text-sm sm:text-base">Real Business Problems</h3>
-                    <p class="text-xs text-slate-500 group-hover:text-slate-300 mt-1">Rooted in genuine market & community needs</p>
+        <!-- Right Visual Card -->
+        <div class="lg:col-span-5">
+          <div class="relative rounded-3xl p-1 bg-gradient-to-br from-gold-400/60 via-gold-500/20 to-blue-500/30 shadow-2xl">
+            <div class="bg-navy-900 rounded-[22px] p-6 sm:p-8 space-y-6">
+              <div class="flex items-center justify-between border-b border-white/10 pb-4">
+                <div>
+                  <span class="text-xs font-bold uppercase tracking-widest text-gold-400">Event Blueprint</span>
+                  <h2 class="text-lg font-bold text-white mt-0.5">IIC DMIMS Innovation Track</h2>
                 </div>
-
-                <!-- Pillar 2 -->
-                <div class="flex flex-col items-center text-center p-4 rounded-2xl bg-slate-50 hover:bg-navy-900 hover:text-white group transition-colors border border-slate-100">
-                    <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-700 group-hover:bg-gold-500 group-hover:text-navy-950 flex items-center justify-center text-xl mb-3 transition-colors">
-                        <i class="fa-solid fa-lightbulb"></i>
-                    </div>
-                    <h3 class="font-display font-bold text-sm sm:text-base">Innovative Solutions</h3>
-                    <p class="text-xs text-slate-500 group-hover:text-slate-300 mt-1">Novel technology, process, or service design</p>
+                <div class="w-12 h-12 rounded-2xl bg-gold-400/15 border border-gold-400/30 flex items-center justify-center">
+                  <i data-lucide="trending-up" class="w-6 h-6 text-gold-400"></i>
                 </div>
+              </div>
 
-                <!-- Pillar 3 -->
-                <div class="flex flex-col items-center text-center p-4 rounded-2xl bg-slate-50 hover:bg-navy-900 hover:text-white group transition-colors border border-slate-100">
-                    <div class="w-12 h-12 rounded-2xl bg-blue-100 text-blue-700 group-hover:bg-gold-500 group-hover:text-navy-950 flex items-center justify-center text-xl mb-3 transition-colors">
-                        <i class="fa-solid fa-arrow-trend-up"></i>
-                    </div>
-                    <h3 class="font-display font-bold text-sm sm:text-base">Sustainable Models</h3>
-                    <p class="text-xs text-slate-500 group-hover:text-slate-300 mt-1">Financially viable & scalable revenue engines</p>
+              <div class="space-y-4">
+                <div class="flex items-start gap-3.5">
+                  <div class="w-8 h-8 rounded-lg bg-gold-400/15 text-gold-400 flex items-center justify-center shrink-0 mt-0.5 font-bold text-sm">01</div>
+                  <div>
+                    <h3 class="font-bold text-white text-sm">Select a Focus Sector (1–40)</h3>
+                    <p class="text-xs text-slate-400 mt-0.5">Choose from 40 curated domains spanning AgriTech, HealthTech, AI, EVs, FinTech, Circular Economy & more.</p>
+                  </div>
                 </div>
-
-                <!-- Pillar 4 -->
-                <div class="flex flex-col items-center text-center p-4 rounded-2xl bg-slate-50 hover:bg-navy-900 hover:text-white group transition-colors border border-slate-100">
-                    <div class="w-12 h-12 rounded-2xl bg-indigo-100 text-indigo-700 group-hover:bg-gold-500 group-hover:text-navy-950 flex items-center justify-center text-xl mb-3 transition-colors">
-                        <i class="fa-solid fa-users-gear"></i>
-                    </div>
-                    <h3 class="font-display font-bold text-sm sm:text-base">Industry Relevance</h3>
-                    <p class="text-xs text-slate-500 group-hover:text-slate-300 mt-1">Aligned with modern enterprise & market trends</p>
+                <div class="flex items-start gap-3.5">
+                  <div class="w-8 h-8 rounded-lg bg-gold-400/15 text-gold-400 flex items-center justify-center shrink-0 mt-0.5 font-bold text-sm">02</div>
+                  <div>
+                    <h3 class="font-bold text-white text-sm">Build Prototype or Physical Model</h3>
+                    <p class="text-xs text-slate-400 mt-0.5">Bring tangible working prototypes, physical exhibition models, or interactive software demos.</p>
+                  </div>
                 </div>
+                <div class="flex items-start gap-3.5">
+                  <div class="w-8 h-8 rounded-lg bg-gold-400/15 text-gold-400 flex items-center justify-center shrink-0 mt-0.5 font-bold text-sm">03</div>
+                  <div>
+                    <h3 class="font-bold text-white text-sm">Prove Commercial & Social Viability</h3>
+                    <p class="text-xs text-slate-400 mt-0.5">Present revenue streams, CAPEX/OPEX estimates, competitor edge, and societal impact.</p>
+                  </div>
+                </div>
+              </div>
 
-                <!-- Pillar 5 -->
-                <div class="col-span-2 sm:col-span-1 flex flex-col items-center text-center p-4 rounded-2xl bg-slate-50 hover:bg-navy-900 hover:text-white group transition-colors border border-slate-100">
-                    <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-700 group-hover:bg-gold-500 group-hover:text-navy-950 flex items-center justify-center text-xl mb-3 transition-colors">
-                        <i class="fa-solid fa-leaf"></i>
-                    </div>
-                    <h3 class="font-display font-bold text-sm sm:text-base">Societal Impact</h3>
-                    <p class="text-xs te
+              <div class="pt-2">
+                <a href="https://tally.so/r/q5Gbp8" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 px-5 rounded-xl bg-white/5 hover:bg-gold-400 hover:text-navy-950 border border-gold-400/40 text-gold-300 font-bold text-sm flex items-center justify-between transition-all group">
+                  <span>Official Team Registration Portal</span>
+                  <span class="inline-flex items-center gap-1 text-xs uppercase tracking-wider">
+                    Open Form <i data-lucide="external-link" class="w-4 h-4"></i>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 Core Pillars -->
+  <section id="pillars" class="py-16 border-b border-white/10 bg-navy-900/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs font-bold uppercase tracking-widest text-gold-400">Evaluation Foundation</span>
+        <h2 class="font-display text-2xl sm:text-4xl font-bold text-white mt-2">Five Core Pillars of BizNexus 2026</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+        <div class="glass-card rounded-2xl p-6 text-center space-y-3 hover:border-gold-400/45 transition-colors">
+          <div class="w-12 h-12 mx-auto rounded-xl bg-purple-500/15 border border-purple-400/30 flex items-center justify-center text-purple-300">
+            <i data-lucide="target" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-bold text-white text-base">Real Business Problems</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">Rooted in genuine, validated market pain points and operational bottlenecks.</p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 text-center space-y-3 hover:border-gold-400/45 transition-colors">
+          <div class="w-12 h-12 mx-auto rounded-xl bg-gold-400/15 border border-gold-400/30 flex items-center justify-center text-gold-400">
+            <i data-lucide="lightbulb" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-bold text-white text-base">Innovative Solutions</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">Creative product, service, or technology-driven interventions that outperform status quo.</p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 text-center space-y-3 hover:border-gold-400/45 transition-colors">
+          <div class="w-12 h-12 mx-auto rounded-xl bg-sky-500/15 border border-sky-400/30 flex items-center justify-center text-sky-300">
+            <i data-lucide="bar-chart-3" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-bold text-white text-base">Sustainable Models</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">Clear revenue architecture, unit economics, and scalable financial projections.</p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 text-center space-y-3 hover:border-gold-400/45 transition-colors">
+          <div class="w-12 h-12 mx-auto rounded-xl bg-indigo-500/15 border border-indigo-400/30 flex items-center justify-center text-indigo-300">
+            <i data-lucide="users" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-bold text-white text-base">Industry Relevance</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">Aligned with current commercial demand, supply chains, and customer adoption readiness.</p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 text-center space-y-3 hover:border-gold-400/45 transition-colors">
+          <div class="w-12 h-12 mx-auto rounded-xl bg-emerald-500/15 border border-emerald-400/30 flex items-center justify-center text-emerald-300">
+            <i data-lucide="leaf" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-bold text-white text-base">Societal Impact</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">Measurable positive outcomes for communities, inclusivity, and environmental health.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Top 10 Recommended Sectors for Exhibition Models -->
+  <section id="top-models" class="py-16 border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-gold-400">High-Impact Physical & Working Displays</span>
+          <h2 class="font-display text-2xl sm:text-4xl font-bold text-white mt-1.5">Top 10 Recommended Sectors for Exhibition Models</h2>
+        </div>
+        <p class="text-sm text-slate-400 max-w-md">
+          Ideal tracks for live physical prototypes, scale models, IoT setups, and functional demonstrations at the exhibition arena.
+        </p>
+      </div>
+
+      <div id="topModelsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        <!-- Populated dynamically via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- All 40 Focus Sectors Detailed Cards -->
+  <section id="all-sectors" class="py-20 bg-navy-900/30 border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-400/15 border border-gold-400/30 text-gold-300 text-xs font-bold uppercase tracking-wider mb-3">
+            Complete Sector Directory (01 – 40)
+          </div>
+          <h2 class="font-display text-3xl sm:text-5xl font-bold text-white">All 40 Focus Sectors</h2>
+          <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
+            Explore every official BizNexus 2026 focus sector in detail—including problem sub-themes, business opportunities, and recommended prototype models. Click <strong class="text-gold-400">Register Team</strong> on any card to submit your team via Tally.
+          </p>
+        </div>
+
+        <!-- Search Box -->
+        <div class="w-full lg:w-96">
+          <label for="sectorSearch" class="sr-only">Search 40 sectors</label>
+          <div class="relative">
+            <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2"></i>
+            <input
+              id="sectorSearch"
+              type="text"
+              placeholder="Search sector, keyword, or prototype..."
+              class="w-full pl-11 pr-4 py-3.5 rounded-xl bg-navy-950 border border-gold-400/25 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-gold-400"
+            />
+          </div>
+        </div>
+      </div>
+<!-- Category Filter Pills -->
+      <div id="filterBar" class="flex flex-wrap items-center gap-2.5 mb-8">
+        <button data-filter="all" class="filter-pill active px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-gold-400 text-navy-950 transition-all">
+          All 40 Sectors
+        </button>
+        <button data-filter="exhibition" class="filter-pill px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-navy-800/90 text-gold-300 border border-gold-400/30 hover:border-gold-400 transition-all">
+          ★ Top 10 Exhibition Models
+        </button>
+        <button data-filter="tech" class="filter-pill px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-navy-800/90 text-slate-300 border border-white/10 hover:border-gold-400/40 transition-all">
+          Tech, AI & DeepTech
+        </button>
+        <button data-filter="sustainability" class="filter-pill px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-navy-800/90 text-slate-300 border border-white/10 hover:border-gold-400/40 transition-all">
+          Green, Energy & Agri
+        </button>
+        <button data-filter="health" class="filter-pill px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-navy-800/90 text-slate-300 border border-white/10 hover:border-gold-400/40 transition-all">
+          Health, Bio & Care
+        </button>
+        <button data-filter="commerce" class="filter-pill px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-navy-800/90 text-slate-300 border border-white/10 hover:border-gold-400/40 transition-all">
+          Commerce, FinTech & Social
+        </button>
+      </div>
+
+      <!-- Results Count -->
+      <div class="flex items-center justify-between text-xs text-slate-400 mb-6">
+        <span id="sectorCountText">Showing all 40 focus sectors</span>
+        <button id="resetFiltersBtn" class="hidden text-gold-400 hover:underline font-semibold">Reset filters</button>
+      </div>
+
+      <!-- 40 Sector Cards Grid -->
+      <div id="sectorsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Rendered by JS -->
+      </div>
+
+      <!-- Empty Search State -->
+      <div id="emptyState" class="hidden text-center py-16 glass-card rounded-2xl">
+        <i data-lucide="search-x" class="w-10 h-10 text-gold-400 mx-auto mb-3"></i>
+        <h3 class="text-lg font-bold text-white">No matching sectors found</h3>
+        <p class="text-sm text-slate-400 mt-1">Try searching another keyword or reset your active filters.</p>
+        <button onclick="resetAllFilters()" class="mt-4 px-5 py-2.5 rounded-xl bg-gold-400 text-navy-950 font-bold text-xs uppercase tracking-wider">
+          Show All 40 Sectors
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- What Every Student Team Should Present (Interactive 10-Point Checklist) -->
+  <section id="checklist" class="py-20 border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-10 items-start">
+        <div class="lg:col-span-5 space-y-5 lg:sticky lg:top-28">
+          <span class="text-xs font-bold uppercase tracking-widest text-gold-400">Mandatory Pitch Structure</span>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold text-white leading-tight">
+            What Every Student Team Should Present
+          </h2>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Use this interactive readiness tracker to verify that your pitch deck and exhibition booth cover all 10 required evaluation dimensions before final presentation day.
+          </p>
+
+          <!-- Progress Card -->
+          <div class="glass-card rounded-2xl p-6 space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-sm font-bold text-white">Team Pitch Readiness</span>
+              <span id="readinessPercent" class="text-lg font-extrabold text-gold-400">0%</span>
+            </div>
+            <div class="w-full h-3 rounded-full bg-navy-950 overflow-hidden border border-white/10">
+              <div id="readinessBar" class="h-full bg-gradient-to-r from-gold-500 to-gold-300 transition-all duration-300" style="width: 0%"></div>
+            </div>
+            <p id="readinessStatus" class="text-xs text-slate-400">Click the deliverables on the right to track your team's preparation.</p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-gradient-to-br from-navy-800 to-navy-900 border border-gold-400/30 space-y-4">
+            <h3 class="font-bold text-white text-base">Ready to Lock Your Team Slot?</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Submit your team details, chosen focus sector, and model abstract on the official IIC DMIMS registration form.
+            </p>
+            <a href="https://tally.so/r/q5Gbp8" target="_blank" rel="noopener noreferrer" class="gold-btn w-full py-3.5 px-5 rounded-xl text-xs font-extrabold uppercase tracking-wider inline-flex items-center justify-center gap-2">
+              <span>Register Team via Tally Form</span>
+              <i data-lucide="external-link" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 grid sm:grid-cols-2 gap-4" id="pitchChecklistGrid">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom CTA Banner -->
+  <section class="py-16 relative overflow-hidden">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="rounded-3xl p-8 sm:p-12 bg-gradient-to-r from-navy-800 via-navy-850 to-navy-900 border border-gold-400/35 text-center space-y-6 shadow-2xl relative overflow-hidden">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-gold-400/15 text-gold-300 text-xs font-bold uppercase tracking-widest">
+          From Idea To Impact
+        </div>
+        <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-white">
+          Identify a Problem. Build a Solution. <span class="gold-gradient-text">Prove the Business Model.</span>
+        </h2>
+        <p class="text-slate-300 max-w-2xl mx-auto text-sm sm:text-base">
+          Join student innovators across DMIMS at BizNexus 2026. Pick any of the 40 focus sectors and register your team today.
+        </p>
+        <div class="pt-2">
+          <a href="https://tally.so/r/q5Gbp8" target="_blank" rel="noopener noreferrer" class="gold-btn px-8 py-4 rounded-xl text-sm font-extrabold uppercase tracking-wider inline-flex items-center gap-2.5 shadow-xl">
+            <span>Proceed to Team Registration</span>
+            <i data-lucide="external-link" class="w-5 h-5"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10 bg-navy-950 py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+      <div class="flex items-center gap-2.5">
+        <i data-lucide="award" class="w-4 h-4 text-gold-400"></i>
+        <span class="font-semibold text-slate-200">BizNexus 2026 — Business Model Development Event</span>
+        <span>•</span>
+        <span>Hosted by IIC DMIMS</span>
+      </div>
+      <div class="flex items-center gap-5">
+        <a href="#all-sectors" class="hover:text-gold-400 transition-colors">40 Focus Sectors</a>
+        <a href="#top-models" class="hover:text-gold-400 transition-colors">Top 10 Models</a>
+        <a href="https://tally.so/r/q5Gbp8" target="_blank" rel="noopener noreferrer" class="text-gold-400 font-bold hover:underline inline-flex items-center gap-1">
+          Register Team <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sector Detail Modal -->
+  <div id="sectorModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-navy-950/85 backdrop-blur-md">
+    <div class="bg-navy-900 border border-gold-400/40 rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative space-y-6 max-h-[90vh] overflow-y-auto">
+      <button onclick="closeSectorModal()" class="absolute top-5 right-5 w-9 h-9 rounded-xl bg-white/5 hover:bg-white/15 flex items-center justify-center text-slate-300 hover:text-white" aria-label="Close modal">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="space-y-2 pr-8">
+        <div class="flex flex-wrap items-center gap-2">
+          <span id="modalSectorBadge" class="px-2.5 py-1 rounded-lg bg-gold-400/15 border border-gold-400/30 text-gold-300 text-xs font-extrabold">SECTOR 01</span>
+          <span id="modalCategoryTag" class="px-2.5 py-1 rounded-lg bg-white/5 text-slate-300 text-xs font-semibold">Tech & Infrastructure</span>
+          <span id="modalExhibitionBadge" class="hidden px-2.5 py-1 rounded-lg bg-emerald-500/15 border border-emerald-400/30 text-emerald-300 text-xs font-bold">★ Top 10 Exhibition Track</span>
+        </div>
+        <h3 id="modalTitle" class="font-display text-2xl sm:text-3xl font-bold text-white pt-1">Sector Title</h3>
+      </div>
+
+      <div class="space-y-4">
+        <div class="p-4 rounded-2xl bg-navy-950/80 border border-white/10">
+          <div class="text-xs font-bold uppercase tracking-wider text-gold-400 mb-2">Official Brochure Focus Areas</div>
+          <div id="modalSubthemes" class="flex flex-wrap gap-2"></div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="p-4 rounded-2xl bg-navy-850/80 border border-white/10 space-y-1.5">
+            <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-sky-300">
+              <i data-lucide="briefcase" class="w-4 h-4"></i>
+              <span>Business Opportunity</span>
+            </div>
+            <p id="modalOpportunity" class="text-xs sm:text-sm text-slate-300 leading-relaxed"></p>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-navy-850/80 border border-white/10 space-y-1.5">
+            <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-emerald-300">
+              <i data-lucide="cpu" class="w-4 h-4"></i>
+              <span>Prototype / Model Idea</span>
+            </div>
+            <p id="modalPrototype" class="text-xs sm:text-sm text-slate-300 leading-relaxed"></p>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-gold-400/10 border border-gold-400/25 flex items-start gap-3">
+          <i data-lucide="info" class="w-5 h-5 text-gold-400 shrink-0 mt-0.5"></i>
+          <p class="text-xs text-slate-200 leading-relaxed">
+            <strong>Pitch Tip:</strong> When registering on the Tally form, mention this sector number and outline your target customer segment, revenue model, and prototype format.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-end gap-3 pt-2 border-t border-white/10">
+        <button onclick="closeSectorModal()" class="w-full sm:w-auto px-5 py-3 rounded-xl border border-white/15 text-xs font-bold uppercase tracking-wider text-slate-300 hover:text-white">
+          Close Preview
+        </button>
+        <a href="https://tally.so/r/q5Gbp8" target="_blank" rel="noopener noreferrer" class="gold-btn w-full sm:w-auto px-6 py-3 rounded-xl text-xs font-extrabold uppercase tracking-wider inline-flex items-center justify-center gap-2">
+          <span>Register Team for This Sector</span>
+          <i data-lucide="external-link" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const TALLY_FORM_URL = "https://tally.so/r/q5Gbp8";
+
+    const SECTORS_DATA = [
+      {
+        id: 1,
+        title: "Smart City & Urban Development",
+        category: "tech",
+        categoryLabel: "Urban & Infrastructure",
+        icon: "building-2",
+        isTop10: true,
+        exhibitionTitle: "Smart City Model",
+        subthemes: ["Smart traffic management", "Smart parking", "Intelligent street lighting", "Smart waste management"],
+        opportunity: "B2G municipal SaaS contracts, commercial parking automation, and IoT energy-saving retrofits for urban campuses and townships.",
+        prototype: "Working IoT scale diorama with automated adaptive street lights, ultrasonic parking slot sensors, and dynamic traffic signal control."
+      },
+      {
+        id: 2,
+        title: "Electric Vehicles & Green Mobility",
+        category: "sustainability",
+        categoryLabel: "Clean Mobility",
+        icon: "zap",
+        isTop10: true,
+        exhibitionTitle: "EV Ecosystem Model",
+        subthemes: ["EV charging stations", "Battery swapping", "Solar-powered EVs", "EV battery recycling"],
+        opportunity: "Subscription-based battery swapping networks for 2/3-wheelers, pay-per-use campus chargers, and second-life lithium battery pack refurbishment.",
+        prototype: "Solar-assisted EV charging kiosk miniature with RFID user authentication and live battery state-of-charge telemetry display."
+      },
+      {
+        id: 3,
+        title: "Manufacturing & Industrial Innovation",
+        category: "tech",
+        categoryLabel: "Industry 4.0",
+        icon: "factory",
+        isTop10: true,
+        exhibitionTitle: "Manufacturing Unit",
+        subthemes: ["Automated manufacturing", "Robotics-based production", "Plastic recycling plant", "Smart packaging"],
+        opportunity: "Low-cost automation kits for MSME factories, predictive maintenance sensors, and QR-enabled smart tamper-proof packaging.",
+        prototype: "Automated conveyor sorting line model using color/IR sensors and a robotic pick-and-place arm prototype."
+      },
+      {
+        id: 4,
+        title: "Healthcare & Medical Technology",
+        category: "health",
+        categoryLabel: "HealthTech & MedTech",
+        icon: "heart-pulse",
+        isTop10: true,
+        exhibitionTitle: "Healthcare Model",
+        subthemes: ["Smart medicine dispenser", "Mobile clinic", "Affordable diagnostic centre", "Telemedicine"],
+        opportunity: "Point-of-care diagnostic kiosks for rural clinics, automated geriatric pill dispensers, and tele-consultation subscription networks.",
+        prototype: "IoT automated medicine dispenser with scheduled buzzer/SMS alerts or a portable multi-parameter vital monitoring kit."
+      },
+    {
+        id: 5,
+        title: "Agriculture & AgriTech",
+        category: "sustainability",
+        categoryLabel: "AgriTech",
+        icon: "sprout",
+        isTop10: true,
+        exhibitionTitle: "Smart Agriculture Model",
+        subthemes: ["Smart irrigation", "Hydroponics", "Drone crop monitoring", "Farm-to-home delivery"],
+        opportunity: "Precision soil-moisture irrigation controllers, urban hydroponic produce subscriptions, and direct FPO-to-consumer supply platforms.",
+        prototype: "Automated soil-moisture drip irrigation setup or a compact vertical hydroponic tower with nutrient pH/EC monitoring."
+      },
+      {
+        id: 6,
+        title: "Renewable Energy",
+        category: "sustainability",
+        categoryLabel: "Clean Energy",
+        icon: "sun",
+        isTop10: true,
+        exhibitionTitle: "Renewable Energy",
+        subthemes: ["Solar-powered homes", "Wind energy", "Solar charging stations", "Biogas production"],
+        opportunity: "Micro-grid rooftop solar leasing, rural organic-waste biogas digesters, and portable solar power banks for off-grid vendors.",
+        prototype: "Dual-axis solar tracking panel model paired with a micro wind-turbine hybrid power storage unit."
+      },
+      {
+        id: 7,
+        title: "Waste Management & Recycling",
+        category: "sustainability",
+        categoryLabel: "Circular & CleanTech",
+        icon: "recycle",
+        isTop10: true,
+        exhibitionTitle: "Recycling Plant",
+        subthemes: ["Plastic-to-granules", "E-waste recycling", "Smart segregation", "Compost manufacturing"],
+        opportunity: "B2B industrial plastic pelletizing, certified e-waste collection drives, and automated organic composters for housing societies.",
+        prototype: "Smart optical/inductive waste segregation bin that automatically separates wet, metallic, and dry plastic waste."
+      },
+      {
+        id: 8,
+        title: "Artificial Intelligence & Robotics",
+        category: "tech",
+        categoryLabel: "AI & Autonomous Systems",
+        icon: "bot",
+        isTop10: false,
+        subthemes: ["AI personal assistant", "AI recruitment", "Smart customer service", "Warehouse robot"],
+        opportunity: "Vernacular AI customer support agents for SMEs, automated skill-screening SaaS, and autonomous warehouse inventory bots.",
+        prototype: "Live AI voice/chat workflow agent demo or an autonomous line-following warehouse logistics rover."
+      },
+      {
+        id: 9,
+        title: "Education & EdTech",
+        category: "tech",
+        categoryLabel: "EdTech & Skilling",
+        icon: "graduation-cap",
+        isTop10: false,
+        subthemes: ["Smart classroom", "Skill platform", "AI learning assistant", "Rural digital education"],
+        opportunity: "Offline-first rural learning boxes, cohort-based career skilling platforms, and adaptive AI exam preparation tutors.",
+        prototype: "Interactive vernacular AI tutor web app with low-bandwidth offline sync mode for rural classrooms."
+      },
+      {
+        id: 10,
+        title: "Food Processing & FoodTech",
+        category: "sustainability",
+        categoryLabel: "FoodTech & Nutrition",
+        icon: "utensils",
+        isTop10: true,
+        exhibitionTitle: "Food Processing Unit",
+        subthemes: ["Healthy snacks", "Millet products", "Food preservation", "Automated food vending"],
+        opportunity: "Value-added millet D2C nutrition brands, solar dehydration preservation units for farmers, and smart campus healthy vending kiosks.",
+        prototype: "Solar-assisted food dehydrator unit or packaged millet snack line with shelf-life and nutritional traceability."
+      },
+      {
+        id: 11,
+        title: "Women Entrepreneurship",
+        category: "commerce",
+        categoryLabel: "Inclusive Commerce",
+        icon: "sparkles",
+        isTop10: false,
+        subthemes: ["Women-led production unit", "Marketplace for women-owned brands"],
+        opportunity: "Aggregated B2B/B2C storefront for SHG-manufactured goods, micro-credit enablement, and shared cloud-kitchen infrastructure.",
+        prototype: "Curated digital marketplace platform onboarding local women-led micro-enterprises with verified logistics."
+      },
+      {
+        id: 12,
+        title: "Tourism & Hospitality",
+        category: "commerce",
+        categoryLabel: "Travel & Experiences",
+        icon: "compass",
+        isTop10: false,
+        subthemes: ["Smart tourism platform", "Local experience marketplace"],
+        opportunity: "Hyperlocal cultural trail bookings, AR heritage audio guides, and homestay management SaaS for tier-2/3 destinations.",
+        prototype: "Interactive itinerary & local guide booking web app with QR-triggered AR monument storytelling."
+      },
+      {
+        id: 13,
+        title: "Defence & Security",
+        category: "tech",
+        categoryLabel: "Security & Surveillance",
+        icon: "shield-alert",
+        isTop10: false,
+        subthemes: ["Smart surveillance", "Emergency alert solutions"],
+        opportunity: "Perimeter intrusion detection for industrial campuses, women's wearable SOS hardware, and AI CCTV anomaly alerts.",
+        prototype: "Smart GSM/GPS emergency SOS wearable badge or motion-triggered edge-AI surveillance camera alert demo."
+      },
+      {
+        id: 14,
+        title: "Rural Development",
+        category: "commerce",
+        categoryLabel: "Bharat & Rural Impact",
+        icon: "home",
+        isTop10: false,
+        subthemes: ["Rural business service hub", "Village-level service centre"],
+        opportunity: "One-stop phygital kiosk offering agri-inputs, banking, telemedicine, and e-governance services in underserved villages.",
+        prototype: "Village Service Centre business blueprint and tablet POS interface designed for rural micro-entrepreneurs."
+      },
+      {
+        id: 15,
+        title: "Water Management",
+        category: "sustainability",
+        categoryLabel: "WaterTech",
+        icon: "droplets",
+        isTop10: false,
+        subthemes: ["Water purification", "Rainwater harvesting", "Smart leak detection"],
+        opportunity: "Low-cost gravity nanofiltration units, modular rooftop rainwater recharge systems, and ultrasonic pipeline leak monitors.",
+        prototype: "IoT smart water flow & leak-detection pipeline model with automatic solenoid shutoff valve."
+      },
+      {
+        id: 16,
+        title: "FinTech",
+        category: "commerce",
+        categoryLabel: "Financial Technology",
+        icon: "wallet",
+        isTop10: false,
+        subthemes: ["Digital payments", "Expense management", "Financial inclusion tools"],
+        opportunity: "Automated GST & cashflow tracker for street vendors, student micro-savings apps, and vernacular voice-assisted UPI tools.",
+        prototype: "Interactive SME bookkeeping & invoice-financing dashboard with automated UPI ledger reconciliation."
+      },
+      {
+        id: 17,
+        title: "E-Commerce",
+        category: "commerce",
+        categoryLabel: "Digital Retail",
+        icon: "shopping-bag",
+        isTop10: false,
+        subthemes: ["Local seller marketplace", "Niche online store"],
+        opportunity: "Hyperlocal 60-minute delivery network for neighborhood kirana stores and high-margin D2C niche enthusiast stores.",
+        prototype: "Hyperlocal storefront web app connecting neighborhood merchants with real-time inventory sync."
+      },
+      {
+        id: 18,
+        title: "Logistics & Supply Chain",
+        category: "commerce",
+        categoryLabel: "Supply Chain & Mobility",
+        icon: "truck",
+        isTop10: true,
+        exhibitionTitle: "Logistics Model",
+        subthemes: ["Smart delivery network", "Inventory and route optimisation"],
+        opportunity: "Last-mile EV micro-hub consolidation, cold-chain tracking for perishables, and AI multi-stop route optimization SaaS.",
+        prototype: "Smart warehouse & route-optimization simulation model with RFID parcel tracking and cold-chain temp alerts."
+      },
+      {
+        id: 19,
+        title: "Textile & Fashion",
+        category: "sustainability",
+        categoryLabel: "Sustainable Fashion",
+        icon: "shirt",
+        isTop10: false,
+        subthemes: ["Sustainable clothing", "Textile upcycling"],
+        opportunity: "Post-consumer denim/cotton upcycling into corporate merchandise, organic bamboo apparel D2C, and zero-waste pattern manufacturing.",
+        prototype: "Upcycled textile product catalog with QR-based circular lifecycle passport showing water and carbon savings."
+      },
+      {
+        id: 20,
+        title: "Beauty & Personal Care",
+        category: "commerce",
+        categoryLabel: "Clean D2C Consumer",
+        icon: "flask-conical",
+        isTop10: false,
+        subthemes: ["Organic cosmetics", "Refill-based personal care"],
+        opportunity: "Zero-plastic shampoo/body-wash refill stations in retail stores and ayurvedic herbal skincare formulations.",
+        prototype: "Smart liquid-dispensing refill station prototype using reusable aluminum bottles and QR loyalty rewards."
+      },
+      {
+        id: 21,
+        title: "Construction & Real Estate",
+        category: "sustainability",
+        categoryLabel: "Green Infrastructure",
+        icon: "hard-hat",
+        isTop10: false,
+        subthemes: ["Affordable housing", "Construction waste reuse"],
+        opportunity: "Recycled C&D (construction & demolition) paver blocks, modular prefab housing panels, and PropTech rental management.",
+        prototype: "High-strength eco-bricks made from recycled construction debris and fly-ash with load-test specifications."
+      },
+      {
+        id: 22,
+        title: "Smart Home Technology",
+        category: "tech",
+        categoryLabel: "Consumer IoT",
+        icon: "wifi",
+        isTop10: true,
+        exhibitionTitle: "Smart Homes",
+        subthemes: ["Home automation", "Energy monitoring"],
+        opportunity: "Retrofit smart switchboards for existing Indian apartments and real-time appliance-level electricity bill optimizers.",
+        prototype: "Scale smart home model featuring voice/app appliance switching, gas-leak cutoff, and live wattage analytics."
+      },
+      {
+        id: 23,
+        title: "Mental Wellness",
+        category: "health",
+        categoryLabel: "Behavioral Health",
+        icon: "brain",
+        isTop10: false,
+        subthemes: ["Wellness and counselling platform", "Workplace wellbeing"],
+        opportunity: "B2B employee assistance programs (EAP), anonymous student peer-support networks, and guided CBT habit apps.",
+        prototype: "Confidential student & corporate mental wellness platform with mood analytics and counselor booking."
+      },
+      {
+        id: 24,
+        title: "Senior Citizen Care",
+        category: "health",
+        categoryLabel: "ElderTech & Care",
+        icon: "heart-handshake",
+        isTop10: false,
+        subthemes: ["Elderly assistance", "Medicine and appointment support"],
+        opportunity: "Subscription geriatric care concierge for NRI/working families, fall-detection wearables, and home physiotherapy booking.",
+        prototype: "One-tap senior care companion app & wearable fall-alert device linked to family and emergency responders."
+      },
+      {
+        id: 25,
+        title: "Childcare & Development",
+        category: "health",
+        categoryLabel: "Early Learning & Care",
+        icon: "baby",
+        isTop10: false,
+        subthemes: ["Daycare", "Early learning centre"],
+        opportunity: "Corporate-partnered smart daycare centers with live parent CCTV feeds and Montessori sensory learning kits.",
+        prototype: "Interactive early-childhood cognitive development kit and parent-teacher live activity tracking portal."
+      },
+      {
+        id: 26,
+        title: "Sports & Fitness",
+        category: "health",
+        categoryLabel: "SportsTech & Wellness",
+        icon: "dumbbell",
+        isTop10: false,
+        subthemes: ["Smart fitness centre", "Community sports platform"],
+        opportunity: "Pay-per-session neighborhood turf/gym booking aggregator and AI computer-vision posture correction for workouts.",
+        prototype: "Community sports matchmaking & turf booking app with live fitness leaderboard integration."
+      },
+      {
+        id: 27,
+        title: "Biotechnology",
+        category: "health",
+        categoryLabel: "Bio-Innovation",
+        icon: "dna",
+        isTop10: false,
+        subthemes: ["Biofertilizer", "Bio-based products"],
+        opportunity: "Microbial liquid biofertilizers replacing chemical urea, mycelium leather alternatives, and bio-enzyme cleaners.",
+        prototype: "Formulated microbial biofertilizer sample kit with comparative crop-growth trial metrics."
+      },
+      {
+        id: 28,
+        title: "Pharmaceuticals",
+        category: "health",
+        categoryLabel: "Pharma & Supply",
+        icon: "pill",
+        isTop10: false,
+        subthemes: ["Medicine inventory management", "Adherence support"],
+        opportunity: "Expiry-alert inventory SaaS for independent pharmacies and chronic-disease medication adherence refill subscriptions.",
+        prototype: "Smart pharmacy stock-expiry predictor & automated chronic prescription refill dashboard."
+      },
+      {
+        id: 29,
+        title: "Transportation",
+        category: "tech",
+        categoryLabel: "Smart Transit",
+        icon: "bus",
+        isTop10: false,
+        subthemes: ["Intelligent public transport", "Shared mobility"],
+        opportunity: "Campus-to-city student shuttle pooling, real-time bus ETA tracking, and unified QR transit ticketing.",
+        prototype: "Live commuter carpool & campus shuttle tracking app with dynamic seat occupancy display."
+      },
+      {
+        id: 30,
+        title: "Disaster Management",
+        category: "tech",
+        categoryLabel: "Resilience & Safety",
+        icon: "siren",
+        isTop10: false,
+        subthemes: ["Early warning", "Emergency supply coordination"],
+        opportunity: "IoT flood/landslide water-level early warning nodes for municipalities and crowdfunded relief logistics platforms.",
+        prototype: "Ultrasonic river/drain flood-level sensor tower that triggers automated SMS/siren alerts at critical thresholds."
+      },
+      {
+        id: 31,
+        title: "Cybersecurity",
+        category: "tech",
+        categoryLabel: "InfoSec & Privacy",
+        icon: "lock",
+        isTop10: false,
+        subthemes: ["Data protection", "Cyber awareness services"],
+        opportunity: "Automated vulnerability & phishing simulation training for SMEs, DPDP compliance toolkits, and UPI fraud-shield tools.",
+        prototype: "SME cyber-hygiene scanner & interactive phishing-detection browser extension demo."
+      },
+      {
+        id: 32,
+        title: "Space Technology",
+        category: "tech",
+        categoryLabel: "GeoSpatial & SpaceTech",
+        icon: "satellite",
+        isTop10: false,
+        subthemes: ["Satellite-based crop monitoring", "Geospatial services"],
+        opportunity: "NDVI satellite crop-health advisory for insurers/banks, urban heat-island mapping, and solar rooftop potential analytics.",
+        prototype: "GIS satellite vegetation & water-body monitoring dashboard using open Sentinel geospatial datasets."
+      },
+      {
+        id: 33,
+        title: "Marine & Fisheries",
+        category: "sustainability",
+        categoryLabel: "Blue Economy & Aquaculture",
+        icon: "fish",
+        isTop10: false,
+        subthemes: ["Smart fish farming", "Cold-chain support"],
+        opportunity: "IoT dissolved-oxygen & ammonia pond aerators for aquaculture farmers and solar-powered insulated fish crates.",
+        prototype: "Smart aquaculture water-quality buoy prototype measuring pH, temperature, and dissolved oxygen in real time."
+      },
+      {
+        id: 34,
+        title: "Pet Care",
+        category: "commerce",
+        categoryLabel: "PetTech & Services",
+        icon: "paw-print",
+        isTop10: false,
+        subthemes: ["Pet healthcare", "Grooming and boarding platform"],
+        opportunity: "Mobile doorstep pet grooming vans, verified home-boarding marketplace, and digital vaccination health records.",
+        prototype: "All-in-one pet health passport, tele-vet booking, and verified boarding marketplace web app."
+      },
+      {
+        id: 35,
+        title: "Green Packaging",
+        category: "sustainability",
+        categoryLabel: "Sustainable Materials",
+        icon: "package-check",
+        isTop10: false,
+        subthemes: ["Biodegradable packaging", "Reusable packaging systems"],
+        opportunity: "Bagasse/cornstarch food delivery containers for cloud kitchens and returnable B2B e-commerce mailer totes.",
+        prototype: "Compostable agri-waste molded packaging samples with water-resistance and biodegradation timeline benchmarks."
+      },
+      {
+        id: 36,
+        title: "Handicrafts & Rural Art",
+        category: "commerce",
+        categoryLabel: "Artisan Economy",
+        icon: "palette",
+        isTop10: false,
+        subthemes: ["Handmade product marketplace", "Artisan supply chain"],
+        opportunity: "Direct-from-artisan GI-tagged craft exports, corporate gifting catalogs, and raw-material bulk procurement clusters.",
+        prototype: "Artisan storytelling & GI-verified e-commerce storefront with transparent weaver/craftsman payout split."
+      },
+      {
+        id: 37,
+        title: "Automobile Industry",
+        category: "tech",
+        categoryLabel: "AutoTech & Aftermarket",
+        icon: "car",
+        isTop10: false,
+        subthemes: ["Automobile service centre", "Vehicle diagnostics"],
+        opportunity: "Standardized multi-brand digital garage network and OBD-II plug-and-play predictive engine health diagnostics.",
+        prototype: "OBD-II vehicle fault-code reader app that estimates repair costs and books nearby certified mechanics."
+      },
+      {
+        id: 38,
+        title: "Social Entrepreneurship",
+        category: "commerce",
+        categoryLabel: "Impact Ventures",
+        icon: "globe",
+        isTop10: false,
+        subthemes: ["Affordable community services", "Impact-led ventures"],
+        opportunity: "Cross-subsidized community eye/dental care, livelihood training centers, and affordable clean-cooking fuel distribution.",
+        prototype: "Self-sustaining social enterprise revenue model canvas balancing underserved access with institutional CSR/B2B revenue."
+      },
+      {
+        id: 39,
+        title: "Smart Retail",
+        category: "commerce",
+        categoryLabel: "RetailTech",
+        icon: "scan-barcode",
+        isTop10: false,
+        subthemes: ["Automated retail", "Smart inventory and checkout"],
+        opportunity: "QR self-checkout kiosks eliminating supermarket queues and AI demand-forecasting POS for small retailers.",
+        prototype: "Scan-and-go mobile self-checkout system with instant digital receipt and automated stock deduction."
+      },
+      {
+        id: 40,
+        title: "Circular Economy",
+        category: "sustainability",
+        categoryLabel: "Zero-Waste & Resale",
+        icon: "refresh-cw",
+        isTop10: false,
+        subthemes: ["Repair, reuse, refurbishment and resale"],
+        opportunity: "Certified refurbished laptops/smartphones for students, campus textbook/appliance rental exchanges, and repair cafes.",
+        prototype: "Certified refurbishment & circular exchange platform with graded quality warranties and carbon-offset tracking."
+      }
+    ];
+
+    const PITCH_CHECKLIST = [
+      { num: "01", title: "Business Idea & Problem Identification", desc: "Clear definition of the real-world gap, target pain point, and urgency." },
+      { num: "02", title: "Proposed Solution", desc: "How your product, service, or technology uniquely solves the identified problem." },
+  
+        
