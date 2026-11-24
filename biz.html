@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BizNexus 2026 Business Model Course — IIC &amp; ED Cell, DMIMS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #070b14;
+      --card: #0f172a;
+      --card-2: #162033;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --border: rgba(148, 163, 184, 0.16);
+      --primary: #2563eb;
+      --primary-hover: #3b82f6;
+      --accent: #f59e0b;
+      --success: #10b981;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, h4, .heading-font { font-family: 'Space Grotesk', sans-serif; }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+    /* Navbar */
+    header {
+      position: sticky; top: 0; z-index: 40;
+      background: rgba(7, 11, 20, 0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; min-height: 74px; flex-wrap: wrap;
+    }
+    .logos { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .logos img {
+      height: 36px; width: auto; object-fit: contain;
+      background: #ffffff; padding: 4px 6px; border-radius: 8px;
+    }
+    .brand-label { font-size: 12px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+    nav { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; font-size: 13px; font-weight: 600; }
+    nav a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    nav a:hover { color: var(--text); }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 11px 18px; border-radius: 12px; font-size: 13px; font-weight: 700;
+      text-decoration: none; border: 1px solid transparent; cursor: pointer; transition: all 0.2s;
+    }
+    .btn-primary { background: var(--primary); color: #fff; }
+    .btn-primary:hover { background: var(--primary-hover); }
+    .btn-outline { background: var(--card); color: var(--text); border-color: var(--border); }
+    .btn-outline:hover { border-color: var(--primary-hover); }
+    .btn-accent { background: var(--accent); color: #090d16; }
+    .btn-success { background: var(--success); color: #052e16; }
+
+    /* Hero */
+    .hero {
+      padding: 56px 0 40px;
+      background: radial-gradient(circle at top right, rgba(37, 99, 235, 0.18), transparent 55%),
+                  radial-gradient(circle at bottom left, rgba(245, 158, 11, 0.12), transparent 50%);
+      border-bottom: 1px solid var(--border);
+    }
+    .pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 14px; border-radius: 999px; font-size: 11px; font-weight: 800;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      background: rgba(37, 99, 235, 0.15); color: #93c5fd; border: 1px solid rgba(59, 130, 246, 0.3);
+      margin-bottom: 16px;
+    }
+    .hero h1 { font-size: clamp(2rem, 4.5vw, 3.2rem); line-height: 1.15; margin-bottom: 14px; }
+    .hero p.lead { color: var(--muted); max-width: 780px; font-size: 15px; margin-bottom: 24px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 28px; }
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px; }
+    .stat-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 16px; }
+    .stat-val { font-size: 26px; font-weight: 800; color: #60a5fa; }
+    .stat-lbl { font-size: 12px; color: var(--muted); font-weight: 600; }
+
+    section { padding: 52px 0; border-bottom: 1px solid var(--border); }
+    .sec-head { margin-bottom: 24px; }
+    .sec-tag { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); display: block; margin-bottom: 6px; }
+    .sec-title { font-size: clamp(1.5rem, 3vw, 2.1rem); margin-bottom: 8px; }
+    .sec-sub { color: var(--muted); font-size: 14px; max-width: 740px; }
+
+    /* Course Video Player + Syllabus */
+    .course-layout { display: grid; grid-template-columns: 1.6fr 1fr; gap: 22px; }
+    @media (max-width: 900px) { .course-layout { grid-template-columns: 1fr; } }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 20px; }
+    .video-wrap {
+      position: relative; width: 100%; padding-bottom: 56.25%;
+      border-radius: 14px; overflow: hidden; background: #000; border: 1px solid var(--border);
+      margin-bottom: 16px;
+    }
+    .video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .lesson-list { display: flex; flex-direction: column; gap: 10px; }
+    .lesson-btn {
+      width: 100%; text-align: left; padding: 14px; border-radius: 14px;
+      background: var(--card-2); border: 1px solid var(--border); color: var(--text);
+      cursor: pointer; transition: all 0.2s;
+    }
+    .lesson-btn.active { border-color: var(--primary-hover); background: rgba(37, 99, 235, 0.16); }
+    .lesson-btn .top { display: flex; justify-content: space-between; font-size: 12px; font-weight: 800; color: #93c5fd; margin-bottom: 4px; }
+    .lesson-btn .title { font-size: 14px; font-weight: 700; }
+    .progress-track { height: 8px; width: 100%; background: var(--card-2); border-radius: 999px; overflow: hidden; margin: 10px 0 18px; }
+    .progress-fill { height: 100%; background: var(--success); width: 0%; transition: width 0.3s; }
+
+    /* Pillars & Exhibition Tracks */
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+    .mini-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 18px; display: flex; flex-direction: column; justify-content: space-between; gap: 12px; }
+    .badge-ex { display: inline-block; font-size: 10px; font-weight: 800; text-transform: uppercase; padding: 3px 8px; border-radius: 6px; background: rgba(245, 158, 11, 0.16); color: #fbbf24; }
+    .badge-sec { display: inline-block; font-size: 10px; font-weight: 800; text-transform: uppercase; padding: 3px 8px; border-radius: 6px; background: rgba(59, 130, 246, 0.16); color: #93c5fd; }
+
+    /* Sector Controls */
+    .controls { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; align-items: center; justify-content: space-between; }
+    .search-input {
+      flex: 1; min-width: 240px; padding: 11px 14px; border-radius: 12px;
+      background: var(--card); border: 1px solid var(--border); color: var(--text); font-size: 13px;
+    }
+    .filter-group { display: flex; flex-wrap: wrap; gap: 8px; }
+    .filter-btn {
+      padding: 8px 13px; border-radius: 10px; font-size: 12px; font-weight: 700;
+      background: var(--card); border: 1px solid var(--border); color: var(--muted); cursor: pointer;
+    }
+    .filter-btn.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+    .subthemes { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 12px; }
+    .subtag { font-size: 11px; padding: 3px 8px; border-radius: 999px; background: var(--card-2); color: var(--muted); }
+    .detail-box { font-size: 12px; color: var(--muted); margin-top: 6px; }
+    .detail-box strong { color: var(--text); display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 2px; }
+
+    /* Pitch Builder + Calculator */
+    .pitch-layout { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 22px; }
+    @media (max-width: 900px) { .pitch-layout { grid-template-columns: 1fr; } }
+    .pitch-item {
+      display: flex; align-items: flex-start; gap: 12px; padding: 13px 14px;
+      border-radius: 14px; background: var(--card-2); border: 1px solid var(--border);
+      cursor: pointer; margin-bottom: 10px; transition: border-color 0.2s;
+    }
+    .pitch-item.done { border-color: rgba(16, 185, 129, 0.55); background: rgba(16, 185, 129, 0.08); }
+    .pitch-item input { margin-top: 3px; accent-color: var(--success); width: 16px; height: 16px; cursor: pointer; }
+    .pitch-num { font-size: 11px; font-weight: 800; color: var(--accent); }
+    .pitch-title { font-size: 14px; font-weight: 700; }
+    .pitch-desc { font-size: 12px; color: var(--muted); }
+
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px; }
+    @media (max-width: 600px) { .form-grid { grid-template-columns: 1fr; } }
+    label.field-lbl { display: block; font-size: 11px; font-weight: 700; color: var(--muted); margin-bottom: 4px; }
+    input.field-inp, select.field-inp, textarea.field-inp {
+      width: 100%; padding: 10px 12px; border-radius: 10px;
+      background: var(--card-2); border: 1px solid var(--border); color: var(--text); font-size: 13px;
+    }
+    .calc-box { background: var(--card-2); border: 1px solid var(--border); border-radius: 14px; padding: 14px; margin-bottom: 14px; font-size: 13px; }
+    .calc-row { display: flex; justify-content: space-between; padding: 4px 0; }
+    .calc-row strong { color: #60a5fa; }
+
+    footer { padding: 34px 0; text-align: center; color: var(--muted); font-size: 12px; }
+    .footer-logos { display: flex; justify-content: center; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; }
+    .footer-logos img { height: 32px; background: #fff; padding: 4px 6px; border-radius: 8px; }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container nav-inner">
+      <div class="logos">
+        <img src="https://dmimsbiznexus.lovable.app/__l5e/assets-v1/616536f3-35bf-410e-9188-a956c46733c3/logo-dmims.png" alt="DMIMS Logo" />
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFeD4V-fBtkBLBAvA3XNOmtpNjshG0rB92yJetR2pNiw&s" alt="IIC Logo" />
+        <img src="https://dmimsbiznexus.lovable.app/__l5e/assets-v1/0dc71486-b760-461b-a527-4da93b5be9a3/logo-edc.png" alt="ED Cell Logo" />
+        <span class="brand-label">BizNexus 2026 • DMIMS</span>
+      </div>
+      <nav>
+        <a href="#course-player">Video Course</a>
+        <a href="#pillars">5 Core Pillars</a>
+        <a href="#exhibition-models">10 Exhibition Models</a>
+        <a href="#sectors">All 40 Sectors</a>
+        <a href="#pitch-lab">10-Point Pitch Lab</a>
+        <a href="https://tally.so/r/q5Gbp8" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Register Team</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="pill">IIC &amp; ED Cell Organizing • DMIMS Flagship Event</div>
+      <h1>BizNexus 2026: Business Model Development Course</h1>
+      <p class="lead">
+        <strong>Ideate | Model | Innovate | Create Impact.</strong> Organized by the <strong>Institution's Innovation Council (IIC)</strong> and <strong>Entrepreneurship Development Cell (ED Cell), DMIMS</strong>—learn how to pick a real problem across 40 sectors, build a working prototype or physical exhibition model, model CAPEX/OPEX and unit economics, and deliver a complete 10-point pitch.
+      </p>
+      <div class="hero-actions">
+        <a href="#course-player" class="btn btn-primary">Start Video Course</a>
+        <a href="#sectors" class="btn btn-outline">Explore All 40 Sectors</a>
+        <a href="https://tally.so/r/q5Gbp8" target="_blank" rel="noopener noreferrer" class="btn btn-accent">Official Tally Registration</a>
+        <a href="https://iicdmims.vercel.app/Biznexus.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Event Reference Page</a>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card"><div class="stat-val">40</div><div class="stat-lbl">Focus Sectors</div></div>
+        <div class="stat-card"><div class="stat-val">10</div><div class="stat-lbl">Exhibition Model Tracks</div></div>
+        <div class="stat-card"><div class="stat-val">10</div><div class="stat-lbl">Mandatory Pitch Parameters</div></div>
+        <div class="stat-card"><div class="stat-val">5</div><div class="stat-lbl">Core Evaluation Pillars</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EMBEDDED YOUTUBE COURSE & SYLLABUS -->
+  <section id="course-player">
+    <div class="container">
+      <div class="sec-head">
+        <span class="sec-tag">Structured Learning Modules</span>
+        <h2 class="sec-title">Business Model Foundations (With Embedded Video Lessons)</h2>
+        <p class="sec-sub">Watch each video lesson, mark modules complete as your team builds its model, and use the practical action steps below every lesson.</p>
+      </div>
+
+      <div class="progress-track"><div id="course-progress-bar" class="progress-fill"></div></div>
+      <p id="course-progress-label" style="font-size:12px;color:var(--muted);margin-bottom:18px;font-weight:700;">0 of 4 lessons completed (0%)</p>
+
+      <div class="course-layout">
+        <div class="card">
+          <div class="video-wrap">
+            <iframe
+              id="yt-frame"
+              src="https://www.youtube.com/embed/CakUeC1sCSs"
+              title="BizNexus Business Model Video Lesson"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:10px;">
+            <h3 id="active-lesson-title" style="font-size:19px;"></h3>
+            <button id="toggle-lesson-btn" class="btn btn-success" onclick="toggleCurrentLesson()">Mark Lesson Completed</button>
+          </div>
+          <p id="active-lesson-desc" style="color:var(--muted);font-size:14px;margin-bottom:14px;"></p>
+          <div class="detail-box">
+            <strong>Team Action Deliverable for This Module</strong>
+            <span id="active-lesson-action"></span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 style="font-size:16px;margin-bottom:12px;">Course Syllabus (4 Modules)</h3>
+          <div id="lesson-list" class="lesson-list"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FIVE CORE PILLARS -->
+  <section id="pillars">
+    <div class="container">
+      <div class="sec-head">
+        <span class="sec-tag">Evaluation Foundation</span>
+        <h2 class="sec-title">Five Core Pillars of BizNexus 2026</h2>
+      </div>
+      <div class="grid-3">
+        <div class="mini-card"><div><span class="badge-sec">Pillar 01</span><h3 style="margin:8px 0 6px;">Real Business Problems</h3><p class="pitch-desc">Rooted in genuine, validated market pain points and operational bottlenecks.</p></div></div>
+        <div class="mini-card"><div><span class="badge-sec">Pillar 02</span><h3 style="margin:8px 0 6px;">Innovative Solutions</h3><p class="pitch-desc">Creative product, service, or technology-driven interventions that outperform status quo.</p></div></div>
+        <div class="mini-card"><div><span class="badge-sec">Pillar 03</span><h3 style="margin:8px 0 6px;">Sustainable Models</h3><p class="pitch-desc">Clear revenue architecture, unit economics, and scalable financial projections.</p></div></div>
+        <div class="mini-card"><div><span class="badge-sec">Pillar 04</span><h3 style="margin:8px 0 6px;">Industry Relevance</h3><p class="pitch-desc">Aligned with current commercial demand, supply chains, and customer adoption readiness.</p></div></div>
+        <div class="mini-card"><div><span class="badge-sec">Pillar 05</span><h3 style="margin:8px 0 6px;">Societal Impact</h3><p class="pitch-desc">Measurable positive outcomes for communities, inclusivity, and environmental health.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 EXHIBITION MODEL TRACKS -->
+  <section id="exhibition-models">
+    <div class="container">
+      <div class="sec-head">
+        <span class="sec-tag">High-Impact Physical &amp; Working Displays</span>
+        <h2 class="sec-title">Recommended Sectors for Exhibition Models (10 Tracks)</h2>
+        <p class="sec-sub">Ideal tracks for live physical prototypes, scale models, IoT setups, and functional demonstrations at the exhibition arena.</p>
+      </div>
+      <div id="exhibition-grid" class="grid-3"></div>
+    </div>
+  </section>
+
+  <!-- COMPLETE 40 FOCUS SECTORS -->
+  <section id="sectors">
+    <div class="container">
+      <div class="sec-head">
+        <span class="sec-tag">Complete Sector Directory (01 – 40)</span>
+        <h2 class="sec-title">All 40 Focus Sectors</h2>
+        <p class="sec-sub">Explore problem sub-themes, business opportunities, and recommended prototype models across all 40 sectors.</p>
+      </div>
+
+      <div class="controls">
+        <input id="sector-search" type="search" class="search-input" placeholder="Search sector, keyword, or prototype (e.g., EV, Solar, AgriTech, FinTech)..." oninput="renderSectors()" />
+        <div class="filter-group" id="category-filters">
+          <button class="filter-btn active" data-cat="All" onclick="setCategory('All', this)">All 40 Sectors</button>
+          <button class="filter-btn" data-cat="Exhibition" onclick="setCategory('Exhibition', this)">★ Exhibition Models</button>
+          <button class="filter-btn" data-cat="Tech" onclick="setCategory('Tech', this)">Tech, AI &amp; DeepTech</button>
+          <button class="filter-btn" data-cat="Green" onclick="setCategory('Green', this)">Green, Energy &amp; Agri</button>
+          <button class="filter-btn" data-cat="Health" onclick="setCategory('Health', this)">Health, Bio &amp; Care</button>
+          <button class="filter-btn" data-cat="Commerce" onclick="setCategory('Commerce', this)">Commerce, FinTech &amp; Social</button>
+        </div>
+      </div>
+
+      <p id="sector-count-label" style="font-size:12px;color:var(--muted);margin-bottom:14px;font-weight:700;">Showing 40 of 40 focus sectors</p>
+      <div id="sectors-grid" class="grid-3"></div>
+    </div>
+  </section>
+
+  <!-- 10-POINT PITCH READINESS & UNIT ECONOMICS LAB -->
+  <section id="pitch-lab">
+    <div class="container">
+      <div class="sec-head">
+        <span class="sec-tag">Mandatory Pitch Structure + Economics Simulator</span>
+        <h2 class="sec-title">10-Point Pitch Readiness &amp; CAPEX/OPEX Builder</h2>
+        <p class="sec-sub">Check off all 10 pitch dimensions and model your CAPEX, OPEX, and break-even before submitting your team registration.</p>
+      </div>
+
+      <div class="pitch-layout">
+        <div class="card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+            <strong style="font-size:13px;">Team Pitch Readiness</strong>
+            <strong id="pitch-pct-label" style="font-size:14px;color:var(--success);">0%</strong>
+          </div>
+          <div class="progress-track" style="margin-bottom:16px;"><div id="pitch-progress-bar" class="progress-fill"></div></div>
+          <div id="pitch-checklist"></div>
+        </div>
+
+        <div class="card">
+          <h3 style="font-size:17px;margin-bottom:12px;">Quick CAPEX / OPEX &amp; Registration Brief</h3>
+          <div class="form-grid">
+            <div>
+              <label class="field-lbl">Team Name</label>
+              <input id="team-name" class="field-inp" placeholder="e.g., Team VidarbhaGrid" oninput="updateBrief()" />
+            </div>
+            <div>
+              <label class="field-lbl">Selected Sector (01–40)</label>
+              <select id="selected-sector-input" class="field-inp" onchange="updateBrief()"></select>
+            </div>
+            <div>
+              <label class="field-lbl">Initial CAPEX (₹)</label>
+              <input id="capex-inp" type="number" class="field-inp" value="25000" min="0" oninput="updateEconomics()" />
+            </div>
+            <div>
+              <label class="field-lbl">Monthly OPEX (₹/mo)</label>
+              <input id="opex-inp" type="number" class="field-inp" value="8000" min="0" oninput="updateEconomics()" />
+            </div>
+            <div>
+              <label class="field-lbl">Price / Revenue per Unit (₹)</label>
+              <input id="price-inp" type="number" class="field-inp" value="1500" min="1" oninput="updateEconomics()" />
+            </div>
+            <div>
+              <label class="field-lbl">Variable Cost per Unit (₹)</label>
+              <input id="varcost-inp" type="number" class="field-inp" value="500" min="0" oninput="updateEconomics()" />
+            </div>
+          </div>
+
+          <div class="calc-box">
+            <div class="calc-row"><span>Contribution Margin / Unit:</span><strong id="out-margin">₹1,000</strong></div>
+            <div class="calc-row"><span>Monthly Break-Even Units (OPEX):</span><strong id="out-breakeven">8 units / mo</strong></div>
+            <div class="calc-row"><span>CAPEX Recovery at Break-Even Surplus:</span><strong id="out-capex-recovery">Model &amp; scale margin</strong></div>
+          </div>
+
+          <label class="field-lbl">Ready-to-Paste Team Summary (For Tally / WhatsApp)</label>
+          <textarea id="brief-output" rows="6" readonly class="field-inp" style="margin-bottom:12px;font-family:monospace;font-size:11.5px;"></textarea>
+
+          <div style="display:flex;flex-wrap:wrap;gap:10px;">
+            <button class="btn btn-outline" onclick="copyBrief()">Copy Team Brief</button>
+            <a id="wa-share-btn" href="https://wa.me/?text=" target="_blank" rel="noopener noreferrer" class="btn btn-success">Share on WhatsApp</a>
+            <a href="https://tally.so/r/q5Gbp8" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Open Tally Form ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-logos">
+        <img src="https://dmimsbiznexus.lovable.app/__l5e/assets-v1/616536f3-35bf-410e-9188-a956c46733c3/logo-dmims.png" alt="DMIMS" />
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFeD4V-fBtkBLBAvA3XNOmtpNjshG0rB92yJetR2pNiw&s" alt="IIC" />
+        <img src="https://dmimsbiznexus.lovable.app/__l5e/assets-v1/0dc71486-b760-461b-a527-4da93b5be9a3/logo-edc.png" alt="ED Cell" />
+      </div>
+      <p>© 2026 BizNexus • Institution's Innovation Council (IIC) &amp; Entrepreneurship Development Cell (ED Cell), DMIMS.</p>
+    </div>
+  </footer>
+
+  <script>
+    const LESSONS = [
+      {
+        id: "l1",
+        code: "MODULE 01",
+        title: "Business Model Canvas Explained with Examples",
+        ytId: "CakUeC1sCSs",
+        desc: "Understand how value propositions, customer segments, channels, revenue streams, and cost structures fit together into a single cohesive business model.",
+        action: "Pick 1 of the 40 BizNexus focus sectors and write down your target customer's #1 urgent pain point."
+      },
+      {
+        id: "l2",
+        code: "MODULE 02",
+        title: "9 Steps to Creating a Successful Business Model",
+        ytId: "IP0cUBWTgpY",
+        desc: "Walk through customer discovery, solution differentiation, prototype validation, and building a repeatable growth engine from day one.",
+        action: "Decide whether your team is building a physical exhibition model, hardware/IoT prototype, or software MVP."
+      },
+      {
+        id: "l3",
+        code: "MODULE 03",
+        title: "CapEx vs OpEx Explained in Business Finance",
+        ytId: "SjCExUvI8JQ",
+        desc: "Separate upfront capital expenditures (CAPEX—equipment, sensors, tooling, initial build) from recurring monthly operating expenses (OPEX).",
+        action: "Fill in the CAPEX/OPEX simulator below and verify your monthly break-even volume."
+      },
+      {
+        id: "l4",
+        code: "MODULE 04",
+        title: "How to Calculate Business Unit Economics",
+        ytId: "Ehkg3_UwzpY",
+        desc: "Learn how per-unit pricing, variable cost, customer lifetime value, and acquisition cost determine whether a business model scales sustainably.",
+        action: "Complete all 10 pitch readiness items and register your team on Tally."
+      }
+    ];
+
+    const EXHIBITION_PICKS = [
+      { num: "#01 • Sector 01", title: "Smart City Model", sector: "Smart City & Urban Development", proto: "Working IoT scale diorama with automated adaptive street lights, ultrasonic parking slot sensors, and dynamic traffic signal control." },
+      { num: "#02 • Sector 02", title: "EV Ecosystem Model", sector: "Electric Vehicles & Green Mobility", proto: "Solar-assisted EV charging kiosk miniature with RFID user authentication and live battery state-of-charge telemetry display." },
+      { num: "#03 • Sector 03", title: "Manufacturing Unit", sector: "Manufacturing & Industrial Innovation", proto: "Automated conveyor sorting line model using color/IR sensors and a robotic pick-and-place arm prototype." },
+      { num: "#04 • Sector 04", title: "Healthcare Model", sector: "Healthcare & Medical Technology", proto: "IoT automated medicine dispenser with scheduled buzzer/SMS alerts or a portable multi-parameter vital monitoring kit." },
+      { num: "#05 • Sector 05", title: "Smart Agriculture Model", sector: "Agriculture & AgriTech", proto: "Automated soil-moisture drip irrigation setup or a compact vertical hydroponic tower with nutrient pH/EC monitoring." },
+      { num: "#06 • Sector 06", title: "Renewable Energy", sector: "Renewable Energy", proto: "Dual-axis solar tracking panel model paired with a micro wind-turbine hybrid power storage unit." },
+      { num: "#07 • Sector 07", title: "Recycling Plant", sector: "Waste Management & Recycling", proto: "Smart optical/inductive waste segregation bin that automatically separates wet, metallic, and dry plastic waste." },
+      { num: "#08 • Sector 10", title: "Food Processing Unit", sector: "Food Processing & FoodTech", proto: "Solar-assisted food dehydrator unit or packaged millet snack line with shelf-life and nutritional traceability." },
+      { num: "#09 • Sector 18", title: "Logistics Model", sector: "Logistics & Supply Chain", proto: "Smart warehouse & route-optimization simulation model with RFID parcel tracking and cold-chain temp alerts." },
+      { num: "#10 • Sector 22", title: "Smart Homes", sector: "Smart Home Technology", proto: "Scale smart home model featuring voice/app appliance switching, gas-leak cutoff, and live wattage analytics." }
+    ];
+
+    const SECTORS_40 = [
+      { id: 1, tag: "Urban & Infrastructure", cat: "Exhibition", ex: true, name: "Smart City & Urban Development", themes: ["Smart traffic management", "Smart parking", "Intelligent street lighting", "Smart waste management"], opp: "B2G municipal SaaS contracts, commercial parking automation, and IoT energy-saving retrofits for urban campuses and townships.", proto: "Working IoT scale diorama with automated adaptive street lights, ultrasonic parking slot sensors, and dynamic traffic signal control." },
+      { id: 2, tag: "Clean Mobility", cat: "Exhibition", ex: true, name: "Electric Vehicles & Green Mobility", themes: ["EV charging stations", "Battery swapping", "Solar-powered EVs", "EV battery recycling"], opp: "Subscription-based battery swapping networks for 2/3-wheelers, pay-per-use campus chargers, and second-life lithium battery pack refurbishment.", proto: "Solar-assisted EV charging kiosk miniature with RFID user authentication and live battery state-of-charge telemetry display." },
+      { id: 3, tag: "Industry 4.0", cat: "Exhibition", ex: true, name: "Manufacturing & Industrial Innovation", themes: ["Automated manufacturing", "Robotics-based production", "Plastic recycling plant", "Smart packaging"], opp: "Low-cost automation kits for MSME factories, predictive maintenance sensors, and QR-enabled smart tamper-proof packaging.", proto: "Automated conveyor sorting line model using color/IR sensors and a robotic pick-and-place arm prototype." },
+      { id: 4, tag: "HealthTech & MedTech", cat: "Exhibition", ex: true, name: "Healthcare & Medical Technology", themes: ["Smart medicine dispenser", "Mobile clinic", "Affordable diagnostic centre", "Telemedicine"], opp: "Point-of-care diagnostic kiosks for rural clinics, automated geriatric pill dispensers, and tele-consultation subscription networks.", proto: "IoT automated medicine dispenser with scheduled buzzer/SMS alerts or a portable multi-parameter vital monitoring kit." },
+      { id: 5, tag: "AgriTech", cat: "Exhibition", ex: true, name: "Agriculture & AgriTech", themes: ["Smart irrigation", "Hydroponics", "Drone crop monitoring", "Farm-to-home delivery"], opp: "Precision soil-moisture irrigation controllers, urban hydroponic produce subscriptions, and direct FPO-to-consumer supply platforms.", proto: "Automated soil-moisture drip irrigation setup or a compact vertical hydroponic tower with nutrient pH/EC monitoring." },
+      { id: 6, tag: "Clean Energy", cat: "Exhibition", ex: true, name: "Renewable Energy", themes: ["Solar-powered homes", "Wind energy", "Solar charging stations", "Biogas production"], opp: "Micro-grid rooftop solar leasing, rural organic-waste biogas digesters, and portable solar power banks for off-grid vendors.", proto: "Dual-axis solar tracking panel model paired with a micro wind-turbine hybrid power storage unit." },
+      { id: 7, tag: "Circular & CleanTech", cat: "Exhibition", ex: true, name: "Waste Management & Recycling", themes: ["Plastic-to-granules", "E-waste recycling", "Smart segregation", "Compost manufacturing"], opp: "B2B industrial plastic pelletizing, certified e-waste collection drives, and automated organic composters for housing societies.", proto: "Smart optical/inductive waste segregation bin that automatically separates wet, metallic, and dry plastic waste." },
+      { id: 8, tag: "AI & Autonomous Systems", cat: "Tech", ex: false, name: "Artificial Intelligence & Robotics", themes: ["AI personal assistant", "AI recruitment", "Smart customer service", "Warehouse robot"], opp: "Vernacular AI customer support agents for SMEs, automated skill-screening SaaS, and autonomous warehouse inventory bots.", proto: "Live AI voice/chat workflow agent demo or an autonomous line-following warehouse logistics rover." },
+      { id: 9, tag: "EdTech & Skilling", cat: "Tech", ex: false, name: "Education & EdTech", themes: ["Smart classroom", "Skill platform", "AI learning assistant", "Rural digital education"], opp: "Offline-first rural learning boxes, cohort-based career skilling platforms, and adaptive AI exam preparation tutors.", proto: "Interactive vernacular AI tutor web app with low-bandwidth offline sync mode for rural classrooms." },
+      { id: 10, tag: "FoodTech & Nutrition", cat: "Exhibition", ex: true, name: "Food Processing & FoodTech", themes: ["Healthy snacks", "Millet products", "Food preservation", "Automated food vending"], opp: "Value-added millet D2C nutrition brands, solar dehydration preservation units for farmers, and smart campus healthy vending kiosks.", proto: "Solar-assisted food dehydrator unit or packaged millet snack line with shelf-life and nutritional traceability." },
+      { id: 11, tag: "Inclusive Commerce", cat: "Commerce", ex: false, name: "Women Entrepreneurship", themes: ["Women-led production unit", "Marketplace for women-owned brands"], opp: "Aggregated B2B/B2C storefront for SHG-manufactured goods, micro-credit enablement, and shared cloud-kitchen infrastructure.", proto: "Curated digital marketplace platform onboarding local women-led micro-enterprises with verified logistics." },
+      { id: 12, tag: "Travel & Experiences", cat: "Commerce", ex: false, name: "Tourism & Hospitality", themes: ["Smart tourism platform", "Local experience marketplace"], opp: "Hyperlocal cultural trail bookings, AR heritage audio guides, and homestay management SaaS for tier-2/3 destinations.", proto: "Interactive itinerary & local guide booking web app with QR-triggered AR monument storytelling." },
+      { id: 13, tag: "Security & Surveillance", cat: "Tech", ex: false, name: "Defence & Security", themes: ["Smart surveillance", "Emergency alert solutions"], opp: "Perimeter intrusion detection for industrial campuses, women's wearable SOS hardware, and AI CCTV anomaly alerts.", proto: "Smart GSM/GPS emergency SOS wearable badge or motion-triggered edge-AI surveillance camera alert demo." },
+      { id: 14, tag: "Bharat & Rural Impact", cat: "Commerce", ex: false, name: "Rural Development", themes: ["Rural business service hub", "Village-level service centre"], opp: "One-stop phygital kiosk offering agri-inputs, banking, telemedicine, and e-governance services in underserved villages.", proto: "Village Service Centre business blueprint and tablet POS interface designed for rural micro-entrepreneurs." },
+      { id: 15, tag: "WaterTech", cat: "Green", ex: false, name: "Water Management", themes: ["Water purification", "Rainwater harvesting", "Smart leak detection"], opp: "Low-cost gravity nanofiltration units, modular rooftop rainwater recharge systems, and ultrasonic pipeline leak monitors.", proto: "IoT smart water flow & leak-detection pipeline model with automatic solenoid shutoff valve." },
+      { id: 16, tag: "Financial Technology", cat: "Commerce", ex: false, name: "FinTech", themes: ["Digital payments", "Expense management", "Financial inclusion tools"], opp: "Automated GST & cashflow tracker for street vendors, student micro-savings apps, and vernacular voice-assisted UPI tools.", proto: "Interactive SME bookkeeping & invoice-financing dashboard with automated UPI ledger reconciliation." },
+      { id: 17, tag: "Digital Retail", cat: "Commerce", ex: false, name: "E-Commerce", themes: ["Local seller marketplace", "Niche online store"], opp: "Hyperlocal 60-minute delivery network for neighborhood kirana stores and high-margin D2C niche enthusiast stores.", proto: "Hyperlocal storefront web app connecting neighborhood merchants with real-time inventory sync." },
+      { id: 18, tag: "Supply Chain & Mobility", cat: "Exhibition", ex: true, name: "Logistics & Supply Chain", themes: ["Smart delivery network", "Inventory and route optimisation"], opp: "Last-mile EV micro-hub consolidation, cold-chain tracking for perishables, and AI multi-stop route optimization SaaS.", proto: "Smart warehouse & route-optimization simulation model with RFID parcel tracking and cold-chain temp alerts." },
+      { id: 19, tag: "Sustainable Fashion", cat: "Green", ex: false, name: "Textile & Fashion", themes: ["Sustainable clothing", "Textile upcycling"], opp: "Post-consumer denim/cotton upcycling into corporate merchandise, organic bamboo apparel D2C, and zero-waste pattern manufacturing.", proto: "Upcycled textile product catalog with QR-based circular lifecycle passport showing water and carbon savings." },
+      { id: 20, tag: "Clean D2C Consumer", cat: "Commerce", ex: false, name: "Beauty & Personal Care", themes: ["Organic cosmetics", "Refill-based personal care"], opp: "Zero-plastic shampoo/body-wash refill stations in retail stores and ayurvedic herbal skincare formulations.", proto: "Smart liquid-dispensing refill station prototype using reusable aluminum bottles and QR loyalty rewards." },
+      { id: 21, tag: "Green Infrastructure", cat: "Green", ex: false, name: "Construction & Real Estate", themes: ["Affordable housing", "Construction waste reuse"], opp: "Recycled C&D (construction & demolition) paver blocks, modular prefab housing panels, and PropTech rental management.", proto: "High-strength eco-bricks made from recycled construction debris and fly-ash with load-test specifications." },
+      { id: 22, tag: "Consumer IoT", cat: "Exhibition", ex: true, name: "Smart Home Technology", themes: ["Home automation", "Energy monitoring"], opp: "Retrofit smart switchboards for existing Indian apartments and real-time appliance-level electricity bill optimizers.", proto: "Scale smart home model featuring voice/app appliance switching, gas-leak cutoff, and live wattage analytics." },
+      { id: 23, tag: "Behavioral Health", cat: "Health", ex: false, name: "Mental Wellness", themes: ["Wellness and counselling platform", "Workplace wellbeing"], opp: "B2B employee assistance programs (EAP), anonymous student peer-support networks, and guided CBT habit apps.", proto: "Confidential student & corporate mental wellness platform with mood analytics and counselor booking." },
+      { id: 24, tag: "ElderTech & Care", cat: "Health", ex: false, name: "Senior Citizen Care", themes: ["Elderly assistance", "Medicine and appointment support"], opp: "Subscription geriatric care concierge for NRI/working families, fall-detection wearables, and home physiotherapy booking.", proto: "One-tap senior care companion app & wearable fall-alert device linked to family and emergency responders." },
+      { id: 25, tag: "Early Learning & Care", cat: "Health", ex: false, name: "Childcare & Development", themes: ["Daycare", "Early learning centre"], opp: "Corporate-partnered smart daycare centers with live parent CCTV feeds and Montessori sensory learning kits.", proto: "Interactive early-childhood cognitive development kit and parent-teacher live activity tracking portal." },
+      { id: 26, tag: "SportsTech & Wellness", cat: "Health", ex: false, name: "Sports & Fitness", themes: ["Smart fitness centre", "Community sports platform"], opp: "Pay-per-session neighborhood turf/gym booking aggregator and AI computer-vision posture correction for workouts.", proto: "Community sports matchmaking & turf booking app with live fitness leaderboard integration." },
+      { id: 27, tag: "Bio-Innovation", cat: "Health", ex: false, name: "Biotechnology", themes: ["Biofertilizer", "Bio-based products"], opp: "Microbial liquid biofertilizers replacing chemical urea, mycelium leather alternatives, and bio-enzyme cleaners.", proto: "Formulated microbial biofertilizer sample kit with comparative crop-growth trial metrics." },
+      { id: 28, tag: "Pharma & Supply", cat: "Health", ex: false, name: "Pharmaceuticals", themes: ["Medicine inventory management", "Adherence support"], opp: "Expiry-alert inventory SaaS for independent pharmacies and chronic-disease medication adherence refill subscriptions.", proto: "Smart pharmacy stock-expiry predictor & automated chronic prescription refill dashboard." },
+      { id: 29, tag: "Smart Transit", cat: "Tech", ex: false, name: "Transportation", themes: ["Intelligent public transport", "Shared mobility"], opp: "Campus-to-city student shuttle pooling, real-time bus ETA tracking, and unified QR transit ticketing.", proto: "Live commuter carpool & campus shuttle tracking app with dynamic seat occupancy display." },
+      { id: 30, tag: "Resilience & Safety", cat: "Tech", ex: false, name: "Disaster Management", themes: ["Early warning", "Emergency supply coordination"], opp: "IoT flood/landslide water-level early warning nodes for municipalities and crowdfunded relief logistics platforms.", proto: "Ultrasonic river/drain flood-level sensor tower that triggers automated SMS/siren alerts at critical thresholds." },
+      { id: 31, tag: "InfoSec & Privacy", cat: "Tech", ex: false, name: "Cybersecurity", themes: ["Data protection", "Cyber awareness services"], opp: "Automated vulnerability & phishing simulation training for SMEs, DPDP compliance toolkits, and UPI fraud-shield tools.", proto: "SME cyber-hygiene scanner & interactive phishing-detection browser extension demo." },
+      { id: 32, tag: "GeoSpatial & SpaceTech", cat: "Tech", ex: false, name: "Space Technology", themes: ["Satellite-based crop monitoring", "Geospatial services"], opp: "NDVI satellite crop-health advisory for insurers/banks, urban heat-island mapping, and solar rooftop potential analytics.", proto: "GIS satellite vegetation & water-body monitoring dashboard using open Sentinel geospatial datasets." },
+      { id: 33, tag: "Blue Economy & Aquaculture", cat: "Green", ex: false, name: "Marine & Fisheries", themes: ["Smart fish farming", "Cold-chain support"], opp: "IoT dissolved-oxygen & ammonia pond aerators for aquaculture farmers and solar-powered insulated fish crates.", proto: "Smart aquaculture water-quality buoy prototype measuring pH, temperature, and dissolved oxygen in real time." },
+      { id: 34, tag: "PetTech & Services", cat: "Commerce", ex: false, name: "Pet Care", themes: ["Pet healthcare", "Grooming and boarding platform"], opp: "Mobile doorstep pet grooming vans, verified home-boarding marketplace, and digital vaccination health records.", proto: "All-in-one pet health passport, tele-vet booking, and verified boarding marketplace web app." },
+      { id: 35, tag: "Sustainable Materials", cat: "Green", ex: false, name: "Green Packaging", themes: ["Biodegradable packaging", "Reusable packaging systems"], opp: "Bagasse/cornstarch food delivery containers for cloud kitchens and returnable B2B e-commerce mailer totes.", proto: "Compostable agri-waste molded packaging samples with water-resistance and biodegradation timeline benchmarks." },
+      { id: 36, tag: "Artisan Economy", cat: "Commerce", ex: false, name: "Handicrafts & Rural Art", themes: ["Handmade product marketplace", "Artisan supply chain"], opp: "Direct-from-artisan GI-tagged craft exports, corporate gifting catalogs, and raw-material bulk procurement clusters.", proto: "Artisan storytelling & GI-verified e-commerce storefront with transparent weaver/craftsman payout split." },
+      { id: 37, tag: "AutoTech & Aftermarket", cat: "Commerce", ex: false, name: "Automobile Industry", themes: ["Automobile service centre", "Vehicle diagnostics"], opp: "Standardized multi-brand digital garage network and OBD-II plug-and-play predictive engine health diagnostics.", proto: "OBD-II vehicle fault-code reader app that estimates repair costs and books nearby certified mechanics." },
+      { id: 38, tag: "Impact Ventures", cat: "Commerce", ex: false, name: "Social Entrepreneurship", themes: ["Affordable community services", "Impact-led ventures"], opp: "Cross-subsidized community eye/dental care, livelihood training centers, and affordable clean-cooking fuel distribution.", proto: "Self-sustaining social enterprise revenue model canvas balancing underserved access with institutional CSR/B2B revenue." },
+      { id: 39, tag: "RetailTech", cat: "Commerce", ex: false, name: "Smart Retail", themes: ["Automated retail", "Smart inventory and checkout"], opp: "QR self-checkout kiosks eliminating supermarket queues and AI demand-forecasting POS for small retailers.", proto: "Scan-and-go mobile self-checkout system with instant digital receipt and automated stock deduction." },
+      { id: 40, tag: "Zero-Waste & Resale", cat: "Green", ex: false, name: "Circular Economy", themes: ["Repair, reuse, refurbishment and resale"], opp: "Certified refurbished laptops/smartphones for students, campus textbook/appliance rental exchanges, and repair cafes.", proto: "Certified refurbishment & circular exchange platform with graded quality warranties and carbon-offset tracking." }
+    ];
+
+    const PITCH_10 = [
+      { id: "p1", title: "Business Idea & Problem Identification", desc: "Clear definition of the real-world gap, target pain point, and urgency." },
+      { id: "p2", title: "Proposed Solution", desc: "How your product, service, or technology uniquely solves the identified problem." },
+      { id: "p3", title: "Target Customers", desc: "Well-defined buyer personas, B2B/B2C segments, and addressable market size." },
+      { id: "p4", title: "Product/Service Prototype or Physical Model", desc: "Tangible working model, scale exhibition unit, or functional software MVP." },
+      { id: "p5", title: "Revenue Generation Model", desc: "Pricing strategy, sales channels, recurring streams, and unit economics." },
+      { id: "p6", title: "Investment & Estimated Expenses", desc: "Initial capital requirement (CAPEX), operational costs (OPEX), and break-even timeline." },
+      { id: "p7", title: "Marketing Strategy", desc: "Customer acquisition channels, partnerships, branding, and go-to-market plan." },
+      { id: "p8", title: "Competitor Analysis", desc: "Existing alternatives, competitive differentiation, and defensible unfair advantage." },
+      { id: "p9", title: "Social & Environmental Impact", desc: "Measurable community upliftment, sustainability metrics, and SDG alignment." },
+      { id: "p10", title: "Future Expansion Opportunities", desc: "Scalability roadmap across new geographies, product lines, or customer tiers." }
+    ];
+
+    let activeLessonIndex = 0;
+    let activeCategory = "All";
+    let completedLessons = JSON.parse(localStorage.getItem("biznexus_lessons_v1") || "{}");
+    let checkedPitch = JSON.parse(localStorage.getItem("biznexus_pitch_v1") || "{}");
+
+    function renderLessons() {
+      const list = document.getElementById("lesson-list");
+      list.innerHTML = LESSONS.map((l, i) => {
+        const done = !!completedLessons[l.id];
+        return `
+          <button class="lesson-btn ${i === activeLessonIndex ? "active" : ""}" onclick="selectLesson(${i})">
+            <div class="top"><span>${l.code}</span><span>${done ? "✓ Completed" : "Watch"}</span></div>
+            <div class="title">${l.title}</div>
+          </button>`;
+      }).join("");
+
+      const cur = LESSONS[activeLessonIndex];
+      document.getElementById("yt-frame").src = `https://www.youtube.com/embed/${cur.ytId}`;
+      document.getElementById("active-lesson-title").textContent = cur.title;
+      document.getElementById("active-lesson-desc").textContent = cur.desc;
+      document.getElementById("active-lesson-action").textContent = cur.action;
+
+      const btn = document.getElementById("toggle-lesson-btn");
+      btn.textContent = completedLessons[cur.id] ? "✓ Completed (Click to Undo)" : "Mark Lesson Completed";
+
+      const doneCount = Object.values(completedLessons).filter(Boolean).length;
+      const pct = Math.round((doneCount / LESSONS.length) * 100);
+      document.getElementById("course-progress-bar").style.width = pct + "%";
+      document.getElementById("course-progress-label").textContent = `${doneCount} of ${LESSONS.length} lessons completed (${pct}%)`;
+    }
+
+    function selectLesson(i) {
+      activeLessonIndex = i;
+      renderLessons();
+    }
+
+    function toggleCurrentLesson() {
+      const cur = LESSONS[activeLessonIndex];
+      completedLessons[cur.id] = !completedLessons[cur.id];
+      localStorage.setItem("biznexus_lessons_v1", JSON.stringify(completedLessons));
+      renderLessons();
+    }
+
+    function renderExhibitionPicks() {
+      document.getElementById("exhibition-grid").innerHTML = EXHIBITION_PICKS.map(item => `
+        <div class="mini-card">
+          <div>
+            <span class="badge-ex">${item.num}</span>
+            <h3 style="margin:8px 0 4px;">${item.title}</h3>
+            <p style="font-size:12px;color:#93c5fd;font-weight:700;margin-bottom:8px;">${item.sector}</p>
+            <p class="pitch-desc">${item.proto}</p>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <a href="#pitch-lab" onclick="pickSectorFromExhibition('${item.sector.replace(/'/g, "\\'")}')" class="btn btn-outline" style="padding:8px 12px;font-size:12px;">Select Sector</a>
+            <a href="https://tally.so/r/q5Gbp8" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding:8px 12px;font-size:12px;">Register</a>
+          </div>
+        </div>`).join("");
+    }
+
+    function pickSectorFromExhibition(sectorName) {
+      const match = SECTORS_40.find(s => s.name === sectorName);
+      if (match) {
+        document.getElementById("selected-sector-input").value = `Sector ${String(match.id).padStart(2, "0")}: ${match.name}`;
+        updateBrief();
+      }
+    }
+
+    function setCategory(cat, el) {
+      activeCategory = cat;
+      document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+      el.classList.add("active");
+      renderSectors();
+    }
+
+    function renderSectors() {
+      const q = (document.getElementById("sector-search").value || "").toLowerCase().trim();
+      const filtered = SECTORS_40.filter(s => {
+        const catOk = activeCategory === "All" || (activeCategory === "Exhibition" ? s.ex : s.cat === activeCategory);
+        const text = `${s.id} ${s.tag} ${s.name} ${s.opp} ${s.proto} ${s.themes.join(" ")}`.toLowerCase();
+        return catOk && (!q || text.includes(q));
+      });
+
+      document.getElementById("sector-count-label").textContent = `Showing ${filtered.length} of 40 focus sectors`;
+      document.getElementById("sectors-grid").innerHTML = filtered.map(s => `
+        <div class="mini-card">
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;">
+              <span class="badge-sec">SECTOR ${String(s.id).padStart(2, "0")} • ${s.tag}</span>
+              ${s.ex ? `<span class="badge-ex">Exhibition</span>` : ""}
+            </div>
+            <h3 style="font-size:16px;margin-bottom:8px;">${s.name}</h3>
+            <div class="subthemes">${s.themes.map(t => `<span class="subtag">${t}</span>`).join("")}</div>
+            <div class="detail-box"><strong>Business Opportunity</strong>${s.opp}</div>
+            <div class="detail-box"><strong>Prototype / Model Idea</strong>${s.proto}</div>
+          </div>
+          <div style="display:flex;gap:8px;padding-top:10px;border-top:1px solid var(--border);">
+            <a href="#pitch-lab" onclick="pickSectorFromExhibition('${s.name.replace(/'/g, "\\'")}')" class="btn btn-outline" style="flex:1;padding:8px 10px;font-size:12px;">Use in Pitch</a>
+            <a href="https://tally.so/r/q5Gbp8" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="flex:1;padding:8px 10px;font-size:12px;">Register Team</a>
+          </div>
+        </div>`).join("");
+    }
+
+    function renderPitchChecklist() {
+      document.getElementById("pitch-checklist").innerHTML = PITCH_10.map((p, idx) => {
+        const isDone = !!checkedPitch[p.id];
+        return `
+          <label class="pitch-item ${isDone ? "done" : ""}">
+            <input type="checkbox" ${isDone ? "checked" : ""} onchange="togglePitchItem('${p.id}')" />
+            <div>
+              <div class="pitch-num">PARAMETER ${String(idx + 1).padStart(2, "0")}</div>
+              <div class="pitch-title">${p.title}</div>
+              <div class="pitch-desc">${p.desc}</div>
+            </div>
+          </label>`;
+      }).join("");
+
+      const doneCount = Object.values(checkedPitch).filter(Boolean).length;
+      const pct = Math.round((doneCount / PITCH_10.length) * 100);
+      document.getElementById("pitch-pct-label").textContent = `${pct}% (${doneCount}/10)`;
+      document.getElementById("pitch-progress-bar").style.width = pct + "%";
+      updateBrief();
+    }
+
+    function togglePitchItem(id) {
+      checkedPitch[id] = !checkedPitch[id];
+      localStorage.setItem("biznexus_pitch_v1", JSON.stringify(checkedPitch));
+      renderPitchChecklist();
+    }
+
+    function updateEconomics() {
+      const capex = Number(document.getElementById("capex-inp").value || 0);
+      const opex = Number(document.getElementById("opex-inp").value || 0);
+      const price = Number(document.getElementById("price-inp").value || 0);
+      const varCost = Number(document.getElementById("varcost-inp").value || 0);
+      const margin = price - varCost;
+
+      document.getElementById("out-margin").textContent = `₹${margin.toLocaleString("en-IN")}`;
+      if (margin > 0) {
+        const beUnits = Math.ceil(opex / margin);
+        document.getElementById("out-breakeven").textContent = `${beUnits.toLocaleString("en-IN")} units / mo`;
+        document.getElementById("out-capex-recovery").textContent = capex > 0 ? `₹${capex.toLocaleString("en-IN")} upfront CAPEX` : "₹0 upfront CAPEX";
+      } else {
+        document.getElementById("out-breakeven").textContent = "Raise price above variable cost";
+        document.getElementById("out-capex-recovery").textContent = "Negative unit margin";
+      }
+      updateBrief();
+    }
+
+    function populateSectorDropdown() {
+      const sel = document.getElementById("selected-sector-input");
+      sel.innerHTML = SECTORS_40.map(s => {
+        const val = `Sector ${String(s.id).padStart(2, "0")}: ${s.name}`;
+        return `<option value="${val}">${val}</option>`;
+      }).join("");
+    }
+
+    function updateBrief() {
+      const team = document.getElementById("team-name").value.trim() || "DMIMS Student Team";
+      const sector = document.getElementById("selected-sector-input").value;
+      const capex = Number(document.getElementById("capex-inp").value || 0).toLocaleString("en-IN");
+      const opex = Number(document.getElementById("opex-inp").value || 0).toLocaleString("en-IN");
+      const price = Number(document.getElementById("price-inp").value || 0).toLocaleString("en-IN");
+      const margin = document.getElementById("out-margin").textContent;
+      const be = document.getElementById("out-breakeven").textContent;
+      const doneCount = Object.values(checkedPitch).filter(Boolean).length;
+
+      const text = [
+        `BizNexus 2026 (IIC & ED Cell, DMIMS)`,
+        `Team: ${team}`,
+        `Focus Sector: ${sector}`,
+        `CAPEX: ₹${capex} | Monthly OPEX: ₹${opex} | Unit Price: ₹${price} | Margin: ${margin}`,
+        `Break-Even Volume: ${be} | Pitch Readiness: ${doneCount}/10`,
+        `Registration: https://tally.so/r/q5Gbp8`
+      ].join("\n");
+
+      document.getElementById("brief-output").value = text;
+      document.getElementById("wa-share-btn").href = `https://wa.me/?text=${encodeURIComponent(text)}`;
+    }
+
+    function copyBrief() {
+      navigator.clipboard.writeText(document.getElementById("brief-output").value);
+      alert("Team brief copied to clipboard!");
+    }
+
+    populateSectorDropdown();
+    renderLessons();
+    renderExhibitionPicks();
+    renderSectors();
+    renderPitchChecklist();
+    updateEconomics();
+  </script>
+</body>
+</html>
